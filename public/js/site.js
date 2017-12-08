@@ -36136,7 +36136,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 $(function () {
 
-	alert('********** Site under construction **********');
+	alert('Site under construction.');
 
 	/* Popover: */
 
