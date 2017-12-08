@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="25" height="25" viewBox="0 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:square;">
+    <g id="BR">
+        <circle id="Mask" cx="14" cy="14" r="14" style="fill:white;"/>
+        <clipPath id="_clip1">
+            <circle id="Mask1" cx="14" cy="14" r="14"/>
+        </clipPath>
+        <g clip-path="url(#_clip1)">
+            <g>
+                <g id="Mask.-Copy" transform="matrix(1,0,0,1,-5,0)">
+                    <rect x="0" y="0" width="38.267" height="28" style="fill:rgb(5,171,65);"/>
+                </g>
+                <g id="Rectangle.-60" transform="matrix(1,0,0,1,-5,0)">
+                    <path d="M4.196,14.365C3.891,14.164 3.888,13.839 4.196,13.635L18.582,4.099C18.887,3.897 19.377,3.895 19.685,4.099L34.071,13.635C34.375,13.836 34.379,14.161 34.071,14.365L19.685,23.901C19.38,24.103 18.89,24.105 18.582,23.901L4.196,14.365Z" style="fill:rgb(253,210,22);"/>
+                </g>
+                <g id="Mask2" transform="matrix(1,0,0,1,7.75556,7.46667)">
+                    <ellipse cx="6.378" cy="6.533" rx="6.378" ry="6.533" style="fill:rgb(5,48,135);"/>
+                    <clipPath id="_clip2">
+                        <ellipse cx="6.378" cy="6.533" rx="6.378" ry="6.533"/>
+                    </clipPath>
+                    <g clip-path="url(#_clip2)">
+                        <g id="Line" transform="matrix(0.994522,0.104528,-0.104528,0.994522,0.737984,-0.629814)">
+                            <path d="M-0.911,5.6C0,4.667 3.294,5.103 6.378,5.6C9.462,6.097 12.767,7.478 13.667,8.4" style="fill:none;stroke:white;stroke-width:1.33px;"/>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

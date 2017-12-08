@@ -1,0 +1,196 @@
+<?php
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
+Auth::routes();
+
+//Route::view('/', 'maintenance');
+Route::get('/', 'IndexController@index')->name('index');
+Route::get('/home', 'IndexController@index')->name('home');
+
+Route::get('/produtos', 'ProductController@index')->name('produtos');
+Route::get('/produtos/{slug}/{sabor?}', ['as' => 'produto_exibicao', 'uses' => 'ProductController@product']);
+Route::get('/products/{type}/{category}', ['as' => 'produto_categoria', 'uses' => 'ProductController@obterPorTipoCategoria']);
+
+Route::get('/atletas', 'AthleteController@index')->name('atletas');
+Route::get('/atletas/{slug}', 'AthleteController@athlete')->name('atleta');
+
+Route::get('/objetivos', 'GoalController@index')->name('objetivos');
+Route::get('/objetivos/{goal}', ['as' => 'objetivo_exibicao', 'uses' => 'GoalController@goal']);
+
+Route::get('/historia', 'HistoryController@index')->name('historia');
+Route::get('/treinos', 'TrainingController@index')->name('treinos');
+
+Route::get('/revenda', 'ResaleController@index')->name('revenda');
+Route::post('/salvar-revenda', 'ResaleController@store')->name('salvar-revenda');
+
+$router->group(['prefix' => 'lojas', 'as' => 'lojas.'], function () use ($router)
+{
+	$router->get('/', ['as' => 'index', 'uses' => 'StoreController@index']);
+	$router->get('/pesquisar', ['as' => 'pesquisar', 'uses' => 'StoreController@pesquisar']);
+	$router->get('/json', ['as' => 'json', 'uses' => 'StoreController@json']);
+	$router->get('/pesquisa/json', ['as' => 'pesquisaJson', 'uses' => 'StoreController@pesquisaJson']);
+});
+
+Route::get('/contato', 'ContactController@index')->name('contato');
+
+Route::get('/inscreverse', 'SubscribeController@index')->name('inscreverse');
+Route::post('/inscrever', 'SubscribeController@store')->name('inscrever');
+
+//testes
+Route::get('/testes/{cep}', 'TesteController@index');
+
+//final rotas de testes
+
+
+Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'adminCheck']], function () use ($router)
+{
+	Route::view('/', 'admin.index')->name('admin');
+	
+	$router->group(['prefix' => 'produtos', 'as' => 'produtos.'], function () use ($router)
+	{
+		$router->get('/', ['as' => 'listar', 'uses' => 'ProductAdminController@index']);
+		$router->post('store', ['as' => 'gravar', 'uses' => 'ProductAdminController@store']);
+		$router->get('create', ['as' => 'criar', 'uses' => 'ProductAdminController@create']);
+		$router->get('{id}/destroy', ['as' => 'remover', 'uses' => 'ProductAdminController@destroy']);
+		$router->get('{id}/edit', ['as' => 'editar', 'uses' => 'ProductAdminController@edit']);
+		$router->post('{id}/update', ['as' => 'atualizar', 'uses' => 'ProductAdminController@update']);
+		$router->get('{topico_id}/topic/destroy', ['as' => 'remover_topico', 'uses' => 'ProductAdminController@topicoDestroy']);
+		$router->get('{portion_id}/portion/destroy', ['as' => 'remover_porcao', 'uses' => 'ProductAdminController@portionDestroy']);
+	});
+	
+	$router->group(['prefix' => 'linhas', 'as' => 'linhas.'], function () use ($router)
+	{
+		$router->get('/', ['as' => 'listar', 'uses' => 'LineAdminController@index']);
+		$router->post('store', ['as' => 'gravar', 'uses' => 'LineAdminController@store']);
+		$router->get('create', ['as' => 'criar', 'uses' => 'LineAdminController@create']);
+		$router->get('{id}/destroy', ['as' => 'remover', 'uses' => 'LineAdminController@destroy']);
+		$router->get('{id}/edit', ['as' => 'editar', 'uses' => 'LineAdminController@edit']);
+		$router->post('{id}/update', ['as' => 'atualizar', 'uses' => 'LineAdminController@update']);
+	});
+	
+	$router->group(['prefix' => 'objetivos', 'as' => 'objetivos.'], function () use ($router)
+	{
+		$router->get('/', ['as' => 'listar', 'uses' => 'GoalAdminController@index']);
+		$router->post('store', ['as' => 'gravar', 'uses' => 'GoalAdminController@store']);
+		$router->get('create', ['as' => 'criar', 'uses' => 'GoalAdminController@create']);
+		$router->get('{id}/destroy', ['as' => 'remover', 'uses' => 'GoalAdminController@destroy']);
+		$router->get('{id}/edit', ['as' => 'editar', 'uses' => 'GoalAdminController@edit']);
+		$router->post('{id}/update', ['as' => 'atualizar', 'uses' => 'GoalAdminController@update']);
+	});
+	
+	$router->group(['prefix' => 'tipos', 'as' => 'tipos.'], function () use ($router)
+	{
+		$router->get('/', ['as' => 'listar', 'uses' => 'TypeAdminController@index']);
+		$router->post('store', ['as' => 'gravar', 'uses' => 'TypeAdminController@store']);
+		$router->get('create', ['as' => 'criar', 'uses' => 'TypeAdminController@create']);
+		$router->get('{id}/destroy', ['as' => 'remover', 'uses' => 'TypeAdminController@destroy']);
+		$router->get('{id}/edit', ['as' => 'editar', 'uses' => 'TypeAdminController@edit']);
+		$router->post('{id}/update', ['as' => 'atualizar', 'uses' => 'TypeAdminController@update']);
+	});
+	
+	$router->group(['prefix' => 'categorias', 'as' => 'categorias.'], function () use ($router)
+	{
+		$router->get('/', ['as' => 'listar', 'uses' => 'CategoryAdminController@index']);
+		$router->post('store', ['as' => 'gravar', 'uses' => 'CategoryAdminController@store']);
+		$router->get('create', ['as' => 'criar', 'uses' => 'CategoryAdminController@create']);
+		$router->get('{id}/destroy', ['as' => 'remover', 'uses' => 'CategoryAdminController@destroy']);
+		$router->get('{id}/edit', ['as' => 'editar', 'uses' => 'CategoryAdminController@edit']);
+		$router->post('{id}/update', ['as' => 'atualizar', 'uses' => 'CategoryAdminController@update']);
+	});
+	
+	$router->group(['prefix' => 'sabores', 'as' => 'sabores.'], function () use ($router)
+	{
+		$router->get('/', ['as' => 'listar', 'uses' => 'FlavorAdminController@index']);
+		$router->post('store', ['as' => 'gravar', 'uses' => 'FlavorAdminController@store']);
+		$router->get('create', ['as' => 'criar', 'uses' => 'FlavorAdminController@create']);
+		$router->get('{id}/destroy', ['as' => 'remover', 'uses' => 'FlavorAdminController@destroy']);
+		$router->get('{id}/edit', ['as' => 'editar', 'uses' => 'FlavorAdminController@edit']);
+		$router->post('{id}/update', ['as' => 'atualizar', 'uses' => 'FlavorAdminController@update']);
+	});
+	
+	$router->group(['prefix' => 'treinos', 'as' => 'treinos.'], function () use ($router)
+	{
+		$router->get('/', ['as' => 'listar', 'uses' => 'TrainingAdminController@index']);
+		$router->post('store', ['as' => 'gravar', 'uses' => 'TrainingAdminController@store']);
+		$router->get('create', ['as' => 'criar', 'uses' => 'TrainingAdminController@create']);
+		$router->get('{id}/destroy', ['as' => 'remover', 'uses' => 'TrainingAdminController@destroy']);
+		$router->get('{id}/edit', ['as' => 'editar', 'uses' => 'TrainingAdminController@edit']);
+		$router->post('{id}/update', ['as' => 'atualizar', 'uses' => 'TrainingAdminController@update']);
+		
+		$router->group(['prefix' => 'categorias', 'as' => 'categorias.'], function () use ($router)
+		{
+			$router->get('/', ['as' => 'listar', 'uses' => 'TrainingCategoryAdminController@index']);
+			$router->post('store', ['as' => 'gravar', 'uses' => 'TrainingCategoryAdminController@store']);
+			$router->get('create', ['as' => 'criar', 'uses' => 'TrainingCategoryAdminController@create']);
+			$router->get('{id}/destroy', ['as' => 'remover', 'uses' => 'TrainingCategoryAdminController@destroy']);
+			$router->get('{id}/edit', ['as' => 'editar', 'uses' => 'TrainingCategoryAdminController@edit']);
+			$router->post('{id}/update', ['as' => 'atualizar', 'uses' => 'TrainingCategoryAdminController@update']);
+		});
+	});
+	
+	$router->group(['prefix' => 'atletas', 'as' => 'atletas.'], function () use ($router)
+	{
+		$router->get('/', ['as' => 'listar', 'uses' => 'AthleteAdminController@index']);
+		$router->post('store', ['as' => 'gravar', 'uses' => 'AthleteAdminController@store']);
+		$router->get('create', ['as' => 'criar', 'uses' => 'AthleteAdminController@create']);
+		$router->get('{id}/destroy', ['as' => 'remover', 'uses' => 'AthleteAdminController@destroy']);
+		$router->get('{id}/edit', ['as' => 'editar', 'uses' => 'AthleteAdminController@edit']);
+		$router->post('{id}/update', ['as' => 'atualizar', 'uses' => 'AthleteAdminController@update']);
+	});
+	
+	$router->group(['prefix' => 'permissoes', 'as' => 'permissoes.'], function () use ($router)
+	{
+		$router->get('/', ['as' => 'listar', 'uses' => 'PermissionAdminController@index']);
+		$router->get('usuario/{user_id}/edit', ['as' => 'editar', 'uses' => 'PermissionAdminController@edit']);
+		$router->get('{permissao_id}/permitir', ['as' => 'permitir', 'uses' => 'PermissionAdminController@setPermissao']);
+	});
+	
+	$router->group(['prefix' => 'lojas', 'as' => 'lojas.'], function () use ($router)
+	{
+		$router->get('/', ['as' => 'listar', 'uses' => 'StoreAdminController@index']);
+		$router->post('store', ['as' => 'gravar', 'uses' => 'StoreAdminController@store']);
+		$router->get('create', ['as' => 'criar', 'uses' => 'StoreAdminController@create']);
+		$router->get('{id}/destroy', ['as' => 'remover', 'uses' => 'StoreAdminController@destroy']);
+		$router->get('{id}/edit', ['as' => 'editar', 'uses' => 'StoreAdminController@edit']);
+		$router->post('{id}/update', ['as' => 'atualizar', 'uses' => 'StoreAdminController@update']);
+	});
+});
+
+Route::group(['prefix' => 'atualizar-rotas'], function () use ($router)
+{
+	Route::get('/', function ()
+	{
+		$routeCollection = Route::getRoutes();
+		foreach ($routeCollection as $rt)
+		{
+			if (preg_match('[admin]', $rt->getPrefix()) && $rt->getName() != 'admin')
+			{
+				$controller = explode('\\', explode('@', $rt->getActionName())[0])[3];
+				$controllerAction = explode('\\', $rt->getActionName())[3];
+				
+				$res = \App\Permission::where('controller', $controller)
+					->where('controller_action', $controllerAction)->first();
+				
+				if (!$res)
+				{
+					\App\Permission::create([
+						'controller' => $controller,
+						'controller_action' => $controllerAction,
+						'route_name' => $rt->getName(),
+						'action_name' => explode('@', $rt->getActionName())[1]
+					]);
+				}
+			}
+		}
+	});
+});
