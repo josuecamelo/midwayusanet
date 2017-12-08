@@ -1,5 +1,7 @@
 $(function () {
 
+	alert('********** Site under construction **********');
+
 	/* Popover: */
 
 	$('[data-toggle="popover"]').popover();
