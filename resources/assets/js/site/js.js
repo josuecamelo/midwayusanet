@@ -1,6 +1,6 @@
 $(function () {
 
-	alert('Site under construction');
+	alert('Site under construction.');
 
 	/* Popover: */
 

@@ -244,7 +244,6 @@
 				</li>
 				<li id="menu-mobile">
 					<a href="#">
-						Menu
 						<i class="fas fa-bars"></i>
 					</a>
 					<nav>
