@@ -36195,7 +36195,7 @@ $(function () {
 		event.stopPropagation();
 	});
 
-	$('body').on('click', function () {
+	$(document).on('click', function () {
 
 		alert('Midway Labs USA');
 		console.log('Midway Labs USA');
