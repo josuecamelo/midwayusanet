@@ -2,7 +2,9 @@
 
 @section('css')
 	<style>
-
+.meu_estilo{
+	background: red;
+}
 
 	</style>
 @endsection
@@ -43,6 +45,7 @@
 @section('js')
 	<script>
 
+		var minhaVar = 'Midway';
 
 	</script>
 @endsection
