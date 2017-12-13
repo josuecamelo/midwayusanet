@@ -62,7 +62,15 @@ $(function () {
 	});
 
 	$('body').on('click', function () {
+
+		alert('Midway Labs USA');
+		console.log('Midway Labs USA');
+
 		if (!mmOpen) {
+
+			alert('Midway');
+			console.log('Midway');
+
 			$('#menu-mobile nav').hide('slide', {direction: 'left'});
 			$('#menu-mobile > a > svg').removeClass('fa-times').addClass('fa-bars').attr('data-icon', 'bars');
 			mmOpen = true;
