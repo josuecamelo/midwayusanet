@@ -36,9 +36,9 @@ $(function () {
 		} else {
 			$('#menu-mobile nav').hide('slide', {direction: 'left'});
 			$('#menu-mobile > a > svg').removeClass('fa-times').addClass('fa-bars').attr('data-icon', 'bars');
-			setTimeout(function () {
-				$('#menu-mobile nav').removeAttr('style');
-			}, 500);
+			// setTimeout(function () {
+			// 	$('#menu-mobile nav').removeAttr('style');
+			// }, 500);
 		}
 		mmOpen = !mmOpen;
 		event.stopPropagation();
