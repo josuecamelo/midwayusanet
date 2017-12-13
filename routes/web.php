@@ -13,7 +13,6 @@
 
 Auth::routes();
 
-//Route::view('/', 'maintenance');
 Route::get('/', 'IndexController@index')->name('index');
 Route::get('/home', 'IndexController@index')->name('home');
 
