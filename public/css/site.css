@@ -7106,10 +7106,10 @@ output {
 }
 
 .form-control:focus {
-  border-color: #f29095;
+  border-color: #ff8080;
   outline: 0;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(242, 144, 149, 0.6);
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(242, 144, 149, 0.6);
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 128, 128, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 128, 128, 0.6);
 }
 
 .form-control::-moz-placeholder {
@@ -12098,12 +12098,12 @@ body {
 }
 
 ::-moz-selection {
-  background: #e41e28;
+  background: #ff0000;
   color: #fff;
 }
 
 ::selection {
-  background: #e41e28;
+  background: #ff0000;
   color: #fff;
 }
 
@@ -12121,11 +12121,18 @@ h6 {
 /* HEADER */
 
 #header {
-  background: url("/img/bg-header.svg") no-repeat #e41e28;
+  background: url("/img/bg-header.svg") no-repeat #ff0000;
   background-size: 240px auto;
   background-position: left top;
   z-index: 9999 !important;
   position: relative;
+}
+
+@media (max-width: 380px) {
+  #header {
+    background-size: 260px 90px;
+    background-position: -45px -15px;
+  }
 }
 
 #logo {
@@ -12140,6 +12147,12 @@ h6 {
 #logo h1 {
   margin: 0 0 0 20px;
   padding: 3px;
+}
+
+@media (max-width: 380px) {
+  #logo h1 {
+    margin: 0;
+  }
 }
 
 /* Nav */
@@ -12192,7 +12205,6 @@ h6 {
   display: block;
   content: '';
   height: 70px;
-  background: white;
   position: absolute;
   width: 100%;
   left: 0px;
@@ -12208,7 +12220,7 @@ h6 {
   display: block;
   content: '';
   height: 64px;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.3);
   position: absolute;
   width: 100%;
   left: 0px;
@@ -12232,8 +12244,8 @@ h6 {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
-          box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   background: #fff;
   top: 64px;
   left: 0;
@@ -12319,10 +12331,9 @@ h6 {
 }
 
 #header-links {
-  bottom: 0;
-  height: 100%;
-  margin: 0 10px;
-  float: right;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 #header-links > ul {
@@ -12372,7 +12383,6 @@ h6 {
           justify-content: space-evenly;
   -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
           box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
-  background: #fff;
   padding: 1rem 0;
 }
 
@@ -12414,7 +12424,7 @@ h6 {
 }
 
 #menu-mobile nav > ul > li {
-  border-bottom: 1px solid #e41e28;
+  border-bottom: 1px solid #ff0000;
 }
 
 #menu-mobile nav > ul > li > a {
@@ -12458,24 +12468,19 @@ h6 {
 /* Pesquisa: */
 
 #search {
-  text-align: right;
-  padding: 0.7rem 0;
+  padding-top: 2px;
 }
 
 #search svg {
-  float: left;
   position: relative;
-  display: inline-block;
-  top: 28px;
-  left: 8px;
+  top: 35px;
+  left: 9px;
 }
 
 #search label {
-  display: inline-block !important;
   font-weight: normal;
   margin: -15px 0 0 0 !important;
   padding: 0 !important;
-  float: left;
 }
 
 #search .form-control {

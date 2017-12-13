@@ -36136,7 +36136,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 $(function () {
 
-	alert('Site under construction.');
+	// alert('Site under construction.');
 
 	/* Popover: */
 
@@ -36197,13 +36197,7 @@ $(function () {
 
 	$(document).on('click', function () {
 
-		alert('Midway Labs USA');
-		console.log('Midway Labs USA');
-
 		if (!mmOpen) {
-
-			alert('Midway');
-			console.log('Midway');
 
 			$('#menu-mobile nav').hide('slide', { direction: 'left' });
 			$('#menu-mobile > a > svg').removeClass('fa-times').addClass('fa-bars').attr('data-icon', 'bars');

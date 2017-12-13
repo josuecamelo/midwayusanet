@@ -9,7 +9,7 @@ html, body {
 }
 
 ::selection {
-	background: $red-1;
+	background: $red-0;
 	color: #fff;
 }
 
@@ -22,11 +22,18 @@ h1, h2, h3, h4, h5, h6 {
 /* HEADER */
 
 #header {
-	background: url('/img/bg-header.svg') no-repeat $red-1;
+	background: url('/img/bg-header.svg') no-repeat $red-0;
 	background-size: 240px auto;
 	background-position: left top;
 	z-index: 9999 !important;
 	position: relative;
+}
+
+@media(max-width: 380px) {
+	#header {
+		background-size: 260px 90px;
+		background-position: -45px -15px;
+	}
 }
 
 #header .container-fluid {
@@ -45,6 +52,12 @@ h1, h2, h3, h4, h5, h6 {
 #logo h1 {
 	margin: 0 0 0 20px;
 	padding: 3px;
+}
+
+@media(max-width: 380px) {
+	#logo h1 {
+		margin: 0;
+	}
 }
 
 /* Nav */
@@ -94,7 +107,6 @@ h1, h2, h3, h4, h5, h6 {
 	display: block;
 	content: '';
 	height: 70px;
-	background: white;
 	position: absolute;
 	width: 100%;
 	left: 0px;
@@ -109,7 +121,7 @@ h1, h2, h3, h4, h5, h6 {
 	display: block;
 	content: '';
 	height: 64px;
-	background: rgba(255, 255, 255, 0.2);
+	background: rgba(255, 255, 255, 0.3);
 	position: absolute;
 	width: 100%;
 	left: 0px;
@@ -127,7 +139,7 @@ h1, h2, h3, h4, h5, h6 {
 	@include transition;
 	display: flex;
 	justify-content: space-evenly;
-	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 	background: #fff;
 	top: 64px;
 	left: 0;
@@ -213,10 +225,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #header-links {
-	bottom: 0;
-	height: 100%;
-	margin: 0 10px;
-	float: right;
+	position: absolute;
+	top: 0;
+	right: 0;
 }
 
 #header-links > ul {
@@ -258,7 +269,6 @@ h1, h2, h3, h4, h5, h6 {
 	display: flex;
 	justify-content: space-evenly;
 	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
-	background: #fff;
 	padding: 1rem 0;
 }
 
@@ -300,7 +310,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #menu-mobile nav > ul > li {
-	border-bottom: 1px solid $red-1;
+	border-bottom: 1px solid $red-0;
 }
 
 #menu-mobile nav > ul > li > a {
@@ -324,7 +334,6 @@ h1, h2, h3, h4, h5, h6 {
 	background: $red-2;
 }
 
-
 #menu-mobile h2 {
 	font-size: 18px;
 	color: #fff;
@@ -345,24 +354,19 @@ h1, h2, h3, h4, h5, h6 {
 /* Pesquisa: */
 
 #search {
-	text-align: right;
-	padding: 0.7rem 0;
+	padding-top: 2px;
 }
 
 #search svg {
-	float: left;
 	position: relative;
-	display: inline-block;
-	top: 28px;
-	left: 8px;
+	top: 35px;
+	left: 9px;
 }
 
 #search label {
-	display: inline-block !important;
 	font-weight: normal;
 	margin: -15px 0 0 0 !important;
 	padding: 0 !important;
-	float: left;
 }
 
 #search .form-control {

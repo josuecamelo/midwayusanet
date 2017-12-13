@@ -11,7 +11,7 @@
 	@yield('css')
 </head>
 <body>
-<header id="header" class="animated bounceInDown">
+<header id="header" class="animated fadeInDown">
 	<div class="container-fluid">
 		<div id="logo">
 			<h1>
@@ -23,7 +23,7 @@
 		<nav id="nav-main" role="navigation">
 			<ul>
 				<li>
-					<a href="/">Woman's Products</a>
+					<a href="#">Woman's Products</a>
 					<ul>
 						<li>
 							<h2>POPULAR CATEGORIES</h2>
@@ -88,7 +88,7 @@
 					</ul>
 				</li>
 				<li>
-					<a href="/">Man's Products</a>
+					<a href="#">Man's Products</a>
 					<ul>
 						<li>
 							<h2>POPULAR CATEGORIES</h2>
@@ -153,7 +153,7 @@
 					</ul>
 				</li>
 				<li>
-					<a href="/">Shop All Products</a>
+					<a href="#">Shop All Products</a>
 					<ul>
 						<li>
 							<h2>POPULAR CATEGORIES</h2>
@@ -218,7 +218,7 @@
 					</ul>
 				</li>
 				<li>
-					<a href="/">Science</a>
+					<a href="#">Science</a>
 				</li>
 			</ul>
 		</nav>
