@@ -505,7 +505,7 @@
 
 	{{--gtag('config', '{{env('GOOGLE_ANALYTICS_ID')}}');--}}
 {{--</script>--}}
-<script src="{{ asset('js/site.js'). '?v='.time() }}"></script>
+
 @yield('js')
 </body>
 </html>
