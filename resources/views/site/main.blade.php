@@ -493,18 +493,18 @@
 	var base_url = "{{ url('/') }}"
 </script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id={{env('GOOGLE_ANALYTICS_ID')}}"></script>
-<script>
-	window.dataLayer = window.dataLayer || [];
+{{--<script async src="https://www.googletagmanager.com/gtag/js?id={{env('GOOGLE_ANALYTICS_ID')}}"></script>--}}
+{{--<script>--}}
+	{{--window.dataLayer = window.dataLayer || [];--}}
 
-	function gtag() {
-		dataLayer.push(arguments);
-	}
+	{{--function gtag() {--}}
+		{{--dataLayer.push(arguments);--}}
+	{{--}--}}
 
-	gtag('js', new Date());
+	{{--gtag('js', new Date());--}}
 
-	gtag('config', '{{env('GOOGLE_ANALYTICS_ID')}}');
-</script>
+	{{--gtag('config', '{{env('GOOGLE_ANALYTICS_ID')}}');--}}
+{{--</script>--}}
 <script src="{{ asset('js/site.js'). '?v='.time() }}"></script>
 @yield('js')
 </body>
