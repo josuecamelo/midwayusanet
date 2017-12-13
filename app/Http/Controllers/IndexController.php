@@ -23,8 +23,8 @@ class IndexController extends Controller
 	{
 //		$treinoDoDia = $this->trainingModel->treinoDoDia();
 //		$outrosTreinos = $this->trainingModel->skip(1)->take(3)->get();
-		$goals = $this->goalModel->tudo();
+//		$goals = $this->goalModel->tudo();
 
-		return view('site.index', compact('goals'));
+		return view('site.index');
 	}
 }
