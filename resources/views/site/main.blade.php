@@ -75,15 +75,15 @@
 							<h2>Featured Stack</h2>
 							<div id="featured-stack">
 								<a href="/">
-									<img src="http://via.placeholder.com/150x150">
+									<img src="https://via.placeholder.com/150x150">
 									<p>Product Name</p>
 									<p class="value">$ <span>109</span><sup>.99</sup></p>
 								</a>
 							</div>
 						</li>
 						<li class="ads">
-							<div><a href="/" title=""><img src="http://via.placeholder.com/400x130"></a></div>
-							<div><a href="/" title=""><img src="http://via.placeholder.com/400x130"></a></div>
+							<div><a href="/" title=""><img src="https://via.placeholder.com/400x130"></a></div>
+							<div><a href="/" title=""><img src="https://via.placeholder.com/400x130"></a></div>
 						</li>
 					</ul>
 				</li>
@@ -140,15 +140,15 @@
 							<h2>Featured Stack</h2>
 							<div id="featured-stack">
 								<a href="/">
-									<img src="http://via.placeholder.com/150x150">
+									<img src="https://via.placeholder.com/150x150">
 									<p>Product Name</p>
 									<p class="value">$ <span>109</span><sup>.99</sup></p>
 								</a>
 							</div>
 						</li>
 						<li class="ads">
-							<div><a href="/" title=""><img src="http://via.placeholder.com/400x130"></a></div>
-							<div><a href="/" title=""><img src="http://via.placeholder.com/400x130"></a></div>
+							<div><a href="/" title=""><img src="https://via.placeholder.com/400x130"></a></div>
+							<div><a href="/" title=""><img src="https://via.placeholder.com/400x130"></a></div>
 						</li>
 					</ul>
 				</li>
@@ -205,15 +205,15 @@
 							<h2>Featured Stack</h2>
 							<div id="featured-stack">
 								<a href="/">
-									<img src="http://via.placeholder.com/150x150">
+									<img src="https://via.placeholder.com/150x150">
 									<p>Product Name</p>
 									<p class="value">$ <span>109</span><sup>.99</sup></p>
 								</a>
 							</div>
 						</li>
 						<li class="ads">
-							<div><a href="/" title=""><img src="http://via.placeholder.com/400x130"></a></div>
-							<div><a href="/" title=""><img src="http://via.placeholder.com/400x130"></a></div>
+							<div><a href="/" title=""><img src="https://via.placeholder.com/400x130"></a></div>
+							<div><a href="/" title=""><img src="https://via.placeholder.com/400x130"></a></div>
 						</li>
 					</ul>
 				</li>
@@ -416,7 +416,7 @@
 					</nav>
 				</li>
 				<li>
-					<a href="http://br.midwaylabsusa.com/"><img src="{{ asset('img/br.svg') }}" alt="Midway Brasil"></a>
+					<a href="https://br.midwaylabsusa.com/"><img src="{{ asset('img/br.svg') }}" alt="Midway Brasil"></a>
 				</li>
 				<li id="search">
 					<label><i class="fas fa-search"></i><input type="search" class="form-control" placeholder="Search..."></label>
