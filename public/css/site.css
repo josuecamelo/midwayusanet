@@ -12122,8 +12122,8 @@ h6 {
 
 #header {
   background: url("/img/bg-header.svg") no-repeat #ff0000;
-  background-size: 240px auto;
-  background-position: left top;
+  background-size: 230px auto;
+  background-position: -5px top;
   z-index: 9999 !important;
   position: relative;
 }
@@ -12145,7 +12145,7 @@ h6 {
 }
 
 #logo h1 {
-  margin: 0 0 0 20px;
+  margin: -2px 0 0 10px;
   padding: 3px;
 }
 
@@ -12356,13 +12356,19 @@ h6 {
   text-transform: uppercase;
   text-decoration: none;
   display: block;
-  padding: 0.5rem 1rem 0.5rem 0;
+  padding-right: 1rem;
   height: 100%;
   line-height: 300%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   position: relative;
   z-index: 1;
+}
+
+@media (max-width: 380px) {
+  #header-links > ul > li > a {
+    padding-right: 0.5rem;
+  }
 }
 
 #menu nav {
@@ -12468,7 +12474,7 @@ h6 {
 /* Pesquisa: */
 
 #search {
-  padding-top: 2px;
+  padding: 2px 12px 0 0;
 }
 
 #search svg {
@@ -12486,6 +12492,7 @@ h6 {
 #search .form-control {
   padding-left: 30px;
   width: 200px;
+  height: 40px;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
