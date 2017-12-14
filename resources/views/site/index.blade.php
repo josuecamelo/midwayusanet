@@ -68,13 +68,22 @@
 		</ol>
 		<div class="carousel-inner" role="listbox">
 			<div class="item active">
-				<img src="{{ asset('img/home/banners/ArnoldBanner.jpg') }}" alt="...">
+				<picture>
+					<source media="(min-width: 480px)" srcset="{{ asset('img/home/banners/ArnoldBanner.jpg') }}">
+					<img src="{{ asset('img/home/banners/ArnoldBanner-mobile.jpg') }}" alt="Criamos sites responsivos" class="img-responsive">
+				</picture>
 			</div>
 			<div class="item">
-				<img src="{{ asset('img/home/banners/AthleteBanner.jpg') }}" alt="...">
+				<picture>
+					<source media="(min-width: 480px)" srcset="{{ asset('img/home/banners/AthleteBanner.jpg') }}">
+					<img src="{{ asset('img/home/banners/AthleteBanner-mobile.jpg') }}" alt="Criamos sites responsivos" class="img-responsive">
+				</picture>
 			</div>
 			<div class="item">
-				<img src="{{ asset('img/home/banners/ProductBanner.jpg') }}" alt="...">
+				<picture>
+					<source media="(min-width: 480px)" srcset="{{ asset('img/home/banners/ProductBanner.jpg') }}">
+					<img src="{{ asset('img/home/banners/ProductBanner-mobile.jpg') }}" alt="Criamos sites responsivos" class="img-responsive">
+				</picture>
 			</div>
 		</div>
 		<a class="left carousel-control" href="#carousel-main" role="button" data-slide="prev">

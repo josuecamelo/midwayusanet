@@ -56,7 +56,8 @@ h1, h2, h3, h4, h5, h6 {
 
 @media(max-width: 380px) {
 	#logo h1 {
-		margin: 0;
+		margin: -2px 0 0 0;
+		padding: 3px;
 	}
 }
 
@@ -228,32 +229,27 @@ h1, h2, h3, h4, h5, h6 {
 	position: absolute;
 	top: 0;
 	right: 0;
+	height: 100%;
 }
 
 #header-links > ul {
 	list-style: none;
 	height: 100%;
 	margin: 0;
+	padding: 0;
 	display: flex;
 }
 
 #header-links > ul > li {
-	height: 100%;
+	display: flex;
+	align-items: center;
 }
 
 #header-links > ul > li > a {
 	color: white;
 	font-weight: 900;
-	font-style: italic;
-	text-transform: uppercase;
 	text-decoration: none;
-	display: block;
 	padding-right: 1rem;
-	height: 100%;
-	line-height: 300%;
-	box-sizing: border-box;
-	position: relative;
-	z-index: 1;
 }
 
 @media(max-width: 380px) {
@@ -289,12 +285,12 @@ h1, h2, h3, h4, h5, h6 {
 /* Menu Mobile: */
 
 #menu-mobile {
-	display: none;
+	display: none !important;
 }
 
 @media(max-width: 1302px) {
 	#menu-mobile {
-		display: block;
+		display: flex !important;
 	}
 }
 
@@ -360,7 +356,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Pesquisa: */
 
 #search {
-	padding: 2px 12px 0 0;
+	padding: 0 12px 0 0;
 }
 
 #search svg {
@@ -371,7 +367,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #search label {
 	font-weight: normal;
-	margin: -15px 0 0 0 !important;
+	margin: 0 0 0 0 !important;
 	padding: 0 !important;
 }
 
@@ -403,6 +399,6 @@ h1, h2, h3, h4, h5, h6 {
 
 @media(max-width: 1302px) {
 	#nav-main, #menu {
-		display: none;
+		display: none !important;
 	}
 }
