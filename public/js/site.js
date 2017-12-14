@@ -36136,6 +36136,11 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 $(function () {
 
+	$('#search svg').on('click', function (event) {
+		console.log('clicou svg');
+		$(this).siblings('.form-control').focus();
+	});
+
 	// alert('Site under construction.');
 
 	/* Popover: */

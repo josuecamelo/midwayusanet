@@ -360,9 +360,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #search svg {
-	position: relative;
-	top: 35px;
-	left: 9px;
+	position: absolute;
+	margin-left: 9px;
 }
 
 #search label {

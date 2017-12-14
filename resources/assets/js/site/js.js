@@ -1,5 +1,10 @@
 $(function () {
 
+	$('#search svg').on('click', function (event) {
+		console.log('clicou svg');
+		$(this).siblings('.form-control').focus();
+	});
+
 	// alert('Site under construction.');
 
 	/* Popover: */
