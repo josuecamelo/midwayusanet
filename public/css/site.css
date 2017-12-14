@@ -12193,7 +12193,7 @@ h6 {
   text-transform: uppercase;
   text-decoration: none;
   display: block;
-  padding: 0.5rem 1rem;
+  padding: 0.4rem 1rem;
   height: 100%;
   line-height: 300%;
   -webkit-box-sizing: border-box;
@@ -12202,25 +12202,10 @@ h6 {
   z-index: 1;
 }
 
-#nav-main > ul > li > a:hover::before {
-  display: block;
-  content: '';
-  height: 70px;
-  position: absolute;
-  width: 100%;
-  left: 0px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  top: 0px;
-  -webkit-transform: skew(-20deg);
-  transform: skew(-20deg);
-  z-index: -1;
-}
-
 #nav-main > ul > li:hover a::before {
   display: block;
   content: '';
-  height: 64px;
+  height: 61px;
   background: rgba(255, 255, 255, 0.3);
   position: absolute;
   width: 100%;
@@ -12248,7 +12233,7 @@ h6 {
   -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
           box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   background: #fff;
-  top: 64px;
+  top: 61px;
   left: 0;
   margin-left: -207px;
   width: 100vw;
@@ -12332,10 +12317,8 @@ h6 {
 }
 
 #header-links {
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 100%;
+  float: right;
+  padding: 10px;
 }
 
 #header-links > ul {
@@ -12373,9 +12356,10 @@ h6 {
 #menu nav {
   display: none;
   position: absolute;
-  top: 64px;
+  top: 61px;
   left: 0;
   width: 100vw;
+  background: #fff;
 }
 
 #menu ul {
@@ -12416,7 +12400,7 @@ h6 {
 #menu-mobile nav {
   display: none;
   position: absolute;
-  top: 64px;
+  top: 61px;
   left: 0;
   width: 80vw;
   background: #9f151c;

@@ -434,17 +434,17 @@
 		{{--<h1>Cadastre-se e receba novidades</h1>--}}
 		{{--<p>Inscreva-se gratuitamente para receber programas de treinamento, dicas nutricionais e muito mais!</p>--}}
 		{{--<p><a href="{{ route('inscreverse') }}" class="bt">Inscreva-se agora <i class="fa fa-chevron-right" aria-hidden="true"></i></a></p>--}}
-		<p class="textcenter"><img src="{{ asset('img/produtos.jpg') }}" alt="" class="img-responsive"></p>
+{{--		<p class="textcenter"><img src="{{ asset('img/produtos.jpg') }}" alt="" class="img-responsive"></p>--}}
 	</section>
 
 	<a href="#" class="to-top">
-		<span class="name">ir para o topo</span>
+		{{--<span class="name">ir para o topo</span>--}}
 	</a>
 	<div class="container">
 		<div class="row" id="meio-footer">
 			<div class="col-md-2 text-center">
 				<a href="/">
-					<img src="{{ asset('img/logo-midway.svg') }}" alt="Midway">
+					{{--<img src="{{ asset('img/logo-midway.svg') }}" alt="Midway">--}}
 				</a>
 				{{--<div id="social-icons">--}}
 					{{--<ul>--}}
