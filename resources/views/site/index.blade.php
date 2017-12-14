@@ -11,8 +11,6 @@
 
 @section('main')
 
-	<p>Página inicial</p>
-
 	<div id="carousel-main" class="carousel slide animated fadeInDown" data-ride="carousel">
 		<ol class="carousel-indicators">
 			<li data-target="#carousel-main" data-slide-to="0" class="active"></li>

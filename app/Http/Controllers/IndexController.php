@@ -25,6 +25,6 @@ class IndexController extends Controller
 //		$outrosTreinos = $this->trainingModel->skip(1)->take(3)->get();
 //		$goals = $this->goalModel->tudo();
 
-		return view('site.history');
+		return view('site.index');
 	}
 }
