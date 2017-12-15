@@ -23,7 +23,7 @@
 		<nav id="nav-main" role="navigation">
 			<ul>
 				<li>
-					<a href="#">Woman's Products</a>
+					<a href="#">Women's Products</a>
 					<ul>
 						<li>
 							<h2>POPULAR CATEGORIES</h2>
@@ -88,7 +88,7 @@
 					</ul>
 				</li>
 				<li>
-					<a href="#">Man's Products</a>
+					<a href="#">Men's Products</a>
 					<ul>
 						<li>
 							<h2>POPULAR CATEGORIES</h2>
