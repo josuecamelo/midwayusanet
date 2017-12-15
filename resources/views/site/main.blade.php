@@ -249,7 +249,7 @@
 					<nav>
 						<ul>
 							<li>
-								<a href="#">Woman's Products<i class="fas fa-plus"></i></a>
+								<a href="#">Women's Products<i class="fas fa-plus"></i></a>
 								<ul>
 									<li>
 										<h2>POPULAR CATEGORIES</h2>
@@ -300,7 +300,7 @@
 								</ul>
 							</li>
 							<li>
-								<a href="/">Man's Products<i class="fas fa-plus"></i></a>
+								<a href="/">Men's Products<i class="fas fa-plus"></i></a>
 								<ul>
 									<li>
 										<h2>POPULAR CATEGORIES</h2>
