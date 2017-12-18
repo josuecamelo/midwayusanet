@@ -793,7 +793,7 @@
 				autoplaySpeed: 5000,
 				autoplay: true,
 				responsive: [{
-					breakpoint: 700,
+					breakpoint: 900,
 					settings: {
 						slidesToShow: 1,
 					}
