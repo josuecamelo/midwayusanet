@@ -430,6 +430,31 @@
 			float: right;
 		}
 
+		#videos-row {
+			padding: 0 30px;
+			margin-top: 30px;
+			display: block;
+			background: #f9f9f9;
+			float: left;
+			width: 100%;
+		}
+
+		#videos-row h2 {
+			font-size: 20px;
+		}
+
+		#videos-row h3 {
+			margin: 10px 5px;
+			font-size: 17px;
+			text-align: center;
+		}
+
+		#videos-row .overlay-video {
+			cursor: pointer;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+		}
 
 	</style>
 @endsection
@@ -743,7 +768,8 @@
 
 	{{-- Articles: --}}
 
-	<section id="articles-row"><h2>Recommended Articles</h2>
+	<section id="articles-row">
+		<h2>Recommended Articles</h2>
 		<div class="article">
 			<a href="#">
 				<img src="http://s3.amazonaws.com/bpi-cdn/v2/wp-content/uploads/2017/12/15182030/VICTORIA-HOLIDAY_THUMBNAIL.jpg" alt="">
@@ -786,6 +812,52 @@
 		</div>
 	</section>
 
+
+	{{-- Vídeos: --}}
+
+	<section id="videos-row">
+		<h2>NEWEST VIDEOS</h2>
+		<div class="row">
+			<div class="col-md-3">
+				<div class="overlay-video"></div>
+				<iframe width="100%" height="248" src="https://www.youtube.com/embed/8l7UvzPN3AA" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+				<h3>Trailer Canal Midway</h3>
+			</div>
+			<div class="col-md-3">
+				<div class="overlay-video"></div>
+				<iframe width="100%" height="248" src="https://www.youtube.com/embed/YtPgNbYUZhw" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+				<h3>Treino de Atleta - Rômulo Rocha</h3>
+			</div>
+			<div class="col-md-3">
+				<div class="overlay-video"></div>
+				<iframe width="100%" height="248" src="https://www.youtube.com/embed/PapZMGJaosA" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+				<h3>Trailer Canal Midway</h3>
+			</div>
+			<div class="col-md-3">
+				<div class="overlay-video"></div>
+				<iframe width="100%" height="248" src="https://www.youtube.com/embed/GUWqcniWY_o" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+				<h3>Treino de Atleta - Juliete de Pieri</h3>
+			</div>
+		</div>
+	</section>
+
+
+	{{-- Modal Vídeo: --}}
+
+	<div class="modal fade" id="modal-video" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">Modal title</h4>
+				</div>
+				<div class="modal-body">
+					<iframe width="100%" height="488" src="" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+				</div>
+			</div>
+		</div>
+	</div>
+
 @endsection
 
 @section('js')
@@ -803,6 +875,17 @@
 						slidesToShow: 1,
 					}
 				}]
+			});
+
+			$('.overlay-video').on('click', function (event) {
+
+				$('#modal-video').modal('show');
+
+				let titulo = $(this).siblings('h3').text();
+				$('#modal-video h4').text(titulo);
+
+				let src = $(this).siblings('iframe').attr('src') + '?autoplay=1';
+				$('#modal-video iframe').attr('src', src);
 			});
 		});
 	</script>
