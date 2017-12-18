@@ -82,8 +82,8 @@
 							</div>
 						</li>
 						<li class="ads">
-							<div><a href="/" title=""><img src="https://via.placeholder.com/400x130"></a></div>
-							<div><a href="/" title=""><img src="https://via.placeholder.com/400x130"></a></div>
+							<div><a href="/" title=""><img src="{{ asset('img/build.jpg') }}"></a></div>
+							<div><a href="/" title=""><img src="{{ asset('img/quality.jpg') }}"></a></div>
 						</li>
 					</ul>
 				</li>
@@ -147,8 +147,8 @@
 							</div>
 						</li>
 						<li class="ads">
-							<div><a href="/" title=""><img src="https://via.placeholder.com/400x130"></a></div>
-							<div><a href="/" title=""><img src="https://via.placeholder.com/400x130"></a></div>
+							<div><a href="/" title=""><img src="{{ asset('img/build.jpg') }}"></a></div>
+							<div><a href="/" title=""><img src="{{ asset('img/quality.jpg') }}"></a></div>
 						</li>
 					</ul>
 				</li>
@@ -212,8 +212,8 @@
 							</div>
 						</li>
 						<li class="ads">
-							<div><a href="/" title=""><img src="https://via.placeholder.com/400x130"></a></div>
-							<div><a href="/" title=""><img src="https://via.placeholder.com/400x130"></a></div>
+							<div><a href="/" title=""><img src="{{ asset('img/build.jpg') }}"></a></div>
+							<div><a href="/" title=""><img src="{{ asset('img/quality.jpg') }}"></a></div>
 						</li>
 					</ul>
 				</li>

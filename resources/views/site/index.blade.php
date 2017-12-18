@@ -133,13 +133,14 @@
 			padding-right: 2px;
 		}
 
-		@media(max-width: 600px) {
+		@media (max-width: 600px) {
 			#products-row #products-menu {
 				width: 100%;
 				display: block;
 				left: 0;
 			}
 		}
+
 		#products-row #products-menu div h1 {
 			font-size: 2rem;
 		}
@@ -210,7 +211,7 @@
 			left: 25%;
 		}
 
-		@media(max-width: 600px) {
+		@media (max-width: 600px) {
 			#products-row #products {
 				width: 100%;
 				left: 0;
@@ -294,6 +295,136 @@
 		.product:hover img {
 			transform: scale(1.1);
 		}
+
+		/* Articles: */
+
+		#articles-row {
+			padding: 0 30px;
+			margin-top: 30px;
+			display: block;
+			background: #f3f3f3;
+			float: left;
+			width: 100%;
+		}
+
+		#articles-row h2 {
+			font-size: 20px;
+		}
+
+		#articles-row .article:first-of-type {
+			width: 48%;
+			float: left;
+			padding: 0 0 2px 0;
+		}
+
+		@media (max-width: 600px) {
+			#articles-row .article:first-of-type {
+				width: 100%;
+			}
+		}
+
+		#articles-row .article:first-of-type img {
+			width: 100%;
+			float: left;
+			padding-right: 0;
+			padding-left: 0;
+		}
+
+		#articles-row .article:first-of-type .detail:last-child:not(:first-child) {
+			float: right;
+		}
+
+		#articles-row .article:first-of-type .detail .date {
+			font-size: 16px;
+		}
+
+		#articles-row .article:first-of-type .detail h3 {
+			min-height: 56px;
+			font-size: 22px;
+			line-height: 23px;
+			margin: 12px 0;
+		}
+
+		#articles-row .article:first-of-type .detail a {
+			position: relative;
+			bottom: 0;
+		}
+
+		#articles-row .article .detail a {
+			text-transform: uppercase;
+			text-decoration: none;
+			color: red;
+			font-weight: bold;
+			bottom: 10px;
+		}
+
+		#articles-row .article .detail a svg {
+			margin-left: 5px;
+			transition: all 0.2s;
+		}
+
+		#articles-row .article .detail a:hover svg {
+			margin-left: 10px;
+		}
+
+		#articles-row .article:first-of-type .detail {
+			width: 100%;
+			padding: 1em;
+		}
+
+		#articles-row .article .detail h3 {
+			font-size: 20px;
+			line-height: 22px;
+			margin: 12px 0;
+		}
+
+		#articles-row .article {
+			width: 50%;
+			float: right;
+			padding: 0;
+			float: right;
+			max-width: none;
+			margin: 0 0 14px 0;
+			background: #FFFFFF;
+			box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.13);
+		}
+
+		@media (max-width: 600px) {
+			#articles-row .article {
+				width: 100%;
+			}
+		}
+
+		#articles-row .article img {
+			width: 41.66667%;
+			float: left;
+			padding-right: 0;
+			padding-left: 0;
+		}
+
+		@media (max-width: 600px) {
+			#articles-row .article img {
+				width: 100%;
+			}
+		}
+
+		#articles-row .article .detail {
+			width: 58.33333%;
+			float: right;
+			padding: 15px;
+			min-height: auto;
+		}
+
+		@media (max-width: 600px) {
+			#articles-row .article .detail {
+				width: 100%;
+			}
+		}
+
+		#articles-row .article:last-child:not(:first-child) {
+			float: right;
+		}
+
 
 	</style>
 @endsection
@@ -602,6 +733,52 @@
 				<a href="#" title="Customize your plan" role="link">Customize Your Plan</a>
 			</div>
 		</aside>
+	</section>
+
+
+	{{-- Articles: --}}
+
+	<section id="articles-row"><h2>Recommended Articles</h2>
+		<div class="article">
+			<a href="#">
+				<img src="http://s3.amazonaws.com/bpi-cdn/v2/wp-content/uploads/2017/12/15182030/VICTORIA-HOLIDAY_THUMBNAIL.jpg" alt="">
+			</a>
+			<div class="detail">
+				<span class="date">December 17, 2017</span>
+				<h3 class="title">‘Tis the Season to Fall Off Track: How to Tackle the Holidays</h3>
+				<a href="#" title="Read More">Read More<i class="fas fa-angle-right"></i></a>
+			</div>
+		</div>
+		<div class="article">
+			<a href="#">
+				<img src="http://s3.amazonaws.com/bpi-cdn/v2/wp-content/uploads/2017/12/15170546/YOUR-HOLIDAY-WISH-LIST_THUMBNAIL.jpg" alt="">
+			</a>
+			<div class="detail">
+				<span class="date">December 16, 2017</span>
+				<h3 class="title">Holiday Gift Guide for Him &amp; Her</h3>
+				<a href="#" title="Read More">Read More<i class="fas fa-angle-right"></i></a>
+			</div>
+		</div>
+		<div class="article">
+			<a href="#">
+				<img src="http://s3.amazonaws.com/bpi-cdn/v2/wp-content/uploads/2017/12/13144604/WHAT-IS-ESSENTIAL-9_THUMBNAIL.jpg" alt="">
+			</a>
+			<div class="detail">
+				<span class="date">December 15, 2017</span>
+				<h3 class="title">What is Essential 9™?</h3>
+				<a href="#" title="Read More">Read More<i class="fas fa-angle-right"></i></a>
+			</div>
+		</div>
+		<div class="article">
+			<a href="#">
+				<img src="http://s3.amazonaws.com/bpi-cdn/v2/wp-content/uploads/2017/12/12153631/BAND-EXERCISES-YOU-CAN-DO-AT-HOME_THUMBNAIL.jpg" alt="">
+			</a>
+			<div class="detail">
+				<span class="date">December 14, 2017</span>
+				<h3 class="title">5 Resistance Band Exercises You Can Do at Home</h3>
+				<a href="#" title="Read More">Read More<i class="fas fa-angle-right"></i></a>
+			</div>
+		</div>
 	</section>
 
 @endsection
