@@ -789,7 +789,7 @@
 		$(document).ready(function () {
 			$('.slick-track').slick({
 				slidesToShow: 5,
-				slidesToScroll: 5,
+				slidesToScroll: 1,
 				autoplaySpeed: 5000,
 				autoplay: true,
 				responsive: [{
