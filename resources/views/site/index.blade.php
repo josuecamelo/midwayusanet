@@ -612,7 +612,8 @@
 		$(document).ready(function () {
 			$('.slick-track').slick({
 				slidesToShow: 5,
-				slidesToScroll: 1,
+				slidesToScroll: 5,
+				autoplaySpeed: 5000,
 				autoplay: true,
 				responsive: [{
 					breakpoint: 600,
