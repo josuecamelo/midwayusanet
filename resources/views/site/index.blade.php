@@ -155,25 +155,25 @@
 	{{-- Mini Banners: --}}
 
 	<aside id="mini-banners">
-		<div>
+		<div class="animated fadeInUp">
 			<a href="https://store.bpisports.com/all-products/?_ga=2.208811738.997604798.1513332053-1419607128.1513332053">
 				<h3>SHOP our STORE<i class="fas fa-angle-right"></i></h3>
 				<img src="https://s3.amazonaws.com/bpi-cdn/v2/wp-content/uploads/2016/09/16211210/Shope-our-store-750x350-02.jpg">
 			</a>
 		</div>
-		<div>
+		<div class="animated fadeInUp" style="animation-delay: 0.2s;">
 			<a href="https://bpisports.com/12-days-christmas-deals/">
 				<h3>A New &amp; Amazing Deal Everyday!<i class="fas fa-angle-right"></i></h3>
 				<img src="https://s3.amazonaws.com/bpi-cdn/v2/wp-content/uploads/2017/12/12155813/12-Days-of-Christmas_HomePage_Tile-25-off.jpg">
 			</a>
 		</div>
-		<div>
+		<div class="animated fadeInUp" style="animation-delay: 0.4s;">
 			<a href="https://store.bpisports.com/all-products/?search_query=liquid&amp;submit=Submit&amp;_ga=2.7835258.997604798.1513332053-1419607128.1513332053">
 				<h3>Best BCAA + Soft Drinks = Delicious &amp; Powerful<i class="fas fa-angle-right"></i></h3>
 				<img src="https://s3.amazonaws.com/bpi-cdn/v2/wp-content/uploads/2016/09/17182957/BCAA-Soda-Series_HomePage_Tile-25-off.jpg">
 			</a>
 		</div>
-		<div>
+		<div class="animated fadeInUp" style="animation-delay: 0.6s;">
 			<a href="/sales-and-promotions/">
 				<h3>SAVE ON OUR TOP PRODUCTS!<i class="fas fa-angle-right"></i></h3>
 				<img src="https://s3.amazonaws.com/bpi-cdn/v2/wp-content/uploads/2016/09/25190703/tile-011.jpg">
