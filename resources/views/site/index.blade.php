@@ -1,6 +1,8 @@
 @extends('site.main')
 
 @section('css')
+	<link rel="stylesheet" type="text/css" href="{{ asset('slick/slick.css') }}"/>
+	<link rel="stylesheet" type="text/css" href="{{ asset('slick/slick-theme.css') }}"/>
 	<style>
 
 		/* Carousel: */
@@ -97,6 +99,7 @@
 		#mini-banners h3 svg {
 			margin-left: 5px;
 			color: red;
+			transition: all .2s;
 		}
 
 		#mini-banners a img {
@@ -110,6 +113,187 @@
 			transition: all .2s;
 		}
 
+		#mini-banners a:hover svg {
+			margin-left: 15px;
+		}
+
+		/* Products */
+
+		#products-row h2 {
+			font-size: 25px;
+		}
+
+		#products-row #products-menu {
+			width: 25%;
+			float: left;
+			padding-right: 0;
+			padding-left: 0;
+			position: relative;
+			left: -75%;
+			padding-right: 2px;
+		}
+
+		@media(max-width: 600px) {
+			#products-row #products-menu {
+				width: 100%;
+				display: block;
+				left: 0;
+			}
+		}
+		#products-row #products-menu div h1 {
+			font-size: 2rem;
+		}
+
+		#products-menu ul {
+			padding: 0px;
+			margin: 0px;
+			height: 200px;
+			background: #f3f3f3 url("{{ asset('img/bg-menu.png') }}");
+			background-size: 150%;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-orient: vertical;
+			-webkit-box-direction: normal;
+			-ms-flex-direction: column;
+			flex-direction: column;
+		}
+
+		#products-menu ul li {
+			list-style: none;
+			box-sizing: border-box;
+			border-bottom: 1px solid #e6e6e6;
+			height: 25%;
+			width: 100%;
+			text-align: left;
+		}
+
+		#products-menu ul li a {
+			padding: 15px 0 0 10%;
+			width: 100%;
+		}
+
+		#products-menu ul li a {
+			text-decoration: none;
+			display: inline-block;
+			color: #333333;
+			padding: 10px 40px;
+			height: 100%;
+			vertical-align: middle;
+			position: relative;
+			font-size: 18px;
+			font-weight: 900;
+			text-transform: uppercase;
+			font-style: italic;
+		}
+
+		#products-menu ul li a svg {
+			display: block;
+			position: absolute;
+			right: 5%;
+			top: 15px;
+			color: red;
+			z-index: 9;
+			transition: all 0.3s;
+		}
+
+		#products-menu ul li a:hover svg {
+			right: 2%;
+		}
+
+		#products-row #products {
+			width: 75%;
+			float: left;
+			padding-right: 0.625rem;
+			padding-left: 0.625rem;
+			position: relative;
+			left: 25%;
+		}
+
+		@media(max-width: 600px) {
+			#products-row #products {
+				width: 100%;
+				left: 0;
+			}
+		}
+
+		#products-row #products-menu div {
+			background: black;
+			color: white;
+			padding: 4em 10% 6em;
+		}
+
+		#products-row #products-menu div a {
+			color: red;
+			border: 2px solid red;
+			display: block;
+			width: 100%;
+			max-width: 250px;
+			padding: 1em 0;
+			margin: 0 auto;
+			text-align: center;
+			text-decoration: none;
+			text-transform: uppercase;
+			font-size: 14px;
+			transition: all 0.3s;
+		}
+
+		#products-row #products-menu div a:hover {
+			background: red;
+			color: white;
+		}
+
+		#recommended-products {
+			padding: 0 25px;
+			text-align: center;
+		}
+
+		#recommended-products a {
+			color: #000;
+		}
+
+		#recommended-products a:hover {
+			text-decoration: none;
+		}
+
+		#recommended-products a span {
+			color: red;
+			font-weight: bold;
+		}
+
+		#recommended-stacks {
+			padding: 0 25px;
+			text-align: center;
+		}
+
+		#recommended-stacks a {
+			color: #000;
+		}
+
+		#recommended-stacks a:hover {
+			text-decoration: none;
+		}
+
+		#recommended-stacks a span {
+			color: red;
+			font-weight: bold;
+		}
+
+		.slick-prev::before, .slick-next::before {
+			color: #000;
+		}
+
+		.slick-slide img {
+			display: inline;
+		}
+
+		.product img {
+			transition: all 0.3s;
+		}
+
+		.product:hover img {
+			transform: scale(1.1);
+		}
 
 	</style>
 @endsection
@@ -181,11 +365,262 @@
 		</div>
 	</aside>
 
+	{{-- Products --}}
+
+	<section id="products-row">
+		<section id="products"><h2>Recommended Products</h2>
+			<div id="recommended-products">
+				<div class="slick-track" role="listbox">
+					<a href="#">
+						<div class="product">
+							<img src="{{ asset('img/best-protein.png') }}">
+							<h4>Best Protein</h4>
+							<span>$23.99</span>
+						</div>
+					</a>
+					<a href="#">
+						<div class="product">
+							<img src="{{ asset('img/best-protein.png') }}">
+							<h4>Best Protein</h4>
+							<span class="price">$23.99</span>
+						</div>
+					</a>
+					<a href="#">
+						<div class="product">
+							<img src="{{ asset('img/best-protein.png') }}">
+							<h4>Best Protein</h4>
+							<span class="price">$23.99</span>
+						</div>
+					</a>
+					<a href="#">
+						<div class="product">
+							<img src="{{ asset('img/best-protein.png') }}">
+							<h4>Best Protein</h4>
+							<span class="price">$23.99</span>
+						</div>
+					</a>
+					<a href="#">
+						<div class="product">
+							<img src="{{ asset('img/best-protein.png') }}">
+							<h4>Best Protein</h4>
+							<span class="price">$23.99</span>
+						</div>
+					</a>
+					<a href="#">
+						<div class="product">
+							<img src="{{ asset('img/best-protein.png') }}">
+							<h4>Best Protein</h4>
+							<span class="price">$23.99</span>
+						</div>
+					</a>
+					<a href="#">
+						<div class="product">
+							<img src="{{ asset('img/best-protein.png') }}">
+							<h4>Best Protein</h4>
+							<span class="price">$23.99</span>
+						</div>
+					</a>
+					<a href="#">
+						<div class="product">
+							<img src="{{ asset('img/best-protein.png') }}">
+							<h4>Best Protein</h4>
+							<span class="price">$23.99</span>
+						</div>
+					</a>
+					<a href="#">
+						<div class="product">
+							<img src="{{ asset('img/best-protein.png') }}">
+							<h4>Best Protein</h4>
+							<span class="price">$23.99</span>
+						</div>
+					</a>
+					<a href="#">
+						<div class="product">
+							<img src="{{ asset('img/best-protein.png') }}">
+							<h4>Best Protein</h4>
+							<span class="price">$23.99</span>
+						</div>
+					</a>
+					<a href="#">
+						<div class="product">
+							<img src="{{ asset('img/best-protein.png') }}">
+							<h4>Best Protein</h4>
+							<span class="price">$23.99</span>
+						</div>
+					</a>
+					<a href="#">
+						<div class="product">
+							<img src="{{ asset('img/best-protein.png') }}">
+							<h4>Best Protein</h4>
+							<span class="price">$23.99</span>
+						</div>
+					</a>
+					<a href="#">
+						<div class="product">
+							<img src="{{ asset('img/best-protein.png') }}">
+							<h4>Best Protein</h4>
+							<span class="price">$23.99</span>
+						</div>
+					</a>
+					<a href="#">
+						<div class="product">
+							<img src="{{ asset('img/best-protein.png') }}">
+							<h4>Best Protein</h4>
+							<span class="price">$23.99</span>
+						</div>
+					</a>
+					<a href="#">
+						<div class="product">
+							<img src="{{ asset('img/best-protein.png') }}">
+							<h4>Best Protein</h4>
+							<span class="price">$23.99</span>
+						</div>
+					</a>
+				</div>
+			</div>
+			<h2>Recommended Stacks</h2>
+			<div id="recommended-stacks" class="slick-initialized slick-slider">
+				<div class="slick-track" role="listbox">
+					<a href="#">
+						<div class="product">
+							<img src="{{ asset('img/best-protein.png') }}">
+							<h4>Best Protein</h4>
+							<span>$23.99</span>
+						</div>
+					</a>
+					<a href="#">
+						<div class="product">
+							<img src="{{ asset('img/best-protein.png') }}">
+							<h4>Best Protein</h4>
+							<span class="price">$23.99</span>
+						</div>
+					</a>
+					<a href="#">
+						<div class="product">
+							<img src="{{ asset('img/best-protein.png') }}">
+							<h4>Best Protein</h4>
+							<span class="price">$23.99</span>
+						</div>
+					</a>
+					<a href="#">
+						<div class="product">
+							<img src="{{ asset('img/best-protein.png') }}">
+							<h4>Best Protein</h4>
+							<span class="price">$23.99</span>
+						</div>
+					</a>
+					<a href="#">
+						<div class="product">
+							<img src="{{ asset('img/best-protein.png') }}">
+							<h4>Best Protein</h4>
+							<span class="price">$23.99</span>
+						</div>
+					</a>
+					<a href="#">
+						<div class="product">
+							<img src="{{ asset('img/best-protein.png') }}">
+							<h4>Best Protein</h4>
+							<span class="price">$23.99</span>
+						</div>
+					</a>
+					<a href="#">
+						<div class="product">
+							<img src="{{ asset('img/best-protein.png') }}">
+							<h4>Best Protein</h4>
+							<span class="price">$23.99</span>
+						</div>
+					</a>
+					<a href="#">
+						<div class="product">
+							<img src="{{ asset('img/best-protein.png') }}">
+							<h4>Best Protein</h4>
+							<span class="price">$23.99</span>
+						</div>
+					</a>
+					<a href="#">
+						<div class="product">
+							<img src="{{ asset('img/best-protein.png') }}">
+							<h4>Best Protein</h4>
+							<span class="price">$23.99</span>
+						</div>
+					</a>
+					<a href="#">
+						<div class="product">
+							<img src="{{ asset('img/best-protein.png') }}">
+							<h4>Best Protein</h4>
+							<span class="price">$23.99</span>
+						</div>
+					</a>
+					<a href="#">
+						<div class="product">
+							<img src="{{ asset('img/best-protein.png') }}">
+							<h4>Best Protein</h4>
+							<span class="price">$23.99</span>
+						</div>
+					</a>
+					<a href="#">
+						<div class="product">
+							<img src="{{ asset('img/best-protein.png') }}">
+							<h4>Best Protein</h4>
+							<span class="price">$23.99</span>
+						</div>
+					</a>
+					<a href="#">
+						<div class="product">
+							<img src="{{ asset('img/best-protein.png') }}">
+							<h4>Best Protein</h4>
+							<span class="price">$23.99</span>
+						</div>
+					</a>
+					<a href="#">
+						<div class="product">
+							<img src="{{ asset('img/best-protein.png') }}">
+							<h4>Best Protein</h4>
+							<span class="price">$23.99</span>
+						</div>
+					</a>
+					<a href="#">
+						<div class="product">
+							<img src="{{ asset('img/best-protein.png') }}">
+							<h4>Best Protein</h4>
+							<span class="price">$23.99</span>
+						</div>
+					</a>
+				</div>
+			</div>
+		</section>
+		<aside id="products-menu">
+			<ul>
+				<li><a href="#">Protein<i class="fas fa-angle-right"></i></a></li>
+				<li><a href="#">Pre-Workout<i class="fas fa-angle-right"></i></a></li>
+				<li><a href="#">Ketogenic<i class="fas fa-angle-right"></i></a></li>
+				<li><a href="#">Stacks<i class="fas fa-angle-right"></i></a></li>
+			</ul>
+			<div>
+				<h1>Not sure where to start?</h1>
+				<p>Answer these questions for a customized workout plan and our recommended supplement stack.</p>
+				<a href="#" title="Customize your plan" role="link">Customize Your Plan</a>
+			</div>
+		</aside>
+	</section>
+
 @endsection
 
 @section('js')
-	<script>
-
-
+	<script type="text/javascript" src="{{ asset('slick/slick.min.js') }}"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$('.slick-track').slick({
+				slidesToShow: 5,
+				slidesToScroll: 1,
+				autoplay: true,
+				responsive: [{
+					breakpoint: 600,
+					settings: {
+						slidesToShow: 1,
+					}
+				}]
+			});
+		});
 	</script>
 @endsection
