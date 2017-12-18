@@ -262,6 +262,11 @@
 			font-weight: bold;
 		}
 
+		#products-row #products #recommended-products a > div > img, #products-row #products #recommended-stacks a > div > img {
+			max-height: 150px;
+			margin: 0 auto;
+		}
+
 		#recommended-stacks {
 			padding: 0 25px;
 			text-align: center;
