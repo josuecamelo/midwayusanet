@@ -391,10 +391,6 @@
 			float: left;
 		}
 
-		/*#videos-row h2 {*/
-		/*font-size: 20px;*/
-		/*}*/
-
 		#videos-row h3 {
 			margin: 10px 5px;
 			font-size: 17px;
@@ -409,7 +405,7 @@
 			position: absolute;
 		}
 
-		@media (max-width: 600px) {
+		@media (max-width: 900px) {
 			#videos-row .overlay-video {
 				display: none;
 			}
