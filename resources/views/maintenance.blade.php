@@ -8,38 +8,24 @@
 	<title>Midway Labs USA</title>
 	<link href="{{ asset('css/site.css') }}" rel="stylesheet">
 	<style>
-		h1 {
-			margin-top: 200px;
+		a, footer {
+			margin: 72px;
+			display: block;
+		}
+		img {
+			width: 200px;
 		}
 	</style>
 </head>
-<body>
-<header id="header">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12" id="logo">
-				<h1>
-					<a href="/">
-						<img src="{{ asset('img/midway.svg') }}" alt="Midway">
-					</a>
-				</h1>
-				<h1>
-					<a href="/">
-						<img src="{{ asset('img/military.svg') }}" alt="Military">
-					</a>
-				</h1>
-				<h1>
-					<a href="/">
-						<img src="{{ asset('img/made-in-usa.svg') }}" alt="Made in usa">
-					</a>
-				</h1>
-			</div>
-		</div>
-	</div>
-</header>
-<h1 class="text-center">Site em construção</h1>
-<p class="text-center">Em breve um novo site com muitas novidades.</p>
-<footer class="text-center">© {{ date('Y') }} Midway Labs USA</footer>
-<script src="{{ asset('js/site.js') }}"></script>
+<body class="text-center">
+<h1>
+	<a href="{{ route('home') }}">
+		<img src="{{ asset('img/logo-midway-build-yourself.svg') }}" alt="Midway">
+	</a>
+</h1>
+<h2>SITE UNDER CONSTRUCTION</h2>
+<p><i>Soon a new site with many new features.</i></p>
+<p><a href="{{ route('home') }}">Click here to access the site under construction.</a></p>
+<footer>© {{ date('Y') }} Midway Labs USA</footer>
 </body>
 </html>
