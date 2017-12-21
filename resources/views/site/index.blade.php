@@ -57,13 +57,6 @@
 			margin-top: -10px !important;
 		}
 
-		h2 {
-			border-bottom: 1px solid #ddd;
-			margin: 0 0 30px 0;
-			font-size: 25px;
-			padding: 0 0 5px 0;
-		}
-
 		/* Mini Banners: */
 
 		#mini-banners {

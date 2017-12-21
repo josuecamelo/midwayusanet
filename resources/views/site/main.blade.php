@@ -432,24 +432,77 @@
 	@yield('main')
 </main>
 
-{{--<footer>--}}
-	{{--<div class="row">--}}
-		{{--<div class="col-md-3">--}}
-			{{--<h2>Store</h2>--}}
-			{{--<ul>--}}
-				{{--<li><a href="">Protein Products</a></li>--}}
-				{{--<li><a href="">Protein Products</a></li>--}}
-				{{--<li><a href="">Protein Products</a></li>--}}
-				{{--<li><a href="">Protein Products</a></li>--}}
-				{{--<li><a href="">Protein Products</a></li>--}}
-				{{--<li><a href="">Protein Products</a></li>--}}
-			{{--</ul>--}}
-		{{--</div>--}}
-		{{--<div class="col-md-3"></div>--}}
-		{{--<div class="col-md-3"></div>--}}
-		{{--<div class="col-md-3"></div>--}}
-	{{--</div>--}}
-{{--</footer>--}}
+<footer>
+	<div class="row">
+		<div class="col-md-6">
+			<h2>Midway Store</h2>
+			<div class="row">
+				<div class="col-md-6">
+					<h3>POPULAR CATEGORIES</h3>
+					<ul>
+						<li>
+							<a href="/">Pre-Workout<i class="fas fa-angle-right"></i></a>
+						</li>
+						<li>
+							<a href="/">Protein<i class="fas fa-angle-right"></i></a>
+						</li>
+						<li>
+							<a href="/">Amino<i class="fas fa-angle-right"></i></a>
+						</li>
+						<li>
+							<a href="/">Creatine<i class="fas fa-angle-right"></i></a>
+						</li>
+						<li>
+							<a href="/">Test Booster<i class="fas fa-angle-right"></i></a>
+						</li>
+						<li>
+							<a href="/">View All Products<i class="fas fa-angle-right"></i></a>
+						</li>
+					</ul>
+				</div>
+				<div class="col-md-6">
+					<h3>POPULAR PRODUCTS</h3>
+					<ul>
+						<li>
+							<a href="/">Pre-Workout<i class="fas fa-angle-right"></i></a>
+						</li>
+						<li>
+							<a href="/">Protein<i class="fas fa-angle-right"></i></a>
+						</li>
+						<li>
+							<a href="/">Amino<i class="fas fa-angle-right"></i></a>
+						</li>
+						<li>
+							<a href="/">Creatine<i class="fas fa-angle-right"></i></a>
+						</li>
+						<li>
+							<a href="/">Test Booster<i class="fas fa-angle-right"></i></a>
+						</li>
+						<li>
+							<a href="/">View All Products<i class="fas fa-angle-right"></i></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-3">
+			<h2>LET US HELP YOU</h2>
+			<ul>
+				<li><a href="/">Find a Store<i class="fas fa-angle-right"></i></a></li>
+				<li><a href="/">Your Account<i class="fas fa-angle-right"></i></a></li>
+				<li><a href="/">Your Orders<i class="fas fa-angle-right"></i></a></li>
+				<li><a href="/">Shipping Rates &amp; Policies<i class="fas fa-angle-right"></i></a></li>
+				<li><a href="/">Returns &amp; Refund<i class="fas fa-angle-right"></i></a></li>
+				<li><a href="/">Sales &amp; Promotions<i class="fas fa-angle-right"></i></a></li>
+				<li><a href="/">About Us<i class="fas fa-angle-right"></i></a></li>
+				<li><a href="/">Contact Us<i class="fas fa-angle-right"></i></a></li>
+			</ul>
+		</div>
+		<div class="col-md-3"></div>
+		<div class="col-md-3"></div>
+		<div class="col-md-3"></div>
+	</div>
+</footer>
 
 {{--<footer>--}}
 {{----}}
