@@ -12604,18 +12604,18 @@ footer ul li a:hover svg:not(#social-icons li a svg) {
 }
 
 #sub-footer {
+  text-align: center;
   padding: 15px 0;
   border-top: 1px solid #ddd;
 }
 
 #sub-footer ul {
-  text-align: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 @media (max-width: 600px) {

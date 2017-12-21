@@ -495,14 +495,14 @@ footer ul li a:hover svg:not(#social-icons li a svg) {
 }
 
 #sub-footer {
+	text-align: center;
 	padding: 15px 0;
 	border-top: 1px solid #ddd;
 }
 
 #sub-footer ul {
-	text-align: center;
 	display: flex;
-	justify-content: flex-end;
+	justify-content: center;
 }
 
 @media(max-width: 600px) {
