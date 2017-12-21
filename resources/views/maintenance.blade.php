@@ -31,7 +31,7 @@
 </h1>
 <h2>SITE UNDER CONSTRUCTION</h2>
 <h3><i>Soon a new site with many new features.</i></h3>
-<p><a href="{{ route('home') }}" class="btn btn-danger">Click here to access the site under construction <i class="fas fa-angle-right"></i></a></p>
+<p><a href="{{ route('home') }}" class="btn btn-danger">Enter site under construction <i class="fas fa-angle-right"></i></a></p>
 <footer>© {{ date('Y') }} Midway Labs USA</footer>
 <script src="{{ asset('js/site.js') . '?v='.time() }}"></script>
 </body>
