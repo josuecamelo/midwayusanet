@@ -539,6 +539,17 @@
 			</ul>
 		</div>
 	</div>
+	<div id="deep-footer">
+		<div class="row">
+			<div class="col-md-12">
+				<p>PLEASE NOTE: All SITE VISITORS are advised to consult their physician before beginning any exercise and nutrition program. Midway and the contributors do not accept any responsibility for injury sustained as a result of following the advice or suggestions contained within the content of this SITE.</p>
+				<small>* These statements have not been evaluated by the Food and Drug Administration. These products are not intended to diagnose, treat, cure or prevent any disease.</small>
+				<small>† When combined with a proper exercise and nutrition regimen. Statements based on early-stage independent 3rd party in vivo and / or in vitro model scientific research data findings for individual ingredients.</small>
+				<small>By placing your order, you agree to Midway privacy policy and terms and conditions.</small>
+				<small>Want to become a Midway affiliate? Fill out the form to get started!</small>
+			</div>
+		</div>
+	</div>
 </footer>
 
 {{--<footer>--}}

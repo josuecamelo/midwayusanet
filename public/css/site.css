@@ -12621,3 +12621,11 @@ footer ul li a:hover svg:not(#social-icons li a svg) {
   padding: 5px 15px;
 }
 
+#deep-footer {
+  background: #000;
+  color: #fff;
+  text-align: center;
+  margin: 0 -30px -30px -30px;
+  padding: 30px;
+}
+
