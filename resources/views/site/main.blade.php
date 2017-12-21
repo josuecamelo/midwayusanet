@@ -9,6 +9,8 @@
 	<link rel="stylesheet" href="https://use.typekit.net/nhi6prz.css">
 	<link href="{{ asset('css/site.css'). '?v='.time() }}" rel="stylesheet">
 	@yield('css')
+	<meta name="robots" content="noindex">
+	<meta name="googlebot" content="noindex">
 </head>
 <body>
 <header id="header" class="animated fadeInDown">
