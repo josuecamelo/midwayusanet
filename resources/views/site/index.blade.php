@@ -339,7 +339,7 @@
 			margin-right: 20px;
 		}
 
-		@media (max-width: 600px) {
+		@media (max-width: 800px) {
 			#articles .col-md-6:last-child img {
 				width: 100%;
 				float: none;
