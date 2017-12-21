@@ -444,12 +444,42 @@ footer ul li a:hover {
 	text-decoration: none;
 }
 
-footer ul li a svg {
+footer ul li a svg:not(#social-icons li a svg) {
 	opacity: 0;
 	@include transition;
 }
 
-footer ul li a:hover svg {
+footer ul li a:hover svg:not(#social-icons li a svg) {
 	opacity: 1;
 	margin-left: 10px;
+}
+
+#social-icons {
+	padding: 30px 0;
+	text-align: center;
+}
+
+#social-icons h3 {
+	padding: 10px;
+}
+
+#social-icons li {
+	display: inline-block;
+}
+
+#social-icons li a {
+	color: white;
+	font-size: 22px;
+	text-decoration: none;
+	background: red;
+	height: 41px;
+	width: 41px;
+	line-height: 41px;
+	border-radius: 100%;
+	text-align: center;
+	padding: 0;
+}
+
+#social-icons li a:hover {
+	background: #000;
 }

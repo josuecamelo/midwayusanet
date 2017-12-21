@@ -498,9 +498,33 @@
 				<li><a href="/">Contact Us<i class="fas fa-angle-right"></i></a></li>
 			</ul>
 		</div>
-		<div class="col-md-3"></div>
-		<div class="col-md-3"></div>
-		<div class="col-md-3"></div>
+		<div class="col-md-3">
+			<h2>STAY IN TOUCH</h2>
+			<form>
+				<div class="form-group">
+					<label for="first-name-contact">First Name</label>
+					<input type="text" class="form-control" id="first-name-contact">
+				</div>
+				<div class="form-group">
+					<label for="email-contact">Email address</label>
+					<input type="email" class="form-control" id="email-contact">
+				</div>
+				<button type="submit" class="btn btn-danger">Subscribe <i class="fas fa-angle-right"></i></button>
+			</form>
+			<div class="row" id="social-icons">
+				<div class="col-md-6">
+					<h3>Follow Midway</h3>
+				</div>
+				<div class="col-md-6">
+					<ul>
+						<li><a href="https://www.instagram.com/midwaylabsusa/"><i class="fab fa-instagram"></i></a></li>
+						<li><a href="https://www.facebook.com/MidwayLabsUSA/"><i class="fab fa-facebook-f"></i></a></li>
+						<li><a href="https://twitter.com/midwaylabsusa/"><i class="fab fa-twitter"></i></a></li>
+						<li><a href="https://www.youtube.com/user/MidwayLabsUSA"><i class="fab fa-youtube"></i></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
 	</div>
 </footer>
 
