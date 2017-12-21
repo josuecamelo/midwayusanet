@@ -426,84 +426,105 @@
 	</div>
 </header>
 
-@yield('main')
+<main>
+	@yield('main')
+</main>
 
-<footer>
-
-	<section id="cadastro">
-		{{--<h1>Cadastre-se e receba novidades</h1>--}}
-		{{--<p>Inscreva-se gratuitamente para receber programas de treinamento, dicas nutricionais e muito mais!</p>--}}
-		{{--<p><a href="{{ route('inscreverse') }}" class="bt">Inscreva-se agora <i class="fa fa-chevron-right" aria-hidden="true"></i></a></p>--}}
-{{--		<p class="textcenter"><img src="{{ asset('img/produtos.jpg') }}" alt="" class="img-responsive"></p>--}}
-	</section>
-
-	<a href="#" class="to-top">
-		{{--<span class="name">ir para o topo</span>--}}
-	</a>
-	<div class="container">
-		<div class="row" id="meio-footer">
-			<div class="col-md-2 text-center">
-				<a href="/">
-					{{--<img src="{{ asset('img/logo-midway.svg') }}" alt="Midway">--}}
-				</a>
-				{{--<div id="social-icons">--}}
-					{{--<ul>--}}
-						{{--<li><a href="https://pt-br.facebook.com/militarytrail/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>--}}
-						{{--<li><a href="#" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>--}}
-						{{--<li><a href="https://www.instagram.com/militarytrail_/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>--}}
-						{{--<li><a href="#" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>--}}
-					{{--</ul>--}}
-				</div>
-			</div>
-			{{--<div class="col-md-2">--}}
-				{{--<h4>Objetivos</h4>--}}
-				{{--{!! goal_menu_helper() !!}--}}
-			{{--</div>--}}
-			{{--<div class="col-md-2">--}}
-				{{--<h4>Suplementos</h4>--}}
-				{{--{!! menu_footer_helper(1) !!}--}}
-			{{--</div>--}}
-			{{--<div class="col-md-2">--}}
-				{{--<h4>Roupas</h4>--}}
-				{{--{!! menu_footer_helper(2) !!}--}}
-			{{--</div>--}}
-			{{--<div class="col-md-2">--}}
-				{{--<h4>Acessórios</h4>--}}
-				{{--{!! menu_footer_helper(3) !!}--}}
-			{{--</div>--}}
-			{{--<div class="col-md-2">--}}
-				{{--<h4>Informações</h4>--}}
-				{{--<ul>--}}
-					{{--<li><a href="{{ route('atletas') }}">Atletas</a></li>--}}
-					{{--<li><a href="{{ route('objetivos') }}">Objetivos</a></li>--}}
-					{{--<li><a href="{{ route('treinos') }}">Treinos</a></li>--}}
-					{{--<li><a href="{{ route('historia') }}">História</a></li>--}}
-					{{--<li><a href="https://www.midwaybrasil.com.br/busca?q=military-trail" target="_blank">Comprar online</a></li>--}}
-					{{--<li><a href="{{ route('lojas.index') }}">Encontre uma loja</a></li>--}}
-					{{--<li><a href="{{ route('revenda') }}">Seja um revendedor</a></li>--}}
-				{{--</ul>--}}
-			{{--</div>--}}
+{{--<footer>--}}
+	{{--<div class="row">--}}
+		{{--<div class="col-md-3">--}}
+			{{--<h2>Store</h2>--}}
+			{{--<ul>--}}
+				{{--<li><a href="">Protein Products</a></li>--}}
+				{{--<li><a href="">Protein Products</a></li>--}}
+				{{--<li><a href="">Protein Products</a></li>--}}
+				{{--<li><a href="">Protein Products</a></li>--}}
+				{{--<li><a href="">Protein Products</a></li>--}}
+				{{--<li><a href="">Protein Products</a></li>--}}
+			{{--</ul>--}}
 		{{--</div>--}}
+		{{--<div class="col-md-3"></div>--}}
+		{{--<div class="col-md-3"></div>--}}
+		{{--<div class="col-md-3"></div>--}}
 	{{--</div>--}}
-	{{--<div class="text-center" id="copyright">--}}
-		{{--Copyright © {{ date('Y') }} <a href="http://br.midwaylabsusa.com/" target="_blank" class="link">Midway Labs USA</a> - Todos os direitos reservados--}}
-	</div>
-</footer>
+{{--</footer>--}}
+
+{{--<footer>--}}
+{{----}}
+{{--<section id="cadastro">--}}
+{{--<h1>Cadastre-se e receba novidades</h1>--}}
+{{--<p>Inscreva-se gratuitamente para receber programas de treinamento, dicas nutricionais e muito mais!</p>--}}
+{{--<p><a href="{{ route('inscreverse') }}" class="bt">Inscreva-se agora <i class="fa fa-chevron-right" aria-hidden="true"></i></a></p>--}}
+{{--		<p class="textcenter"><img src="{{ asset('img/produtos.jpg') }}" alt="" class="img-responsive"></p>--}}
+{{--</section>--}}
+{{----}}
+{{--<a href="#" class="to-top">--}}
+{{--<span class="name">ir para o topo</span>--}}
+{{--</a>--}}
+{{--<div class="container">--}}
+{{--<div class="row" id="meio-footer">--}}
+{{--<div class="col-md-2 text-center">--}}
+{{--<a href="/">--}}
+{{--<img src="{{ asset('img/logo-midway.svg') }}" alt="Midway">--}}
+{{--</a>--}}
+{{--<div id="social-icons">--}}
+{{--<ul>--}}
+{{--<li><a href="https://pt-br.facebook.com/militarytrail/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>--}}
+{{--<li><a href="#" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>--}}
+{{--<li><a href="https://www.instagram.com/militarytrail_/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>--}}
+{{--<li><a href="#" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>--}}
+{{--</ul>--}}
+{{--</div>--}}
+{{--</div>--}}
+{{--<div class="col-md-2">--}}
+{{--<h4>Objetivos</h4>--}}
+{{--{!! goal_menu_helper() !!}--}}
+{{--</div>--}}
+{{--<div class="col-md-2">--}}
+{{--<h4>Suplementos</h4>--}}
+{{--{!! menu_footer_helper(1) !!}--}}
+{{--</div>--}}
+{{--<div class="col-md-2">--}}
+{{--<h4>Roupas</h4>--}}
+{{--{!! menu_footer_helper(2) !!}--}}
+{{--</div>--}}
+{{--<div class="col-md-2">--}}
+{{--<h4>Acessórios</h4>--}}
+{{--{!! menu_footer_helper(3) !!}--}}
+{{--</div>--}}
+{{--<div class="col-md-2">--}}
+{{--<h4>Informações</h4>--}}
+{{--<ul>--}}
+{{--<li><a href="{{ route('atletas') }}">Atletas</a></li>--}}
+{{--<li><a href="{{ route('objetivos') }}">Objetivos</a></li>--}}
+{{--<li><a href="{{ route('treinos') }}">Treinos</a></li>--}}
+{{--<li><a href="{{ route('historia') }}">História</a></li>--}}
+{{--<li><a href="https://www.midwaybrasil.com.br/busca?q=military-trail" target="_blank">Comprar online</a></li>--}}
+{{--<li><a href="{{ route('lojas.index') }}">Encontre uma loja</a></li>--}}
+{{--<li><a href="{{ route('revenda') }}">Seja um revendedor</a></li>--}}
+{{--</ul>--}}
+{{--</div>--}}
+{{--</div>--}}
+{{--</div>--}}
+{{--<div class="text-center" id="copyright">--}}
+{{--Copyright © {{ date('Y') }} <a href="http://br.midwaylabsusa.com/" target="_blank" class="link">Midway Labs USA</a> - Todos os direitos reservados--}}
+{{--</div>--}}
+{{--</footer>--}}
 <script type="text/javascript">
 	var base_url = "{{ url('/') }}"
 </script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 {{--<script async src="https://www.googletagmanager.com/gtag/js?id={{env('GOOGLE_ANALYTICS_ID')}}"></script>--}}
 {{--<script>--}}
-	{{--window.dataLayer = window.dataLayer || [];--}}
+{{--window.dataLayer = window.dataLayer || [];--}}
 
-	{{--function gtag() {--}}
-		{{--dataLayer.push(arguments);--}}
-	{{--}--}}
+{{--function gtag() {--}}
+{{--dataLayer.push(arguments);--}}
+{{--}--}}
 
-	{{--gtag('js', new Date());--}}
+{{--gtag('js', new Date());--}}
 
-	{{--gtag('config', '{{env('GOOGLE_ANALYTICS_ID')}}');--}}
+{{--gtag('config', '{{env('GOOGLE_ANALYTICS_ID')}}');--}}
 {{--</script>--}}
 <script src="{{ asset('js/site.js'). '?v='.time() }}"></script>
 @yield('js')

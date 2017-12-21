@@ -76,6 +76,12 @@
 			position: relative;
 		}
 
+		@media (max-width: 900px) {
+			#mini-banners div {
+				margin-right: 0;
+			}
+		}
+
 		#mini-banners div:last-child {
 			margin-right: 0;
 		}
@@ -123,7 +129,7 @@
 			font-size: 25px;
 		}
 
-		#products-row #products-menu {
+		#products-menu {
 			width: 25%;
 			float: left;
 			padding-right: 0;
@@ -134,14 +140,15 @@
 		}
 
 		@media (max-width: 600px) {
-			#products-row #products-menu {
+			#products-menu {
 				width: 100%;
 				display: block;
 				left: 0;
+				padding-right: 0;
 			}
 		}
 
-		#products-row #products-menu div h1 {
+		#products-menu div h1 {
 			font-size: 2rem;
 		}
 
@@ -186,6 +193,7 @@
 			font-weight: 900;
 			text-transform: uppercase;
 			font-style: italic;
+			transition: all 0.2s;
 		}
 
 		#products-menu ul li a svg {
@@ -195,36 +203,37 @@
 			top: 15px;
 			color: red;
 			z-index: 9;
-			transition: all 0.3s;
+			transition: all 0.2s;
 		}
 
 		#products-menu ul li a:hover svg {
 			right: 2%;
 		}
 
-		#products-row #products {
+		#products {
 			width: 75%;
 			float: left;
 			padding-right: 0.625rem;
 			padding-left: 0.625rem;
 			position: relative;
 			left: 25%;
+			background: #f9f9f9;
 		}
 
 		@media (max-width: 600px) {
-			#products-row #products {
+			#products {
 				width: 100%;
 				left: 0;
 			}
 		}
 
-		#products-row #products-menu div {
+		#products-menu div {
 			background: black;
 			color: white;
-			padding: 4em 10% 6em;
+			padding: 86px 50px;
 		}
 
-		#products-row #products-menu div a {
+		#products-menu div a {
 			color: red;
 			border: 2px solid red;
 			display: block;
@@ -239,204 +248,147 @@
 			transition: all 0.3s;
 		}
 
-		#products-row #products-menu div a:hover {
+		#products-menu div a:hover {
 			background: red;
 			color: white;
 		}
 
-		#recommended-products {
-			padding: 0 25px;
+		#products > div {
+			padding: 15px 25px;
 			text-align: center;
+
 		}
 
-		#recommended-products a {
+		#products a {
 			color: #000;
 		}
 
-		#recommended-products a:hover {
+		#products a:hover {
 			text-decoration: none;
 		}
 
-		#recommended-products a span {
+		#products a span {
 			color: red;
 			font-weight: bold;
 		}
 
-		#products-row #products #recommended-products a > div > img, #products-row #products #recommended-stacks a > div > img {
+		#products img {
 			max-height: 150px;
 			margin: 0 auto;
+			transition: all 0.2s;
 		}
 
-		#recommended-stacks {
-			padding: 0 25px;
-			text-align: center;
+		#products h2 {
+			border-bottom: 1px solid #ddd;
+			margin: 0;
+			padding: 17px 0 5px 0 !important;
 		}
 
-		#recommended-stacks a {
-			color: #000;
-		}
-
-		#recommended-stacks a:hover {
-			text-decoration: none;
-		}
-
-		#recommended-stacks a span {
-			color: red;
-			font-weight: bold;
-		}
-
-		.slick-prev::before, .slick-next::before {
-			color: #000;
-		}
-
-		.slick-slide img {
-			display: inline;
-		}
-
-		.product img {
-			transition: all 0.3s;
+		#products h4 {
+			font-size: 17px;
 		}
 
 		.product:hover img {
 			transform: scale(1.1);
 		}
 
-		/* Articles: */
-
-		#articles-row {
-			padding: 0 30px;
-			margin-top: 30px;
-			display: block;
-			background: #f3f3f3;
-			float: left;
-			width: 100%;
+		.slick-prev, .slick-next {
+			width: 50px;
+			height: 50px;
 		}
 
-		#articles-row h2 {
-			font-size: 20px;
+		.slick-prev::before, .slick-next::before {
+			font-size: 25px;
+			color: #000;
 		}
 
-		#articles-row .article:first-of-type {
-			width: 48%;
-			float: left;
-			padding: 0 0 2px 0;
-		}
-
-		@media (max-width: 600px) {
-			#articles-row .article:first-of-type {
-				width: 100%;
+		@media (max-width: 900px) {
+			.slick-prev::before, .slick-next::before {
+				font-size: 30px;
 			}
 		}
 
-		#articles-row .article:first-of-type img {
+		/* Articles: */
+
+		#articles {
+			padding: 30px;
+			display: block;
+			background: #f3f3f3;
 			width: 100%;
 			float: left;
-			padding-right: 0;
-			padding-left: 0;
 		}
 
-		#articles-row .article:first-of-type .detail:last-child:not(:first-child) {
-			float: right;
-		}
-
-		#articles-row .article:first-of-type .detail .date {
-			font-size: 16px;
-		}
-
-		#articles-row .article:first-of-type .detail h3 {
-			min-height: 56px;
-			font-size: 22px;
-			line-height: 23px;
-			margin: 12px 0;
-		}
-
-		#articles-row .article:first-of-type .detail a {
-			position: relative;
-			bottom: 0;
-		}
-
-		#articles-row .article .detail a {
-			text-transform: uppercase;
+		#articles a {
 			text-decoration: none;
-			color: red;
-			font-weight: bold;
-			bottom: 10px;
 		}
 
-		#articles-row .article .detail a svg {
+		#articles h2 {
+			font-size: 25px;
+			margin: 0 0 30px 0;
+		}
+
+		#articles h3 {
+			margin: 20px;
+			font-size: 20px;
+		}
+
+		#articles .col-md-6:first-child img {
+			width: 100%;
+		}
+
+		#articles .col-md-6:last-child img {
+			width: 42%;
+			float: left;
+			margin-right: 20px;
+		}
+
+		@media (max-width: 600px) {
+			#articles .col-md-6:last-child img {
+				width: 100%;
+				float: none;
+			}
+		}
+
+		#articles .col-md-6 a:last-child {
+			font-weight: bold;
+			margin: 20px;
+			display: block;
+		}
+
+		#articles .col-md-6 a:last-child svg {
 			margin-left: 5px;
 			transition: all 0.2s;
 		}
 
-		#articles-row .article .detail a:hover svg {
+		#articles .col-md-6 a:last-child:hover svg {
 			margin-left: 10px;
 		}
 
-		#articles-row .article:first-of-type .detail {
-			width: 100%;
-			padding: 1em;
+		#articles .col-md-6 span {
+			display: block;
+			margin: 15px 20px;
 		}
 
-		#articles-row .article .detail h3 {
-			font-size: 20px;
-			line-height: 22px;
-			margin: 12px 0;
-		}
-
-		#articles-row .article {
-			width: 50%;
-			float: right;
+		#articles .col-md-6 div {
+			clear: both;
 			padding: 0;
-			float: right;
-			max-width: none;
-			margin: 0 0 14px 0;
 			background: #FFFFFF;
 			box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.13);
-		}
-
-		@media (max-width: 600px) {
-			#articles-row .article {
-				width: 100%;
-			}
-		}
-
-		#articles-row .article img {
-			width: 41.66667%;
+			display: block;
 			float: left;
-			padding-right: 0;
-			padding-left: 0;
+			width: 100%;
 		}
 
-		@media (max-width: 600px) {
-			#articles-row .article img {
-				width: 100%;
-			}
-		}
-
-		#articles-row .article .detail {
-			width: 58.33333%;
-			float: right;
-			padding: 15px;
-			min-height: auto;
-		}
-
-		@media (max-width: 600px) {
-			#articles-row .article .detail {
-				width: 100%;
-			}
-		}
-
-		#articles-row .article:last-child:not(:first-child) {
-			float: right;
+		#articles .col-md-6:last-child div:not(:last-child) {
+			margin-bottom: 15px;
 		}
 
 		#videos-row {
-			padding: 0 30px;
-			margin-top: 30px;
+			padding: 30px;
 			display: block;
-			background: #f9f9f9;
-			float: left;
+			background: #fff;
 			width: 100%;
+			float: left;
 		}
 
 		#videos-row h2 {
@@ -447,6 +399,7 @@
 			margin: 10px 5px;
 			font-size: 17px;
 			text-align: center;
+			transition: all 0.2s;
 		}
 
 		#videos-row .overlay-video {
@@ -454,6 +407,16 @@
 			width: 100%;
 			height: 100%;
 			position: absolute;
+		}
+
+		@media (max-width: 600px) {
+			#videos-row .overlay-video {
+				display: none;
+			}
+		}
+
+		#videos-row .col-md-3:hover h3 {
+			color: red;
 		}
 
 	</style>
@@ -499,7 +462,7 @@
 
 	{{-- Mini Banners: --}}
 
-	<aside id="mini-banners">
+	<section id="mini-banners">
 		<div class="animated fadeInUp">
 			<a href="https://store.bpisports.com/all-products/?_ga=2.208811738.997604798.1513332053-1419607128.1513332053">
 				<h3>SHOP our STORE<i class="fas fa-angle-right"></i></h3>
@@ -524,13 +487,14 @@
 				<img src="https://s3.amazonaws.com/bpi-cdn/v2/wp-content/uploads/2016/09/25190703/tile-011.jpg">
 			</a>
 		</div>
-	</aside>
+	</section>
 
 	{{-- Products --}}
 
 	<section id="products-row">
-		<section id="products"><h2>Recommended Products</h2>
-			<div id="recommended-products">
+		<section id="products">
+			<h2>Recommended Products</h2>
+			<div>
 				<div class="slick-track" role="listbox">
 					<a href="#">
 						<div class="product">
@@ -640,7 +604,7 @@
 				</div>
 			</div>
 			<h2>Recommended Stacks</h2>
-			<div id="recommended-stacks" class="slick-initialized slick-slider">
+			<div>
 				<div class="slick-track" role="listbox">
 					<a href="#">
 						<div class="product">
@@ -768,46 +732,44 @@
 
 	{{-- Articles: --}}
 
-	<section id="articles-row">
+	<section id="articles">
 		<h2>Recommended Articles</h2>
-		<div class="article">
-			<a href="#">
-				<img src="http://s3.amazonaws.com/bpi-cdn/v2/wp-content/uploads/2017/12/15182030/VICTORIA-HOLIDAY_THUMBNAIL.jpg" alt="">
-			</a>
-			<div class="detail">
-				<span class="date">December 17, 2017</span>
-				<h3 class="title">‘Tis the Season to Fall Off Track: How to Tackle the Holidays</h3>
-				<a href="#" title="Read More">Read More<i class="fas fa-angle-right"></i></a>
+		<div class="row">
+			<div class="col-md-6">
+				<div>
+					<a href="#">
+						<img src="http://s3.amazonaws.com/bpi-cdn/v2/wp-content/uploads/2017/12/15182030/VICTORIA-HOLIDAY_THUMBNAIL.jpg" alt="">
+					</a>
+					<span>December 17, 2017</span>
+					<h3>Tis the Season to Fall Off Track: How to Tackle the Holidays</h3>
+					<a href="#">Read More<i class="fas fa-angle-right"></i></a>
+				</div>
 			</div>
-		</div>
-		<div class="article">
-			<a href="#">
-				<img src="http://s3.amazonaws.com/bpi-cdn/v2/wp-content/uploads/2017/12/15170546/YOUR-HOLIDAY-WISH-LIST_THUMBNAIL.jpg" alt="">
-			</a>
-			<div class="detail">
-				<span class="date">December 16, 2017</span>
-				<h3 class="title">Holiday Gift Guide for Him &amp; Her</h3>
-				<a href="#" title="Read More">Read More<i class="fas fa-angle-right"></i></a>
-			</div>
-		</div>
-		<div class="article">
-			<a href="#">
-				<img src="http://s3.amazonaws.com/bpi-cdn/v2/wp-content/uploads/2017/12/13144604/WHAT-IS-ESSENTIAL-9_THUMBNAIL.jpg" alt="">
-			</a>
-			<div class="detail">
-				<span class="date">December 15, 2017</span>
-				<h3 class="title">What is Essential 9™?</h3>
-				<a href="#" title="Read More">Read More<i class="fas fa-angle-right"></i></a>
-			</div>
-		</div>
-		<div class="article">
-			<a href="#">
-				<img src="http://s3.amazonaws.com/bpi-cdn/v2/wp-content/uploads/2017/12/12153631/BAND-EXERCISES-YOU-CAN-DO-AT-HOME_THUMBNAIL.jpg" alt="">
-			</a>
-			<div class="detail">
-				<span class="date">December 14, 2017</span>
-				<h3 class="title">5 Resistance Band Exercises You Can Do at Home</h3>
-				<a href="#" title="Read More">Read More<i class="fas fa-angle-right"></i></a>
+			<div class="col-md-6">
+				<div>
+					<a href="#">
+						<img src="http://s3.amazonaws.com/bpi-cdn/v2/wp-content/uploads/2017/12/15170546/YOUR-HOLIDAY-WISH-LIST_THUMBNAIL.jpg" alt="">
+					</a>
+					<span>December 16, 2017</span>
+					<h3>Holiday Gift Guide for Him &amp; Her</h3>
+					<a href="#">Read More<i class="fas fa-angle-right"></i></a>
+				</div>
+				<div>
+					<a href="#">
+						<img src="http://s3.amazonaws.com/bpi-cdn/v2/wp-content/uploads/2017/12/13144604/WHAT-IS-ESSENTIAL-9_THUMBNAIL.jpg" alt="">
+					</a>
+					<span>December 15, 2017</span>
+					<h3>What is Essential 9™?</h3>
+					<a href="#">Read More<i class="fas fa-angle-right"></i></a>
+				</div>
+				<div>
+					<a href="#">
+						<img src="http://s3.amazonaws.com/bpi-cdn/v2/wp-content/uploads/2017/12/12153631/BAND-EXERCISES-YOU-CAN-DO-AT-HOME_THUMBNAIL.jpg" alt="">
+					</a>
+					<span>December 14, 2017</span>
+					<h3>5 Resistance Band Exercises You Can Do at Home</h3>
+					<a href="#">Read More<i class="fas fa-angle-right"></i></a>
+				</div>
 			</div>
 		</div>
 	</section>
@@ -877,7 +839,7 @@
 				}]
 			});
 
-			$('.overlay-video').on('click', function (event) {
+			$('.overlay-video').on('click', function (e) {
 
 				$('#modal-video').modal('show');
 
@@ -886,6 +848,18 @@
 
 				let src = $(this).siblings('iframe').attr('src') + '?autoplay=1';
 				$('#modal-video iframe').attr('src', src);
+			});
+
+			$('#modal-video').on('hide.bs.modal', function (e) {
+				$('#modal-video h4').text('');
+				$('#modal-video iframe').attr('src', '');
+			});
+
+			$('#videos-row .col-md-3').on('mouseover', function (e) {
+			var iframe = $(this).find('iframe');
+			console.log(iframe);
+			$('.ytp-button', iframe.contents()).hide();
+console.log('teste');
 			});
 		});
 	</script>
