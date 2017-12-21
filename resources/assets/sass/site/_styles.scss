@@ -500,8 +500,15 @@ footer ul li a:hover svg:not(#social-icons li a svg) {
 }
 
 #sub-footer ul {
+	text-align: center;
 	display: flex;
 	justify-content: flex-end;
+}
+
+@media(max-width: 600px) {
+	#sub-footer ul, #sub-footer ul li {
+		display: block;
+	}
 }
 
 #sub-footer .col-md-6 ul li a {

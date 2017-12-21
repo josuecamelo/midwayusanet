@@ -527,7 +527,7 @@
 		</div>
 	</div>
 	<div class="row" id="sub-footer">
-		<div class="col-md-6">
+		<div class="col-md-6 text-center">
 			© {{ date('Y') }} Midway Labs USA | All Rights Reserved.
 		</div>
 		<div class="col-md-6">
