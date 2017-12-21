@@ -7,11 +7,15 @@
 	<meta name="robots" content="noindex">
 	<meta name="googlebot" content="noindex">
 	<title>Midway Labs USA</title>
-	<link href="{{ asset('css/site.css') }}" rel="stylesheet">
+	<link href="{{ asset('css/site.css') . '?v='.time() }}" rel="stylesheet">
 	<style>
 		a, footer {
 			margin: 72px;
 			display: block;
+		}
+
+		h3 {
+			font-weight: normal !important;
 		}
 
 		img {
@@ -26,8 +30,9 @@
 	</a>
 </h1>
 <h2>SITE UNDER CONSTRUCTION</h2>
-<p><i>Soon a new site with many new features.</i></p>
-<p><a href="{{ route('home') }}">Click here to access the site under construction.</a></p>
+<h3><i>Soon a new site with many new features.</i></h3>
+<p><a href="{{ route('home') }}" class="btn btn-danger">Click here to access the site under construction <i class="fas fa-angle-right"></i></a></p>
 <footer>© {{ date('Y') }} Midway Labs USA</footer>
+<script src="{{ asset('js/site.js') . '?v='.time() }}"></script>
 </body>
 </html>
