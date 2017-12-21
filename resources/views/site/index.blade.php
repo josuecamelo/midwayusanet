@@ -142,7 +142,7 @@
 			padding-right: 2px;
 		}
 
-		@media (max-width: 600px) {
+		@media (max-width: 900px) {
 			#products-menu {
 				width: 100%;
 				display: block;
@@ -223,7 +223,7 @@
 			background: #f9f9f9;
 		}
 
-		@media (max-width: 600px) {
+		@media (max-width: 900px) {
 			#products {
 				width: 100%;
 				left: 0;
