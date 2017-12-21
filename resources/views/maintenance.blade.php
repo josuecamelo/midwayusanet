@@ -10,7 +10,7 @@
 	<link href="{{ asset('css/site.css') . '?v='.time() }}" rel="stylesheet">
 	<style>
 		a, footer {
-			margin: 72px;
+			margin: 50px 0;
 			display: block;
 		}
 
@@ -19,7 +19,7 @@
 		}
 
 		img {
-			width: 200px;
+			width: 150px;
 		}
 	</style>
 </head>
