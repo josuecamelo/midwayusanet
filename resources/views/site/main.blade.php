@@ -526,6 +526,19 @@
 			</div>
 		</div>
 	</div>
+	<div class="row" id="sub-footer">
+		<div class="col-md-6">
+			© {{ date('Y') }} Midway Labs USA | All Rights Reserved.
+		</div>
+		<div class="col-md-6">
+			<ul>
+				<li><a href="/">Privacy Policy</a></li>
+				<li><a href="/">Terms of Use</a></li>
+				<li><a href="/">Sitemap</a></li>
+				<li><a href="/">Affiliate</a></li>
+			</ul>
+		</div>
+	</div>
 </footer>
 
 {{--<footer>--}}
