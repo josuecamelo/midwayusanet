@@ -12562,13 +12562,13 @@ footer ul li a:hover {
   text-decoration: none;
 }
 
-footer ul li a svg:not(#social-icons li a svg) {
+.arrow-link {
   opacity: 0;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
 }
 
-footer ul li a:hover svg:not(#social-icons li a svg) {
+footer ul li a:hover .arrow-link {
   opacity: 1;
   margin-left: 10px;
 }

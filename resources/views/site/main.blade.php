@@ -441,22 +441,22 @@
 					<h3>POPULAR CATEGORIES</h3>
 					<ul>
 						<li>
-							<a href="/">Pre-Workout<i class="fas fa-angle-right"></i></a>
+							<a href="/">Pre-Workout<i class="fas fa-angle-right arrow-link"></i></a>
 						</li>
 						<li>
-							<a href="/">Protein<i class="fas fa-angle-right"></i></a>
+							<a href="/">Protein<i class="fas fa-angle-right arrow-link"></i></a>
 						</li>
 						<li>
-							<a href="/">Amino<i class="fas fa-angle-right"></i></a>
+							<a href="/">Amino<i class="fas fa-angle-right arrow-link"></i></a>
 						</li>
 						<li>
-							<a href="/">Creatine<i class="fas fa-angle-right"></i></a>
+							<a href="/">Creatine<i class="fas fa-angle-right arrow-link"></i></a>
 						</li>
 						<li>
-							<a href="/">Test Booster<i class="fas fa-angle-right"></i></a>
+							<a href="/">Test Booster<i class="fas fa-angle-right arrow-link"></i></a>
 						</li>
 						<li>
-							<a href="/">View All Products<i class="fas fa-angle-right"></i></a>
+							<a href="/">View All Products<i class="fas fa-angle-right arrow-link"></i></a>
 						</li>
 					</ul>
 				</div>
@@ -464,22 +464,22 @@
 					<h3>POPULAR PRODUCTS</h3>
 					<ul>
 						<li>
-							<a href="/">Pre-Workout<i class="fas fa-angle-right"></i></a>
+							<a href="/">Pre-Workout<i class="fas fa-angle-right arrow-link"></i></a>
 						</li>
 						<li>
-							<a href="/">Protein<i class="fas fa-angle-right"></i></a>
+							<a href="/">Protein<i class="fas fa-angle-right arrow-link"></i></a>
 						</li>
 						<li>
-							<a href="/">Amino<i class="fas fa-angle-right"></i></a>
+							<a href="/">Amino<i class="fas fa-angle-right arrow-link"></i></a>
 						</li>
 						<li>
-							<a href="/">Creatine<i class="fas fa-angle-right"></i></a>
+							<a href="/">Creatine<i class="fas fa-angle-right arrow-link"></i></a>
 						</li>
 						<li>
-							<a href="/">Test Booster<i class="fas fa-angle-right"></i></a>
+							<a href="/">Test Booster<i class="fas fa-angle-right arrow-link"></i></a>
 						</li>
 						<li>
-							<a href="/">View All Products<i class="fas fa-angle-right"></i></a>
+							<a href="/">View All Products<i class="fas fa-angle-right arrow-link"></i></a>
 						</li>
 					</ul>
 				</div>
@@ -488,14 +488,14 @@
 		<div class="col-md-3">
 			<h2>LET US HELP YOU</h2>
 			<ul>
-				<li><a href="/">Find a Store<i class="fas fa-angle-right"></i></a></li>
-				<li><a href="/">Your Account<i class="fas fa-angle-right"></i></a></li>
-				<li><a href="/">Your Orders<i class="fas fa-angle-right"></i></a></li>
-				<li><a href="/">Shipping Rates &amp; Policies<i class="fas fa-angle-right"></i></a></li>
-				<li><a href="/">Returns &amp; Refund<i class="fas fa-angle-right"></i></a></li>
-				<li><a href="/">Sales &amp; Promotions<i class="fas fa-angle-right"></i></a></li>
-				<li><a href="/">About Us<i class="fas fa-angle-right"></i></a></li>
-				<li><a href="/">Contact Us<i class="fas fa-angle-right"></i></a></li>
+				<li><a href="/">Find a Store<i class="fas fa-angle-right arrow-link"></i></a></li>
+				<li><a href="/">Your Account<i class="fas fa-angle-right arrow-link"></i></a></li>
+				<li><a href="/">Your Orders<i class="fas fa-angle-right arrow-link"></i></a></li>
+				<li><a href="/">Shipping Rates &amp; Policies<i class="fas fa-angle-right arrow-link"></i></a></li>
+				<li><a href="/">Returns &amp; Refund<i class="fas fa-angle-right arrow-link"></i></a></li>
+				<li><a href="/">Sales &amp; Promotions<i class="fas fa-angle-right arrow-link"></i></a></li>
+				<li><a href="/">About Us<i class="fas fa-angle-right arrow-link"></i></a></li>
+				<li><a href="/">Contact Us<i class="fas fa-angle-right arrow-link"></i></a></li>
 			</ul>
 		</div>
 		<div class="col-md-3">
