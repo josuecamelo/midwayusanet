@@ -28,58 +28,58 @@
 					<a href="#">Women's Products</a>
 					<ul>
 						<li>
-							<h2>POPULAR CATEGORIES</h2>
+							<h2>Popular Categories</h2>
 							<ul>
 								<li>
-									<a href="/">PRE-WORKOUT</a>
+									<a href="/">Protein</a>
 								</li>
 								<li>
-									<a href="/">PROTEIN</a>
+									<a href="/">Collagen</a>
 								</li>
 								<li>
-									<a href="/">AMINO</a>
+									<a href="/">Sleep Support</a>
 								</li>
 								<li>
-									<a href="/">CREATINE</a>
+									<a href="/">Anti Age</a>
 								</li>
 								<li>
-									<a href="/">TEST BOOSTER</a>
+									<a href="/">Hair Skin And Nails</a>
 								</li>
 								<li>
-									<a href="/">VIEW ALL PRODUCTS</a>
+									<a href="/">View All Products</a>
 								</li>
 							</ul>
 						</li>
 						<li>
-							<h2>POPULAR PRODUCTS</h2>
+							<h2>Popular Products</h2>
 							<ul>
 								<li>
-									<a href="/">PRE-WORKOUT</a>
+									<a href="/">Glamour Protein</a>
 								</li>
 								<li>
-									<a href="/">PROTEIN</a>
+									<a href="/">Glamour Collagen</a>
 								</li>
 								<li>
-									<a href="/">AMINO</a>
+									<a href="/">Beauty Sleep</a>
 								</li>
 								<li>
-									<a href="/">CREATINE</a>
+									<a href="/">Glamour Anti Age</a>
 								</li>
 								<li>
-									<a href="/">TEST BOOSTER</a>
+									<a href="/">Hair Skin And Nails</a>
 								</li>
 								<li>
-									<a href="/">VIEW ALL PRODUCTS</a>
+									<a href="/">View All Products</a>
 								</li>
 							</ul>
 						</li>
 						<li>
-							<h2>Featured Stack</h2>
+							<h2>BEAUTY STACK BUNDLE</h2>
 							<div id="featured-stack">
 								<a href="/">
-									<img src="https://via.placeholder.com/150x150">
-									<p>Product Name</p>
-									<p class="value">$ <span>109</span><sup>.99</sup></p>
+									<img src="{{ asset('img/Beauty_Stack20_720x.png') }}">
+									<p>Glamour Collagen</p>
+									<p class="value">$ <span>51</span><sup>.99</sup></p>
 								</a>
 							</div>
 						</li>
@@ -119,19 +119,19 @@
 							<h2>POPULAR PRODUCTS</h2>
 							<ul>
 								<li>
-									<a href="/">PRE-WORKOUT</a>
+									<a href="/">ATP ENHANCER</a>
 								</li>
 								<li>
-									<a href="/">PROTEIN</a>
+									<a href="/">MILITARY WHEY</a>
 								</li>
 								<li>
-									<a href="/">AMINO</a>
+									<a href="/">AMINO TANK</a>
 								</li>
 								<li>
 									<a href="/">CREATINE</a>
 								</li>
 								<li>
-									<a href="/">TEST BOOSTER</a>
+									<a href="/">ERE FORCE</a>
 								</li>
 								<li>
 									<a href="/">VIEW ALL PRODUCTS</a>
@@ -139,12 +139,12 @@
 							</ul>
 						</li>
 						<li>
-							<h2>Featured Stack</h2>
+							<h2>FAT BURNER BUNDLE</h2>
 							<div id="featured-stack">
 								<a href="/">
-									<img src="https://via.placeholder.com/150x150">
-									<p>Product Name</p>
-									<p class="value">$ <span>109</span><sup>.99</sup></p>
+									<img src="{{ asset('img/Fat_Burner_Bundle_1080x.png') }}">
+									<p>Thermogenic Blast + L-Carnitine Strike</p>
+									<p class="value">$ <span>69</span><sup>.99</sup></p>
 								</a>
 							</div>
 						</li>
@@ -441,22 +441,22 @@
 					<h3>POPULAR CATEGORIES</h3>
 					<ul>
 						<li>
-							<a href="/">Pre-Workout<i class="fas fa-angle-right arrow-link"></i></a>
+							<a href="/">PROTEIN<i class="fas fa-angle-right arrow-link"></i></a>
 						</li>
 						<li>
-							<a href="/">Protein<i class="fas fa-angle-right arrow-link"></i></a>
+							<a href="/">COLLAGEN<i class="fas fa-angle-right arrow-link"></i></a>
 						</li>
 						<li>
-							<a href="/">Amino<i class="fas fa-angle-right arrow-link"></i></a>
+							<a href="/">TESTO BOOSTER<i class="fas fa-angle-right arrow-link"></i></a>
 						</li>
 						<li>
-							<a href="/">Creatine<i class="fas fa-angle-right arrow-link"></i></a>
+							<a href="/">PRE WORKOUT<i class="fas fa-angle-right arrow-link"></i></a>
 						</li>
 						<li>
-							<a href="/">Test Booster<i class="fas fa-angle-right arrow-link"></i></a>
+							<a href="/">CREATINE<i class="fas fa-angle-right arrow-link"></i></a>
 						</li>
 						<li>
-							<a href="/">View All Products<i class="fas fa-angle-right arrow-link"></i></a>
+							<a href="/">VIEW ALL CATEGORIES<i class="fas fa-angle-right arrow-link"></i></a>
 						</li>
 					</ul>
 				</div>
@@ -464,22 +464,19 @@
 					<h3>POPULAR PRODUCTS</h3>
 					<ul>
 						<li>
-							<a href="/">Pre-Workout<i class="fas fa-angle-right arrow-link"></i></a>
+							<a href="/">ERE FORCE<i class="fas fa-angle-right arrow-link"></i></a>
 						</li>
 						<li>
-							<a href="/">Protein<i class="fas fa-angle-right arrow-link"></i></a>
+							<a href="/">L CARNITINE STRIKE<i class="fas fa-angle-right arrow-link"></i></a>
 						</li>
 						<li>
-							<a href="/">Amino<i class="fas fa-angle-right arrow-link"></i></a>
+							<a href="/">ANABOLIC ARSENAL<i class="fas fa-angle-right arrow-link"></i></a>
 						</li>
 						<li>
-							<a href="/">Creatine<i class="fas fa-angle-right arrow-link"></i></a>
+							<a href="/">GLAMOUR PROTEIN<i class="fas fa-angle-right arrow-link"></i></a>
 						</li>
 						<li>
-							<a href="/">Test Booster<i class="fas fa-angle-right arrow-link"></i></a>
-						</li>
-						<li>
-							<a href="/">View All Products<i class="fas fa-angle-right arrow-link"></i></a>
+							<a href="/">GLAMOUR COLLAGEN<i class="fas fa-angle-right arrow-link"></i></a>
 						</li>
 					</ul>
 				</div>
@@ -517,10 +514,10 @@
 				</div>
 				<div class="col-md-6">
 					<ul>
-						<li><a href="https://www.instagram.com/midwaylabsusa/"><i class="fab fa-instagram"></i></a></li>
-						<li><a href="https://www.facebook.com/MidwayLabsUSA/"><i class="fab fa-facebook-f"></i></a></li>
-						<li><a href="https://twitter.com/midwaylabsusa/"><i class="fab fa-twitter"></i></a></li>
-						<li><a href="https://www.youtube.com/user/MidwayLabsUSA"><i class="fab fa-youtube"></i></a></li>
+						<li><a href="https://www.instagram.com/midwaylabsusa/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+						<li><a href="https://www.facebook.com/MidwayLabsUSA/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+						<li><a href="https://twitter.com/midwaylabsusa/" target="_blank"><i class="fab fa-twitter"></i></a></li>
+						<li><a href="https://www.youtube.com/user/MidwayLabsUSA" target="_blank"><i class="fab fa-youtube"></i></a></li>
 					</ul>
 				</div>
 			</div>
@@ -542,93 +539,15 @@
 	<div id="deep-footer">
 		<div class="row">
 			<div class="col-md-12">
-				<p>PLEASE NOTE: All SITE VISITORS are advised to consult their physician before beginning any exercise and nutrition program. Midway and the contributors do not accept any responsibility for injury sustained as a result of following the advice or suggestions contained within the content of this SITE.</p>
-				<small>* These statements have not been evaluated by the Food and Drug Administration. These products are not intended to diagnose, treat, cure or prevent any disease.</small>
-				<small>† When combined with a proper exercise and nutrition regimen. Statements based on early-stage independent 3rd party in vivo and / or in vitro model scientific research data findings for individual ingredients.</small>
-				<small>By placing your order, you agree to Midway privacy policy and terms and conditions.</small>
-				<small>Want to become a Midway affiliate? Fill out the form to get started!</small>
+				<small>* These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure or prevent any disease.</small>
 			</div>
 		</div>
 	</div>
 </footer>
 
-{{--<footer>--}}
-{{----}}
-{{--<section id="cadastro">--}}
-{{--<h1>Cadastre-se e receba novidades</h1>--}}
-{{--<p>Inscreva-se gratuitamente para receber programas de treinamento, dicas nutricionais e muito mais!</p>--}}
-{{--<p><a href="{{ route('inscreverse') }}" class="bt">Inscreva-se agora <i class="fa fa-chevron-right" aria-hidden="true"></i></a></p>--}}
-{{--		<p class="textcenter"><img src="{{ asset('img/produtos.jpg') }}" alt="" class="img-responsive"></p>--}}
-{{--</section>--}}
-{{----}}
-{{--<a href="#" class="to-top">--}}
-{{--<span class="name">ir para o topo</span>--}}
-{{--</a>--}}
-{{--<div class="container">--}}
-{{--<div class="row" id="meio-footer">--}}
-{{--<div class="col-md-2 text-center">--}}
-{{--<a href="/">--}}
-{{--<img src="{{ asset('img/logo-midway.svg') }}" alt="Midway">--}}
-{{--</a>--}}
-{{--<div id="social-icons">--}}
-{{--<ul>--}}
-{{--<li><a href="https://pt-br.facebook.com/militarytrail/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>--}}
-{{--<li><a href="#" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>--}}
-{{--<li><a href="https://www.instagram.com/militarytrail_/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>--}}
-{{--<li><a href="#" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>--}}
-{{--</ul>--}}
-{{--</div>--}}
-{{--</div>--}}
-{{--<div class="col-md-2">--}}
-{{--<h4>Objetivos</h4>--}}
-{{--{!! goal_menu_helper() !!}--}}
-{{--</div>--}}
-{{--<div class="col-md-2">--}}
-{{--<h4>Suplementos</h4>--}}
-{{--{!! menu_footer_helper(1) !!}--}}
-{{--</div>--}}
-{{--<div class="col-md-2">--}}
-{{--<h4>Roupas</h4>--}}
-{{--{!! menu_footer_helper(2) !!}--}}
-{{--</div>--}}
-{{--<div class="col-md-2">--}}
-{{--<h4>Acessórios</h4>--}}
-{{--{!! menu_footer_helper(3) !!}--}}
-{{--</div>--}}
-{{--<div class="col-md-2">--}}
-{{--<h4>Informações</h4>--}}
-{{--<ul>--}}
-{{--<li><a href="{{ route('atletas') }}">Atletas</a></li>--}}
-{{--<li><a href="{{ route('objetivos') }}">Objetivos</a></li>--}}
-{{--<li><a href="{{ route('treinos') }}">Treinos</a></li>--}}
-{{--<li><a href="{{ route('historia') }}">História</a></li>--}}
-{{--<li><a href="https://www.midwaybrasil.com.br/busca?q=military-trail" target="_blank">Comprar online</a></li>--}}
-{{--<li><a href="{{ route('lojas.index') }}">Encontre uma loja</a></li>--}}
-{{--<li><a href="{{ route('revenda') }}">Seja um revendedor</a></li>--}}
-{{--</ul>--}}
-{{--</div>--}}
-{{--</div>--}}
-{{--</div>--}}
-{{--<div class="text-center" id="copyright">--}}
-{{--Copyright © {{ date('Y') }} <a href="http://br.midwaylabsusa.com/" target="_blank" class="link">Midway Labs USA</a> - Todos os direitos reservados--}}
-{{--</div>--}}
-{{--</footer>--}}
 <script type="text/javascript">
 	var base_url = "{{ url('/') }}"
 </script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-{{--<script async src="https://www.googletagmanager.com/gtag/js?id={{env('GOOGLE_ANALYTICS_ID')}}"></script>--}}
-{{--<script>--}}
-{{--window.dataLayer = window.dataLayer || [];--}}
-
-{{--function gtag() {--}}
-{{--dataLayer.push(arguments);--}}
-{{--}--}}
-
-{{--gtag('js', new Date());--}}
-
-{{--gtag('config', '{{env('GOOGLE_ANALYTICS_ID')}}');--}}
-{{--</script>--}}
 <script src="{{ asset('js/site.js'). '?v='.time() }}"></script>
 @yield('js')
 </body>

@@ -707,12 +707,12 @@
 			<ul>
 				<li><a href="#">Protein<i class="fas fa-angle-right"></i></a></li>
 				<li><a href="#">Pre-Workout<i class="fas fa-angle-right"></i></a></li>
-				<li><a href="#">Ketogenic<i class="fas fa-angle-right"></i></a></li>
+				<li><a href="#">Beauty<i class="fas fa-angle-right"></i></a></li>
 				<li><a href="#">Stacks<i class="fas fa-angle-right"></i></a></li>
 			</ul>
 			<div>
-				<h1>Not sure where to start?</h1>
-				<p>Answer these questions for a customized workout plan and our recommended supplement stack.</p>
+				<h1>LET US HELP YOU BUILD YOURSELF</h1>
+				<p>Answer these questions for a customized supplement stack.</p>
 				<a href="#" title="Customize your plan" role="link">Customize Your Plan</a>
 			</div>
 		</aside>
@@ -771,23 +771,23 @@
 		<div class="row">
 			<div class="col-md-3">
 				<div class="overlay-video"></div>
-				<iframe width="100%" height="248" src="https://www.youtube.com/embed/8l7UvzPN3AA" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
-				<h3>Trailer Canal Midway</h3>
+				<iframe width="100%" height="248" src="https://www.youtube.com/embed/M6GFK6RkFvQ" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+				<h3>Glamour Collagen</h3>
 			</div>
 			<div class="col-md-3">
 				<div class="overlay-video"></div>
-				<iframe width="100%" height="248" src="https://www.youtube.com/embed/YtPgNbYUZhw" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
-				<h3>Treino de Atleta - Rômulo Rocha</h3>
+				<iframe width="100%" height="248" src="https://www.youtube.com/embed/mhO0e3lJAgI" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+				<h3>Glamour Protein Shake</h3>
 			</div>
 			<div class="col-md-3">
 				<div class="overlay-video"></div>
-				<iframe width="100%" height="248" src="https://www.youtube.com/embed/PapZMGJaosA" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
-				<h3>Trailer Canal Midway</h3>
+				<iframe width="100%" height="248" src="https://www.youtube.com/embed/kI_NR0uCklM" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+				<h3>Creatine Military Trail Supplement</h3>
 			</div>
 			<div class="col-md-3">
 				<div class="overlay-video"></div>
-				<iframe width="100%" height="248" src="https://www.youtube.com/embed/GUWqcniWY_o" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
-				<h3>Treino de Atleta - Juliete de Pieri</h3>
+				<iframe width="100%" height="248" src="https://www.youtube.com/embed/_5lP9g8X-ZA" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+				<h3>Felipe Franco Visits Midway Labs USA</h3>
 			</div>
 		</div>
 	</section>
