@@ -9,7 +9,7 @@
 			<thead>
 			<tr>
 				<th>Nome</th>
-				<th>Categoria</th>
+				<th>Tipo</th>
 				<th>Editar</th>
 				<th>Deletar</th>
 			</tr>
