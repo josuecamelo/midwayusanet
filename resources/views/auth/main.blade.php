@@ -10,9 +10,7 @@
 <body>
 <header>
 	<div id="logo">
-		<img src="{{ asset('img/midway.svg') }}" alt="Midway">
-		<img src="{{ asset('img/military.svg') }}" alt="Military">
-		<img src="{{ asset('img/made-in-usa.svg') }}" alt="Made in usa">
+		<img src="{{ asset('img/logo-midway-build-yourself.svg') }}" alt="Midway">
 	</div>
 </header>
 @yield('main')
