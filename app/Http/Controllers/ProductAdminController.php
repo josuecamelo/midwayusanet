@@ -199,7 +199,7 @@ class ProductAdminController extends Controller
 		
 		if (isset($inputs['image']))
 		{
-			$inputs['image'] = UploadImagem::singleUpload($inputs['image'], $product->id, public_path("uploads/products/$product->id"));
+			$inputs['image'] = UploadImagem::singleUpload($inputs['image'], $product->id, public_path("uploads/products/$product->id"), $redimensionar = true);
 		}
 		
 		//$inputs['highlights_portion'] = implode($inputs['portions'], ";");

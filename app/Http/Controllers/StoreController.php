@@ -18,12 +18,14 @@ class StoreController extends Controller
 	public function json()
 	{
 		$stores = Store::all();
+		
 		return response()->json($stores);
 	}
 	
 	public function index()
 	{
 		$stores = $this->storeModel->orderBy('other_name')->get();
+		
 		return view('site.stores.index', compact('stores'));
 	}
 	
@@ -31,12 +33,55 @@ class StoreController extends Controller
 	{
 		$origins = $request->origins;
 		$destinations = $request->destinations;
-
-		$url = 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=' . $origins . '&destinations=' . $destinations . '&key=AIzaSyAAZyGvRUbt54ql9guh2x2rdrSMGw0YD74';
 		
+		$apis = [
+			'AIzaSyAAZyGvRUbt54ql9guh2x2rdrSMGw0YD74',
+			'AIzaSyDpH7LYxR5Fh5s-mi7Jx7mQNlvCPUPAZ0I',
+			'AIzaSyB_bQ1kdr9l6XJjQy0y2vKM1X_DwDOzxR8'
+		];
+		
+		list($getBody, $results) = $this->getHttpClient($origins, $destinations, $apis, 0);
+		
+		if ($results[0]->status != 'OK')
+		{
+			list($getBody, $results) = $this->getHttpClient($origins, $destinations, $apis, 1);
+			
+			if ($results[0]->status != 'OK')
+			{
+				list($getBody, $results) = $this->getHttpClient($origins, $destinations, $apis, 2);
+				
+				if ($results[0]->status != 'OK')
+				{
+					return 'Erro';
+				}
+				else
+				{
+					return $getBody;
+				}
+			}
+			else
+			{
+				return $getBody;
+			}
+		}
+		else
+		{
+			return $getBody;
+		}
+	}
+	
+	private function getUrlGoogleMaps($origins, $destinations, $apis, $n)
+	{
+		return 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=' . $origins . '&destinations=' . $destinations . '&key=' . $apis[$n];
+	}
+	
+	private function getHttpClient($origins, $destinations, $apis, $n)
+	{
 		$client = new \GuzzleHttp\Client();
-		$res = $client->request('GET', $url);
-		return $res->getBody();
+		$res = $client->request('GET', $this->getUrlGoogleMaps($origins, $destinations, $apis, $n));
+		$getBody = $res->getBody();
+		$results[] = json_decode($getBody);
+		return [$getBody, $results];
 	}
 	
 	public function pesquisar(Request $request)
@@ -102,9 +147,13 @@ class StoreController extends Controller
 		foreach ($ceps as $cepsIdx => $cep)
 		{
 			if (($cepsIdx < count($ceps) - 1))
+			{
 				$cepQuery .= "'" . $cep . "', ";
+			}
 			else
+			{
 				$cepQuery .= "'" . $cep . "'";
+			}
 		}
 		
 		$stores = Store::whereRaw("zip in(" . $cepQuery . ")")
