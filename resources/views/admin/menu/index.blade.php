@@ -300,9 +300,11 @@
 
 				let selectTo = i.parent().parent().siblings('div').find('select');
 				let select = selectTo.find(':selected');
-				let newPos = select.index() - 1;
 
 				select.each(function () {
+
+					let newPos = $(this).index() - 1;
+
 					if (newPos > -1) {
 						selectTo.find('option').eq(newPos).before("<option value='" + $(this).val() + "' selected='selected'>" + $(this).text() + "</option>");
 						$(this).remove();
@@ -317,10 +319,13 @@
 
 				let selectTo = i.parent().parent().siblings('div').find('select');
 				let select = selectTo.find(':selected');
-				let newPos = select.index() + 1;
-				let lengthOptions = selectTo.find('option').length;
+				let lenghtSelect = select.length;
 
 				select.each(function () {
+
+					let lengthOptions = selectTo.find('option').length;
+					let newPos = $(this).index() + lenghtSelect;
+
 					if (newPos < lengthOptions) {
 						selectTo.find('option').eq(newPos).after("<option value='" + $(this).val() + "' selected='selected'>" + $(this).text() + "</option>");
 						$(this).remove();
