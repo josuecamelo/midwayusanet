@@ -268,10 +268,10 @@
 				let lengthSelectTo = selectTo.find('option').length;
 				let textItem = n == 1 ? ' item' : ' itens';
 
-				if (lengthSelectTo < n) {
+				let item = i.siblings('div').find('select').find(':selected');
+				let lengthSelectFrom = item.length;
 
-					let item = i.siblings('div').find('select').find(':selected');
-
+				if (lengthSelectFrom + lengthSelectTo <= n) {
 					item.each(function () {
 						$(this).clone().appendTo(selectTo);
 						$(this).remove();
