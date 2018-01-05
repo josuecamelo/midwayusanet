@@ -73,7 +73,7 @@
 										<i class="fa fa-angle-double-right" aria-hidden="true"></i>
 									</button>
 									<div class="panel panel-default">
-										<div class="panel-heading">All Products</div>
+										<div class="panel-heading">All Categories</div>
 										<select name="selectfrom" class="select-from" multiple size="4">
 											<option value="1">Item 1</option>
 											<option value="2">Item 2</option>
@@ -87,7 +87,7 @@
 										<i class="fa fa-angle-double-left" aria-hidden="true"></i>
 									</button>
 									<div class="panel panel-default">
-										<div class="panel-heading">Selected Products</div>
+										<div class="panel-heading">Selected Categories</div>
 										<select name="selectto" class="select-to" multiple size="5">
 											<option value="5">Item 5</option>
 											<option value="6">Item 6</option>
@@ -183,7 +183,7 @@
 										<i class="fa fa-angle-double-left" aria-hidden="true"></i>
 									</button>
 									<div class="panel panel-default">
-										<div class="panel-heading">Selected Products</div>
+										<div class="panel-heading">Selected Product</div>
 										<select name="selectto" class="select-to" multiple size="5">
 											<option value="5">Item 5</option>
 										</select>
