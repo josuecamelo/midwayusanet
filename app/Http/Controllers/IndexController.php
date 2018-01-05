@@ -19,12 +19,26 @@ class IndexController extends Controller
 		$this->typeModel = $typeModel;
 	}
 	
+//	public function index()
+//	{
+////		$treinoDoDia = $this->trainingModel->treinoDoDia();
+////		$outrosTreinos = $this->trainingModel->skip(1)->take(3)->get();
+//		$goals = $this->goalModel->tudo();
+//
+//		return view('site.index', compact('goals'));
+//	}
+	
 	public function index()
+	{
+		return view('maintenance');
+	}
+	
+	public function home()
 	{
 //		$treinoDoDia = $this->trainingModel->treinoDoDia();
 //		$outrosTreinos = $this->trainingModel->skip(1)->take(3)->get();
-		$goals = $this->goalModel->tudo();
-
-		return view('site.index', compact('goals'));
+//		$goals = $this->goalModel->tudo();
+		
+		return view('site.index');
 	}
 }

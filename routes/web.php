@@ -164,7 +164,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'adminCheck']], func
 		$router->post('{id}/update', ['as' => 'atualizar', 'uses' => 'StoreAdminController@update']);
 	});
 
-
     $router->group(['prefix' => 'blog/posts', 'as' => 'posts.'], function () use ($router)
     {
         $router->get('/news', ['as' => 'news', 'uses' => 'BlogPostAdminController@index']);
@@ -177,6 +176,16 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'adminCheck']], func
     Route::resource('blog/categories', 'BlogCategoryAdminController', ['except' => ['show','destroy']]);
     Route::resource('blog/posts', 'BlogPostAdminController', ['only' => ['store','edit','update']]);
 
+	
+	$router->group(['prefix' => 'menus', 'as' => 'menus.'], function () use ($router)
+	{
+		$router->get('/{menu_id?}', ['as' => 'listar', 'uses' => 'MenuAdminController@index']);
+		$router->post('store', ['as' => 'gravar', 'uses' => 'MenuAdminController@store']);
+		/*$router->get('create', ['as' => 'criar', 'uses' => 'MenuAdminController@create']);
+		$router->get('{id}/destroy', ['as' => 'remover', 'uses' => 'MenuAdminController@destroy']);
+		$router->get('{id}/edit', ['as' => 'editar', 'uses' => 'MenuAdminController@edit']);
+		$router->post('{id}/update', ['as' => 'atualizar', 'uses' => 'MenuAdminController@update']);*/
+	});
 });
 
 Route::group(['prefix' => 'atualizar-rotas'], function () use ($router)

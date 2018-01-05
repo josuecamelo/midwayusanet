@@ -85,6 +85,9 @@
 						@endcan
 					</ul>
 				</li>
+				<li>
+					<a href="{{ route('menus.listar') }}" class="dropdown-toggle" role="button"><i class="fa fa-th" aria-hidden="true"></i>Menu</a>
+				</li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li class="dropdown">
