@@ -60,47 +60,133 @@
 	<form>
 
 		<div class="container-fluid">
-			<div class="col-md-4" id="popular-categories">
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						<h3 class="panel-title">Popular Categories</h3>
-					</div>
-					<div class="panel-body">
-						<div class="row">
-							<div class="col-md-5">
-								<button type="button" class="btn btn-rounded btn btn-icon btn-default bt-action-right btn-add-categories" data-toggle="tooltip" data-placement="top" title="Adicionar item">
-									<i class="fa fa-angle-double-right" aria-hidden="true"></i>
-								</button>
-								<div class="panel panel-default">
-									<div class="panel-heading">All Products</div>
-									<select name="selectfrom" class="select-from" multiple size="5">
-										<option value="1">Item 1</option>
-										<option value="2">Item 2</option>
-										<option value="3">Item 3</option>
-										<option value="4">Item 4</option>
-									</select>
+			<div class="row">
+				<div class="col-md-4" id="popular-categories">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">Popular Categories</h3>
+						</div>
+						<div class="panel-body">
+							<div class="row">
+								<div class="col-md-5">
+									<button type="button" class="btn btn-rounded btn btn-icon btn-default bt-action-right btn-add-categories" data-toggle="tooltip" data-placement="top" title="Adicionar item">
+										<i class="fa fa-angle-double-right" aria-hidden="true"></i>
+									</button>
+									<div class="panel panel-default">
+										<div class="panel-heading">All Products</div>
+										<select name="selectfrom" class="select-from" multiple size="5">
+											<option value="1">Item 1</option>
+											<option value="2">Item 2</option>
+											<option value="3">Item 3</option>
+											<option value="4">Item 4</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-md-5 col-md-offset-2">
+									<button type="button" class="btn btn-rounded btn btn-icon btn-default bt-action-left btn-remove-categories" data-toggle="tooltip" data-placement="top" title="Remover item">
+										<i class="fa fa-angle-double-left" aria-hidden="true"></i>
+									</button>
+									<div class="panel panel-default">
+										<div class="panel-heading">Selected Products</div>
+										<select name="selectto" class="select-to" multiple size="5">
+											<option value="5">Item 5</option>
+											<option value="6">Item 6</option>
+											<option value="7">Item 7</option>
+										</select>
+									</div>
+									<div class="text-center">
+										<div class="btn-group">
+											<button type="button" class="btn btn-sm btn-default btn-up-categories" data-toggle="tooltip" data-placement="top" title="Mover item para cima">
+												<i class="fa fa-angle-double-up" aria-hidden="true"></i>
+											</button>
+											<button type="button" class="btn btn-sm btn-default btn-down-categories" data-toggle="tooltip" data-placement="top" title="Mover item para baixo">
+												<i class="fa fa-angle-double-down" aria-hidden="true"></i>
+											</button>
+										</div>
+									</div>
 								</div>
 							</div>
-							<div class="col-md-5 col-md-offset-2">
-								<button type="button" class="btn btn-rounded btn btn-icon btn-default bt-action-left btn-remove-categories" data-toggle="tooltip" data-placement="top" title="Remover item">
-									<i class="fa fa-angle-double-left" aria-hidden="true"></i>
-								</button>
-								<div class="panel panel-default">
-									<div class="panel-heading">Selected Products</div>
-									<select name="selectto" class="select-to" multiple size="5">
-										<option value="5">Item 5</option>
-										<option value="6">Item 6</option>
-										<option value="7">Item 7</option>
-									</select>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4" id="popular-products">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">Popular Products</h3>
+						</div>
+						<div class="panel-body">
+							<div class="row">
+								<div class="col-md-5">
+									<button type="button" class="btn btn-rounded btn btn-icon btn-default bt-action-right btn-add-products" data-toggle="tooltip" data-placement="top" title="Adicionar item">
+										<i class="fa fa-angle-double-right" aria-hidden="true"></i>
+									</button>
+									<div class="panel panel-default">
+										<div class="panel-heading">All Products</div>
+										<select name="selectfrom" class="select-from" multiple size="5">
+											<option value="1">Item 1</option>
+											<option value="2">Item 2</option>
+											<option value="3">Item 3</option>
+											<option value="4">Item 4</option>
+										</select>
+									</div>
 								</div>
-								<div class="text-center">
-									<div class="btn-group">
-										<button type="button" class="btn btn-sm btn-default btn-up-categories" data-toggle="tooltip" data-placement="top" title="Mover item para cima">
-											<i class="fa fa-angle-double-up" aria-hidden="true"></i>
-										</button>
-										<button type="button" class="btn btn-sm btn-default btn-down-categories" data-toggle="tooltip" data-placement="top" title="Mover item para baixo">
-											<i class="fa fa-angle-double-down" aria-hidden="true"></i>
-										</button>
+								<div class="col-md-5 col-md-offset-2">
+									<button type="button" class="btn btn-rounded btn btn-icon btn-default bt-action-left btn-remove-products" data-toggle="tooltip" data-placement="top" title="Remover item">
+										<i class="fa fa-angle-double-left" aria-hidden="true"></i>
+									</button>
+									<div class="panel panel-default">
+										<div class="panel-heading">Selected Products</div>
+										<select name="selectto" class="select-to" multiple size="5">
+											<option value="5">Item 5</option>
+											<option value="6">Item 6</option>
+											<option value="7">Item 7</option>
+										</select>
+									</div>
+									<div class="text-center">
+										<div class="btn-group">
+											<button type="button" class="btn btn-sm btn-default btn-up-products" data-toggle="tooltip" data-placement="top" title="Mover item para cima">
+												<i class="fa fa-angle-double-up" aria-hidden="true"></i>
+											</button>
+											<button type="button" class="btn btn-sm btn-default btn-down-products" data-toggle="tooltip" data-placement="top" title="Mover item para baixo">
+												<i class="fa fa-angle-double-down" aria-hidden="true"></i>
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4" id="featured">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">Featured</h3>
+						</div>
+						<div class="panel-body">
+							<div class="row">
+								<div class="col-md-5">
+									<button type="button" class="btn btn-rounded btn btn-icon btn-default bt-action-right btn-add-product" data-toggle="tooltip" data-placement="top" title="Adicionar item">
+										<i class="fa fa-angle-double-right" aria-hidden="true"></i>
+									</button>
+									<div class="panel panel-default">
+										<div class="panel-heading">All Products</div>
+										<select name="selectfrom" class="select-from" multiple size="5">
+											<option value="1">Item 1</option>
+											<option value="2">Item 2</option>
+											<option value="3">Item 3</option>
+											<option value="4">Item 4</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-md-5 col-md-offset-2">
+									<button type="button" class="btn btn-rounded btn btn-icon btn-default bt-action-left btn-remove-product" data-toggle="tooltip" data-placement="top" title="Remover item">
+										<i class="fa fa-angle-double-left" aria-hidden="true"></i>
+									</button>
+									<div class="panel panel-default">
+										<div class="panel-heading">Selected Products</div>
+										<select name="selectto" class="select-to" multiple size="5">
+											<option value="5">Item 5</option>
+										</select>
 									</div>
 								</div>
 							</div>
@@ -108,88 +194,9 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-md-4" id="popular-products">
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						<h3 class="panel-title">Popular Products</h3>
-					</div>
-					<div class="panel-body">
-						<div class="row">
-							<div class="col-md-5">
-								<button type="button" class="btn btn-rounded btn btn-icon btn-default bt-action-right btn-add-products" data-toggle="tooltip" data-placement="top" title="Adicionar item">
-									<i class="fa fa-angle-double-right" aria-hidden="true"></i>
-								</button>
-								<div class="panel panel-default">
-									<div class="panel-heading">All Products</div>
-									<select name="selectfrom" class="select-from" multiple size="5">
-										<option value="1">Item 1</option>
-										<option value="2">Item 2</option>
-										<option value="3">Item 3</option>
-										<option value="4">Item 4</option>
-									</select>
-								</div>
-							</div>
-							<div class="col-md-5 col-md-offset-2">
-								<button type="button" class="btn btn-rounded btn btn-icon btn-default bt-action-left btn-remove-products" data-toggle="tooltip" data-placement="top" title="Remover item">
-									<i class="fa fa-angle-double-left" aria-hidden="true"></i>
-								</button>
-								<div class="panel panel-default">
-									<div class="panel-heading">Selected Products</div>
-									<select name="selectto" class="select-to" multiple size="5">
-										<option value="5">Item 5</option>
-										<option value="6">Item 6</option>
-										<option value="7">Item 7</option>
-									</select>
-								</div>
-								<div class="text-center">
-									<div class="btn-group">
-										<button type="button" class="btn btn-sm btn-default btn-up-products" data-toggle="tooltip" data-placement="top" title="Mover item para cima">
-											<i class="fa fa-angle-double-up" aria-hidden="true"></i>
-										</button>
-										<button type="button" class="btn btn-sm btn-default btn-down-products" data-toggle="tooltip" data-placement="top" title="Mover item para baixo">
-											<i class="fa fa-angle-double-down" aria-hidden="true"></i>
-										</button>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4" id="featured">
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						<h3 class="panel-title">Featured</h3>
-					</div>
-					<div class="panel-body">
-						<div class="row">
-							<div class="col-md-5">
-								<button type="button" class="btn btn-rounded btn btn-icon btn-default bt-action-right btn-add-product" data-toggle="tooltip" data-placement="top" title="Adicionar item">
-									<i class="fa fa-angle-double-right" aria-hidden="true"></i>
-								</button>
-								<div class="panel panel-default">
-									<div class="panel-heading">All Products</div>
-									<select name="selectfrom" class="select-from" multiple size="5">
-										<option value="1">Item 1</option>
-										<option value="2">Item 2</option>
-										<option value="3">Item 3</option>
-										<option value="4">Item 4</option>
-									</select>
-								</div>
-							</div>
-							<div class="col-md-5 col-md-offset-2">
-								<button type="button" class="btn btn-rounded btn btn-icon btn-default bt-action-left btn-remove-product" data-toggle="tooltip" data-placement="top" title="Remover item">
-									<i class="fa fa-angle-double-left" aria-hidden="true"></i>
-								</button>
-								<div class="panel panel-default">
-									<div class="panel-heading">Selected Products</div>
-									<select name="selectto" class="select-to" multiple size="5">
-										<option value="5">Item 5</option>
-									</select>
-								</div>
-							</div>
-						</div>
-					</div>
+			<div class="row">
+				<div class="col-md-2 col-md-offset-5">
+					<button type="submit" class="btn btn-success btn-block"><i class="fa fa-check" aria-hidden="true"></i> Salvar</button>
 				</div>
 			</div>
 		</div>
