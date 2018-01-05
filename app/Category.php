@@ -58,4 +58,15 @@ class Category extends Model
             ";
 	    return DB::select($sql);
     }
+
+    public function listarTodos()
+    {
+        return $this
+            ->select(
+                'categories.id',
+                'categories.name'
+            )
+            ->orderBy('name', 'ASC')
+            ->pluck('name', 'id')->all();
+    }
 }

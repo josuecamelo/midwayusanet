@@ -13,7 +13,7 @@ class CreateMenuCategoryTable extends Migration
      */
     public function up()
     {
-        /*Schema::create('menu_category', function (Blueprint $table) {
+        Schema::create('menu_category', function (Blueprint $table) {
             $table->increments('id');
 
             $table->integer('menu_id')->unsigned();
@@ -22,7 +22,7 @@ class CreateMenuCategoryTable extends Migration
             $table->integer('category_id')->unsigned();
             $table->foreign('category_id')->references('id')->on('categories');
             $table->timestamps();
-        });*/
+        });
     }
 
     /**
@@ -32,6 +32,6 @@ class CreateMenuCategoryTable extends Migration
      */
     public function down()
     {
-        //Schema::dropIfExists('menu_category');
+        Schema::dropIfExists('menu_category');
     }
 }
