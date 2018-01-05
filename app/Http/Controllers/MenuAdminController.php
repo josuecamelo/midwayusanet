@@ -44,6 +44,9 @@ class MenuAdminController extends Controller
 
             $products[] = $this->productModel->listar($relatedProductsList);
             $categories[] = $this->categoryModel->listar($relatedCategoriesList);
+
+            $products[] = $this->productModel->listarTodos([$menu->featured_product_id]);
+            $products[] = $this->productModel->listar([$menu->featured_product_id]);
         }
 
         return view('admin.menu.index', compact('products', 'categories'));

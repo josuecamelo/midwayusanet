@@ -152,12 +152,7 @@
 									</button>
 									<div class="panel panel-default">
 										<div class="panel-heading">All Products</div>
-										<select name="selectfrom" class="select-from" multiple size="5">
-											<option value="1">Item 1</option>
-											<option value="2">Item 2</option>
-											<option value="3">Item 3</option>
-											<option value="4">Item 4</option>
-										</select>
+										{!! Form::select('products_list', $products[2], null,['class'=>'select-from', 'multiple']) !!}
 									</div>
 								</div>
 								<div class="col-md-5 col-md-offset-2">
@@ -166,9 +161,7 @@
 									</button>
 									<div class="panel panel-default">
 										<div class="panel-heading">Selected Products</div>
-										<select name="selectto" class="select-to" multiple size="5">
-											<option value="5">Item 5</option>
-										</select>
+										{!! Form::select('featured_product_id', $products[3], null,['class'=>'select-to', 'multiple']) !!}
 									</div>
 								</div>
 							</div>
