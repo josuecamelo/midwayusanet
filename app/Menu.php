@@ -47,4 +47,14 @@ class Menu extends Model
 				->pluck('name', 'id')->all();
 		}
 	}
+
+    public function relatedCategories()
+    {
+        return $this->belongsToMany(Category::class, 'menu_category', 'menu_id');
+    }
+
+    public function relatedProducts()
+    {
+        return $this->belongsToMany(Product::class, 'menu_product', 'menu_id');
+    }
 }

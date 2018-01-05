@@ -22,14 +22,30 @@ class MenuAdminController extends Controller
 
     public function index($menu_id = null)
 	{
-	    $menu = $this->menuModel->find($menu_id);
+	    if($menu_id != null){
+            $menu = $this->menuModel->find($menu_id);
 
-	    $products[] = $this->productModel->listarTodos();
-	    $categories[] = $this->categoryModel->listarTodos();
 
-        $products[] = $this->productModel->listarTodos();
-        $categories[] = $this->categoryModel->listarTodos();
+            $relatedCategories =$menu->relatedCategories()->get();
+            $relatedProducts = $menu->relatedProducts()->get();
 
-		return view('admin.menu.index', compact('products', 'categories'));
+            foreach ($relatedCategories as $key => $relatedCategory)
+            {
+                $relatedCategoriesList[] = $relatedCategory->id;
+            }
+
+            foreach ($relatedProducts as $key => $relatedProduct)
+            {
+                $relatedProductsList[] = $relatedProduct->id;
+            }
+
+            $products[] = $this->productModel->listarTodos($relatedProductsList);
+            $categories[] = $this->categoryModel->listarTodos($relatedCategoriesList);
+
+            $products[] = $this->productModel->listar($relatedProductsList);
+            $categories[] = $this->categoryModel->listar($relatedCategoriesList);
+        }
+
+        return view('admin.menu.index', compact('products', 'categories'));
 	}
 }
