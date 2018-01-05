@@ -73,9 +73,13 @@
 										<i class="fa fa-angle-double-right" aria-hidden="true"></i>
 									</button>
 									<div class="panel panel-default">
-										<div class="panel-heading">All Categories</div>
-										{{--{!! Form::select('categories_list[]', $products, empty($relatedProductsList) ? null : $relatedProductsList,['class'=>'form-control sabores-relacionados', 'multiple']) !!}--}}
-										{!! Form::select('categories_list[]', $categories, null,['class'=>'select-from', 'multiple', 'size' => 5]) !!}
+										<div class="panel-heading">All Products</div>
+										<select name="selectfrom" class="select-from" multiple size="5">
+											<option value="1">Item 1</option>
+											<option value="2">Item 2</option>
+											<option value="3">Item 3</option>
+											<option value="4">Item 4</option>
+										</select>
 									</div>
 								</div>
 								<div class="col-md-5 col-md-offset-2">
@@ -83,8 +87,8 @@
 										<i class="fa fa-angle-double-left" aria-hidden="true"></i>
 									</button>
 									<div class="panel panel-default">
-										<div class="panel-heading">Selected Categories</div>
-										<select name="selected_category" class="select-to" multiple size="5">
+										<div class="panel-heading">Selected Products</div>
+										<select name="selectto" class="select-to" multiple size="5">
 											<option value="5">Item 5</option>
 											<option value="6">Item 6</option>
 											<option value="7">Item 7</option>
@@ -118,7 +122,12 @@
 									</button>
 									<div class="panel panel-default">
 										<div class="panel-heading">All Products</div>
-										{!! Form::select('products_list[]', $products, null,['class'=>'select-from', 'multiple', 'size' => 5]) !!}
+										<select name="selectfrom" class="select-from" multiple size="5">
+											<option value="1">Item 1</option>
+											<option value="2">Item 2</option>
+											<option value="3">Item 3</option>
+											<option value="4">Item 4</option>
+										</select>
 									</div>
 								</div>
 								<div class="col-md-5 col-md-offset-2">
@@ -161,7 +170,12 @@
 									</button>
 									<div class="panel panel-default">
 										<div class="panel-heading">All Products</div>
-										{!! Form::select('featured_products_list[]', $products, null,['class'=>'select-from', 'multiple', 'size' => 5]) !!}
+										<select name="selectfrom" class="select-from" multiple size="5">
+											<option value="1">Item 1</option>
+											<option value="2">Item 2</option>
+											<option value="3">Item 3</option>
+											<option value="4">Item 4</option>
+										</select>
 									</div>
 								</div>
 								<div class="col-md-5 col-md-offset-2">
