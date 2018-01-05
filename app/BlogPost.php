@@ -25,6 +25,11 @@ class BlogPost extends Model
         return $this->belongsTo(BlogCategory::class,'blog_category_id');
     }
 
+    public function getShowImageAttribute()
+    {
+        return 'uploads/blog/destaque/'.$this->image;
+    }
+
     public function setTitleAttribute($value)
     {
         $this->attributes['title'] = $value;

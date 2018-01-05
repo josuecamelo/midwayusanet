@@ -32,7 +32,7 @@
 		</div>
 		<div class="col-sm-4">
 			@if(isset($post->image))
-				<img id="thumb" class="img-fluid" src="{{asset($post->image)}}" />
+				<img id="thumb" class="img-fluid" src="{{asset($post->show_image)}}" />
 			@else
 				<img id="thumb" class="img-fluid" src="{{asset('img/no-image.jpg')}}" />
 			@endif

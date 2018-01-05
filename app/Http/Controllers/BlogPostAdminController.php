@@ -5,6 +5,7 @@ use App\BlogCategory;
 use App\BlogPost;
 use Laracasts\Flash\Flash;
 use Route;
+use Illuminate\Support\Facades\File;
 
 class BlogPostAdminController extends Controller
 {
@@ -44,7 +45,7 @@ class BlogPostAdminController extends Controller
         $save = $this->model->create(request()->all());
 
         if(request()->file() && $save){
-            $path = 'uploads/blog/';
+            $path = 'uploads/blog/destaque';
             $d['image'] = $this->doUpload(request()->file('file'),str_slug($save->title),$path);
             $save->update($d);
         }
@@ -62,14 +63,21 @@ class BlogPostAdminController extends Controller
 
     public function edit($id)
     {
-        $category = $this->model->find($id);
-        $types = $this->model->types();
-        return view('admin.blog.posts.edit', compact('category','types'));
+        $post = $this->model->find($id);
+        $t = $post->category->type;
+        $categories = BlogCategory::where('type',$t)->pluck('name','id')->all();
+        return view('admin.blog.posts.edit', compact('post','t','categories'));
     }
 
-    public function update(BlogPost $category)
+    public function update(BlogPost $post)
     {
-        $save = $category->update(request()->all());
+        $save = $post->update(request()->all());
+
+        if(request()->file() && $save){
+            $path = 'uploads/blog/destaque';
+            $d['image'] = $this->doUpload(request()->file('file'),str_slug($post->title),$path);
+            $post->update($d);
+        }
 
         if($save){
             Flash::success('Item alterado com sucesso.');
@@ -77,7 +85,8 @@ class BlogPostAdminController extends Controller
             Flash::error('Não foi possível alterar este item. Tente novamente.');
         }
 
-        return redirect()->route('posts.index');
+        $r = $post->category->type == 1 ?'posts.news':'posts.science';
+        return redirect()->route($r);
     }
 
     public function destroy(BlogPost $category)

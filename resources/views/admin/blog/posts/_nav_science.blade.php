@@ -14,7 +14,7 @@
 			</div>
 			<div class="collapse navbar-collapse" id="menu-page">
 				<ul class="nav navbar-nav">
-					<li{{ (Route::is('posts.science') ? ' class=active' : '') }}><a href="{{ route('posts.news') }}"><i class="fa fa-file" aria-hidden="true"></i> Todas as Ciências</a></li>
+					<li{{ (Route::is('posts.science') ? ' class=active' : '') }}><a href="{{ route('posts.science') }}"><i class="fa fa-file" aria-hidden="true"></i> Todas as Ciências</a></li>
 					<li{{ (Route::is('posts.create') ? ' class=active' : '') }}><a href="{{ route('posts.create',$t) }}" ><i class="fa fa-file-o" aria-hidden="true"></i> Nova Ciência</a></li>
 					@if(Route::is('posts.edit'))
 						<li class="active"><a href="#" ><i class="fa fa-pencil" aria-hidden="true"></i> Editar Ciência</a></li>

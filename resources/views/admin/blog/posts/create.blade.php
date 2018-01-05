@@ -1,5 +1,7 @@
 @extends('admin.main')
-
+@section('js')
+    @include('admin.blog.posts._tinymce')
+@endsection
 @section('main')
     @if($t == 1)
         @include('admin.blog.posts._nav_news')
@@ -7,10 +9,8 @@
         @include('admin.blog.posts._nav_science')
     @endif
 
-	{!! Form::open(['route'=>'posts.store']) !!}
-
+	{!! Form::open(['route'=>'posts.store','method'=> 'post','enctype' => 'multipart/form-data']) !!}
 	@include('admin.blog.posts._form')
-
 	{!! Form::close() !!}
 
 @endsection
