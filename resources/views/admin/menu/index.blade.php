@@ -48,16 +48,16 @@
 				</div>
 				<div class="collapse navbar-collapse" id="menu-page">
 					<ul class="nav navbar-nav">
-						<li><a href="#"><i class="fa fa-venus" aria-hidden="true"></i> Women's Products</a></li>
-						<li><a href="#"><i class="fa fa-mars" aria-hidden="true"></i> Men's Products</a></li>
-						<li><a href="#"><i class="fa fa-cubes" aria-hidden="true"></i> Shop All Products</a></li>
+						<li><a href="{{ route('menus.listar', 1)  }}"><i class="fa fa-venus" aria-hidden="true"></i> Women's Products</a></li>
+						<li><a href="{{ route('menus.listar', 2)  }}"><i class="fa fa-mars" aria-hidden="true"></i> Men's Products</a></li>
+						<li><a href="{{ route('menus.listar', 3)  }}"><i class="fa fa-cubes" aria-hidden="true"></i> Shop All Products</a></li>
 					</ul>
 				</div>
 			</div>
 		</nav>
 	</div>
 
-	<form>
+	{!! Form::open(['route'=> ['menus.gravar']]) !!}
 
 		<div class="container-fluid">
 			<div class="row">
@@ -176,7 +176,7 @@
 			</div>
 		</div>
 
-	</form>
+	{!! Form::close() !!}
 
 @endsection
 
