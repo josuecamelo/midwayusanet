@@ -68,7 +68,7 @@
 					<div class="panel-body">
 						<div class="row">
 							<div class="col-md-5">
-								<button type="button" class="btn btn-rounded btn btn-icon btn-default bt-action-right btn-add" data-toggle="tooltip" data-placement="top" title="Adicionar item">
+								<button type="button" class="btn btn-rounded btn btn-icon btn-default bt-action-right btn-add-categories" data-toggle="tooltip" data-placement="top" title="Adicionar item">
 									<i class="fa fa-angle-double-right" aria-hidden="true"></i>
 								</button>
 								<div class="panel panel-default">
@@ -82,7 +82,7 @@
 								</div>
 							</div>
 							<div class="col-md-5 col-md-offset-2">
-								<button type="button" class="btn btn-rounded btn btn-icon btn-default bt-action-left btn-remove" data-toggle="tooltip" data-placement="top" title="Remover item">
+								<button type="button" class="btn btn-rounded btn btn-icon btn-default bt-action-left btn-remove-categories" data-toggle="tooltip" data-placement="top" title="Remover item">
 									<i class="fa fa-angle-double-left" aria-hidden="true"></i>
 								</button>
 								<div class="panel panel-default">
@@ -95,10 +95,10 @@
 								</div>
 								<div class="text-center">
 									<div class="btn-group">
-										<button type="button" class="btn btn-sm btn-default btn-up" data-toggle="tooltip" data-placement="top" title="Mover item para cima">
+										<button type="button" class="btn btn-sm btn-default btn-up-categories" data-toggle="tooltip" data-placement="top" title="Mover item para cima">
 											<i class="fa fa-angle-double-up" aria-hidden="true"></i>
 										</button>
-										<button type="button" class="btn btn-sm btn-default btn-down" data-toggle="tooltip" data-placement="top" title="Mover item para baixo">
+										<button type="button" class="btn btn-sm btn-default btn-down-categories" data-toggle="tooltip" data-placement="top" title="Mover item para baixo">
 											<i class="fa fa-angle-double-down" aria-hidden="true"></i>
 										</button>
 									</div>
@@ -116,7 +116,7 @@
 					<div class="panel-body">
 						<div class="row">
 							<div class="col-md-5">
-								<button type="button" class="btn btn-rounded btn btn-icon btn-default bt-action-right btn-add" data-toggle="tooltip" data-placement="top" title="Adicionar item">
+								<button type="button" class="btn btn-rounded btn btn-icon btn-default bt-action-right btn-add-products" data-toggle="tooltip" data-placement="top" title="Adicionar item">
 									<i class="fa fa-angle-double-right" aria-hidden="true"></i>
 								</button>
 								<div class="panel panel-default">
@@ -130,7 +130,7 @@
 								</div>
 							</div>
 							<div class="col-md-5 col-md-offset-2">
-								<button type="button" class="btn btn-rounded btn btn-icon btn-default bt-action-left btn-remove" data-toggle="tooltip" data-placement="top" title="Remover item">
+								<button type="button" class="btn btn-rounded btn btn-icon btn-default bt-action-left btn-remove-products" data-toggle="tooltip" data-placement="top" title="Remover item">
 									<i class="fa fa-angle-double-left" aria-hidden="true"></i>
 								</button>
 								<div class="panel panel-default">
@@ -143,10 +143,10 @@
 								</div>
 								<div class="text-center">
 									<div class="btn-group">
-										<button type="button" class="btn btn-sm btn-default btn-up" data-toggle="tooltip" data-placement="top" title="Mover item para cima">
+										<button type="button" class="btn btn-sm btn-default btn-up-products" data-toggle="tooltip" data-placement="top" title="Mover item para cima">
 											<i class="fa fa-angle-double-up" aria-hidden="true"></i>
 										</button>
-										<button type="button" class="btn btn-sm btn-default btn-down" data-toggle="tooltip" data-placement="top" title="Mover item para baixo">
+										<button type="button" class="btn btn-sm btn-default btn-down-products" data-toggle="tooltip" data-placement="top" title="Mover item para baixo">
 											<i class="fa fa-angle-double-down" aria-hidden="true"></i>
 										</button>
 									</div>
@@ -164,7 +164,7 @@
 					<div class="panel-body">
 						<div class="row">
 							<div class="col-md-5">
-								<button type="button" class="btn btn-rounded btn btn-icon btn-default bt-action-right btn-add" data-toggle="tooltip" data-placement="top" title="Adicionar item">
+								<button type="button" class="btn btn-rounded btn btn-icon btn-default bt-action-right btn-add-product" data-toggle="tooltip" data-placement="top" title="Adicionar item">
 									<i class="fa fa-angle-double-right" aria-hidden="true"></i>
 								</button>
 								<div class="panel panel-default">
@@ -178,26 +178,14 @@
 								</div>
 							</div>
 							<div class="col-md-5 col-md-offset-2">
-								<button type="button" class="btn btn-rounded btn btn-icon btn-default bt-action-left btn-remove" data-toggle="tooltip" data-placement="top" title="Remover item">
+								<button type="button" class="btn btn-rounded btn btn-icon btn-default bt-action-left btn-remove-product" data-toggle="tooltip" data-placement="top" title="Remover item">
 									<i class="fa fa-angle-double-left" aria-hidden="true"></i>
 								</button>
 								<div class="panel panel-default">
 									<div class="panel-heading">Selected Products</div>
 									<select name="selectto" class="select-to" multiple size="5">
 										<option value="5">Item 5</option>
-										<option value="6">Item 6</option>
-										<option value="7">Item 7</option>
 									</select>
-								</div>
-								<div class="text-center">
-									<div class="btn-group">
-										<button type="button" class="btn btn-sm btn-default btn-up" data-toggle="tooltip" data-placement="top" title="Mover item para cima">
-											<i class="fa fa-angle-double-up" aria-hidden="true"></i>
-										</button>
-										<button type="button" class="btn btn-sm btn-default btn-down" data-toggle="tooltip" data-placement="top" title="Mover item para baixo">
-											<i class="fa fa-angle-double-down" aria-hidden="true"></i>
-										</button>
-									</div>
 								</div>
 							</div>
 						</div>
@@ -219,39 +207,119 @@
 				container: 'body'
 			});
 
-			$('.btn-add').click(function () {
-				$('.select-from option:selected').each(function () {
-					$('.select-to').append("<option value='" + $(this).val() + "'>" + $(this).text() + "</option>");
-					$(this).remove();
-				});
+
+			/* Add Event Listener: */
+
+
+			// Categories:
+
+			$('.btn-add-categories').on('click', function () {
+				addItens($(this), 5);
 			});
-			$('.btn-remove').click(function () {
-				$('.select-to option:selected').each(function () {
-					$('.select-from').append("<option value='" + $(this).val() + "'>" + $(this).text() + "</option>");
-					$(this).remove();
-				});
+			$('.btn-remove-categories').on('click', function () {
+				removeItens($(this));
+			});
+			$('.btn-up-categories').on('click', function () {
+				moveUp($(this));
+			});
+			$('.btn-down-categories').on('click', function () {
+				moveDown($(this));
 			});
 
-			$('.btn-up').on('click', function () {
-				$('.select-to option:selected').each(function () {
-					var newPos = $('.select-to option').index(this) - 1;
+
+			// Products:
+
+			$('.btn-add-products').on('click', function () {
+				addItens($(this), 5);
+			});
+			$('.btn-remove-products').on('click', function () {
+				removeItens($(this));
+			});
+			$('.btn-up-products').on('click', function () {
+				moveUp($(this));
+			});
+			$('.btn-down-products').on('click', function () {
+				moveDown($(this));
+			});
+
+
+			// Product:
+
+			$('.btn-add-product').on('click', function () {
+				addItens($(this), 1);
+			});
+			$('.btn-remove-product').on('click', function () {
+				removeItens($(this));
+			});
+
+
+			/* Add Itens: */
+
+			function addItens(i, n) {
+
+				let selectTo = i.parent().siblings('div').find('select');
+				let lengthSelectTo = selectTo.find('option').length;
+				let textItem = n == 1 ? ' item' : ' itens';
+
+				if (lengthSelectTo < n) {
+
+					let item = i.siblings('div').find('select').find(':selected');
+
+					item.each(function () {
+						$(this).clone().appendTo(selectTo);
+						$(this).remove();
+					});
+				} else {
+					alert('Você pode escolher apenas ' + n + textItem + '.');
+				}
+			}
+
+
+			/* Remove itens: */
+
+			function removeItens(i) {
+
+				let item = i.siblings('div').find('select').find(':selected');
+				let selectFrom = i.parent().siblings('div').find('select');
+
+				item.clone().appendTo(selectFrom);
+				item.remove();
+			}
+
+
+			/* Move Up: */
+
+			function moveUp(i) {
+
+				let selectTo = i.parent().parent().siblings('div').find('select');
+				let select = selectTo.find(':selected');
+				let newPos = select.index() - 1;
+
+				select.each(function () {
 					if (newPos > -1) {
-						$('.select-to option').eq(newPos).before("<option value='" + $(this).val() + "' selected='selected'>" + $(this).text() + "</option>");
+						selectTo.find('option').eq(newPos).before("<option value='" + $(this).val() + "' selected='selected'>" + $(this).text() + "</option>");
 						$(this).remove();
 					}
 				});
-			});
+			}
 
-			$('.btn-down').on('click', function () {
-				var countOptions = $('.select-to option').length;
-				$('.select-to option:selected').each(function () {
-					var newPos = $('.select-to option').index(this) + 1;
-					if (newPos < countOptions) {
-						$('.select-to option').eq(newPos).after("<option value='" + $(this).val() + "' selected='selected'>" + $(this).text() + "</option>");
+
+			/* Move Down: */
+
+			function moveDown(i) {
+
+				let selectTo = i.parent().parent().siblings('div').find('select');
+				let select = selectTo.find(':selected');
+				let newPos = select.index() + 1;
+				let lengthOptions = selectTo.find('option').length;
+
+				select.each(function () {
+					if (newPos < lengthOptions) {
+						selectTo.find('option').eq(newPos).after("<option value='" + $(this).val() + "' selected='selected'>" + $(this).text() + "</option>");
 						$(this).remove();
 					}
 				});
-			});
+			}
 		});
 	</script>
 @endsection
