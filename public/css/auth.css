@@ -122,7 +122,7 @@ figure {
 
 hr {
   -webkit-box-sizing: content-box;
-          box-sizing: content-box;
+  box-sizing: content-box;
   height: 0;
 }
 
@@ -183,7 +183,7 @@ input {
 input[type="checkbox"],
 input[type="radio"] {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   padding: 0;
 }
 
@@ -195,7 +195,7 @@ input[type="number"]::-webkit-outer-spin-button {
 input[type="search"] {
   -webkit-appearance: textfield;
   -webkit-box-sizing: content-box;
-          box-sizing: content-box;
+  box-sizing: content-box;
 }
 
 input[type="search"]::-webkit-search-cancel-button,
@@ -241,7 +241,7 @@ th {
     background: transparent !important;
     color: #000 !important;
     -webkit-box-shadow: none !important;
-            box-shadow: none !important;
+    box-shadow: none !important;
     text-shadow: none !important;
   }
 
@@ -1964,7 +1964,7 @@ kbd {
   background-color: #333;
   border-radius: 3px;
   -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.25);
-          box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
 
 kbd kbd {
@@ -1972,7 +1972,7 @@ kbd kbd {
   font-size: 100%;
   font-weight: bold;
   -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
 }
 
 pre {
@@ -3970,7 +3970,7 @@ select[multiple].input-lg,
   text-align: center;
   vertical-align: middle;
   -ms-touch-action: manipulation;
-      touch-action: manipulation;
+  touch-action: manipulation;
   cursor: pointer;
   background-image: none;
   border: 1px solid transparent;
@@ -5313,7 +5313,7 @@ tbody.collapse.in {
   padding-left: 15px;
   border-top: 1px solid transparent;
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
-          box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
   -webkit-overflow-scrolling: touch;
 }
 
@@ -5336,7 +5336,7 @@ tbody.collapse.in {
     width: auto;
     border-top: 0;
     -webkit-box-shadow: none;
-            box-shadow: none;
+    box-shadow: none;
   }
 
   .navbar-collapse.collapse {
@@ -5502,7 +5502,7 @@ tbody.collapse.in {
     background-color: transparent;
     border: 0;
     -webkit-box-shadow: none;
-            box-shadow: none;
+    box-shadow: none;
   }
 
   .navbar-nav .open .dropdown-menu > li > a,
@@ -8526,7 +8526,7 @@ a:hover .caret-white {
 .alert {
   font-size: 13px;
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
-          box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 .alert .close i {
@@ -8903,7 +8903,7 @@ pre {
   background-color: #edf1f2 !important;
   background-image: none;
   -webkit-filter: none;
-          filter: none;
+  filter: none;
 }
 
 .dropdown-header {
@@ -9486,7 +9486,7 @@ body {
 
   .navbar-nav > li > a {
     -webkit-box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.1);
-            box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.1);
   }
 
   .navbar-nav > li > a .up {
@@ -9506,7 +9506,7 @@ body {
     margin-top: 0 !important;
     margin-bottom: 0 !important;
     -webkit-box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.1);
-            box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.1);
   }
 
   .navbar-form .form-group {
@@ -10233,7 +10233,7 @@ body {
 
 .btn-link.active {
   -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
   webkit-box-shadow: none;
 }
 
@@ -10853,7 +10853,7 @@ fieldset[disabled] .btn-black.active {
   border-radius: 50%;
   content: "";
   -webkit-box-shadow: 0 0 0 4px #f0f3f4;
-          box-shadow: 0 0 0 4px #f0f3f4;
+  box-shadow: 0 0 0 4px #f0f3f4;
 }
 
 .tl-wrap:hover:before {
@@ -11136,7 +11136,7 @@ fieldset[disabled] .i-checks input + i:before {
 .datepicker .btn-default {
   border-width: 0;
   -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
 }
 
 .datepicker .btn[disabled] {
@@ -11412,7 +11412,7 @@ fieldset[disabled] .i-checks input + i:before {
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0028323c', endColorstr='#1328323c', GradientType=0);
   -webkit-filter: none;
-          filter: none;
+  filter: none;
 }
 
 .bg-gd-dk {
@@ -11421,7 +11421,7 @@ fieldset[disabled] .i-checks input + i:before {
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0028323c', endColorstr='#8028323c', GradientType=0);
   -webkit-filter: none;
-          filter: none;
+  filter: none;
 }
 
 .bg-light {
@@ -12637,12 +12637,12 @@ a.text-#000000:hover {
 
 .box-shadow {
   -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(0, 0, 0, 0.05);
-          box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(0, 0, 0, 0.05);
 }
 
 .box-shadow-lg {
   -webkit-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.05);
-          box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.05);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.05);
 }
 
 .text-shadow {

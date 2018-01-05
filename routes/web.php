@@ -163,6 +163,19 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'adminCheck']], func
 		$router->get('{id}/edit', ['as' => 'editar', 'uses' => 'StoreAdminController@edit']);
 		$router->post('{id}/update', ['as' => 'atualizar', 'uses' => 'StoreAdminController@update']);
 	});
+
+    $router->group(['prefix' => 'blog/posts', 'as' => 'posts.'], function () use ($router)
+    {
+        $router->get('/news', ['as' => 'news', 'uses' => 'BlogPostAdminController@index']);
+        $router->get('/science', ['as' => 'science', 'uses' => 'BlogPostAdminController@index']);
+        $router->get('{t}/create', ['as' => 'create', 'uses' => 'BlogPostAdminController@create']);
+        $router->get('{post}/destroy', ['as' => 'destroy', 'uses' => 'BlogPostAdminController@destroy']);
+    });
+
+    $router->get('blog/categories/{category}/destroy', ['as' => 'categories.destroy', 'uses' => 'BlogCategoryAdminController@destroy']);
+    Route::resource('blog/categories', 'BlogCategoryAdminController', ['except' => ['show','destroy']]);
+    Route::resource('blog/posts', 'BlogPostAdminController', ['only' => ['store','edit','update']]);
+
 	
 	$router->group(['prefix' => 'menus', 'as' => 'menus.'], function () use ($router)
 	{
