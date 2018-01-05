@@ -74,7 +74,7 @@
 									</button>
 									<div class="panel panel-default">
 										<div class="panel-heading">All Products</div>
-										<select name="selectfrom" class="select-from" multiple size="5">
+										<select name="selectfrom" class="select-from" multiple size="4">
 											<option value="1">Item 1</option>
 											<option value="2">Item 2</option>
 											<option value="3">Item 3</option>
@@ -279,6 +279,10 @@
 				} else {
 					alert('Você pode escolher apenas ' + n + textItem + '.');
 				}
+
+				let selectFrom = i.siblings('div').find('select');
+				let lengthSelectFromFinal = selectFrom.find('option').length;
+				selectFrom.attr('size', lengthSelectFromFinal);
 			}
 
 
@@ -291,6 +295,9 @@
 
 				item.clone().appendTo(selectFrom);
 				item.remove();
+
+				let lengthSelectFrom = selectFrom.find('option').length;
+				selectFrom.attr('size', lengthSelectFrom);
 			}
 
 
