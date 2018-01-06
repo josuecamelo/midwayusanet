@@ -79,7 +79,7 @@ class MenuAdminController extends Controller
             ->find($id);
 
         //dd($menu);
-        //dd($inputs);
+        dd($inputs);
 
         //atualizando
         $menu->update($inputs);
