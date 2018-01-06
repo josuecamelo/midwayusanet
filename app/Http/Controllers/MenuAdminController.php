@@ -79,7 +79,20 @@ class MenuAdminController extends Controller
             ->find($id);
 
         //dd($menu);
-        dd($inputs);
+        //dd($inputs['menu_products']);
+        //dd($inputs['menu_categories']);
+
+        //Adicionando Produtos Relacionados
+        if (!empty($inputs['menu_products']))
+            $menu->relatedProducts()->sync($inputs['menu_products']);
+        else
+            $menu->relatedProducts()->sync([]);
+
+        //Adicionando Categorias relacionadas
+        if (!empty($inputs['menu_categories']))
+            $menu->relatedCategories()->sync($inputs['menu_categories']);
+        else
+            $menu->relatedCategories()->sync([]);
 
         //atualizando
         $menu->update($inputs);
