@@ -6,6 +6,7 @@ use App\Category;
 use App\Menu;
 use App\Product;
 use Illuminate\Http\Request;
+use Laracasts\Flash\Flash;
 
 class MenuAdminController extends Controller
 {
@@ -62,6 +63,34 @@ class MenuAdminController extends Controller
             $products[] = $this->productModel->listar([$menu->featured_product_id]);
         }
 
-        return view('admin.menu.index', compact('products', 'categories'));
+        return view('admin.menu.index', compact(
+            'menu',
+            'products',
+            'categories',
+            'relatedProductsList',
+            'relatedCategoriesList'
+        ));
 	}
+
+    public function update(Request $request, $id)
+    {
+        $inputs = $request->all();
+        $menu = $this->menuModel
+            ->find($id);
+
+        //dd($menu);
+        //dd($inputs);
+
+        //atualizando
+        $menu->update($inputs);
+
+        if ($menu)
+        {
+            Flash::success('Menu alterado com sucesso.');
+        }else{
+            Flash::error('Não foi possível alterar este Menu. Tente novamente.');
+        }
+
+        return redirect()->route('menus.listar', $id);
+    }
 }

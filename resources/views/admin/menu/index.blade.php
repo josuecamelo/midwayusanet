@@ -57,8 +57,7 @@
 		</nav>
 	</div>
 
-	{!! Form::open(['route'=> ['menus.gravar']]) !!}
-
+	{!! Form::model($menu, ['route'=> ['menus.atualizar', $menu->id]]) !!}
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-4" id="popular-categories">
@@ -83,7 +82,7 @@
 									</button>
 									<div class="panel panel-default">
 										<div class="panel-heading">Selected Categories</div>
-										{!! Form::select('menu_categories[]', $categories[1], null,['class'=>'select-to', 'multiple']) !!}
+										{!! Form::select('menu_categories[]', $categories[1], (!isset($relatedCategoriesList) ? null : $relatedCategoriesList),['class'=>'select-to', 'multiple']) !!}
 									</div>
 									<div class="text-center">
 										<div class="btn-group">
@@ -122,7 +121,7 @@
 									</button>
 									<div class="panel panel-default">
 										<div class="panel-heading">Selected Products</div>
-										{!! Form::select('menu_products[]', $products[1], null,['class'=>'select-to', 'multiple']) !!}
+										{!! Form::select('menu_products[]', $products[1], (!isset($relatedProductsList) ? null : $relatedProductsList),['class'=>'select-to', 'multiple']) !!}
 									</div>
 									<div class="text-center">
 										<div class="btn-group">
@@ -161,7 +160,7 @@
 									</button>
 									<div class="panel panel-default">
 										<div class="panel-heading">Selected Products</div>
-										{!! Form::select('featured_product_id', $products[3], null,['class'=>'select-to', 'multiple']) !!}
+										{!! Form::select('featured_product_id', $products[3], isset($products[3][0]) ? $products[3][0]->id : null,['class'=>'select-to', 'multiple']) !!}
 									</div>
 								</div>
 							</div>

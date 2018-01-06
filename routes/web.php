@@ -180,11 +180,11 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'adminCheck']], func
 	$router->group(['prefix' => 'menus', 'as' => 'menus.'], function () use ($router)
 	{
 		$router->get('/{menu_id?}', ['as' => 'listar', 'uses' => 'MenuAdminController@index']);
-		$router->post('store', ['as' => 'gravar', 'uses' => 'MenuAdminController@store']);
+		//$router->post('store', ['as' => 'gravar', 'uses' => 'MenuAdminController@store']);
 		/*$router->get('create', ['as' => 'criar', 'uses' => 'MenuAdminController@create']);
 		$router->get('{id}/destroy', ['as' => 'remover', 'uses' => 'MenuAdminController@destroy']);
-		$router->get('{id}/edit', ['as' => 'editar', 'uses' => 'MenuAdminController@edit']);
-		$router->post('{id}/update', ['as' => 'atualizar', 'uses' => 'MenuAdminController@update']);*/
+		$router->get('{id}/edit', ['as' => 'editar', 'uses' => 'MenuAdminController@edit']);*/
+		$router->post('{id}/update', ['as' => 'atualizar', 'uses' => 'MenuAdminController@update']);
 	});
 });
 
