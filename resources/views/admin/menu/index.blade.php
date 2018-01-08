@@ -196,6 +196,8 @@
 
 			$('.btn-add-categories').on('click', function () {
 				addItens($(this), 5);
+				//ver uma forma de ao adicionar os items seleciona-los em $('select[name="menu_categories"]
+				console.log( $('select[name="menu_categories"]').val() ) ;
 			});
 			$('.btn-remove-categories').on('click', function () {
 				removeItens($(this));

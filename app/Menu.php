@@ -26,6 +26,10 @@ class Menu extends Model
 	{
 		return $this->hasMany(Category::class);
 	}
+
+	public function featuredProduct(){
+	    return $this->belongsTo(Product::class);
+    }
 	
 	public function listar()
 	{

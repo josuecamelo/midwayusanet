@@ -78,9 +78,12 @@ class MenuAdminController extends Controller
         $menu = $this->menuModel
             ->find($id);
 
+        //dd($menu->featuredProduct()->first());
+
         //dd($menu);
         //dd($inputs['menu_products']);
         //dd($inputs['menu_categories']);
+        //dd($inputs);
 
         //Adicionando Produtos Relacionados
         if (!empty($inputs['menu_products']))
