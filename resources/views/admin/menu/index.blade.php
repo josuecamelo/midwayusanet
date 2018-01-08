@@ -58,109 +58,40 @@
 	</div>
 
 	{!! Form::model($menu, ['route'=> ['menus.atualizar', $menu->id]]) !!}
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-md-4" id="popular-categories">
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							<h3 class="panel-title">Popular Categories</h3>
-						</div>
-						<div class="panel-body">
-							<div class="row">
-								<div class="col-md-5">
-									<button type="button" class="btn btn-rounded btn btn-icon btn-default bt-action-right btn-add-categories" data-toggle="tooltip" data-placement="top" title="Adicionar item">
-										<i class="fa fa-angle-double-right" aria-hidden="true"></i>
-									</button>
-									<div class="panel panel-default">
-										<div class="panel-heading">All Categories</div>
-										{!! Form::select('categories_list', $categories[0], null,['class'=>'select-from', 'multiple']) !!}
-									</div>
-								</div>
-								<div class="col-md-5 col-md-offset-2">
-									<button type="button" class="btn btn-rounded btn btn-icon btn-default bt-action-left btn-remove-categories" data-toggle="tooltip" data-placement="top" title="Remover item">
-										<i class="fa fa-angle-double-left" aria-hidden="true"></i>
-									</button>
-									<div class="panel panel-default">
-										<div class="panel-heading">Selected Categories</div>
-										{!! Form::select('menu_categories', $categories[1], (!isset($relatedCategoriesList) ? null : $relatedCategoriesList),['class'=>'select-to', 'multiple']) !!}
-									</div>
-									<div class="text-center">
-										<div class="btn-group">
-											<button type="button" class="btn btn-sm btn-default btn-up-categories" data-toggle="tooltip" data-placement="top" title="Mover item para cima">
-												<i class="fa fa-angle-double-up" aria-hidden="true"></i>
-											</button>
-											<button type="button" class="btn btn-sm btn-default btn-down-categories" data-toggle="tooltip" data-placement="top" title="Mover item para baixo">
-												<i class="fa fa-angle-double-down" aria-hidden="true"></i>
-											</button>
-										</div>
-									</div>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-4" id="popular-categories">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">Popular Categories</h3>
+					</div>
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-md-5">
+								<button type="button" class="btn btn-rounded btn btn-icon btn-default bt-action-right btn-add-categories" data-toggle="tooltip" data-placement="top" title="Adicionar item">
+									<i class="fa fa-angle-double-right" aria-hidden="true"></i>
+								</button>
+								<div class="panel panel-default">
+									<div class="panel-heading">All Categories</div>
+									{!! Form::select('categories_list', $categories[0], null,['class'=>'select-from', 'multiple']) !!}
 								</div>
 							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4" id="popular-products">
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							<h3 class="panel-title">Popular Products</h3>
-						</div>
-						<div class="panel-body">
-							<div class="row">
-								<div class="col-md-5">
-									<button type="button" class="btn btn-rounded btn btn-icon btn-default bt-action-right btn-add-products" data-toggle="tooltip" data-placement="top" title="Adicionar item">
-										<i class="fa fa-angle-double-right" aria-hidden="true"></i>
-									</button>
-									<div class="panel panel-default">
-										<div class="panel-heading">All Products</div>
-										{!! Form::select('products_list', $products[0], null,['class'=>'select-from', 'multiple']) !!}
-									</div>
+							<div class="col-md-5 col-md-offset-2">
+								<button type="button" class="btn btn-rounded btn btn-icon btn-default bt-action-left btn-remove-categories" data-toggle="tooltip" data-placement="top" title="Remover item">
+									<i class="fa fa-angle-double-left" aria-hidden="true"></i>
+								</button>
+								<div class="panel panel-default">
+									<div class="panel-heading">Selected Categories</div>
+									{!! Form::select('menu_categories', $categories[1], (!isset($relatedCategoriesList) ? null : $relatedCategoriesList),['class'=>'select-to', 'multiple']) !!}
 								</div>
-								<div class="col-md-5 col-md-offset-2">
-									<button type="button" class="btn btn-rounded btn btn-icon btn-default bt-action-left btn-remove-products" data-toggle="tooltip" data-placement="top" title="Remover item">
-										<i class="fa fa-angle-double-left" aria-hidden="true"></i>
-									</button>
-									<div class="panel panel-default">
-										<div class="panel-heading">Selected Products</div>
-										{!! Form::select('menu_products', $products[1], (!isset($relatedProductsList) ? null : $relatedProductsList),['class'=>'select-to', 'multiple']) !!}
-									</div>
-									<div class="text-center">
-										<div class="btn-group">
-											<button type="button" class="btn btn-sm btn-default btn-up-products" data-toggle="tooltip" data-placement="top" title="Mover item para cima">
-												<i class="fa fa-angle-double-up" aria-hidden="true"></i>
-											</button>
-											<button type="button" class="btn btn-sm btn-default btn-down-products" data-toggle="tooltip" data-placement="top" title="Mover item para baixo">
-												<i class="fa fa-angle-double-down" aria-hidden="true"></i>
-											</button>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4" id="featured">
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							<h3 class="panel-title">Featured</h3>
-						</div>
-						<div class="panel-body">
-							<div class="row">
-								<div class="col-md-5">
-									<button type="button" class="btn btn-rounded btn btn-icon btn-default bt-action-right btn-add-product" data-toggle="tooltip" data-placement="top" title="Adicionar item">
-										<i class="fa fa-angle-double-right" aria-hidden="true"></i>
-									</button>
-									<div class="panel panel-default">
-										<div class="panel-heading">All Products</div>
-										{!! Form::select('products_list', $products[2], null,['class'=>'select-from', 'multiple']) !!}
-									</div>
-								</div>
-								<div class="col-md-5 col-md-offset-2">
-									<button type="button" class="btn btn-rounded btn btn-icon btn-default bt-action-left btn-remove-product" data-toggle="tooltip" data-placement="top" title="Remover item">
-										<i class="fa fa-angle-double-left" aria-hidden="true"></i>
-									</button>
-									<div class="panel panel-default">
-										<div class="panel-heading">Selected Products</div>
-										{!! Form::select('featured_product_id', $products[3], isset($products[3][0]) ? $products[3][0]->id : null,['class'=>'select-to', 'multiple']) !!}
+								<div class="text-center">
+									<div class="btn-group">
+										<button type="button" class="btn btn-sm btn-default btn-up-categories" data-toggle="tooltip" data-placement="top" title="Mover item para cima">
+											<i class="fa fa-angle-double-up" aria-hidden="true"></i>
+										</button>
+										<button type="button" class="btn btn-sm btn-default btn-down-categories" data-toggle="tooltip" data-placement="top" title="Mover item para baixo">
+											<i class="fa fa-angle-double-down" aria-hidden="true"></i>
+										</button>
 									</div>
 								</div>
 							</div>
@@ -168,12 +99,81 @@
 					</div>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-md-2 col-md-offset-5">
-					<button type="submit" class="btn btn-success btn-block"><i class="fa fa-check" aria-hidden="true"></i> Salvar</button>
+			<div class="col-md-4" id="popular-products">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">Popular Products</h3>
+					</div>
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-md-5">
+								<button type="button" class="btn btn-rounded btn btn-icon btn-default bt-action-right btn-add-products" data-toggle="tooltip" data-placement="top" title="Adicionar item">
+									<i class="fa fa-angle-double-right" aria-hidden="true"></i>
+								</button>
+								<div class="panel panel-default">
+									<div class="panel-heading">All Products</div>
+									{!! Form::select('products_list', $products[0], null,['class'=>'select-from', 'multiple']) !!}
+								</div>
+							</div>
+							<div class="col-md-5 col-md-offset-2">
+								<button type="button" class="btn btn-rounded btn btn-icon btn-default bt-action-left btn-remove-products" data-toggle="tooltip" data-placement="top" title="Remover item">
+									<i class="fa fa-angle-double-left" aria-hidden="true"></i>
+								</button>
+								<div class="panel panel-default">
+									<div class="panel-heading">Selected Products</div>
+									{!! Form::select('menu_products', $products[1], (!isset($relatedProductsList) ? null : $relatedProductsList),['class'=>'select-to', 'multiple']) !!}
+								</div>
+								<div class="text-center">
+									<div class="btn-group">
+										<button type="button" class="btn btn-sm btn-default btn-up-products" data-toggle="tooltip" data-placement="top" title="Mover item para cima">
+											<i class="fa fa-angle-double-up" aria-hidden="true"></i>
+										</button>
+										<button type="button" class="btn btn-sm btn-default btn-down-products" data-toggle="tooltip" data-placement="top" title="Mover item para baixo">
+											<i class="fa fa-angle-double-down" aria-hidden="true"></i>
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4" id="featured">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">Featured</h3>
+					</div>
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-md-5">
+								<button type="button" class="btn btn-rounded btn btn-icon btn-default bt-action-right btn-add-product" data-toggle="tooltip" data-placement="top" title="Adicionar item">
+									<i class="fa fa-angle-double-right" aria-hidden="true"></i>
+								</button>
+								<div class="panel panel-default">
+									<div class="panel-heading">All Products</div>
+									{!! Form::select('products_list', $products[2], null,['class'=>'select-from', 'multiple']) !!}
+								</div>
+							</div>
+							<div class="col-md-5 col-md-offset-2">
+								<button type="button" class="btn btn-rounded btn btn-icon btn-default bt-action-left btn-remove-product" data-toggle="tooltip" data-placement="top" title="Remover item">
+									<i class="fa fa-angle-double-left" aria-hidden="true"></i>
+								</button>
+								<div class="panel panel-default">
+									<div class="panel-heading">Selected Products</div>
+									{!! Form::select('featured_product_id', $products[3], isset($products[3][0]) ? $products[3][0]->id : null,['class'=>'select-to', 'multiple']) !!}
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
+		<div class="row">
+			<div class="col-md-2 col-md-offset-5">
+				<button type="submit" class="btn btn-success btn-block"><i class="fa fa-check" aria-hidden="true"></i> Salvar</button>
+			</div>
+		</div>
+	</div>
 
 	{!! Form::close() !!}
 
@@ -255,6 +255,10 @@
 				} else {
 					alert('Você pode escolher apenas ' + n + textItem + '.');
 				}
+
+				let allOptions = i.parent().siblings('div').find('select').find('option');
+
+				selectAll(allOptions);
 			}
 
 
@@ -267,6 +271,20 @@
 
 				item.clone().appendTo(selectFrom);
 				item.remove();
+
+				let allOptions = i.siblings('div').find('select').find('option');
+
+				selectAll(allOptions);
+			}
+
+
+			/* Select All: */
+
+			function selectAll(allOptions) {
+
+				allOptions.each(function () {
+					$(this).attr('selected', true);
+				});
 			}
 
 
@@ -286,6 +304,10 @@
 						$(this).remove();
 					}
 				});
+
+				let allOptions = i.parent().parent().siblings('div').find('select').find('option');
+
+				selectAll(allOptions);
 			}
 
 
@@ -307,6 +329,10 @@
 						$(this).remove();
 					}
 				});
+
+				let allOptions = i.parent().parent().siblings('div').find('select').find('option');
+
+				selectAll(allOptions);
 			}
 		});
 	</script>
