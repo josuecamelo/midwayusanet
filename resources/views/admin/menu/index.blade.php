@@ -73,7 +73,7 @@
 								</button>
 								<div class="panel panel-default">
 									<div class="panel-heading">All Categories</div>
-									{!! Form::select('categories_list', $categories[0], null,['class'=>'select-from', 'multiple']) !!}
+									{!! Form::select('categories_list', $categories[0], null,['class'=>'select-from', 'multiple', 'size'=> count($categories[0])]) !!}
 								</div>
 							</div>
 							<div class="col-md-5 col-md-offset-2">
@@ -82,7 +82,7 @@
 								</button>
 								<div class="panel panel-default">
 									<div class="panel-heading">Selected Categories</div>
-									{!! Form::select('menu_categories', $categories[1], (!isset($relatedCategoriesList) ? null : $relatedCategoriesList),['class'=>'select-to', 'multiple']) !!}
+									{!! Form::select('menu_categories', $categories[1], (!isset($relatedCategoriesList) ? null : $relatedCategoriesList),['class'=>'select-to', 'multiple', 'size'=>5]) !!}
 								</div>
 								<div class="text-center">
 									<div class="btn-group">
@@ -112,7 +112,7 @@
 								</button>
 								<div class="panel panel-default">
 									<div class="panel-heading">All Products</div>
-									{!! Form::select('products_list', $products[0], null,['class'=>'select-from', 'multiple']) !!}
+									{!! Form::select('products_list', $products[0], null,['class'=>'select-from', 'multiple', 'size'=> count($products[0])]) !!}
 								</div>
 							</div>
 							<div class="col-md-5 col-md-offset-2">
@@ -121,7 +121,7 @@
 								</button>
 								<div class="panel panel-default">
 									<div class="panel-heading">Selected Products</div>
-									{!! Form::select('menu_products', $products[1], (!isset($relatedProductsList) ? null : $relatedProductsList),['class'=>'select-to', 'multiple']) !!}
+									{!! Form::select('menu_products', $products[1], (!isset($relatedProductsList) ? null : $relatedProductsList),['class'=>'select-to', 'multiple', 'size'=> 5]) !!}
 								</div>
 								<div class="text-center">
 									<div class="btn-group">
@@ -151,7 +151,7 @@
 								</button>
 								<div class="panel panel-default">
 									<div class="panel-heading">All Products</div>
-									{!! Form::select('products_list', $products[2], null,['class'=>'select-from', 'multiple']) !!}
+									{!! Form::select('products_list', $products[2], null,['class'=>'select-from', 'multiple', 'size'=> count($products[2])]) !!}
 								</div>
 							</div>
 							<div class="col-md-5 col-md-offset-2">
@@ -160,7 +160,7 @@
 								</button>
 								<div class="panel panel-default">
 									<div class="panel-heading">Selected Products</div>
-									{!! Form::select('featured_product_id', $products[3], isset($products[3][0]) ? $products[3][0]->id : null,['class'=>'select-to', 'multiple']) !!}
+									{!! Form::select('featured_product_id', $products[3], isset($products[3][0]) ? $products[3][0]->id : null,['class'=>'select-to', 'multiple', 'size'=>5]) !!}
 								</div>
 							</div>
 						</div>
