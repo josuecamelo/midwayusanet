@@ -72,6 +72,28 @@
 			</div>
 		</div>
 
+		<div class="goals-female">
+			<h2>MY FITNESS GOAL IS TO</h2>
+			<p>Please select your fitness goal below</p>
+			<div class="row">
+				<div class="col-md-4">
+					<a href="#">
+						<img src="{{ asset('img/custom-plan/build-muscle-female.jpg') }}" alt="" class="img-responsive img-rounded">
+					</a>
+				</div>
+				<div class="col-md-4">
+					<a href="#">
+						<img src="{{ asset('img/custom-plan/improve-performance-female.jpg') }}" alt="" class="img-responsive img-rounded">
+					</a>
+				</div>
+				<div class="col-md-4">
+					<a href="#">
+						<img src="{{ asset('img/custom-plan/lose-weight-female.jpg') }}" alt="" class="img-responsive img-rounded">
+					</a>
+				</div>
+			</div>
+		</div>
+
 	</div>
 
 @endsection
