@@ -520,10 +520,10 @@
 		</section>
 		<aside id="products-menu">
 			<ul>
-				<li><a href="#">Protein<i class="fas fa-angle-right"></i></a></li>
-				<li><a href="#">Pre-Workout<i class="fas fa-angle-right"></i></a></li>
-				<li><a href="#">Beauty<i class="fas fa-angle-right"></i></a></li>
-				<li><a href="#">Stacks<i class="fas fa-angle-right"></i></a></li>
+				<li><a href="{{ url('/') }}">Protein<i class="fas fa-angle-right"></i></a></li>
+				<li><a href="{{ url('/') }}">Pre-Workout<i class="fas fa-angle-right"></i></a></li>
+				<li><a href="{{ url('/') }}">Beauty<i class="fas fa-angle-right"></i></a></li>
+				<li><a href="{{ url('/') }}">Stacks<i class="fas fa-angle-right"></i></a></li>
 			</ul>
 			<div>
 				<h1>LET US HELP YOU BUILD YOURSELF</h1>
