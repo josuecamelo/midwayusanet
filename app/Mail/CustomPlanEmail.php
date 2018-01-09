@@ -33,7 +33,7 @@ class CustomPlanEmail extends Mailable
 		$gender = $this->data->gender;
 		
 		return $this
-			->subject('Team Midway')
+			->subject('Midway Custom Plan')
 			->view('site.emails.custom-plan')
 			->attach('pdf/custom-plan/' . $gender . '/' . $goal . '.pdf', [
 				'mime' => 'application/pdf',
