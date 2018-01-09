@@ -492,9 +492,9 @@
 								<img src="{{ asset('uploads/products') . '/' . $mtProduct->id . '/' . $mtProduct->image }}">
 								<h4>{{ $mtProduct->name . ' ' . $mtProduct->last_name }}</h4>
 								@if(!empty($mtProduct->flavor))
-									<small><span class="cor" style="background-color: {{ $mtProduct->flavor->color }}">{{ $mtProduct->flavor->name }}</span></small>
+									<span class="cor" style="color: {{ $mtProduct->flavor->color }}">{{ $mtProduct->flavor->name }}</span>
 								@endif
-								<span>{!! $mtProduct->shopify !!}</span>
+								<div>{!! $mtProduct->shopify !!}</div>
 							</div>
 						</a>
 					@endforeach

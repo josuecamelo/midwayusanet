@@ -12642,9 +12642,12 @@ footer ul li a:hover .arrow-link {
   border: 1px solid #fff;
 }
 
+.shopify-buy-frame {
+  max-width: auto;
+}
+
 .cor {
-  border-radius: 5px;
-  padding: 3px 8px !important;
-  color: #fff !important;
+  margin: 5px 0 10px 0 !important;
+  display: block;
 }
 
