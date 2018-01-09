@@ -46,6 +46,7 @@ Route::get('/inscreverse', 'SubscribeController@index')->name('inscreverse');
 Route::post('/inscrever', 'SubscribeController@store')->name('inscrever');
 
 Route::get('/custom-plan', 'CustomPlanController@index')->name('custom-plan');
+Route::post('/custom-plan/send', 'CustomPlanController@send')->name('custom-plan-send');
 
 //testes
 Route::get('/testes/{cep}', 'TesteController@index');

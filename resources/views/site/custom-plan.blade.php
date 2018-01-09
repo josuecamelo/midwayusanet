@@ -110,7 +110,8 @@
 			<img id="img" src="" class="img-rounded" alt="">
 			<h4>Please enter your name and email</h4>
 			<p>Your customized fitness plan will be sent to the email address you enter below free of charge.<br>We here at Midway Labs USA are committed to helping you achieve your fitness goals and are here to help you every step of the way!</p>
-			<form class="form-inline" method="post" action="/">
+			<form class="form-inline" method="post" action="{{ route('custom-plan-send') }}">
+				{{ csrf_field() }}
 				<input type="hidden" name="gender" id="my_gender">
 				<input type="hidden" name="goal" id="my_goal">
 				<input type="text" name="name" class="form-control" placeholder="Full Name">
