@@ -337,6 +337,7 @@
 				width: 100%;
 				float: none;
 			}
+
 			.col-md-6:first-child div {
 				margin-bottom: 15px;
 			}
@@ -482,114 +483,21 @@
 
 	<section id="products-row">
 		<section id="products">
-			<h2>Recommended Products</h2>
+			<h2>Military Trail</h2>
 			<div>
 				<div class="slick-track" role="listbox">
-					<a href="#">
-						<div class="product">
-							<img src="{{ asset('img/best-protein.png') }}">
-							<h4>Best Protein</h4>
-							<span>$23.99</span>
-						</div>
-					</a>
-					<a href="#">
-						<div class="product">
-							<img src="{{ asset('img/best-protein.png') }}">
-							<h4>Best Protein</h4>
-							<span class="price">$23.99</span>
-						</div>
-					</a>
-					<a href="#">
-						<div class="product">
-							<img src="{{ asset('img/best-protein.png') }}">
-							<h4>Best Protein</h4>
-							<span class="price">$23.99</span>
-						</div>
-					</a>
-					<a href="#">
-						<div class="product">
-							<img src="{{ asset('img/best-protein.png') }}">
-							<h4>Best Protein</h4>
-							<span class="price">$23.99</span>
-						</div>
-					</a>
-					<a href="#">
-						<div class="product">
-							<img src="{{ asset('img/best-protein.png') }}">
-							<h4>Best Protein</h4>
-							<span class="price">$23.99</span>
-						</div>
-					</a>
-					<a href="#">
-						<div class="product">
-							<img src="{{ asset('img/best-protein.png') }}">
-							<h4>Best Protein</h4>
-							<span class="price">$23.99</span>
-						</div>
-					</a>
-					<a href="#">
-						<div class="product">
-							<img src="{{ asset('img/best-protein.png') }}">
-							<h4>Best Protein</h4>
-							<span class="price">$23.99</span>
-						</div>
-					</a>
-					<a href="#">
-						<div class="product">
-							<img src="{{ asset('img/best-protein.png') }}">
-							<h4>Best Protein</h4>
-							<span class="price">$23.99</span>
-						</div>
-					</a>
-					<a href="#">
-						<div class="product">
-							<img src="{{ asset('img/best-protein.png') }}">
-							<h4>Best Protein</h4>
-							<span class="price">$23.99</span>
-						</div>
-					</a>
-					<a href="#">
-						<div class="product">
-							<img src="{{ asset('img/best-protein.png') }}">
-							<h4>Best Protein</h4>
-							<span class="price">$23.99</span>
-						</div>
-					</a>
-					<a href="#">
-						<div class="product">
-							<img src="{{ asset('img/best-protein.png') }}">
-							<h4>Best Protein</h4>
-							<span class="price">$23.99</span>
-						</div>
-					</a>
-					<a href="#">
-						<div class="product">
-							<img src="{{ asset('img/best-protein.png') }}">
-							<h4>Best Protein</h4>
-							<span class="price">$23.99</span>
-						</div>
-					</a>
-					<a href="#">
-						<div class="product">
-							<img src="{{ asset('img/best-protein.png') }}">
-							<h4>Best Protein</h4>
-							<span class="price">$23.99</span>
-						</div>
-					</a>
-					<a href="#">
-						<div class="product">
-							<img src="{{ asset('img/best-protein.png') }}">
-							<h4>Best Protein</h4>
-							<span class="price">$23.99</span>
-						</div>
-					</a>
-					<a href="#">
-						<div class="product">
-							<img src="{{ asset('img/best-protein.png') }}">
-							<h4>Best Protein</h4>
-							<span class="price">$23.99</span>
-						</div>
-					</a>
+					@foreach($militaryTrailProducts as $mtProduct)
+						<a href="#">
+							<div class="product">
+								<img src="{{ asset('img/best-protein.png') }}">
+								<h4>{{ $mtProduct->name . ' ' . $mtProduct->last_name }}</h4>
+								@if(!empty($mtProduct->flavor))
+									<small><span class="cor" style="background-color: {{ $mtProduct->flavor->color }}">{{ $mtProduct->flavor->name }}</span></small>
+								@endif
+								<span>$23.99</span>
+							</div>
+						</a>
+					@endforeach
 				</div>
 			</div>
 			<h2>Recommended Stacks</h2>

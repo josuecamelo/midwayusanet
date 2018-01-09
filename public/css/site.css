@@ -12642,3 +12642,9 @@ footer ul li a:hover .arrow-link {
   border: 1px solid #fff;
 }
 
+.cor {
+  border-radius: 5px;
+  padding: 3px 8px !important;
+  color: #fff !important;
+}
+

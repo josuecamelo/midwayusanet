@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Product;
 use App\Training;
 use App\Goal;
 use App\Type;
@@ -12,11 +13,9 @@ class IndexController extends Controller
 	private $goalModel;
 	private $typeModel;
 	
-	public function __construct(Training $training, Goal $goal, Type $typeModel)
+	public function __construct(Product $product)
 	{
-		$this->trainingModel = $training;
-		$this->goalModel = $goal;
-		$this->typeModel = $typeModel;
+		$this->productModel = $product;
 	}
 	
 //	public function index()
@@ -35,10 +34,11 @@ class IndexController extends Controller
 	
 	public function home()
 	{
-//		$treinoDoDia = $this->trainingModel->treinoDoDia();
-//		$outrosTreinos = $this->trainingModel->skip(1)->take(3)->get();
-//		$goals = $this->goalModel->tudo();
+		// All Products:
 		
-		return view('site.index');
+		$militaryTrailProducts = $this->productModel->where('line_id', 1)->get();
+		$glamourNutritionProducts = $this->productModel->where('line_id', 2)->get();
+		
+		return view('site.index', compact('militaryTrailProducts', 'glamourNutritionProducts'));
 	}
 }
