@@ -36,6 +36,12 @@
 		img {
 			cursor: pointer;
 		}
+
+		.back {
+			font-size: 30px;
+			cursor: pointer;
+			margin-top: 30px;
+		}
 	</style>
 @endsection
 
@@ -59,43 +65,54 @@
 		</div>
 
 		<div id="goals-male">
+			<p class="text-center">
+				<i class="fas fa-arrow-alt-circle-left back"></i>
+			</p>
 			<h2>MY FITNESS GOAL IS TO</h2>
 			<p>Please select your fitness goal below</p>
 			<div class="row">
 				<div class="col-md-4">
-					<img src="{{ asset('img/custom-plan/build-muscle-male.jpg') }}" alt="" class="img-responsive img-rounded" id="build-muscle-male">
+					<img src="{{ asset('img/custom-plan/build-muscle-male.jpg') }}" alt="Build Muscle" class="img-responsive img-rounded">
 				</div>
 				<div class="col-md-4">
-					<img src="{{ asset('img/custom-plan/improve-performance-male.jpg') }}" alt="" class="img-responsive img-rounded" id="improve-performance-male">
+					<img src="{{ asset('img/custom-plan/improve-performance-male.jpg') }}" alt="Improve Performance" class="img-responsive img-rounded">
 				</div>
 				<div class="col-md-4">
-					<img src="{{ asset('img/custom-plan/lose-weight-male.jpg') }}" alt="" class="img-responsive img-rounded" id="lose-weight-male">
+					<img src="{{ asset('img/custom-plan/lose-weight-male.jpg') }}" alt="Lose Weight" class="img-responsive img-rounded">
 				</div>
 			</div>
 		</div>
 
 		<div id="goals-female">
+			<p class="text-center">
+				<i class="fas fa-arrow-alt-circle-left back"></i>
+			</p>
 			<h2>MY FITNESS GOAL IS TO</h2>
 			<p>Please select your fitness goal below</p>
 			<div class="row">
 				<div class="col-md-4">
-					<img src="{{ asset('img/custom-plan/build-muscle-female.jpg') }}" alt="" class="img-responsive img-rounded" id="build-muscle-female">
+					<img src="{{ asset('img/custom-plan/build-muscle-female.jpg') }}" alt="Build Muscle" class="img-responsive img-rounded">
 				</div>
 				<div class="col-md-4">
-					<img src="{{ asset('img/custom-plan/improve-performance-female.jpg') }}" alt="" class="img-responsive img-rounded" id="improve-performance-female">
+					<img src="{{ asset('img/custom-plan/improve-performance-female.jpg') }}" alt="Improve Performance" class="img-responsive img-rounded">
 				</div>
 				<div class="col-md-4">
-					<img src="{{ asset('img/custom-plan/lose-weight-female.jpg') }}" alt="" class="img-responsive img-rounded" id="lose-weight-female">
+					<img src="{{ asset('img/custom-plan/lose-weight-female.jpg') }}" alt="Lose Weight" class="img-responsive img-rounded">
 				</div>
 			</div>
 		</div>
 
 		<div id="form">
-			<h2>Lose Weight</h2>
-			<img src="{{ asset('img/custom-plan/build-muscle-female-form.jpg') }}" class="img-rounded" alt="">
+			<p class="text-center">
+				<i class="fas fa-arrow-alt-circle-left back"></i>
+			</p>
+			<h2 id="title"></h2>
+			<img id="img" src="" class="img-rounded" alt="">
 			<h4>Please enter your name and email</h4>
 			<p>Your customized fitness plan will be sent to the email address you enter below free of charge.<br>We here at Midway Labs USA are committed to helping you achieve your fitness goals and are here to help you every step of the way!</p>
 			<form class="form-inline" method="post" action="/">
+				<input type="hidden" name="gender" id="my_gender">
+				<input type="hidden" name="goal" id="my_goal">
 				<input type="text" name="name" class="form-control" placeholder="Full Name">
 				<input type="email" name="email" class="form-control" placeholder="Email">
 				<button class="btn btn-primary">Send me my free plan</button>
@@ -110,6 +127,12 @@
 	<script>
 		$(function () {
 
+			var gender = '';
+			var goal = '';
+			var img = '';
+
+			/* Main: */
+
 			$('#main-male').click(function () {
 
 				$('#gender').hide();
@@ -121,6 +144,61 @@
 				$('#gender').hide();
 				$('#goals-female').show();
 			});
+
+
+			/* Secondary: */
+
+			$('#goals-male img').click(function () {
+
+				gender = 'male';
+				goal = $(this).attr('alt');
+				img = base_url + '/img/custom-plan/' + goal.toLowerCase().replace(' ', '-') + '-male-form.jpg';
+
+				$('#goals-male').hide();
+				$('#form').show();
+				$('#title').text(goal);
+				$('#img').attr('src', img);
+				$('#my_gender').val(gender);
+				$('#my_goal').val(goal);
+			});
+
+			$('#goals-female img').click(function () {
+
+				gender = 'female';
+				goal = $(this).attr('alt');
+				img = base_url + '/img/custom-plan/' + goal.toLowerCase().replace(' ', '-') + '-female-form.jpg';
+
+				$('#goals-female').hide();
+				$('#form').show();
+				$('#title').text(goal);
+				$('#img').attr('src', img);
+				$('#my_gender').val(gender);
+				$('#my_goal').val(goal);
+			});
+
+			// Back:
+
+			$('#goals-male .back').click(function () {
+
+				$('#goals-male').hide();
+				$('#gender').show();
+			});
+
+			$('#goals-female .back').click(function () {
+
+				$('#goals-female').hide();
+				$('#gender').show();
+			});
+
+
+			/* Form: */
+
+			$('#form .back').click(function () {
+
+				$('#goals-' + gender).show();
+				$('#form').hide();
+			});
+
 
 		});
 	</script>
