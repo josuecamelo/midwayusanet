@@ -17,16 +17,17 @@ class CustomPlanController extends Controller
 	public function send(Request $request)
 	{
 		Mail::to($request->email)->send(new CustomPlanEmail($request));
-
+		
 		if (Mail::failures())
 		{
 			Flash::error('Não foi possível enviar a mensagem. Tente novamente.');
 		}
 		else
 		{
-			Flash::success('Mensagem enviada com sucesso.');
+			$gender = $request->gender == 'male' ? 'men' : 'women';
+			Flash::success('Congratulations <b>' . $request->name . '</b>, your 30-day <b>' . $request->goal . '</b> for <b>' . $gender . '</b> plan has been sent to your email!');
 		}
-
+		
 		return view('site.custom-plan');
 	}
 }

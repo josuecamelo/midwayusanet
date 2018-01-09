@@ -49,6 +49,10 @@
 
 	<h1 class="h1">SET YOUR FITNESS GOAL</h1>
 
+	<div class="container text-center">
+		@include('flash::message')
+	</div>
+
 	<div class="container">
 
 		<div id="gender">
