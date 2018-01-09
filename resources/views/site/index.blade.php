@@ -621,7 +621,7 @@
 			<div>
 				<h1>LET US HELP YOU BUILD YOURSELF</h1>
 				<p>Answer these questions for a customized supplement stack.</p>
-				<a href="#" title="Customize your plan" role="link">Customize Your Plan</a>
+				<a href="{{ route('custom-plan') }}" title="Customize your plan" role="link">Customize Your Plan</a>
 			</div>
 		</aside>
 	</section>
