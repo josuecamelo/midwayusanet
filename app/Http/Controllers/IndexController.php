@@ -36,8 +36,8 @@ class IndexController extends Controller
 	{
 		// All Products:
 		
-		$militaryTrailProducts = $this->productModel->where('line_id', 1)->get();
-		$glamourNutritionProducts = $this->productModel->where('line_id', 2)->get();
+		$militaryTrailProducts = $this->productModel->where('line_id', 1)->orderBy('name')->get();
+		$glamourNutritionProducts = $this->productModel->where('line_id', 2)->orderBy('name')->get();
 		
 		return view('site.index', compact('militaryTrailProducts', 'glamourNutritionProducts'));
 	}

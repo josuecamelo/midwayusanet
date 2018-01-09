@@ -489,12 +489,12 @@
 					@foreach($militaryTrailProducts as $mtProduct)
 						<a href="#">
 							<div class="product">
-								<img src="{{ asset('img/best-protein.png') }}">
+								<img src="{{ asset('uploads/products') . '/' . $mtProduct->id . '/' . $mtProduct->image }}">
 								<h4>{{ $mtProduct->name . ' ' . $mtProduct->last_name }}</h4>
 								@if(!empty($mtProduct->flavor))
 									<small><span class="cor" style="background-color: {{ $mtProduct->flavor->color }}">{{ $mtProduct->flavor->name }}</span></small>
 								@endif
-								<span>$23.99</span>
+								<span>{!! $mtProduct->shopify !!}</span>
 							</div>
 						</a>
 					@endforeach
