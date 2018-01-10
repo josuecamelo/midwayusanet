@@ -18,14 +18,14 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="{{ route('objetivos.listar') }}"><i class="fa fa-crosshairs" aria-hidden="true"></i> Objetivos</a>
+				<a class="navbar-brand" href="{{ route('objetivos.listar') }}"><i class="fa fa-crosshairs" aria-hidden="true"></i> Goals</a>
 			</div>
 			<div class="collapse navbar-collapse" id="menu-page">
 				<ul class="nav navbar-nav">
-					<li{{ (Route::is('objetivos.listar') ? ' class=active' : '') }}><a href="{{ route('objetivos.listar') }}"><i class="fa fa-file" aria-hidden="true"></i> Todos os Objetivos</a></li>
-					<li{{ (Route::is('objetivos.criar') ? ' class=active' : '') }}><a href="{{ route('objetivos.criar') }}" ><i class="fa fa-file-o" aria-hidden="true"></i> Novo Objetivo</a></li>
+					<li{{ (Route::is('objetivos.listar') ? ' class=active' : '') }}><a href="{{ route('objetivos.listar') }}"><i class="fa fa-file" aria-hidden="true"></i> All Goals</a></li>
+					<li{{ (Route::is('objetivos.criar') ? ' class=active' : '') }}><a href="{{ route('objetivos.criar') }}" ><i class="fa fa-file-o" aria-hidden="true"></i> New Goal</a></li>
 					@if(Route::is('objetivos.editar'))
-						<li class="active"><a href="#" ><i class="fa fa-pencil" aria-hidden="true"></i> Editar Objetivo</a></li>
+						<li class="active"><a href="#" ><i class="fa fa-pencil" aria-hidden="true"></i> Edit Goal</a></li>
 					@endif
 				</ul>
 			</div>
