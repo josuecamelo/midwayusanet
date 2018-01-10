@@ -2,11 +2,11 @@
 
 @section('main')
 
-	@include('admin.trainings.categories._nav')
+	@include('admin.videos.categories._nav')
 
-	{!! Form::model($category,['route'=> ['treinos.categorias.atualizar', $category->id]]) !!}
+	{!! Form::model($category,['route'=> ['videos.categorias.atualizar', $category->id]]) !!}
 
-	@include('admin.trainings.categories._form')
+	@include('admin.videos.categories._form')
 
 	{!! Form::close() !!}
 

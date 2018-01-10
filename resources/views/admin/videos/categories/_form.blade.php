@@ -15,5 +15,5 @@
 	</div>
 </div>
 <p class="text-center">
-	<small>* O campo marcado com asterisco (*) é de preenchimento obrigatório.</small>
+	<small>* Preenchimento obrigatório.</small>
 </p>

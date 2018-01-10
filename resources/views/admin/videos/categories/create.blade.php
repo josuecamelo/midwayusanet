@@ -2,11 +2,11 @@
 
 @section('main')
 
-	@include('admin.trainings.categories._nav')
+	@include('admin.videos.categories._nav')
 
-	{!! Form::open(['route'=>'treinos.categorias.gravar']) !!}
+	{!! Form::open(['route'=>'videos.categorias.gravar']) !!}
 
-	@include('admin.trainings.categories._form')
+	@include('admin.videos.categories._form')
 
 	{!! Form::close() !!}
 

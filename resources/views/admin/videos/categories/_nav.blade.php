@@ -10,14 +10,14 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="{{ route('treinos.categorias.listar') }}"><i class="fa fa-asterisk" aria-hidden="true"></i> Categorias de treinos</a>
+				<a class="navbar-brand" href="{{ route('videos.categorias.listar') }}"><i class="fa fa-asterisk" aria-hidden="true"></i> Categorias de Vídeos</a>
 			</div>
 			<div class="collapse navbar-collapse" id="menu-page">
 				<ul class="nav navbar-nav">
-					<li{{ (Route::is('treinos.categorias.listar') ? ' class=active' : '') }}><a href="{{ route('treinos.categorias.listar') }}"><i class="fa fa-file" aria-hidden="true"></i> Todas as Categorias de Treinos</a></li>
-					<li{{ (Route::is('treinos.categorias.criar') ? ' class=active' : '') }}><a href="{{ route('treinos.categorias.criar') }}" ><i class="fa fa-file-o" aria-hidden="true"></i> Nova Categoria de Treino</a></li>
-					@if(Route::is('treinos.categorias.editar'))
-						<li class="active"><a href="#" ><i class="fa fa-pencil" aria-hidden="true"></i> Editar Categoria de Treino</a></li>
+					<li{{ (Route::is('videos.categorias.listar') ? ' class=active' : '') }}><a href="{{ route('videos.categorias.listar') }}"><i class="fa fa-file" aria-hidden="true"></i> Todas as Categorias de Vídeos</a></li>
+					<li{{ (Route::is('videos.categorias.criar') ? ' class=active' : '') }}><a href="{{ route('videos.categorias.criar') }}" ><i class="fa fa-file-o" aria-hidden="true"></i> Nova Categoria de Vídeo</a></li>
+					@if(Route::is('videos.categorias.editar'))
+						<li class="active"><a href="#" ><i class="fa fa-pencil" aria-hidden="true"></i> Editar Categoria de Vídeo</a></li>
 					@endif
 				</ul>
 			</div>
