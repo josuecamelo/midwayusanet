@@ -37,7 +37,8 @@ class VideoCategoryAdminController extends Controller
 	
 	public function create()
 	{
-		$categories = $this->videoCategoryModel->listarTodos();
+		//$categories = $this->videoCategoryModel->listarTodos();
+        $categories = $this->videoCategoryModel->listarTodos([],$mod='obj');
 
 		return view('admin.videos.categories.create', compact('categories'));
 	}
@@ -70,9 +71,8 @@ class VideoCategoryAdminController extends Controller
 		$category = $this->videoCategoryModel->find($id);
 		$exclude = $category->childCategoriesMod2()->get();
         $exclude = array_merge($exclude->keyBy('id')->keys()->toArray(), [(int)$id] );
+		$categories = $this->videoCategoryModel->listarTodos($exclude, $mod='obj');
 
-		$categories = $this->videoCategoryModel->listarTodos($exclude);
-		
 		return view('admin.videos.categories.edit', compact('category', 'categories'));
 	}
 

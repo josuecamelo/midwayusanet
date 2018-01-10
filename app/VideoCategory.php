@@ -23,22 +23,37 @@ class VideoCategory extends Model
 
 	//
 	public function childCategories(){
-	    return $this->hasMany(VideoCategory::class, 'parent_category_id', 'id');
+	    return $this->hasMany(VideoCategory::class, 'parent_category_id', 'id')->where('id', '<>', $this->id);
     }
 	
-	public function listarTodos($notIn = [])
+	public function listarTodos($notIn = [], $mod = 'chave_valor')
 	{
 	    $res = [];
 
-	    if(empty($notIn)){
-            $res = ['' => ''] + $this
-                    ->orderBy('name', 'ASC')
-                    ->pluck('name', 'id')->all();
+	    if($mod=='chave_valor'){
+            if(empty($notIn)){
+                $res = ['' => ''] + $this
+                        ->orderBy('name', 'ASC')
+                        ->pluck('name', 'id')->all();
+            }else{
+                $res = ['' => ''] + $this
+                        ->whereNotIn('id', $notIn)
+                        ->orderBy('name', 'ASC')
+                        ->pluck('name', 'id')->all();
+            }
         }else{
-            $res = ['' => ''] + $this
-                    ->whereNotIn('id', $notIn)
-                    ->orderBy('name', 'ASC')
-                    ->pluck('name', 'id')->all();
+            if(empty($notIn)){
+                $res = $this
+                        ->whereNull('parent_category_id')
+                        ->orderBy('name', 'ASC')
+                        ->get();
+            }else{
+                $res = $this
+                        ->whereNull('parent_category_id')
+                        ->whereNotIn('id', $notIn)
+                        ->orderBy('name', 'ASC')
+                        ->get();
+            }
         }
 
         return $res;
