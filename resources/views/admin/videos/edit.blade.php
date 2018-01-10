@@ -9,7 +9,7 @@
 	{!! Form::model($training,['route'=> ['videos.atualizar',$training->id]]) !!}
 
 	<div id="visivel">
-		<span>Visibilidade</span>
+		<span>Visibility</span>
 		<label class="i-switch m-t-xs m-r">
 			{!! Form::checkbox('visibility', null, ['class'=>'form-control', $checked]) !!}
 			<i></i>
