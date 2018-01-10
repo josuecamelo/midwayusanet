@@ -26,8 +26,27 @@ class VideoCategory extends Model
 	    return $this->hasMany(VideoCategory::class, 'parent_category_id', 'id');
     }
 	
-	public function listarTodos()
+	public function listarTodos($notIn = null)
 	{
-		return ['' => ''] + $this->orderBy('name', 'ASC')->pluck('name', 'id')->all();
+	    $res = [];
+
+	    if($notIn == null){
+            $res = ['' => ''] + $this
+                    ->orderBy('name', 'ASC')
+                    ->pluck('name', 'id')->all();
+        }else{
+            $res = ['' => ''] + $this
+                    ->where('id','<>', $notIn)
+                    ->orderBy('name', 'ASC')
+                    ->pluck('name', 'id')->all();
+        }
+
+        return $res;
 	}
+
+    public function scopeCategories($query, $id)
+    {
+        return $query->where('id', $id);
+    }
+
 }
