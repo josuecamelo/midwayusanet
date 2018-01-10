@@ -12,6 +12,7 @@ class VideoCategory extends Model
 	protected $table = 'video_categories';
 	protected $dates = ['deleted_at'];
 	protected $fillable = [
+		'parent_category_id',
 		'name'
 	];
 	
