@@ -13,7 +13,7 @@ class CreateProductGoalTable extends Migration
 	 */
 	public function up()
 	{
-		/*Schema::create('product_goal', function (Blueprint $table)
+		/*Schema::create('product_goals', function (Blueprint $table)
 		{
 			$table->increments('id');
 			
@@ -34,6 +34,6 @@ class CreateProductGoalTable extends Migration
 	 */
 	public function down()
 	{
-		//Schema::dropIfExists('product_goal');
+		//Schema::dropIfExists('product_goals');
 	}
 }

@@ -13,7 +13,7 @@ class CreateProductCategoryTable extends Migration
 	 */
 	public function up()
 	{
-		/*Schema::create('product_category', function (Blueprint $table)
+		/*Schema::create('product_categories', function (Blueprint $table)
 		{
 			$table->increments('id');
 			
@@ -34,6 +34,6 @@ class CreateProductCategoryTable extends Migration
 	 */
 	public function down()
 	{
-		//Schema::dropIfExists('product_category');
+		//Schema::dropIfExists('product_categories');
 	}
 }

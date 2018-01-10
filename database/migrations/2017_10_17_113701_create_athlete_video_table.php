@@ -13,7 +13,7 @@ class CreateAthleteVideoTable extends Migration
 	 */
 	public function up()
 	{
-		/*Schema::create('athlete_video', function (Blueprint $table)
+		/*Schema::create('athlete_videos', function (Blueprint $table)
 		{
 			$table->increments('id');
 			$table->string('title', 255);
@@ -34,6 +34,6 @@ class CreateAthleteVideoTable extends Migration
 	 */
 	public function down()
 	{
-		//Schema::dropIfExists('athlete_video');
+		//Schema::dropIfExists('athlete_videos');
 	}
 }

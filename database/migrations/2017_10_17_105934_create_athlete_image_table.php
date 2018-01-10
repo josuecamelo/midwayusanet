@@ -13,7 +13,7 @@ class CreateAthleteImageTable extends Migration
 	 */
 	public function up()
 	{
-		/*Schema::create('athlete_image', function (Blueprint $table)
+		/*Schema::create('athlete_images', function (Blueprint $table)
 		{
 			$table->increments('id');
 			$table->string('url', 255);
@@ -33,6 +33,6 @@ class CreateAthleteImageTable extends Migration
 	 */
 	public function down()
 	{
-		//Schema::dropIfExists('athlete_image');
+		//Schema::dropIfExists('athlete_images');
 	}
 }
