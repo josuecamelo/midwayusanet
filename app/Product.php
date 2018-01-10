@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Utils\UploadImagem;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -61,6 +62,10 @@ class Product extends Model
 		$this->attributes['last_name'] = $value;
 		$this->attributes['last_name_slug'] = strtolower(str_slug($value));
 	}
+
+	public function setImageAttribute($value){
+        $this->attributes['image_ext'] = UploadImagem::getFileExtension($value);
+    }
 	
 	public function listarTodos($excluir = [])
 	{
@@ -167,29 +172,5 @@ class Product extends Model
             ->where('categories.slug', $category_slug)
             ->orderBy('products.name', 'asc')
             ->get();
-    }
-
-    public function listar($ids = [])
-    {
-        if(empty($ids)) {
-            return $this
-                ->select(
-                    'products.id',
-                    DB::raw("concat(products.name, ' ', products.last_name, ' ' , products.presentation, ' ', IFNULL(flavors.name, '')) as name2")
-                )
-                ->leftJoin('flavors', 'flavors.id', '=', 'products.flavor_id')
-                ->orderBy('name2', 'ASC')
-                ->pluck('name2', 'products.id')->all();
-        }else{
-            return $this
-                ->select(
-                    'products.id',
-                    DB::raw("concat(products.name, ' ', products.last_name, ' ' , products.presentation, ' ', IFNULL(flavors.name, '')) as name2")
-                )
-                ->leftJoin('flavors', 'flavors.id', '=', 'products.flavor_id')
-                ->whereIn('products.id', $ids)
-                ->orderBy('name2', 'ASC')
-                ->pluck('name2', 'products.id')->all();
-        }
     }
 }

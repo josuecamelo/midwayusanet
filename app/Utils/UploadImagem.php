@@ -76,7 +76,7 @@ class UploadImagem {
 		}
 	}
 
-	public static function singleUpload($file, $nome, $path) {
+	public static function singleUpload($file, $nome, $path, $redimensionar = false) {
 		if (!File::exists($path)):
 			File::makeDirectory($path, 0777, true, true);
 		endif;
@@ -84,16 +84,45 @@ class UploadImagem {
 		//$allow = ['jpg','gif','png','jpeg'];
 
 		//if(in_array(strtolower($file->getClientOriginalExtension()),$allow)){
-		$nomeFinal = $nome . '.' . strtolower($file->getClientOriginalExtension());
+        $ext = strtolower($file->getClientOriginalExtension());
+		$nomeFinal = $nome . '.' . $ext;
 
 		$file->move($path, $nomeFinal);
-		//new UploadedFile($path, $nome, null, null, true);
-		//dd($file->getTmpName);
-		//move_uploaded_file($myFile["tmp_name"],UPLOAD_DIR . $name);
-		//}
 
-		///return isset($nomeFinal) ? $nomeFinal : null;
+        //josue camelo - 12/12/2017
+        if($redimensionar){
+            $imgOriginal = $path.'/'.$nomeFinal;
+            $imgLg = $path.'/'.$nome.'_lg.'.$ext;
+            $imgSm = $path.'/'.$nome.'_sm.'.$ext;
+            $imgXs = $path.'/'.$nome.'_xs.'.$ext;
 
+            //imagem _lg 600 x X
+            self::setLarguraImagem(600);
+            $proporcaoIdeal = self::getProporcaoIdeal($imgOriginal);
+
+            //Imagem Normal
+            $img = Image::make( $imgOriginal );
+            $img->resize($proporcaoIdeal['w'], $proporcaoIdeal['h']);
+            $img->save($imgLg);
+
+            //imagem _sm
+            self::setLarguraImagem(300);
+            $proporcaoIdeal = self::getProporcaoIdeal($imgOriginal);
+
+            //Imagem Normal
+            $img = Image::make( $imgOriginal );
+            $img->resize($proporcaoIdeal['w'], $proporcaoIdeal['h']);
+            $img->save($imgSm);
+
+            //imagem _sm
+            self::setLarguraImagem(190);
+            $proporcaoIdeal = self::getProporcaoIdeal($imgOriginal);
+
+            //Imagem Normal
+            $img = Image::make( $imgOriginal );
+            $img->resize($proporcaoIdeal['w'], $proporcaoIdeal['h']);
+            $img->save($imgXs);
+        }
 
 		return $nomeFinal;
 	}
@@ -173,6 +202,7 @@ class UploadImagem {
 		$size = self::getLarguraImagem();
 
 		$tax = $tam['width'] / $tam['height'];
+
 		if ($tax < 1) {
 			$newWidth = round($size * $tax);
 			$newHeight = $size;
@@ -281,4 +311,10 @@ class UploadImagem {
 		if ($dst_img) imagedestroy($dst_img);
 		if ($src_img) imagedestroy($src_img);
 	}
+
+    public static function getFileExtension($file = ''){
+        $value = explode(".", $file);
+        $extension = strtolower(array_pop($value));
+        return !empty($extension) ? $extension : null;
+    }
 }
