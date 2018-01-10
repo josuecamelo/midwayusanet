@@ -13,15 +13,15 @@ class CreateMenuProductTable extends Migration
      */
     public function up()
     {
-        Schema::create('menu_product', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('menu_id')->unsigned();
-            $table->foreign('menu_id')->references('id')->on('menus');
-
-            $table->integer('product_id')->unsigned();
-            $table->foreign('product_id')->references('id')->on('products');
-            $table->timestamps();
-        });
+//        Schema::create('menu_product', function (Blueprint $table) {
+//            $table->increments('id');
+//            $table->integer('menu_id')->unsigned();
+//            $table->foreign('menu_id')->references('id')->on('menus');
+//
+//            $table->integer('product_id')->unsigned();
+//            $table->foreign('product_id')->references('id')->on('products');
+//            $table->timestamps();
+//        });
     }
 
     /**
@@ -31,6 +31,6 @@ class CreateMenuProductTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('menu_product');
+//        Schema::dropIfExists('menu_product');
     }
 }

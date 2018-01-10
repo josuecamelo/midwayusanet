@@ -13,20 +13,20 @@ class CreateVideosTable extends Migration
 	 */
 	public function up()
 	{
-		Schema::create('videos', function (Blueprint $table)
-		{
-			$table->increments('id');
-			$table->string('title', 255);
-			$table->text('description');
-			$table->boolean('visibility');
-			$table->string('video', 255);
-			
-			$table->integer('category_id')->unsigned();
-			$table->foreign('category_id')->references('id')->on('video_categories');
-			
-			$table->timestamps();
-			$table->softDeletes();
-		});
+//		Schema::create('videos', function (Blueprint $table)
+//		{
+//			$table->increments('id');
+//			$table->string('title', 255);
+//			$table->text('description');
+//			$table->boolean('visibility');
+//			$table->string('video', 255);
+//
+//			$table->integer('category_id')->unsigned();
+//			$table->foreign('category_id')->references('id')->on('video_categories');
+//
+//			$table->timestamps();
+//			$table->softDeletes();
+//		});
 	}
 	
 	/**
@@ -36,6 +36,6 @@ class CreateVideosTable extends Migration
 	 */
 	public function down()
 	{
-		Schema::dropIfExists('videos');
+//		Schema::dropIfExists('videos');
 	}
 }
