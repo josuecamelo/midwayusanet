@@ -24,7 +24,12 @@ class VideoCategoryAdminController extends Controller
 	
 	public function index()
 	{
-		$categories = $this->videoCategoryModel->orderBy('name', 'ASC')->paginate(15);
+		$categories = $this
+            ->videoCategoryModel
+            ->whereNull('parent_category_id')
+            ->orderBy('name', 'ASC')->paginate(15);
+
+		//dd($categories[1]->childCategories()->get());
 
 		return view('admin.videos.categories.index', compact('categories'));
 	}

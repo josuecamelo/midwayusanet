@@ -20,6 +20,10 @@ class VideoCategory extends Model
 	{
 		return $this->hasMany(Video::class, 'category_id')->orderBy('created_at', 'desc');
 	}
+
+	public function childCategories(){
+	    return $this->hasMany(VideoCategory::class, 'parent_category_id', 'id');
+    }
 	
 	public function listarTodos()
 	{
