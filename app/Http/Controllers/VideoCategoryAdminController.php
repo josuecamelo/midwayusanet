@@ -28,6 +28,7 @@ class VideoCategoryAdminController extends Controller
             ->videoCategoryModel
             ->whereNull('parent_category_id')
             ->orderBy('name', 'ASC')->paginate(15);
+
 		return view('admin.videos.categories.index', compact('categories'));
 	}
 

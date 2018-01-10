@@ -30,6 +30,7 @@
 							<td><a href="{{ route('videos.categorias.editar', ['id'=> $category->id]) }}" class="btn btn-xs btn-success"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a></td>
 							<td><a href="{{ route('videos.categorias.remover', ['id'=> $category->id]) }}" class="btn btn-xs btn-danger bt-delete"><i class="fa fa-times" aria-hidden="true"></i> Delete</a></td>
 						</tr>
+
 						@foreach($category->childCategories()->get() as $childCategory)
 							<tr>
 								<td class="child">{{ $childCategory->name }}</td>
@@ -37,6 +38,7 @@
 								<td><a href="{{ route('videos.categorias.remover', ['id'=> $category->id]) }}" class="btn btn-xs btn-danger bt-delete"><i class="fa fa-times" aria-hidden="true"></i> Delete</a></td>
 							</tr>
 						@endforeach
+
 					@else
 						<tr>
 							<td>{{ $category->name }}</td>
