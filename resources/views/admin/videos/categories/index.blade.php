@@ -1,5 +1,13 @@
 @extends('admin.main')
 
+@section('css')
+	<style>
+		.child {
+			padding-left: 50px !important;
+		}
+	</style>
+@endsection
+
 @section('main')
 
 	@include('admin.videos.categories._nav')
@@ -9,17 +17,17 @@
 			<table class="table table-striped table-responsive table-hover">
 				<thead>
 				<tr>
-					<th>Categoria</th>
-					<th>Editar</th>
-					<th>Deletar</th>
+					<th>Category</th>
+					<th>Edit</th>
+					<th>Delete</th>
 				</tr>
 				</thead>
 				<tbody>
 				@foreach($categories as $category)
 					<tr>
-						<td>{{ $category->name }}</td>
-						<td><a href="{{ route('videos.categorias.editar', ['id'=> $category->id]) }}" class="btn btn-xs btn-success"><i class="fa fa-pencil" aria-hidden="true"></i> Editar</a></td>
-						<td><a href="{{ route('videos.categorias.remover', ['id'=> $category->id]) }}" class="btn btn-xs btn-danger bt-delete"><i class="fa fa-times" aria-hidden="true"></i> Deletar</a></td>
+						<td class="child">{{ $category->name }}</td>
+						<td><a href="{{ route('videos.categorias.editar', ['id'=> $category->id]) }}" class="btn btn-xs btn-success"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a></td>
+						<td><a href="{{ route('videos.categorias.remover', ['id'=> $category->id]) }}" class="btn btn-xs btn-danger bt-delete"><i class="fa fa-times" aria-hidden="true"></i> Delete</a></td>
 					</tr>
 				@endforeach
 				</tbody>
@@ -27,7 +35,7 @@
 			{!! $categories->render() !!}
 		</div>
 	@else
-		<p class="text-center">Nenhum item cadastrado.</p>
+		<p class="text-center">No items added.</p>
 	@endif
 
 @endsection
