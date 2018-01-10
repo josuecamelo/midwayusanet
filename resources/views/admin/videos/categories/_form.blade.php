@@ -9,7 +9,7 @@
 		<div class="col-md-3">
 			<div class="form-group">
 				<label for="parent_cateogry_id">Parent Category</label>
-				{!! Form::select('parent_cateogry_id', $categories, empty($category) ? null : $category, ['class'=>'form-control']) !!}
+				{!! Form::select('parent_category_id', $categories, empty($category) ? null : $category, ['class'=>'form-control']) !!}
 			</div>
 		</div>
 		<div class="col-md-2">
@@ -21,5 +21,5 @@
 	</div>
 </div>
 <p class="text-center">
-	<small>* Preenchimento obrigatório.</small>
+	<small>* Required field.</small>
 </p>
