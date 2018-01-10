@@ -3,19 +3,19 @@
 		<div class="row">
 			<div class="col-md-4">
 				<div class="form-group">
-					<label for="name">Nome *</label>
+					<label for="name">Name *</label>
 					{!! Form::text('name', null, ['class'=>'form-control', 'autofocus', 'required']) !!}
 				</div>
 			</div>
 			<div class="col-md-4">
 				<div class="form-group">
-					<label for="last_name">Último Nome</label>
+					<label for="last_name">Last Name</label>
 					{!! Form::text('last_name', null, ['class'=>'form-control', 'id'=>'last_name']) !!}
 				</div>
 			</div>
 			<div class="col-md-4">
 				<div class="form-group">
-					<label for="presentation">Apresentação</label>
+					<label for="presentation">Presentation</label>
 					{!! Form::text('presentation', null, ['class'=>'form-control', 'required']) !!}
 				</div>
 			</div>
@@ -23,13 +23,13 @@
 		<div class="row">
 			<div class="col-md-6">
 				<div class="form-group">
-					<label for="description">Descrição *</label>
+					<label for="description">Description *</label>
 					{!! Form::textarea('description', null, ['class'=>'form-control textarea','required']) !!}
 				</div>
 			</div>
 			<div class="col-md-6">
 				<div class="form-group">
-					<label for="benefits">Benefícios</label>
+					<label for="benefits">Benefits</label>
 					{!! Form::textarea('benefits', null, ['class'=>'form-control textarea']) !!}
 				</div>
 			</div>
@@ -38,12 +38,12 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="panel panel-default">
-					<div class="panel-heading font-bold"><b>Tópicos</b></div>
+					<div class="panel-heading font-bold"><b>Topics</b></div>
 					<div class="panel-body">
 						<div class="row">
-							<div class="col-md-4"><label>Título</label></div>
-							<div class="col-md-5"><label>Texto</label></div>
-							<div class="col-md-2"><label>Ícone</label></div>
+							<div class="col-md-4"><label>Title</label></div>
+							<div class="col-md-5"><label>Text</label></div>
+							<div class="col-md-2"><label>Icon</label></div>
 							<div class="col-md-1"></div>
 						</div>
 						<div class="topicos">
@@ -102,7 +102,7 @@
 								@endif
 							@endif
 						</div>
-						<button type="button" class="btn btn-primary btn-xs bt-add-topic"><i class="fa fa-plus"></i> Adicionar Novo Tópico</button>
+						<button type="button" class="btn btn-primary btn-xs bt-add-topic"><i class="fa fa-plus"></i> Add New Topic</button>
 					</div>
 				</div>
 			</div>
@@ -110,7 +110,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="form-group">
-					<label for="link-compra-online">Link para compra online</label>
+					<label for="link-compra-online">Link to online purchase</label>
 					{!! Form::text('link_purchase', null, ['class'=>'form-control']) !!}
 				</div>
 			</div>
@@ -124,7 +124,7 @@
 			</div>
 			<div class="col-md-6">
 				<div class="form-group">
-					<label for="excerpt">Resumo</label>
+					<label for="excerpt">Excerpt</label>
 					{!! Form::textarea('excerpt', null, ['class'=>'form-control textarea']) !!}
 				</div>
 			</div>
@@ -132,7 +132,7 @@
 		<div class="row">
 			<div class="col-md-10">
 				<div class="form-group">
-					<label for="video">Vídeo</label>
+					<label for="video">Video</label>
 					<div class="input-group">
 						<span class="input-group-addon"><i class="fa fa-youtube-play" aria-hidden="true"></i></span>
 						{!! Form::text('video', null, ['id'=>'video','class'=>'form-control', 'placeholder'=>'URL vídeo Youtube']) !!}
@@ -141,13 +141,13 @@
 			</div>
 			<div class="col-md-2">
 				<label>&nbsp;</label>
-				<a href="#" class="btn btn-block btn-info bt-visualizar" data-toggle="modal" data-target="#modal-video"><i class="fa fa-eye" aria-hidden="true"></i> Visualizar</a>
+				<a href="#" class="btn btn-block btn-info bt-visualizar" data-toggle="modal" data-target="#modal-video"><i class="fa fa-eye" aria-hidden="true"></i> View</a>
 			</div>
 		</div>
 		<div class="row" id="sabor">
 			<div class="col-md-6">
 				<div class="form-group">
-					<label for="flavor_id">Sabor</label>
+					<label for="flavor_id">Flavor</label>
 					{!! Form::select('flavor_id', $flavors, isset($product) ? $product->flavor_id : null ,['class'=>'form-control']) !!}
 				</div>
 			</div>
@@ -159,7 +159,7 @@
 			{{--</div>--}}
 			<div class="col-md-6">
 				<div class="form-group">
-					<label for="related_flavors">Produtos Relacionados</label>
+					<label for="related_flavors">Related Products</label>
 					{!! Form::select('related_products[]', $products, empty($relatedProductsList) ? null : $relatedProductsList,['class'=>'form-control sabores-relacionados', 'multiple']) !!}
 				</div>
 			</div>
@@ -167,21 +167,21 @@
 		<div class="row" id="informacao-nutricional">
 			<div class="col-md-12">
 				<div class="panel panel-default">
-					<div class="panel-heading font-bold"><b>Informação Nutricional</b></div>
+					<div class="panel-heading font-bold"><b>Nutritional information</b></div>
 					<div class="panel-body">
 						<div class="form-group">
-							<label for="portion">Porção</label>
+							<label for="portion">Serving Size</label>
 							{!! Form::text('serving_size', null, ['class'=>'form-control']) !!}
 						</div>
 						<div class="row">
 							<div class="col-md-6">
-								<label>Nutriente</label>
+								<label>Nutrient</label>
 							</div>
 							<div class="col-md-3">
-								<label>Quantidade</label>
+								<label>Amount</label>
 							</div>
 							<div class="col-md-3">
-								<label>%VD</label>
+								<label>%DV</label>
 							</div>
 						</div>
 						<div class="nutrientes">
@@ -193,7 +193,7 @@
 						</div>
 
 						<div class="form-group">
-							<label for="complement">Complemento</label>
+							<label for="complement">Complement</label>
 							{!! Form::textarea('complement', null, ['class'=>'form-control textarea']) !!}
 						</div>
 					</div>
@@ -214,14 +214,14 @@
 			<div class="col-md-12">
 				<div class="form-group">
 					<label>&nbsp;</label>
-					<button type="submit" class="btn btn-block btn-success"><i class="fa fa-check" aria-hidden="true"></i> Salvar</button>
+					<button type="submit" class="btn btn-block btn-success"><i class="fa fa-check" aria-hidden="true"></i> Save</button>
 				</div>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-12">
 				<div class="form-group">
-					<label for="image">Imagem *</label>
+					<label for="image">Image *</label>
 					@if(isset($product->image))
 						<input type="file" data-url="{{ asset("/uploads/products/$product->id/$product->image")  }}" name="image" class="upload-img" data-responsive="true">
 					@else
@@ -233,7 +233,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="panel panel-default">
-					<div class="panel-heading font-bold"><b>Linha</b></div>
+					<div class="panel-heading font-bold"><b>Line</b></div>
 					<div class="panel-body">
 						@foreach($lines as $l => $line)
 							<div class="radio">
@@ -255,7 +255,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="panel panel-default">
-					<div class="panel-heading font-bold"><b>Tipo</b></div>
+					<div class="panel-heading font-bold"><b>Type</b></div>
 					<div class="panel-body">
 						@foreach($types as $type)
 							<div class="radio">
@@ -277,7 +277,7 @@
 		<div class="row" id="categorias">
 			<div class="col-md-12">
 				<div class="panel panel-default">
-					<div class="panel-heading font-bold"><b>Categorias</b></div>
+					<div class="panel-heading font-bold"><b>Categories</b></div>
 					<div class="panel-body">
 						<div class="categoria">
 							@foreach($categories as $cat => $category)
@@ -301,7 +301,7 @@
 		<div class="row" id="objetivos">
 			<div class="col-md-12">
 				<div class="panel panel-default">
-					<div class="panel-heading font-bold"><b>Objetivos</b></div>
+					<div class="panel-heading font-bold"><b>Goals</b></div>
 					<div class="panel-body">
 						@foreach($goals as $goalIdx => $goal)
 							<div class="checkbox">
@@ -324,11 +324,11 @@
 		<div class="row" id="destaque-porcao">
 			<div class="col-md-12">
 				<div class="panel panel-default">
-					<div class="panel-heading font-bold"><b>Destaques por porção</b></div>
+					<div class="panel-heading font-bold"><b>Highlights per portion</b></div>
 					<div class="panel-body">
 						<div class="row">
-							<div class="col-md-5">Valor</div>
-							<div class="col-md-7">Nutriente</div>
+							<div class="col-md-5">Value</div>
+							<div class="col-md-7">Nutrient</div>
 						</div>
 						<div class="qtds-porcao">
 							@if( !empty($product->portions) )
@@ -359,7 +359,7 @@
 								</div>
 							@endif
 						</div>
-						<button type="button" class="btn btn-primary btn-xs pull-right" id="bt-add-qtd-porcao"><i class="fa fa-plus" aria-hidden="true"></i>Adicionar Novo Item</button>
+						<button type="button" class="btn btn-primary btn-xs pull-right" id="bt-add-qtd-porcao"><i class="fa fa-plus" aria-hidden="true"></i>Add New Item</button>
 					</div>
 				</div>
 			</div>

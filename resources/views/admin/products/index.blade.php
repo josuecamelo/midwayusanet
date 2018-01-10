@@ -19,13 +19,13 @@
 		<table class="table table-striped table-responsive table-hover">
 			<thead>
 			<tr>
-				<th>Nome</th>
+				<th>Name</th>
 				{{--<th>Objetivo</th>--}}
 				{{--<th>Categoria</th>--}}
-				<th>Data de modificação</th>
-				<th>Visualizar</th>
-				<th>Editar</th>
-				<th>Deletar</th>
+				<th>Modification Date</th>
+				<th>View</th>
+				<th>Edit</th>
+				<th>Delete</th>
 			</tr>
 			</thead>
 			<tbody>
@@ -36,10 +36,10 @@
 					{{--<td>Line</td>--}}
 					<td>{{ $product->update_date  }}</td>
 					<td>
-						<a href="{{ $product->url_visualizacao  }}" class="btn btn-xs btn-info" target="_blank"><i class="fa fa-eye" aria-hidden="true"></i> Visualizar</a>
+						<a href="{{ $product->url_visualizacao  }}" class="btn btn-xs btn-info" target="_blank"><i class="fa fa-eye" aria-hidden="true"></i> View</a>
 					</td>
-					<td><a href="{{ route('produtos.editar', $product->id)  }}" class="btn btn-xs btn-success"><i class="fa fa-pencil" aria-hidden="true"></i> Editar</a></td>
-					<td><a href="{{ route('produtos.remover', ['id'=> $product->id]) }}" class="btn btn-xs btn-danger bt-delete"><i class="fa fa-times" aria-hidden="true"></i> Deletar</a></td>
+					<td><a href="{{ route('produtos.editar', $product->id)  }}" class="btn btn-xs btn-success"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a></td>
+					<td><a href="{{ route('produtos.remover', ['id'=> $product->id]) }}" class="btn btn-xs btn-danger bt-delete"><i class="fa fa-times" aria-hidden="true"></i> Delete</a></td>
 				</tr>
 			@endforeach
 			</tbody>
