@@ -11,7 +11,7 @@
 	{!! Form::open(['route'=>'atletas.gravar','files'=>true]) !!}
 
 	<div id="visivel">
-		<span>Visibilidade</span>
+		<span>Visibility</span>
 		<label class="i-switch m-t-xs m-r">
 			{!! Form::checkbox('visibility', null, true, ['class'=>'form-control']) !!}
 			<i></i>
@@ -27,7 +27,7 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<h4 class="modal-title" id="titulo">Vídeo</h4>
+					<h4 class="modal-title" id="titulo">Video</h4>
 				</div>
 				<div class="modal-body">
 					<p class="text-center">

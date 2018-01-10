@@ -9,11 +9,11 @@
 			<table class="table table-striped table-responsive table-hover">
 				<thead>
 				<tr>
-					<th>Título</th>
-					<th>Categoria</th>
-					<th>Visualizar</th>
-					<th>Editar</th>
-					<th>Deletar</th>
+					<th>Title</th>
+					<th>Category</th>
+					<th>View</th>
+					<th>Edit</th>
+					<th>Delete</th>
 				</tr>
 				</thead>
 				<tbody>
@@ -22,10 +22,10 @@
 						<td>{{ $video->title }}</td>
 						<td>{{ $video->category->name }}</td>
 						<td>
-							<button class="btn btn-xs btn-info bt-visualizar" data-video="{{ $video->video }}" data-toggle="modal" data-target="#modal-video"><i class="fa fa-eye" aria-hidden="true"></i> Visualizar</button>
+							<button class="btn btn-xs btn-info bt-visualizar" data-video="{{ $video->video }}" data-toggle="modal" data-target="#modal-video"><i class="fa fa-eye" aria-hidden="true"></i> View</button>
 						</td>
-						<td><a href="{{ route('treinos.editar', ['id'=> $video->id]) }}" class="btn btn-xs btn-success"><i class="fa fa-pencil" aria-hidden="true"></i> Editar</a></td>
-						<td><a href="{{ route('treinos.remover', ['id'=> $video->id]) }}" class="btn btn-xs btn-danger bt-delete"><i class="fa fa-times" aria-hidden="true"></i> Deletar</a></td>
+						<td><a href="{{ route('treinos.editar', ['id'=> $video->id]) }}" class="btn btn-xs btn-success"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a></td>
+						<td><a href="{{ route('treinos.remover', ['id'=> $video->id]) }}" class="btn btn-xs btn-danger bt-delete"><i class="fa fa-times" aria-hidden="true"></i> Delete</a></td>
 					</tr>
 				@endforeach
 				</tbody>
@@ -38,7 +38,7 @@
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title" id="titulo">Vídeo</h4>
+						<h4 class="modal-title" id="titulo">Video</h4>
 					</div>
 					<div class="modal-body">
 						<p class="text-center">
@@ -49,7 +49,7 @@
 			</div>
 		</div>
 	@else
-		<p class="text-center">Nenhum item cadastrado.</p>
+		@include('admin.nia')
 	@endif
 
 @endsection

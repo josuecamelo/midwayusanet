@@ -4,19 +4,19 @@
 			<div class="row">
 				<div class="col-md-3">
 					<div class="form-group">
-						<label for="name">Nome *</label>
+						<label for="name">Name *</label>
 						{!! Form::text('name', null, ['class'=>'form-control', 'id'=>'name', 'autofocus', 'required']) !!}
 					</div>
 				</div>
 				<div class="col-md-3">
 					<div class="form-group">
-						<label for="last_name">Sobrenome *</label>
+						<label for="last_name">Last Name *</label>
 						{!! Form::text('last_name', null, ['class'=>'form-control', 'id'=>'last_name', 'required']) !!}
 					</div>
 				</div>
 				<div class="col-md-6">
 					<div class="form-group">
-						<label for="profession">Profissão</label>
+						<label for="profession">Profession</label>
 						{!! Form::text('profession', null, ['class'=>'form-control', 'id'=>'profession']) !!}
 					</div>
 				</div>
@@ -24,7 +24,7 @@
 			<div class="row">
 				<div class="col-md-6">
 					<div class="form-group">
-						<label for="about">Sobre</label>
+						<label for="about">About</label>
 						{!! Form::textarea('about', null, ['class'=>'form-control textarea', 'id'=>'about']) !!}
 					</div>
 				</div>
@@ -38,26 +38,26 @@
 			<div class="row">
 				<div class="col-md-4">
 					<div class="form-group">
-						<label for="age">Idade</label>
+						<label for="age">Age</label>
 						{!! Form::text('age', null, ['class'=>'form-control', 'id'=>'age']) !!}
 					</div>
 				</div>
 				<div class="col-md-4">
 					<div class="form-group">
-						<label for="weight">Peso</label>
+						<label for="weight">Weight</label>
 						{!! Form::text('weight', null, ['class'=>'form-control', 'id'=>'weight']) !!}
 					</div>
 				</div>
 				<div class="col-md-4">
 					<div class="form-group">
-						<label for="height">Altura</label>
+						<label for="height">Height</label>
 						{!! Form::text('height', null, ['class'=>'form-control', 'id'=>'height']) !!}
 					</div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-12">
-					<label>Galeria de Imagens</label>
+					<label>Image Gallery</label>
 					<input type="file" name="images[]" class="form-control upload-img-gallery" multiple>
 					<input type="hidden" name="images_for_delete" id="images_for_delete">
 					<input type="hidden" name="images_order" id="images_order">
@@ -76,13 +76,13 @@
 			<br>
 			<div class="row">
 				<div class="col-md-12">
-					<label>Galeria de vídeos</label>
+					<label>Video Gallery</label>
 					<div class="row">
 						<div class="col-md-6">
-							<label>Título</label>
+							<label>Title</label>
 						</div>
 						<div class="col-md-3">
-							<label>Vídeo</label>
+							<label>Video</label>
 						</div>
 					</div>
 					<input type="hidden" name="videos_for_delete" id="videos_for_delete">
@@ -101,7 +101,7 @@
 											</div>
 										</div>
 										<div class="col-md-2">
-											<button type="button" class="btn btn-info btn-block bt-modal-video disabled" data-toggle="modal" data-target="#modal-video"><i class="fa fa-eye" aria-hidden="true"></i> Visualizar</button>
+											<button type="button" class="btn btn-info btn-block bt-modal-video disabled" data-toggle="modal" data-target="#modal-video"><i class="fa fa-eye" aria-hidden="true"></i> View</button>
 										</div>
 										<button type="button" class="btn btn-danger btn-xs bt-delete-video-galeria" data-id="{{ $video->id }}"><i class="fa fa-times"></i></button>
 									</div>
@@ -120,14 +120,14 @@
 										</div>
 									</div>
 									<div class="col-md-2">
-										<button type="button" class="btn btn-info btn-block bt-modal-video disabled" data-toggle="modal" data-target="#modal-video"><i class="fa fa-eye" aria-hidden="true"></i> Visualizar</button>
+										<button type="button" class="btn btn-info btn-block bt-modal-video disabled" data-toggle="modal" data-target="#modal-video"><i class="fa fa-eye" aria-hidden="true"></i> View</button>
 									</div>
 									<button type="button" class="btn btn-danger btn-xs bt-delete-video-galeria"><i class="fa fa-times"></i></button>
 								</div>
 							</div>
 						@endif
 					</div>
-					<button type="button" class="btn btn-primary btn-xs pull-right" id="bt-add-video"><i class="fa fa-plus" aria-hidden="true"></i>Adicionar vídeo</button>
+					<button type="button" class="btn btn-primary btn-xs pull-right" id="bt-add-video"><i class="fa fa-plus" aria-hidden="true"></i>Add video</button>
 				</div>
 			</div>
 		</div>
@@ -136,14 +136,14 @@
 				<div class="col-md-12">
 					<div class="form-group">
 						<label>&nbsp;</label>
-						<button type="submit" class="btn btn-block btn-success"><i class="fa fa-check" aria-hidden="true"></i> Salvar</button>
+						<button type="submit" class="btn btn-block btn-success"><i class="fa fa-check" aria-hidden="true"></i> Save</button>
 					</div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-12">
 					<div class="form-group">
-						<label for="photo">Foto</label>
+						<label for="photo">Photo</label>
 						<input type="file" name="_photo" id="photo" class="form-control upload-img" data-responsive="true" data-url="{{ empty($athlete->photo) ? '' : asset('/uploads/athletes') . '/' . $athlete->id . '/' . $athlete->photo }}">
 					</div>
 				</div>
@@ -159,14 +159,14 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="form-group">
-						<label for="thumbnail">Miniatura</label>
+						<label for="thumbnail">Thumbnail</label>
 						<input type="file" name="_thumbnail" id="thumbnail" class="form-control upload-img" data-responsive="true" data-url="{{ empty($athlete->thumbnail) ? '' : asset('/uploads/athletes') . '/' . $athlete->id . '/' . $athlete->thumbnail }}">
 					</div>
 				</div>
 			</div>
 			<div class="row redes-sociais">
 				<div class="col-md-12">
-					<label>Redes sociais</label>
+					<label>Social Media</label>
 					<div class="input-group">
 						<span class="input-group-addon"><i class="fa fa-facebook" aria-hidden="true"></i></span>
 						{!! Form::text('facebook', null, ['class'=>'form-control', 'placeholder'=>'Facebook']) !!}
@@ -190,7 +190,7 @@
 				</div>
 			</div>
 			<div id="produtos-usados">
-				<label>Produtos consumidos pelo atleta</label>
+				<label>Products consumed by the athlete</label>
 				{!! Form::select('products[]', $produtos, empty($products) ? null : $products, ['class'=>'form-control produtos-usados', 'multiple']) !!}
 			</div>
 		</div>

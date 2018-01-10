@@ -9,7 +9,7 @@
     {!! Form::open(['route'=>'videos.gravar']) !!}
 
     <div id="visivel">
-        <span>Visibilidade</span>
+        <span>Visibility</span>
         <label class="i-switch m-t-xs m-r">
             {!! Form::checkbox('visibility', null, true, ['class'=>'form-control']) !!}
             <i></i>

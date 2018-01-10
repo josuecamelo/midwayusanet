@@ -33666,7 +33666,7 @@ $(function () {
 /**************************************** Confirm delete: ****************************************/
 
 confirmDelete = function confirmDelete(event) {
-	if (confirm('Tem certeza de que deseja excluir este item?')) {
+	if (confirm('Are you sure you want to delete this item??')) {
 		return true;
 	} else {
 		event.preventDefault();
@@ -33685,7 +33685,7 @@ uploadImg = function uploadImg() {
 	var uploads = document.querySelectorAll('.upload-img');
 	uploads.forEach(function (element) {
 		element.style.display = 'none';
-		var button = buttonUpload('Definir imagem');
+		var button = buttonUpload('Set image');
 		var parent = element.parentNode;
 		parent.insertBefore(button, element);
 		button.onclick = function () {
@@ -33736,7 +33736,7 @@ uploadImgGallery = function uploadImgGallery() {
 	var uploads = document.querySelectorAll('.upload-img-gallery');
 	uploads.forEach(function (element) {
 		element.style.display = 'none';
-		var button = buttonUpload('Selecionar imagens');
+		var button = buttonUpload('Select images');
 		var parent = element.parentNode;
 		parent.insertBefore(button, element);
 		button.onclick = function () {
