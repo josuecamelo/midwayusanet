@@ -13,15 +13,15 @@ class CreateBlogCategories extends Migration
      */
     public function up()
     {
-        Schema::create('blog_categories', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name', 255);
-            $table->string('slug', 255);
-            $table->unsignedTinyInteger('type');
-            $table->integer('user_id');
-            $table->timestamps();
-            $table->softDeletes();
-        });
+//        Schema::create('blog_categories', function (Blueprint $table) {
+//            $table->increments('id');
+//            $table->string('name', 255);
+//            $table->string('slug', 255);
+//            $table->unsignedTinyInteger('type');
+//            $table->integer('user_id');
+//            $table->timestamps();
+//            $table->softDeletes();
+//        });
     }
 
     /**
@@ -31,6 +31,6 @@ class CreateBlogCategories extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('blog_categories');
+//        Schema::dropIfExists('blog_categories');
     }
 }
