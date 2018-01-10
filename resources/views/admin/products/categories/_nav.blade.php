@@ -10,14 +10,14 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="{{ route('categorias.listar') }}"><i class="fa fa-asterisk" aria-hidden="true"></i> Categorias</a>
+				<a class="navbar-brand" href="{{ route('categorias.listar') }}"><i class="fa fa-asterisk" aria-hidden="true"></i> Categories</a>
 			</div>
 			<div class="collapse navbar-collapse" id="menu-page">
 				<ul class="nav navbar-nav">
-					<li{{ (Route::is('categorias.listar') ? ' class=active' : '') }}><a href="{{ route('categorias.listar') }}"><i class="fa fa-file" aria-hidden="true"></i> Todas as Categorias</a></li>
-					<li{{ (Route::is('categorias.criar') ? ' class=active' : '') }}><a href="{{ route('categorias.criar') }}" ><i class="fa fa-file-o" aria-hidden="true"></i> Nova Categoria</a></li>
+					<li{{ (Route::is('categorias.listar') ? ' class=active' : '') }}><a href="{{ route('categorias.listar') }}"><i class="fa fa-file" aria-hidden="true"></i> All Categories</a></li>
+					<li{{ (Route::is('categorias.criar') ? ' class=active' : '') }}><a href="{{ route('categorias.criar') }}" ><i class="fa fa-file-o" aria-hidden="true"></i> New Category</a></li>
 					@if(Route::is('categorias.editar'))
-						<li class="active"><a href="#" ><i class="fa fa-pencil" aria-hidden="true"></i> Editar Categoria</a></li>
+						<li class="active"><a href="#" ><i class="fa fa-pencil" aria-hidden="true"></i> Edit Category</a></li>
 					@endif
 				</ul>
 			</div>

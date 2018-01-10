@@ -10,14 +10,14 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="{{ route('sabores.listar') }}"><i class="fa fa-apple" aria-hidden="true"></i> Sabores</a>
+				<a class="navbar-brand" href="{{ route('sabores.listar') }}"><i class="fa fa-apple" aria-hidden="true"></i> Flavors</a>
 			</div>
 			<div class="collapse navbar-collapse" id="menu-page">
 				<ul class="nav navbar-nav">
-					<li{{ (Route::is('sabores.listar') ? ' class=active' : '') }}><a href="{{ route('sabores.listar') }}"><i class="fa fa-file" aria-hidden="true"></i> Todos os Sabores</a></li>
-					<li{{ (Route::is('sabores.criar') ? ' class=active' : '') }}><a href="{{ route('sabores.criar') }}" ><i class="fa fa-file-o" aria-hidden="true"></i> Novo Sabor</a></li>
+					<li{{ (Route::is('sabores.listar') ? ' class=active' : '') }}><a href="{{ route('sabores.listar') }}"><i class="fa fa-file" aria-hidden="true"></i> All Flavors</a></li>
+					<li{{ (Route::is('sabores.criar') ? ' class=active' : '') }}><a href="{{ route('sabores.criar') }}" ><i class="fa fa-file-o" aria-hidden="true"></i> New Flavor</a></li>
 					@if(Route::is('sabores.editar'))
-						<li class="active"><a href="#" ><i class="fa fa-pencil" aria-hidden="true"></i> Editar Sabor</a></li>
+						<li class="active"><a href="#" ><i class="fa fa-pencil" aria-hidden="true"></i> Edit Flavor</a></li>
 					@endif
 				</ul>
 			</div>

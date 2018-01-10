@@ -2,19 +2,19 @@
 	<div class="row">
 		<div class="col-md-4">
 			<div class="form-group">
-				<label for="name">Razão Social *</label>
+				<label for="name">Name *</label>
 				{!! Form::text('name', null, ['class'=>'form-control', 'id'=>'name', 'autofocus', 'required']) !!}
 			</div>
 		</div>
 		<div class="col-md-4">
 			<div class="form-group">
-				<label for="other_name">Fantasia *</label>
+				<label for="other_name">Business Name *</label>
 				{!! Form::text('other_name', null, ['class'=>'form-control', 'id'=>'other_name', 'required']) !!}
 			</div>
 		</div>
 		<div class="col-md-4">
 			<div class="form-group">
-				<label for="zip">CEP</label>
+				<label for="zip">ZIP</label>
 				{!! Form::text('zip', null, ['class'=>'form-control', 'id'=>'zip', 'required']) !!}
 			</div>
 		</div>
@@ -22,19 +22,19 @@
 	<div class="row">
 		<div class="col-md-4">
 			<div class="form-group">
-				<label for="address">Endereço *</label>
+				<label for="address">Address *</label>
 				{!! Form::text('address', null, ['class'=>'form-control', 'id'=>'address', 'required']) !!}
 			</div>
 		</div>
 		<div class="col-md-4">
 			<div class="form-group">
-				<label for="complement">Complemento *</label>
+				<label for="complement">Complement *</label>
 				{!! Form::text('complement', null, ['class'=>'form-control', 'id'=>'complement', 'required']) !!}
 			</div>
 		</div>
 		<div class="col-md-4">
 			<div class="form-group">
-				<label for="district">Bairro *</label>
+				<label for="district">District *</label>
 				{!! Form::text('district', null, ['class'=>'form-control', 'id'=>'district', 'required']) !!}
 			</div>
 		</div>
@@ -42,19 +42,19 @@
 	<div class="row">
 		<div class="col-md-4">
 			<div class="form-group">
-				<label for="city">Cidade *</label>
+				<label for="city">City *</label>
 				{!! Form::text('city', null, ['class'=>'form-control', 'id'=>'city', 'required']) !!}
 			</div>
 		</div>
 		<div class="col-md-1">
 			<div class="form-group">
-				<label for="state">UF *</label>
+				<label for="state">State *</label>
 				{!! Form::text('state', null, ['class'=>'form-control', 'id'=>'state', 'required', 'maxlength'=>'2']) !!}
 			</div>
 		</div>
 		<div class="col-md-4">
 			<div class="form-group">
-				<label for="region">Região *</label>
+				<label for="region">Region *</label>
 				{!! Form::select('region', $regions, isset($region) ? $region : null, ['placeholder' => 'Selecione...', 'class'=>'form-control', 'id'=>'region', 'required']) !!}
 			</div>
 		</div>
@@ -68,7 +68,7 @@
 	<div class="row">
 		<div class="col-md-3">
 			<div class="form-group">
-				<label for="contact">Contato *</label>
+				<label for="contact">Contact *</label>
 				{!! Form::text('contact', null, ['class'=>'form-control', 'id'=>'contact', 'required']) !!}
 			</div>
 		</div>
@@ -107,7 +107,7 @@
 	</div>
 	<div class="row">
 		<div class="col-md-2 col-md-offset-5">
-			<button type="submit" class="btn btn-success btn-block"><i class="fa fa-check" aria-hidden="true"></i> Salvar</button>
+			<button type="submit" class="btn btn-success btn-block"><i class="fa fa-check" aria-hidden="true"></i> Save</button>
 		</div>
 	</div>
 	<div class="row">
