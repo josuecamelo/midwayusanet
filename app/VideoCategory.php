@@ -26,17 +26,17 @@ class VideoCategory extends Model
 	    return $this->hasMany(VideoCategory::class, 'parent_category_id', 'id');
     }
 	
-	public function listarTodos($notIn = null)
+	public function listarTodos($notIn = [])
 	{
 	    $res = [];
 
-	    if($notIn == null){
+	    if(empty($notIn)){
             $res = ['' => ''] + $this
                     ->orderBy('name', 'ASC')
                     ->pluck('name', 'id')->all();
         }else{
             $res = ['' => ''] + $this
-                    ->where('id','<>', $notIn)
+                    ->whereNotIn('id', $notIn)
                     ->orderBy('name', 'ASC')
                     ->pluck('name', 'id')->all();
         }
@@ -44,9 +44,7 @@ class VideoCategory extends Model
         return $res;
 	}
 
-    public function scopeCategories($query, $id)
-    {
-        return $query->where('id', $id);
+    public function childCategoriesMod2(){
+        return $this->hasMany(VideoCategory::class, 'parent_category_id', 'id')->select('id');
     }
-
 }
