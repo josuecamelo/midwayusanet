@@ -18,14 +18,14 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="{{ route('linhas.listar') }}"><i class="fa fa-bars" aria-hidden="true"></i> Linhas</a>
+				<a class="navbar-brand" href="{{ route('linhas.listar') }}"><i class="fa fa-bars" aria-hidden="true"></i> Lines</a>
 			</div>
 			<div class="collapse navbar-collapse" id="menu-page">
 				<ul class="nav navbar-nav">
-					<li{{ (Route::is('linhas.listar') ? ' class=active' : '') }}><a href="{{ route('linhas.listar') }}"><i class="fa fa-file" aria-hidden="true"></i> Todas as Linhas</a></li>
-					<li{{ (Route::is('linhas.criar') ? ' class=active' : '') }}><a href="{{ route('linhas.criar') }}" ><i class="fa fa-file-o" aria-hidden="true"></i> Nova Linha</a></li>
+					<li{{ (Route::is('linhas.listar') ? ' class=active' : '') }}><a href="{{ route('linhas.listar') }}"><i class="fa fa-file" aria-hidden="true"></i> All Lines</a></li>
+					<li{{ (Route::is('linhas.criar') ? ' class=active' : '') }}><a href="{{ route('linhas.criar') }}" ><i class="fa fa-file-o" aria-hidden="true"></i> New Line</a></li>
 					@if(Route::is('linhas.editar'))
-						<li class="active"><a href="#" ><i class="fa fa-pencil" aria-hidden="true"></i> Editar Linha</a></li>
+						<li class="active"><a href="#" ><i class="fa fa-pencil" aria-hidden="true"></i> Edit Line</a></li>
 					@endif
 				</ul>
 			</div>

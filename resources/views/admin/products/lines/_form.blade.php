@@ -1,12 +1,12 @@
     <div class="col-md-2">
         <div class="form-group">
-            <label for="name">Nome *</label>
+            <label for="name">Name *</label>
             {!! Form::text('name', null, ['class'=>'form-control', 'autofocus', 'required']) !!}
         </div>
     </div>
     <div class="col-md-5">
         <div class="form-group">
-            <label for="description">Descrição</label>
+            <label for="description">Description</label>
             {!! Form::text('description', null, ['class'=>'form-control']) !!}
         </div>
     </div>
@@ -25,6 +25,6 @@
     <div class="col-md-1">
         <div class="form-group">
             <label>&nbsp;</label>
-            <button type="submit" class="btn btn-block btn-success"><i class="fa fa-check" aria-hidden="true"></i> Salvar</button>
+            <button type="submit" class="btn btn-block btn-success"><i class="fa fa-check" aria-hidden="true"></i> Save</button>
         </div>
     </div>
