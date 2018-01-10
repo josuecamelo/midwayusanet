@@ -65,8 +65,9 @@ class VideoCategoryAdminController extends Controller
 	public function edit($id)
 	{
 		$category = $this->videoCategoryModel->find($id);
+		$categories = $this->videoCategoryModel->listarTodos();
 		
-		return view('admin.videos.categories.edit', compact('category'));
+		return view('admin.videos.categories.edit', compact('category', 'categories'));
 	}
 
 
