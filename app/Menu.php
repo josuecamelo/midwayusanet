@@ -54,11 +54,11 @@ class Menu extends Model
 
     public function relatedCategories()
     {
-        return $this->belongsToMany(Category::class, 'menu_category', 'menu_id');
+        return $this->belongsToMany(Category::class, 'menu_categories', 'menu_id');
     }
 
     public function relatedProducts()
     {
-        return $this->belongsToMany(Product::class, 'menu_product', 'menu_id');
+        return $this->belongsToMany(Product::class, 'menu_products', 'menu_id');
     }
 }
