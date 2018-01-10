@@ -25,7 +25,7 @@ class VideoCategoryAdminController extends Controller
 	public function index()
 	{
 		$categories = $this->videoCategoryModel->orderBy('name', 'ASC')->paginate(15);
-		
+		dd($categories);
 		return view('admin.videos.categories.index', compact('categories'));
 	}
 
@@ -35,7 +35,7 @@ class VideoCategoryAdminController extends Controller
 	public function create()
 	{
 		$categories = $this->videoCategoryModel->listarTodos();
-		dd($categories);
+
 		return view('admin.videos.categories.create', compact('categories'));
 	}
 
