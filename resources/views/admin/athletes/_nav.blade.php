@@ -10,14 +10,14 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="{{ route('atletas.listar') }}"><i class="fa fa-users" aria-hidden="true"></i> Atletas</a>
+				<a class="navbar-brand" href="{{ route('atletas.listar') }}"><i class="fa fa-users" aria-hidden="true"></i> Athletes</a>
 			</div>
 			<div class="collapse navbar-collapse" id="menu-page">
 				<ul class="nav navbar-nav">
-					<li{{ (Route::is('atletas.listar') ? ' class=active' : '') }}><a href="{{ route('atletas.listar') }}"><i class="fa fa-users" aria-hidden="true"></i> Todos os Atletas</a></li>
-					<li{{ (Route::is('atletas.criar') ? ' class=active' : '') }}><a href="{{ route('atletas.criar') }}" ><i class="fa fa-user" aria-hidden="true"></i> Novo Atleta</a></li>
+					<li{{ (Route::is('atletas.listar') ? ' class=active' : '') }}><a href="{{ route('atletas.listar') }}"><i class="fa fa-users" aria-hidden="true"></i> All Athletes</a></li>
+					<li{{ (Route::is('atletas.criar') ? ' class=active' : '') }}><a href="{{ route('atletas.criar') }}" ><i class="fa fa-user" aria-hidden="true"></i> New Athlete</a></li>
 					@if(Route::is('atletas.editar'))
-						<li class="active"><a href="#" ><i class="fa fa-user-circle" aria-hidden="true"></i> Editar Atleta</a></li>
+						<li class="active"><a href="#" ><i class="fa fa-user-circle" aria-hidden="true"></i> Edit Athlete</a></li>
 					@endif
 				</ul>
 			</div>

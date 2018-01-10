@@ -13,7 +13,7 @@ $(function(){
 /**************************************** Confirm delete: ****************************************/
 
 confirmDelete = function (event) {
-	if (confirm('Tem certeza de que deseja excluir este item?')) {
+	if (confirm('Are you sure you want to delete this item??')) {
 		return true;
 	} else {
 		event.preventDefault();
@@ -33,7 +33,7 @@ uploadImg = function () {
 	let uploads = document.querySelectorAll('.upload-img');
 	uploads.forEach(function (element) {
 		element.style.display = 'none';
-		let button = buttonUpload('Definir imagem');
+		let button = buttonUpload('Set image');
 		let parent = element.parentNode;
 		parent.insertBefore(button, element);
 		button.onclick = function () {
@@ -85,7 +85,7 @@ uploadImgGallery = function () {
 	let uploads = document.querySelectorAll('.upload-img-gallery');
 	uploads.forEach(function (element) {
 		element.style.display = 'none';
-		let button = buttonUpload('Selecionar imagens');
+		let button = buttonUpload('Select images');
 		let parent = element.parentNode;
 		parent.insertBefore(button, element);
 		button.onclick = function () {
