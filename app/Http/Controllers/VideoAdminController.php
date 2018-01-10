@@ -38,7 +38,8 @@ class VideoAdminController extends Controller
 	
 	public function create()
 	{
-		$categories = $this->videoCategoryModel->listarTodos();
+		//$categories = $this->videoCategoryModel->listarTodos();
+        $categories = $this->videoCategoryModel->listarTodos([],$mod='obj');
 		
 		return view('admin.videos.create', compact('categories'));
 	}
@@ -71,7 +72,8 @@ class VideoAdminController extends Controller
 	public function edit($id)
 	{
 		$video = $this->videoModel->find($id);
-		$categories = $this->videoCategoryModel->listarTodos();
+		//$categories = $this->videoCategoryModel->listarTodos();
+        $categories = $this->videoCategoryModel->listarTodos([],$mod='obj');
 		$checked = $video->visibility ? '' : 'checked';
 		
 		return view('admin.videos.edit', compact('video', 'categories', 'checked'));
