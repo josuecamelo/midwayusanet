@@ -34,7 +34,9 @@ class VideoCategoryAdminController extends Controller
 	
 	public function create()
 	{
-		return view('admin.videos.categories.create');
+		$categories = $this->videoCategoryModel->listarTodos();
+		dd($categories);
+		return view('admin.videos.categories.create', compact('categories'));
 	}
 
 
