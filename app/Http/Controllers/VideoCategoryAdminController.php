@@ -25,7 +25,7 @@ class VideoCategoryAdminController extends Controller
 	public function index()
 	{
 		$categories = $this->videoCategoryModel->orderBy('name', 'ASC')->paginate(15);
-		dd($categories);
+
 		return view('admin.videos.categories.index', compact('categories'));
 	}
 
@@ -56,7 +56,7 @@ class VideoCategoryAdminController extends Controller
 		{
 			Flash::error('O item não pode ser inserido. Tente novamente.');
 		}
-		return redirect()->route('treinos.categorias.listar');
+		return redirect()->route('videos.categorias.listar');
 	}
 
 
@@ -87,7 +87,7 @@ class VideoCategoryAdminController extends Controller
 			Flash::error('Não foi possível alterar este item. Tente novamente.');
 		}
 		
-		return redirect()->route('treinos.categorias.listar');
+		return redirect()->route('videos.categorias.listar');
 	}
 
 
