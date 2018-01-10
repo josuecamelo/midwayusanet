@@ -89,22 +89,39 @@
             @endcan
 		</div>
 		<div class="row">
-            @can('treinos.listar')
+            @can('videos.listar')
 			<div class="col-md-4">
-				<a href="{{ route('treinos.listar') }}" class="btn btn-lg btn-block btn-danger"><i class="fa fa-cogs" aria-hidden="true"></i>Todos os Treinos</a>
+				<a href="{{ route('videos.listar') }}" class="btn btn-lg btn-block btn-danger"><i class="fa fa-youtube-play" aria-hidden="true"></i>Todos os Vídeos</a>
 			</div>
             @endcan
-            @can('treinos.categorias.listar')
+            @can('videos.categorias.listar')
 			<div class="col-md-4">
-				<a href="{{ route('treinos.categorias.listar') }}" class="btn btn-lg btn-block btn-danger"><i class="fa fa-asterisk" aria-hidden="true"></i>Categorias de Treinos</a>
+				<a href="{{ route('videos.categorias.listar') }}" class="btn btn-lg btn-block btn-danger"><i class="fa fa-asterisk" aria-hidden="true"></i>Categorias de Vídeos</a>
 			</div>
             @endcan
-            @can('treinos.criar')
+            @can('videos.criar')
 			<div class="col-md-4">
-				<a href="{{ route('treinos.criar') }}" class="btn btn-lg btn-block btn-danger"><i class="fa fa-cog" aria-hidden="true"></i>Novo Treino</a>
+				<a href="{{ route('videos.criar') }}" class="btn btn-lg btn-block btn-danger"><i class="fa fa-youtube-square" aria-hidden="true"></i>Novo Vídeo</a>
 			</div>
             @endcan
 		</div>
+		{{--<div class="row">--}}
+            {{--@can('treinos.listar')--}}
+			{{--<div class="col-md-4">--}}
+				{{--<a href="{{ route('treinos.listar') }}" class="btn btn-lg btn-block btn-danger"><i class="fa fa-cogs" aria-hidden="true"></i>Todos os Treinos</a>--}}
+			{{--</div>--}}
+            {{--@endcan--}}
+            {{--@can('treinos.categorias.listar')--}}
+			{{--<div class="col-md-4">--}}
+				{{--<a href="{{ route('treinos.categorias.listar') }}" class="btn btn-lg btn-block btn-danger"><i class="fa fa-asterisk" aria-hidden="true"></i>Categorias de Treinos</a>--}}
+			{{--</div>--}}
+            {{--@endcan--}}
+            {{--@can('treinos.criar')--}}
+			{{--<div class="col-md-4">--}}
+				{{--<a href="{{ route('treinos.criar') }}" class="btn btn-lg btn-block btn-danger"><i class="fa fa-cog" aria-hidden="true"></i>Novo Treino</a>--}}
+			{{--</div>--}}
+            {{--@endcan--}}
+		{{--</div>--}}
 	</div>
 
 @endsection
