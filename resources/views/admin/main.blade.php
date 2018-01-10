@@ -72,19 +72,37 @@
 					</ul>
 				</li>
 				<li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cogs" aria-hidden="true"></i>Treinos <span class="caret"></span></a>
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+						<i class="fa fa-youtube-play" aria-hidden="true"></i>
+						Vídeos
+						<span class="caret"></span>
+					</a>
 					<ul class="dropdown-menu">
-						@can('treinos.listar')
-						<li><a href="{{ route('treinos.listar') }}"><i class="fa fa-cogs" aria-hidden="true"></i>Todos os Treinos</a></li>
+						@can('videos.listar')
+						<li><a href="{{ route('videos.listar') }}"><i class="fa fa-youtube-play" aria-hidden="true"></i>Todos os Vídeos</a></li>
 						@endcan
-						@can('treinos.categorias.listar')
-						<li><a href="{{ route('treinos.categorias.listar') }}"><i class="fa fa-asterisk" aria-hidden="true"></i>Categorias de Treinos</a></li>
+						@can('videos.categorias.listar')
+						<li><a href="{{ route('videos.categorias.listar') }}"><i class="fa fa-asterisk" aria-hidden="true"></i>Categorias de Vídeos</a></li>
 						@endcan
-						@can('treinos.criar')
-						<li><a href="{{ route('treinos.criar') }}"><i class="fa fa-cog" aria-hidden="true"></i>Novo Treino</a></li>
+						@can('videos.criar')
+						<li><a href="{{ route('videos.criar') }}"><i class="fa fa-youtube-square" aria-hidden="true"></i>Novo Vídeo</a></li>
 						@endcan
 					</ul>
 				</li>
+				{{--<li class="dropdown">--}}
+					{{--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cogs" aria-hidden="true"></i>Treinos <span class="caret"></span></a>--}}
+					{{--<ul class="dropdown-menu">--}}
+						{{--@can('treinos.listar')--}}
+						{{--<li><a href="{{ route('treinos.listar') }}"><i class="fa fa-cogs" aria-hidden="true"></i>Todos os Treinos</a></li>--}}
+						{{--@endcan--}}
+						{{--@can('treinos.categorias.listar')--}}
+						{{--<li><a href="{{ route('treinos.categorias.listar') }}"><i class="fa fa-asterisk" aria-hidden="true"></i>Categorias de Treinos</a></li>--}}
+						{{--@endcan--}}
+						{{--@can('treinos.criar')--}}
+						{{--<li><a href="{{ route('treinos.criar') }}"><i class="fa fa-cog" aria-hidden="true"></i>Novo Treino</a></li>--}}
+						{{--@endcan--}}
+					{{--</ul>--}}
+				{{--</li>--}}
 				<li>
 					<a href="{{ route('menus.listar') }}" class="dropdown-toggle" role="button"><i class="fa fa-th" aria-hidden="true"></i>Menu</a>
 				</li>
