@@ -10,14 +10,14 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="{{ route('posts.news') }}"><i class="fa fa-asterisk" aria-hidden="true"></i> Noticias</a>
+				<a class="navbar-brand" href="{{ route('posts.news') }}"><i class="fa fa-newspaper-o" aria-hidden="true"></i> News Blog</a>
 			</div>
 			<div class="collapse navbar-collapse" id="menu-page">
 				<ul class="nav navbar-nav">
-					<li{{ (Route::is('posts.news') ? ' class=active' : '') }}><a href="{{ route('posts.news') }}"><i class="fa fa-file" aria-hidden="true"></i> Todas as Noticias</a></li>
-					<li{{ (Route::is('posts.create') ? ' class=active' : '') }}><a href="{{ route('posts.create',$t) }}" ><i class="fa fa-file-o" aria-hidden="true"></i> Nova Noticia</a></li>
+					<li{{ (Route::is('posts.news') ? ' class=active' : '') }}><a href="{{ route('posts.news') }}"><i class="fa fa-newspaper-o" aria-hidden="true"></i> All News Posts</a></li>
+					<li{{ (Route::is('posts.create') ? ' class=active' : '') }}><a href="{{ route('posts.create',$t) }}" ><i class="fa fa-file-o" aria-hidden="true"></i> New News Post</a></li>
 					@if(Route::is('posts.edit'))
-						<li class="active"><a href="#" ><i class="fa fa-pencil" aria-hidden="true"></i> Editar Noticia</a></li>
+						<li class="active"><a href="#" ><i class="fa fa-pencil" aria-hidden="true"></i> Edit News Post</a></li>
 					@endif
 				</ul>
 			</div>
