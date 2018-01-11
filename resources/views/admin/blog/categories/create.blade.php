@@ -1,7 +1,8 @@
 @extends('admin.main')
 
 @section('main')
-    @include('admin.blog.categories._nav')
+
+	@include('admin.blog.categories._nav')
 
 	{!! Form::open(['route'=>'categories.store']) !!}
 

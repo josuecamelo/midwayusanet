@@ -32,12 +32,16 @@
 						@can('posts.create')
 							<li><a href="{{ route('posts.create', 1) }}"><i class="fa fa-file-o" aria-hidden="true"></i>New News Post</a></li>
 						@endcan
-							<li class="divider"></li>
+						<li class="divider"></li>
 						@can('posts.science')
 							<li><a href="{{ route('posts.science') }}"><i class="fa fa-flask" aria-hidden="true"></i>Science Blog</a></li>
 						@endcan
 						@can('posts.create')
 							<li><a href="{{ route('posts.create', 0) }}"><i class="fa fa-file-o" aria-hidden="true"></i>New Science Post</a></li>
+						@endcan
+						<li class="divider"></li>
+						@can('categories.index')
+							<li><a href="{{ route('categories.index', 0) }}"><i class="fa fa-asterisk" aria-hidden="true"></i>Categories</a></li>
 						@endcan
 					</ul>
 				</li>

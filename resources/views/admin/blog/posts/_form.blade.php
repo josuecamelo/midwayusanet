@@ -51,7 +51,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-sm-12">
+				<div class="col-md-12">
 					@if(isset($post->image))
 						<img id="thumb" class="img-responsive img-rounded" src="{{asset($post->show_image)}}"/>
 					@else
@@ -59,11 +59,12 @@
 					@endif
 				</div>
 			</div>
+			<br>
+			<div class="row">
+				<div class="col-md-12">
+					<button type="submit" class="btn btn-block btn-success"><i class="fa fa-check" aria-hidden="true"></i> Save</button>
+				</div>
+			</div>
 		</div>
 	</div>
-	<diw class="row">
-		<div class="col-md-2 col-md-offset-5">
-			<button type="submit" class="btn btn-block btn-success"><i class="fa fa-check" aria-hidden="true"></i> Save</button>
-		</div>
-	</diw>
 </div>
