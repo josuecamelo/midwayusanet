@@ -32,7 +32,7 @@
 				</div>
 			@endcan
 			@can('posts.create')
-				<div class="col-md-3">
+				<div class="col-md-2">
 					<a href="{{ route('posts.create', 1) }}" class="btn btn-lg btn-block btn-primary"><i class="fa fa-file-o" aria-hidden="true"></i>New News Post</a>
 				</div>
 			@endcan
@@ -42,8 +42,13 @@
 				</div>
 			@endcan
 			@can('posts.create')
-				<div class="col-md-3">
+				<div class="col-md-2">
 					<a href="{{ route('posts.create', 0) }}" class="btn btn-lg btn-block btn-primary"><i class="fa fa-file-o" aria-hidden="true"></i>New Science Post</a>
+				</div>
+			@endcan
+			@can('categories.index')
+				<div class="col-md-2">
+					<a href="{{ route('categories.index', 0) }}" class="btn btn-lg btn-block btn-primary"><i class="fa fa-asterisk" aria-hidden="true"></i>Blog Categories</a>
 				</div>
 			@endcan
 		</div>

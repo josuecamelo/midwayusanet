@@ -9,15 +9,16 @@
 @endsection
 
 @section('js')
-    @include('admin.blog.posts._tinymce')
+	@include('admin.blog.posts._tinymce')
 @endsection
 
 @section('main')
-    @if($t == 1)
-        @include('admin.blog.posts._nav_news')
-    @else
-        @include('admin.blog.posts._nav_science')
-    @endif
+
+	@if($t == 1)
+		@include('admin.blog.posts._nav_news')
+	@else
+		@include('admin.blog.posts._nav_science')
+	@endif
 
 	{!! Form::open(['route'=>'posts.store','method'=> 'post','enctype' => 'multipart/form-data']) !!}
 	@include('admin.blog.posts._form')

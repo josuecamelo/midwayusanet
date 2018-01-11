@@ -12,7 +12,7 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="form-group">
-						{!! Form::textarea('content', null, ['id'=>'content', 'class'=>'form-control', 'required']) !!}
+						{!! Form::textarea('content', null, ['id'=>'content', 'class'=>'form-control']) !!}
 					</div>
 				</div>
 			</div>
@@ -46,7 +46,7 @@
 				<div class="col-md-12">
 					<div class="form-group">
 						<label for="image">Image *</label>
-						<input class="form-control" required type="file" id="image" name="file" accept="image/jpg,image/jpeg,image/png" onchange="readURL(this)" data-browse-class='btn btn-default'>
+						<input class="form-control" type="file" id="image" name="file" accept="image/jpg,image/jpeg,image/png" onchange="readURL(this)" data-browse-class='btn btn-default'>
 					</div>
 				</div>
 			</div>
