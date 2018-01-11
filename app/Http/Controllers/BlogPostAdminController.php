@@ -38,7 +38,7 @@ class BlogPostAdminController extends Controller
 	
 	public function create($t)
 	{
-		$categories = BlogCategory::where('type', $t)->pluck('name', 'id')->all();
+		$categories = ['' => ''] + BlogCategory::where('type', $t)->pluck('name', 'id')->all();
 		return view('admin.blog.posts.create', compact('categories', 't'));
 	}
 	
