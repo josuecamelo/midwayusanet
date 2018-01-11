@@ -30,6 +30,7 @@ btDelete.forEach(function (element) {
 /**************************************** Button upload and preview: ****************************************/
 
 uploadImg = function () {
+	console.log('upload img');
 	let uploads = document.querySelectorAll('.upload-img');
 	uploads.forEach(function (element) {
 		element.style.display = 'none';

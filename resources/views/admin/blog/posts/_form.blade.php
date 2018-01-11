@@ -46,19 +46,18 @@
 				<div class="col-md-12">
 					<div class="form-group">
 						<label for="image">Image *</label>
-						<input class="form-control" type="file" id="image" name="file" accept="image/jpg,image/jpeg,image/png" onchange="readURL(this)" data-browse-class='btn btn-default'>
+						@if(isset($post->image))
+							<input type="file" id="image23" class="upload-img" data-url="{{ asset($post->show_image) }}" data-responsive="true" name="file" accept="image/jpg,image/jpeg,image/png" onchange="readURL(this)" data-browse-class='btn btn-default'>
+						@else
+							<input type="file" id="image" class="upload-img" data-responsive="true" name="file" accept="image/jpg,image/jpeg,image/png" onchange="readURL(this)" data-browse-class='btn btn-default'>
+						@endif
 					</div>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-md-12">
-					@if(isset($post->image))
-						<img id="thumb" class="img-responsive img-rounded" src="{{asset($post->show_image)}}"/>
-					@else
-						<img id="thumb" class="img-responsive img-rounded" src="{{asset('img/no-image.jpg')}}"/>
-					@endif
-				</div>
-			</div>
+			<br>
+			<p class="text-center">
+				<small>* Required field.</small>
+			</p>
 			<br>
 			<div class="row">
 				<div class="col-md-12">
