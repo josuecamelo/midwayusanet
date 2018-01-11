@@ -10,14 +10,14 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="{{ route('lojas.listar') }}"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Lojas</a>
+				<a class="navbar-brand" href="{{ route('lojas.listar') }}"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Stores</a>
 			</div>
 			<div class="collapse navbar-collapse" id="menu-page">
 				<ul class="nav navbar-nav">
 					<li{{ (Route::is('lojas.listar') ? ' class=active' : '') }}><a href="{{ route('lojas.listar') }}"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Todas as Lojas</a></li>
-					<li{{ (Route::is('lojas.criar') ? ' class=active' : '') }}><a href="{{ route('lojas.criar') }}" ><i class="fa fa-shopping-basket" aria-hidden="true"></i> Nova Loja</a></li>
+					<li{{ (Route::is('lojas.criar') ? ' class=active' : '') }}><a href="{{ route('lojas.criar') }}" ><i class="fa fa-shopping-basket" aria-hidden="true"></i> New Store</a></li>
 					@if(Route::is('lojas.editar'))
-						<li class="active"><a href="#" ><i class="fa fa-pencil" aria-hidden="true"></i> Editar Loja</a></li>
+						<li class="active"><a href="#" ><i class="fa fa-pencil" aria-hidden="true"></i> Edit Store</a></li>
 					@endif
 				</ul>
 			</div>

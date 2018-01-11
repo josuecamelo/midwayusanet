@@ -1,0 +1,1 @@
+<div class="alert alert-warning text-center">No items added.</div>

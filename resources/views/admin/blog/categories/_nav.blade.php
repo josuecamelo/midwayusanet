@@ -10,14 +10,14 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="{{ route('categories.index') }}"><i class="fa fa-asterisk" aria-hidden="true"></i> Categorias Blog</a>
+				<a class="navbar-brand" href="{{ route('categories.index') }}"><i class="fa fa-asterisk" aria-hidden="true"></i> Blog Categories</a>
 			</div>
 			<div class="collapse navbar-collapse" id="menu-page">
 				<ul class="nav navbar-nav">
-					<li{{ (Route::is('categories.index') ? ' class=active' : '') }}><a href="{{ route('categories.index') }}"><i class="fa fa-file" aria-hidden="true"></i> Todas as Categoria</a></li>
-					<li{{ (Route::is('categories.create') ? ' class=active' : '') }}><a href="{{ route('categories.create') }}" ><i class="fa fa-file-o" aria-hidden="true"></i> Nova Categoria</a></li>
+					<li{{ (Route::is('categories.index') ? ' class=active' : '') }}><a href="{{ route('categories.index') }}"><i class="fa fa-file" aria-hidden="true"></i> All Blog Categories</a></li>
+					<li{{ (Route::is('categories.create') ? ' class=active' : '') }}><a href="{{ route('categories.create') }}" ><i class="fa fa-file-o" aria-hidden="true"></i> New Blog Category</a></li>
 					@if(Route::is('categories.edit'))
-						<li class="active"><a href="#" ><i class="fa fa-pencil" aria-hidden="true"></i> Editar Categoria do Blog</a></li>
+						<li class="active"><a href="#" ><i class="fa fa-pencil" aria-hidden="true"></i> Edit Blog Category</a></li>
 					@endif
 				</ul>
 			</div>

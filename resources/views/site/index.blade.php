@@ -337,6 +337,7 @@
 				width: 100%;
 				float: none;
 			}
+
 			.col-md-6:first-child div {
 				margin-bottom: 15px;
 			}
@@ -482,238 +483,52 @@
 
 	<section id="products-row">
 		<section id="products">
-			<h2>Recommended Products</h2>
+			<h2>Military Trail</h2>
 			<div>
 				<div class="slick-track" role="listbox">
-					<a href="#">
-						<div class="product">
-							<img src="{{ asset('img/best-protein.png') }}">
-							<h4>Best Protein</h4>
-							<span>$23.99</span>
-						</div>
-					</a>
-					<a href="#">
-						<div class="product">
-							<img src="{{ asset('img/best-protein.png') }}">
-							<h4>Best Protein</h4>
-							<span class="price">$23.99</span>
-						</div>
-					</a>
-					<a href="#">
-						<div class="product">
-							<img src="{{ asset('img/best-protein.png') }}">
-							<h4>Best Protein</h4>
-							<span class="price">$23.99</span>
-						</div>
-					</a>
-					<a href="#">
-						<div class="product">
-							<img src="{{ asset('img/best-protein.png') }}">
-							<h4>Best Protein</h4>
-							<span class="price">$23.99</span>
-						</div>
-					</a>
-					<a href="#">
-						<div class="product">
-							<img src="{{ asset('img/best-protein.png') }}">
-							<h4>Best Protein</h4>
-							<span class="price">$23.99</span>
-						</div>
-					</a>
-					<a href="#">
-						<div class="product">
-							<img src="{{ asset('img/best-protein.png') }}">
-							<h4>Best Protein</h4>
-							<span class="price">$23.99</span>
-						</div>
-					</a>
-					<a href="#">
-						<div class="product">
-							<img src="{{ asset('img/best-protein.png') }}">
-							<h4>Best Protein</h4>
-							<span class="price">$23.99</span>
-						</div>
-					</a>
-					<a href="#">
-						<div class="product">
-							<img src="{{ asset('img/best-protein.png') }}">
-							<h4>Best Protein</h4>
-							<span class="price">$23.99</span>
-						</div>
-					</a>
-					<a href="#">
-						<div class="product">
-							<img src="{{ asset('img/best-protein.png') }}">
-							<h4>Best Protein</h4>
-							<span class="price">$23.99</span>
-						</div>
-					</a>
-					<a href="#">
-						<div class="product">
-							<img src="{{ asset('img/best-protein.png') }}">
-							<h4>Best Protein</h4>
-							<span class="price">$23.99</span>
-						</div>
-					</a>
-					<a href="#">
-						<div class="product">
-							<img src="{{ asset('img/best-protein.png') }}">
-							<h4>Best Protein</h4>
-							<span class="price">$23.99</span>
-						</div>
-					</a>
-					<a href="#">
-						<div class="product">
-							<img src="{{ asset('img/best-protein.png') }}">
-							<h4>Best Protein</h4>
-							<span class="price">$23.99</span>
-						</div>
-					</a>
-					<a href="#">
-						<div class="product">
-							<img src="{{ asset('img/best-protein.png') }}">
-							<h4>Best Protein</h4>
-							<span class="price">$23.99</span>
-						</div>
-					</a>
-					<a href="#">
-						<div class="product">
-							<img src="{{ asset('img/best-protein.png') }}">
-							<h4>Best Protein</h4>
-							<span class="price">$23.99</span>
-						</div>
-					</a>
-					<a href="#">
-						<div class="product">
-							<img src="{{ asset('img/best-protein.png') }}">
-							<h4>Best Protein</h4>
-							<span class="price">$23.99</span>
-						</div>
-					</a>
+					@foreach($militaryTrailProducts as $mtProduct)
+						<a href="#">
+							<div class="product">
+								<img src="{{ asset('uploads/products') . '/' . $mtProduct->id . '/' . $mtProduct->image }}">
+								<h4>{{ $mtProduct->name . ' ' . $mtProduct->last_name }}</h4>
+								@if(!empty($mtProduct->flavor))
+									<span class="cor" style="color: {{ $mtProduct->flavor->color }}">{{ $mtProduct->flavor->name }}</span>
+								@endif
+								<div>{!! $mtProduct->shopify !!}</div>
+							</div>
+						</a>
+					@endforeach
 				</div>
 			</div>
-			<h2>Recommended Stacks</h2>
+			<h2>Glamour Nutrition</h2>
 			<div>
 				<div class="slick-track" role="listbox">
-					<a href="#">
-						<div class="product">
-							<img src="{{ asset('img/best-protein.png') }}">
-							<h4>Best Protein</h4>
-							<span>$23.99</span>
-						</div>
-					</a>
-					<a href="#">
-						<div class="product">
-							<img src="{{ asset('img/best-protein.png') }}">
-							<h4>Best Protein</h4>
-							<span class="price">$23.99</span>
-						</div>
-					</a>
-					<a href="#">
-						<div class="product">
-							<img src="{{ asset('img/best-protein.png') }}">
-							<h4>Best Protein</h4>
-							<span class="price">$23.99</span>
-						</div>
-					</a>
-					<a href="#">
-						<div class="product">
-							<img src="{{ asset('img/best-protein.png') }}">
-							<h4>Best Protein</h4>
-							<span class="price">$23.99</span>
-						</div>
-					</a>
-					<a href="#">
-						<div class="product">
-							<img src="{{ asset('img/best-protein.png') }}">
-							<h4>Best Protein</h4>
-							<span class="price">$23.99</span>
-						</div>
-					</a>
-					<a href="#">
-						<div class="product">
-							<img src="{{ asset('img/best-protein.png') }}">
-							<h4>Best Protein</h4>
-							<span class="price">$23.99</span>
-						</div>
-					</a>
-					<a href="#">
-						<div class="product">
-							<img src="{{ asset('img/best-protein.png') }}">
-							<h4>Best Protein</h4>
-							<span class="price">$23.99</span>
-						</div>
-					</a>
-					<a href="#">
-						<div class="product">
-							<img src="{{ asset('img/best-protein.png') }}">
-							<h4>Best Protein</h4>
-							<span class="price">$23.99</span>
-						</div>
-					</a>
-					<a href="#">
-						<div class="product">
-							<img src="{{ asset('img/best-protein.png') }}">
-							<h4>Best Protein</h4>
-							<span class="price">$23.99</span>
-						</div>
-					</a>
-					<a href="#">
-						<div class="product">
-							<img src="{{ asset('img/best-protein.png') }}">
-							<h4>Best Protein</h4>
-							<span class="price">$23.99</span>
-						</div>
-					</a>
-					<a href="#">
-						<div class="product">
-							<img src="{{ asset('img/best-protein.png') }}">
-							<h4>Best Protein</h4>
-							<span class="price">$23.99</span>
-						</div>
-					</a>
-					<a href="#">
-						<div class="product">
-							<img src="{{ asset('img/best-protein.png') }}">
-							<h4>Best Protein</h4>
-							<span class="price">$23.99</span>
-						</div>
-					</a>
-					<a href="#">
-						<div class="product">
-							<img src="{{ asset('img/best-protein.png') }}">
-							<h4>Best Protein</h4>
-							<span class="price">$23.99</span>
-						</div>
-					</a>
-					<a href="#">
-						<div class="product">
-							<img src="{{ asset('img/best-protein.png') }}">
-							<h4>Best Protein</h4>
-							<span class="price">$23.99</span>
-						</div>
-					</a>
-					<a href="#">
-						<div class="product">
-							<img src="{{ asset('img/best-protein.png') }}">
-							<h4>Best Protein</h4>
-							<span class="price">$23.99</span>
-						</div>
-					</a>
+					@foreach($glamourNutritionProducts as $gnProduct)
+						<a href="#">
+							<div class="product">
+								<img src="{{ asset('uploads/products') . '/' . $gnProduct->id . '/' . $gnProduct->image }}">
+								<h4>{{ $gnProduct->name . ' ' . $gnProduct->last_name }}</h4>
+								@if(!empty($gnProduct->flavor))
+									<span class="cor" style="color: {{ $gnProduct->flavor->color }}">{{ $gnProduct->flavor->name }}</span>
+								@endif
+								<div>{!! $gnProduct->shopify !!}</div>
+							</div>
+						</a>
+					@endforeach
 				</div>
 			</div>
 		</section>
 		<aside id="products-menu">
 			<ul>
-				<li><a href="#">Protein<i class="fas fa-angle-right"></i></a></li>
-				<li><a href="#">Pre-Workout<i class="fas fa-angle-right"></i></a></li>
-				<li><a href="#">Beauty<i class="fas fa-angle-right"></i></a></li>
-				<li><a href="#">Stacks<i class="fas fa-angle-right"></i></a></li>
+				<li><a href="{{ url('/') }}">Protein<i class="fas fa-angle-right"></i></a></li>
+				<li><a href="{{ url('/') }}">Pre-Workout<i class="fas fa-angle-right"></i></a></li>
+				<li><a href="{{ url('/') }}">Beauty<i class="fas fa-angle-right"></i></a></li>
+				<li><a href="{{ url('/') }}">Stacks<i class="fas fa-angle-right"></i></a></li>
 			</ul>
 			<div>
 				<h1>LET US HELP YOU BUILD YOURSELF</h1>
 				<p>Answer these questions for a customized supplement stack.</p>
-				<a href="#" title="Customize your plan" role="link">Customize Your Plan</a>
+				<a href="{{ route('custom-plan') }}" title="Customize your plan" role="link">Customize Your Plan</a>
 			</div>
 		</aside>
 	</section>

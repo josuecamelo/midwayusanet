@@ -1,5 +1,10 @@
 <script src="{{ asset('js/tinymce/js/tinymce/tinymce.min.js') }}"></script>
 <script>
+
+	$(function(){
+		uploadImg();
+	});
+
     var editor_config = {
         path_absolute : "{{ URL::to('/') }}/",
         selector : "textarea",

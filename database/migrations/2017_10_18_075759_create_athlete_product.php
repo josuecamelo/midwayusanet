@@ -13,7 +13,7 @@ class CreateAthleteProduct extends Migration
 	 */
 	public function up()
 	{
-		/*Schema::create('athlete_product', function (Blueprint $table)
+		/*Schema::create('athlete_products', function (Blueprint $table)
 		{
 			$table->increments('id');
 			

@@ -45,6 +45,9 @@ Route::get('/contato', 'ContactController@index')->name('contato');
 Route::get('/inscreverse', 'SubscribeController@index')->name('inscreverse');
 Route::post('/inscrever', 'SubscribeController@store')->name('inscrever');
 
+Route::get('/custom-plan', 'CustomPlanController@index')->name('custom-plan');
+Route::post('/custom-plan/send', 'CustomPlanController@send')->name('custom-plan-send');
+
 //testes
 Route::get('/testes/{cep}', 'TesteController@index');
 
@@ -137,6 +140,26 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'adminCheck']], func
 		});
 	});
 	
+	$router->group(['prefix' => 'videos', 'as' => 'videos.'], function () use ($router)
+	{
+		$router->get('/', ['as' => 'listar', 'uses' => 'VideoAdminController@index']);
+		$router->post('store', ['as' => 'gravar', 'uses' => 'VideoAdminController@store']);
+		$router->get('create', ['as' => 'criar', 'uses' => 'VideoAdminController@create']);
+		$router->get('{id}/destroy', ['as' => 'remover', 'uses' => 'VideoAdminController@destroy']);
+		$router->get('{id}/edit', ['as' => 'editar', 'uses' => 'VideoAdminController@edit']);
+		$router->post('{id}/update', ['as' => 'atualizar', 'uses' => 'VideoAdminController@update']);
+		
+		$router->group(['prefix' => 'categorias', 'as' => 'categorias.'], function () use ($router)
+		{
+			$router->get('/', ['as' => 'listar', 'uses' => 'VideoCategoryAdminController@index']);
+			$router->post('store', ['as' => 'gravar', 'uses' => 'VideoCategoryAdminController@store']);
+			$router->get('create', ['as' => 'criar', 'uses' => 'VideoCategoryAdminController@create']);
+			$router->get('{id}/destroy', ['as' => 'remover', 'uses' => 'VideoCategoryAdminController@destroy']);
+			$router->get('{id}/edit', ['as' => 'editar', 'uses' => 'VideoCategoryAdminController@edit']);
+			$router->post('{id}/update', ['as' => 'atualizar', 'uses' => 'VideoCategoryAdminController@update']);
+		});
+	});
+	
 	$router->group(['prefix' => 'atletas', 'as' => 'atletas.'], function () use ($router)
 	{
 		$router->get('/', ['as' => 'listar', 'uses' => 'AthleteAdminController@index']);
@@ -180,11 +203,11 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'adminCheck']], func
 	$router->group(['prefix' => 'menus', 'as' => 'menus.'], function () use ($router)
 	{
 		$router->get('/{menu_id?}', ['as' => 'listar', 'uses' => 'MenuAdminController@index']);
-		$router->post('store', ['as' => 'gravar', 'uses' => 'MenuAdminController@store']);
+		//$router->post('store', ['as' => 'gravar', 'uses' => 'MenuAdminController@store']);
 		/*$router->get('create', ['as' => 'criar', 'uses' => 'MenuAdminController@create']);
 		$router->get('{id}/destroy', ['as' => 'remover', 'uses' => 'MenuAdminController@destroy']);
-		$router->get('{id}/edit', ['as' => 'editar', 'uses' => 'MenuAdminController@edit']);
-		$router->post('{id}/update', ['as' => 'atualizar', 'uses' => 'MenuAdminController@update']);*/
+		$router->get('{id}/edit', ['as' => 'editar', 'uses' => 'MenuAdminController@edit']);*/
+		$router->post('{id}/update', ['as' => 'atualizar', 'uses' => 'MenuAdminController@update']);
 	});
 });
 

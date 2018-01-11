@@ -69,4 +69,26 @@ class Category extends Model
             ->orderBy('name', 'ASC')
             ->pluck('name', 'id')->all();
     }
+
+    public function listar($ids = [])
+    {
+        if(empty($ids)) {
+            return $this
+                ->select(
+                    'categories.id',
+                    'categories.name'
+                )
+                ->orderBy('name', 'ASC')
+                ->pluck('name', 'id')->all();
+        }else{
+            return $this
+                ->select(
+                    'categories.id',
+                    'categories.name'
+                )
+                ->whereIn('id', $ids)
+                ->orderBy('name', 'ASC')
+                ->pluck('name', 'id')->all();
+        }
+    }
 }

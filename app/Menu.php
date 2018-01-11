@@ -26,6 +26,10 @@ class Menu extends Model
 	{
 		return $this->hasMany(Category::class);
 	}
+
+	public function featuredProduct(){
+	    return $this->belongsTo(Product::class);
+    }
 	
 	public function listar()
 	{
@@ -47,4 +51,14 @@ class Menu extends Model
 				->pluck('name', 'id')->all();
 		}
 	}
+
+    public function relatedCategories()
+    {
+        return $this->belongsToMany(Category::class, 'menu_categories', 'menu_id');
+    }
+
+    public function relatedProducts()
+    {
+        return $this->belongsToMany(Product::class, 'menu_products', 'menu_id');
+    }
 }

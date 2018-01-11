@@ -13,7 +13,7 @@ class CreateProductFlavorsTable extends Migration
      */
     public function up()
     {
-        /*Schema::create('product_flavor', function (Blueprint $table) {
+        /*Schema::create('product_flavors', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('product_id')->unsigned();
             $table->foreign('product_id')->references('id')->on('products');
@@ -30,6 +30,6 @@ class CreateProductFlavorsTable extends Migration
      */
     public function down()
     {
-        //Schema::dropIfExists('product_flavor');
+        //Schema::dropIfExists('product_flavors');
     }
 }

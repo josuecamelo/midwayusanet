@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Utils\UploadImagem;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -61,6 +62,10 @@ class Product extends Model
 		$this->attributes['last_name'] = $value;
 		$this->attributes['last_name_slug'] = strtolower(str_slug($value));
 	}
+
+	public function setImageAttribute($value){
+        $this->attributes['image_ext'] = UploadImagem::getFileExtension($value);
+    }
 	
 	public function listarTodos($excluir = [])
 	{
