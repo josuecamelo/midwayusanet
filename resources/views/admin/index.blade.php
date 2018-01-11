@@ -26,22 +26,22 @@
 
 	<div class="container" id="dashboard">
 		<div class="row">
-			@can('lojas.listar')
+			@can('posts.news')
 				<div class="col-md-3">
 					<a href="{{ route('posts.news') }}" class="btn btn-lg btn-block btn-primary"><i class="fa fa-newspaper-o" aria-hidden="true"></i>News Blog</a>
 				</div>
 			@endcan
-			@can('lojas.listar')
+			@can('posts.create')
 				<div class="col-md-3">
 					<a href="{{ route('posts.create', 1) }}" class="btn btn-lg btn-block btn-primary"><i class="fa fa-file-o" aria-hidden="true"></i>New News Post</a>
 				</div>
 			@endcan
-			@can('lojas.listar')
+			@can('posts.science')
 				<div class="col-md-3">
 					<a href="{{ route('posts.science') }}" class="btn btn-lg btn-block btn-primary"><i class="fa fa-flask" aria-hidden="true"></i>Science Blog</a>
 				</div>
 			@endcan
-			@can('lojas.criar')
+			@can('posts.create')
 				<div class="col-md-3">
 					<a href="{{ route('posts.create', 0) }}" class="btn btn-lg btn-block btn-primary"><i class="fa fa-file-o" aria-hidden="true"></i>New Science Post</a>
 				</div>
