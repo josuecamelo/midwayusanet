@@ -3,13 +3,14 @@
 @section('css')
 	<style>
 
-		#search-col{
+		#search-col {
 			font-size: 14px;
 		}
 
 		.panel {
 			border: none;
 		}
+
 		.panel-body ul {
 			margin: 0;
 			padding: 0;
@@ -101,7 +102,7 @@
 							@foreach($lines as $line)
 								<li>
 									<label class="item-normal">
-										<input type="checkbox" data-item="line" data-id="{{ $line->id }}">
+										<input type="checkbox" data-item="lines" data-id="{{ $line->id }}">
 										{{ $line->name }}
 									</label>
 								</li>
@@ -120,7 +121,7 @@
 							@foreach($types as $type)
 								<li>
 									<label class="item-normal">
-										<input type="checkbox" data-item="type" data-id="{{ $type->id }}">
+										<input type="checkbox" data-item="types" data-id="{{ $type->id }}">
 										{{ $type->name }}
 									</label>
 								</li>
@@ -139,7 +140,7 @@
 							@foreach($categories as $category)
 								<li>
 									<label class="item-normal">
-										<input type="checkbox" data-item="category" data-id="{{ $category->id }}">
+										<input type="checkbox" data-item="categories" data-id="{{ $category->id }}">
 										{{ $category->name }}
 									</label>
 								</li>
@@ -158,7 +159,7 @@
 							@foreach($goals as $goal)
 								<li>
 									<label class="item-normal">
-										<input type="checkbox" data-item="goal" data-id="{{ $goal->id }}">
+										<input type="checkbox" data-item="goals" data-id="{{ $goal->id }}">
 										{{ $goal->name }}
 									</label>
 								</li>
@@ -177,7 +178,7 @@
 							@foreach($flavors as $flavor)
 								<li>
 									<label class="item-normal">
-										<input type="checkbox" data-item="flavor" data-id="{{ $flavor->id }}">
+										<input type="checkbox" data-item="flavors" data-id="{{ $flavor->id }}">
 										{{ $flavor->name }}
 									</label>
 								</li>
@@ -200,7 +201,7 @@
 								<div class="panel panel-default">
 									<div class="panel-header">
 										<a href="#">
-											<img src="{{ asset('uploads/products') . '/' . $product->id . '/' . $product->image }}" alt="">
+											{{--<img src="{{ asset('uploads/products') . '/' . $product->id . '/' . $product->image }}" alt="">--}}
 										</a>
 									</div>
 									<div class="panel-body">
@@ -225,12 +226,82 @@
 
 		$(function () {
 
+			var lines = [];
+			var types = [];
+			var categories = [];
+			var goals = [];
+			var flavors = [];
+			var itens = [];
+			var n = 0;
+
 			$('#search-col :checkbox').on('click', function (event) {
+
 				event.stopPropagation();
+
 				$(this).parent().toggleClass('item-normal item-marcado');
+
+				let checkboxes = $('#search-col :checkbox');
+
+				checkboxes.each(function (index, element) {
+
+					if (element.checked == true) {
+
+						let id = element.dataset.id;
+						let item = element.dataset.item;
+
+						eval(item + '.push(' + id + ')');
+
+						itens.push(item);
+					}
+				});
+
+				lines = Array.from(new Set(lines));
+				types = Array.from(new Set(types));
+				categories = Array.from(new Set(categories));
+				goals = Array.from(new Set(goals));
+				flavors = Array.from(new Set(flavors));
+				itens = Array.from(new Set(itens));
+
+				let products = $('#products-grid li');
+				products.each(function (index, element) {
+
+					let _lines = parseInt(element.dataset.line);
+					let _types = parseInt(element.dataset.type);
+					let _categories = parseInt(element.dataset.category);
+					let _goals = parseInt(element.dataset.goal);
+					let _flavors = parseInt(element.dataset.flavor);
+
+					// console.log(itens);
+
+					itens.forEach(function (e) {
+
+						if (eval(e + '.includes(_' + e + ')')) {
+							n++;
+						}
+					});
+
+					// console.log(itens.length);
+					// console.log(n);
+
+					// if (lines.includes(line) && types.includes(type) && categories.includes(category) && goals.includes(goal) && flavors.includes(flavor)) {
+
+					if (itens.length == n) {
+						element.style.display = 'block';
+					} else {
+						element.style.display = 'none';
+					}
+
+					n = 0;
+				});
+
+				lines = [];
+				types = [];
+				categories = [];
+				goals = [];
+				flavors = [];
+				itens = [];
+
 			});
-
-
 		});
 
 	</script>
