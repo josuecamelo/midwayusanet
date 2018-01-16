@@ -192,9 +192,9 @@
 						<li
 							data-line="{{ $product->line_id }}"
 							data-type="{{ $product->type_id }}"
-							data-category="{{ $product->categories }}"
-							data-goal="{{ $product->goals }}"
-							data-flavor="{{ $product->flavor }}"
+							data-category="{{ $product->categories()->select('id')->get()->implode('id', ',') }}"
+							data-goal="{{ $product->goals()->select('id')->get()->implode('id', ',') }}"
+							data-flavor="{{ $product->flavor_id }}"
 						>
 							<article>
 								<div class="panel panel-default">
