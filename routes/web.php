@@ -16,6 +16,7 @@ Auth::routes();
 Route::get('/', 'IndexController@index')->name('index');
 Route::get('/home', 'IndexController@home')->name('home');
 
+Route::get('/products', 'ProductController@index')->name('products');
 Route::get('/produtos', 'ProductController@index')->name('produtos');
 Route::get('/produtos/{slug}/{sabor?}', ['as' => 'produto_exibicao', 'uses' => 'ProductController@product']);
 Route::get('/products/{type}/{category}', ['as' => 'produto_categoria', 'uses' => 'ProductController@obterPorTipoCategoria']);

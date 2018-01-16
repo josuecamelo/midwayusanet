@@ -90,8 +90,8 @@
 			position: absolute;
 			width: 100%;
 			display: block;
-			background: rgba(0, 0, 0, 0.85);
-			color: white;
+			background: rgba(255, 255, 255, 0.95);
+			color: #A6A8AB;
 			bottom: -1px;
 			text-transform: uppercase;
 			margin: 0px;
