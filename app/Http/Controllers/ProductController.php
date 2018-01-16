@@ -1,0 +1,89 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Flavor;
+use App\Product;
+use App\Line;
+use App\Type;
+use App\Category;
+use App\Goal;
+use App\ProductCategory;
+use Illuminate\Http\Request;
+
+class ProductController extends Controller
+{
+	private $productModel;
+	private $lineModel;
+	private $typeModel;
+	private $categoryModel;
+	private $goalModel;
+	private $flavorModel;
+	private $productCategoryModel;
+	
+	public function __construct(Product $productModel, Line $line, Type $type, Category $category, Goal $goal, ProductCategory $productCategory, Flavor $flavor)
+	{
+		$this->productModel = $productModel;
+		$this->lineModel = $line;
+		$this->typeModel = $type;
+		$this->categoryModel = $category;
+		$this->goalModel = $goal;
+		$this->flavorModel = $flavor;
+		$this->productCategoryModel = $productCategory;
+	}
+	
+	function index()
+	{
+		$products = $this->productModel->orderby('name')->get();
+		$lines = $this->lineModel->orderby('name')->get();
+		$types = $this->typeModel->orderby('name')->get();
+		$categories = $this->categoryModel->orderby('name')->get();
+		$goals = $this->goalModel->orderby('name')->get();
+		$flavors = $this->flavorModel->orderby('name')->get();
+		
+		return view('site.products', compact('products', 'lines', 'types', 'categories', 'goals', 'flavors'));
+	}
+	
+	public function product($slug, $flavor = '')
+	{
+		$slugs = explode('&', $slug);
+		
+		$product = $this->productModel
+			->select('products.*')
+			->leftJoin('flavors', 'flavors.id', '=', 'products.flavor_id')
+			->where(function ($query) use ($slugs, $flavor)
+			{
+				$query->where('products.slug', $slugs[0]);
+				
+				if (isset($slugs[1]))
+				{//correção 30/10/2017 - josue ex: http://militarytrail.com.br/produtos/somarizanol
+					$query->where('last_name_slug', $slugs[1]);
+				}
+				
+				if ($flavor != '')
+					$query->where('flavors.slug', $flavor);
+				//->orWhere('', '=', ');
+			})
+			->first();
+		
+		$topics = $product->productTopics()->get();
+		
+		$flavors = $product::ofProduct($product->slug, $product->last_name_slug);
+		
+		
+		return view('site.supplement', compact(
+			'product',
+			'topics',
+			'flavors'
+		));
+	}
+	
+	public function obterPorTipoCategoria($type, $category)
+	{
+		$slug = $category;
+		$categories = $this->categoryModel->orderBy('name')->get();
+		$products = $this->productModel->getByTypeCategory($type, $category);
+		
+		return view('site.product-category', compact('categories', 'slug', 'products'));
+	}
+}

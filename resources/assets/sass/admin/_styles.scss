@@ -1,0 +1,107 @@
+body {
+	padding-bottom: 50px;
+}
+
+.navbar {
+	border-radius: 0;
+}
+
+nav i {
+	width: 25px;
+}
+
+.dropdown-menu {
+	border: 1px solid #dee5e7;
+	box-shadow: 0 2px 6px #dee5e7;
+}
+
+.dropdown-menu > li > a {
+	color: #58666e;
+}
+
+.title {
+	margin: 30px 15px;
+}
+
+.btn-primary:active, .btn-primary.active {
+	background-color: #3f3f7e !important;
+	border-color: #5a4daa !important;
+}
+
+.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open .dropdown-toggle.btn-default {
+	color: #58666e !important;
+	background-color: #edf1f2 !important;
+	border-color: #c7d3d6 !important;
+}
+
+.bg-light.lter, .bg-light .lter {
+	margin-bottom: 15px;
+}
+
+button i {
+	margin-right: 5px;
+}
+
+.bt-upload {
+	display: block;
+}
+
+.textarea {
+	height: 150px !important;
+}
+
+.input-group-addon i {
+	width: 15px !important;
+}
+
+.select2-container--default.select2-container--focus .select2-selection--multiple, .select2-container--default .select2-selection--multiple {
+	border: 1px solid #cfdadd !important;
+	outline: 0;
+}
+
+.select2-dropdown {
+	border: 1px solid #cfdadd !important;
+}
+
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+	background-color: #8aa9bf;
+	color: white;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+	background-color: #f0f3f4;
+	border: 1px solid #cfdadd;
+}
+
+.select2-container--open .select2-dropdown--below {
+	border-top: none !important;
+}
+
+footer {
+	padding: 50px;
+	text-align: center;
+}
+
+.alert {
+	position: absolute;
+	right: 30px;
+	z-index: 9999;
+	padding: 10px 15px;
+	margin-top: 5px;
+}
+
+.app-aside, .navbar-header {
+	width: auto;
+}
+
+.navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover {
+	color: #58666e !important;
+}
+
+.navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {
+	color: #58666e !important;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
+	color: #58666e !important;
+}
