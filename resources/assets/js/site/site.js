@@ -6,9 +6,9 @@
  */
 
 require('./bootstrap');
-require('../jquery.fancybox.min');
-require('../jquery.maskedinput.min');
-require('../jquery-ui.min');
+// require('../jquery.fancybox.min');
+// require('../jquery.maskedinput.min');
+// require('../jquery-ui.min');
 require('../fontawesome-all.min');
 require('./js');
 
