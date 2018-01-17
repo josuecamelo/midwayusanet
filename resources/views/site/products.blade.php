@@ -188,6 +188,7 @@
 				</div>
 			</div>
 			<div class="col-md-9" id="products-grid">
+				<div class="alert alert-warning text-center" style="display: none">No items found with these search parameters.</div>
 				<ul>
 					@foreach($products as $product)
 						<li
@@ -201,7 +202,7 @@
 								<div class="panel panel-default">
 									<div class="panel-header">
 										<a href="#">
-											{{--<img src="{{ asset('uploads/products') . '/' . $product->id . '/' . $product->image }}" alt="">--}}
+											<img src="{{ asset('uploads/products') . '/' . $product->id . '/' . $product->image }}" alt="">
 										</a>
 									</div>
 									<div class="panel-body">
@@ -233,6 +234,7 @@
 			var flavors = [];
 			var itens = [];
 			var n = 0;
+			var none = 0;
 
 			$('#search-col :checkbox').on('click', function (event) {
 
@@ -263,6 +265,7 @@
 				itens = Array.from(new Set(itens));
 
 				let products = $('#products-grid li');
+
 				products.each(function (index, element) {
 
 					let _lines = parseInt(element.dataset.line);
@@ -271,8 +274,6 @@
 					let _goals = parseInt(element.dataset.goal);
 					let _flavors = parseInt(element.dataset.flavor);
 
-					// console.log(itens);
-
 					itens.forEach(function (e) {
 
 						if (eval(e + '.includes(_' + e + ')')) {
@@ -280,17 +281,12 @@
 						}
 					});
 
-					// console.log(itens.length);
-					// console.log(n);
-
-					// if (lines.includes(line) && types.includes(type) && categories.includes(category) && goals.includes(goal) && flavors.includes(flavor)) {
-
 					if (itens.length == n) {
 						element.style.display = 'block';
 					} else {
 						element.style.display = 'none';
-					}
 
+					}
 					n = 0;
 				});
 
@@ -300,6 +296,21 @@
 				goals = [];
 				flavors = [];
 				itens = [];
+				none = 0;
+
+				$('html, body').animate({scrollTop: 0}, 500);
+
+				products.each(function (index, element) {
+					if (element.style.display == 'none') {
+						none++;
+					}
+				});
+
+				if (products.length == none) {
+					$('#products-grid .alert').show();
+				} else {
+					$('#products-grid .alert').hide();
+				}
 
 			});
 		});
