@@ -91,11 +91,11 @@
 			width: 100%;
 			display: block;
 			background: rgba(255, 255, 255, 0.9);
-			color: #A6A8AB;
+			color: #000;
 			bottom: -1px;
 			text-transform: uppercase;
 			margin: 0px;
-			padding: 1em 0;
+			padding: 0.8em 0;
 			font-size: 12px;
 			z-index: 99;
 			text-align: center;
@@ -453,8 +453,8 @@
 
 	{{-- Mini Banners: --}}
 
-	<section id="mini-banners">
-		<div class="animated fadeInUp">
+	<section id="mini-banners" class="animated fadeInUp">
+		<div>
 			<a href="#">
 				<h3>
 					SHOP MILITARY TRAIL
@@ -469,7 +469,7 @@
 				<img src="{{ asset('img/home/secondary-banners/shop-military.jpg') }}">
 			</a>
 		</div>
-		<div class="animated fadeInUp" style="animation-delay: 0.2s;">
+		<div>
 			<a href="#">
 				<h3>
 					SHOP GLAMOUR NUTRITION
@@ -484,7 +484,7 @@
 				<img src="{{ asset('img/home/secondary-banners/shop-glamour.jpg') }}">
 			</a>
 		</div>
-		<div class="animated fadeInUp" style="animation-delay: 0.4s;">
+		<div>
 			<a href="#">
 				<h3>
 					DELICIOUS LEMON FLAVOR
@@ -499,7 +499,7 @@
 				<img src="{{ asset('img/home/secondary-banners/l-carnitine.jpg') }}">
 			</a>
 		</div>
-		<div class="animated fadeInUp" style="animation-delay: 0.6s;">
+		<div>
 			<a href="#">
 				<h3>
 					GIVING BACK
