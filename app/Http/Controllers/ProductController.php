@@ -10,6 +10,7 @@ use App\Category;
 use App\Goal;
 use App\ProductCategory;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 class ProductController extends Controller
 {
@@ -32,9 +33,19 @@ class ProductController extends Controller
 		$this->productCategoryModel = $productCategory;
 	}
 	
-	function index()
+	function index(Request $request)
 	{
-		$products = $this->productModel->orderby('name')->get();
+	    if($request->getRequestUri() != '/products/offers'){
+            $products = $this->productModel
+                ->orderBy('name')
+                ->get();
+        }else{
+            $products = $this->productModel
+                ->where('offer', 1)
+                ->orderBy('name')
+                ->get();
+        }
+
 		$lines = $this->lineModel->orderby('name')->get();
 		$types = $this->typeModel->orderby('name')->get();
 		$categories = $this->categoryModel->orderby('name')->get();
