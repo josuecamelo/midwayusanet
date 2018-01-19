@@ -89,6 +89,7 @@ return [
     // available since v1.3.0
     'valid_image_mimetypes' => [
         'image/jpeg',
+        'image/jpg',
         'image/pjpeg',
         'image/png',
         'image/gif',
