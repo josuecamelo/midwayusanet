@@ -23,7 +23,7 @@ class CreateProductsTable extends Migration
 			$table->text('description');
 			$table->text('benefits')->nullable();
 			$table->string('link_purchase', 255)->nullable();
-			$table->string('shopify', 255)->nullable();
+			$table->text('shopify', 255)->nullable();
 			$table->text('excerpt')->nullable();
 			$table->string('video', 255)->nullable();
 			//$table->string('related-flavors');
