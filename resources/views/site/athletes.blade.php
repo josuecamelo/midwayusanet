@@ -119,6 +119,19 @@
 			}
 		}
 
+		.min {
+			background: #f9f9f9;
+			/*border: 1px solid #f1f1f1;*/
+			text-align: center !important;
+			/*padding-bottom: 20px;*/
+			/*box-shadow: 0 0 5px rgba(0,0,0,0.1);*/
+			/*border-radius: 5px;*/
+		}
+
+		.img-min {
+			border-bottom: 3px solid #a71a20;
+			margin: auto !important;
+		}
 	</style>
 @endsection
 
@@ -127,11 +140,16 @@
 	<section id="atletas">
 		<h1>Team Midway</h1>
 
-		@foreach($athletesGroups as $key => $g)
+		@foreach($athletesGroups as $g)
 			<div class="row">
 				@foreach($g as $athlete)
 					<div class="col-md-3">
-						{{ $athlete->name }}
+						<div class="min">
+							<a href="" class="">
+								<img height="330" class="img-responsive img-min" src="{{ asset('uploads/athletes') . '/' . $athlete->id . '/' . $athlete->thumbnail }}" alt="{{ $athlete->name . ' ' . $athlete->last_name }}">
+								<h2>{{ $athlete->name . ' ' . $athlete->last_name }}</h2>
+							</a>
+						</div>
 					</div>
 				@endforeach
 			</div>
