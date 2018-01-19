@@ -194,8 +194,8 @@
 						<li
 							data-line="{{ $product->line_id }}"
 							data-type="{{ $product->type_id }}"
-							data-category="{{ $product->categories()->select('id')->get()->implode('id', ',') }}"
-							data-goal="{{ $product->goals()->select('id')->get()->implode('id', ',') }}"
+							data-category="{{ $product->categories()->select('category_id')->get()->implode('category_id', ',') }}"
+							data-goal="{{ $product->goals()->select('goal_id')->get()->implode('goal_id', ',') }}"
 							data-flavor="{{ $product->flavor_id }}"
 						>
 							<article>
