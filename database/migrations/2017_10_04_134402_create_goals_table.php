@@ -17,7 +17,7 @@ class CreateGoalsTable extends Migration
 		{
 			$table->increments('id');
 			$table->string('name', 255);
-			$table->text('description');
+			$table->text('description')->nullable();
 			$table->string('logo', 255)->nullable();
 			$table->string('banner', 255)->nullable();
 			$table->string('slug', 255);
