@@ -9,10 +9,10 @@
 
 		#atletas {
 			margin-top: 80px;
-			background: url({{ asset('img/bg3.jpg') }}) center;
+			/*background: url({{ asset('img/bg3.jpg') }}) center;*/
 		}
 
-		.my-slick-slider {
+		/*.my-slick-slider {
 			text-align: center;
 			width: 70%;
 			margin: auto;
@@ -95,7 +95,7 @@
 
 		.slider-for img {
 			max-height: 480px !important;
-		}
+		}*/
 
 		@media (min-width: 1200px) {
 			#atletas h1 {
@@ -103,8 +103,8 @@
 				padding: 50px 0 40px 0;
 				text-align: center;
 				color: #6d7d32;
-				background: url({{ asset('img/banner-inscrever.jpg') }}) center;
-				text-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+				/*background: url({{ asset('img/banner-inscrever.jpg') }}) center;*/
+				/*text-shadow: 0 0 20px rgba(0, 0, 0, 0.7);*/
 			}
 		}
 
@@ -114,8 +114,8 @@
 				padding: 50px 0 40px 0;
 				text-align: center;
 				color: #6d7d32;
-				background: url({{ asset('img/banner-inscrever.jpg') }}) center;
-				text-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+				/*background: url({{ asset('img/banner-inscrever.jpg') }}) center;*/
+				/*text-shadow: 0 0 20px rgba(0, 0, 0, 0.7);*/
 			}
 		}
 
@@ -125,20 +125,20 @@
 @section('main')
 
 	<section id="atletas">
-		<h1>Nossos atletas</h1>
+		<h1>Team Midway</h1>
 
-		<div class="my-slick-slider">
-			<div class="slider-nav">
+		<div class="">
+			<div class="">
 				@foreach($athletes as $athlete)
 					<div>
 						<figure><img src="{{ asset('uploads/athletes') . '/' . $athlete->id . '/' . $athlete->thumbnail }}" alt="{{ $athlete->name . ' ' . $athlete->last_name }}"></figure>
 					</div>
 				@endforeach
 			</div>
-			<div class="slider-for">
+			<div class="">
 				@foreach($athletes as $athlete)
 					<div>
-						<a href="{{ route('atleta', ['slug'=> $athlete->slug]) }}">
+						<a href="{{ route('team-midway.detail', ['slug'=> $athlete->slug]) }}">
 							<img src="{{ asset('uploads/athletes') . '/' . $athlete->id . '/' . $athlete->photo }}" alt="{{ $athlete->name . ' ' . $athlete->last_name }}">
 							<h2>{{ $athlete->name . ' ' . $athlete->last_name }}</h2>
 						</a>
@@ -152,7 +152,7 @@
 @section('js')
 	<script type="text/javascript" src="{{ asset('slick/slick.min.js') }}"></script>
 	<script type="text/javascript">
-		$(document).ready(function () {
+		/*$(document).ready(function () {
 			$('.slider-for').slick({
 				slidesToShow: 1,
 				slidesToScroll: 1,
@@ -178,6 +178,6 @@
 					}
 				}]
 			});
-		});
+		});*/
 	</script>
 @endsection
