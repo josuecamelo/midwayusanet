@@ -145,7 +145,7 @@
 				@foreach($g as $athlete)
 					<div class="col-md-3">
 						<div class="min">
-							<a href="" class="">
+							<a href="{{ route('team-midway.detail', ['slug'=> $athlete->slug]) }}" class="">
 								<img height="330" class="img-responsive img-min" src="{{ asset('uploads/athletes') . '/' . $athlete->id . '/' . $athlete->thumbnail }}" alt="{{ $athlete->name . ' ' . $athlete->last_name }}">
 								<h2>{{ $athlete->name . ' ' . $athlete->last_name }}</h2>
 							</a>
