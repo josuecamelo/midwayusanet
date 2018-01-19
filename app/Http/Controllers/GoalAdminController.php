@@ -59,7 +59,7 @@ class GoalAdminController extends Controller
 		//arquivo para upload
 		$logo = $request->file('logo');
 		$banner = $request->file('banner');
-		$this->inputs['slug'] = strtolower(str_slug($this->inputs['name']));
+		$inputs['slug'] = strtolower(str_slug($inputs['name']));
 
 		$goal = $this->goalModel->create($inputs);
 

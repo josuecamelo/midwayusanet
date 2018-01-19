@@ -20,7 +20,8 @@ class Goal extends Model
 		'name',
 		'description',
 		'logo',
-		'banner'
+		'banner',
+		'slug'
 	];
 	
 	public function tudo()
