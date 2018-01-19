@@ -127,25 +127,15 @@
 	<section id="atletas">
 		<h1>Team Midway</h1>
 
-		<div class="">
-			<div class="">
-				@foreach($athletes as $athlete)
-					<div>
-						<figure><img src="{{ asset('uploads/athletes') . '/' . $athlete->id . '/' . $athlete->thumbnail }}" alt="{{ $athlete->name . ' ' . $athlete->last_name }}"></figure>
+		@foreach($athletesGroups as $key => $g)
+			<div class="row">
+				@foreach($g as $athlete)
+					<div class="col-md-3">
+						{{ $athlete->name }}
 					</div>
 				@endforeach
 			</div>
-			<div class="">
-				@foreach($athletes as $athlete)
-					<div>
-						<a href="{{ route('team-midway.detail', ['slug'=> $athlete->slug]) }}">
-							<img src="{{ asset('uploads/athletes') . '/' . $athlete->id . '/' . $athlete->photo }}" alt="{{ $athlete->name . ' ' . $athlete->last_name }}">
-							<h2>{{ $athlete->name . ' ' . $athlete->last_name }}</h2>
-						</a>
-					</div>
-				@endforeach
-			</div>
-		</div>
+		@endforeach
 	</section>
 @endsection
 
