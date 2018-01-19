@@ -42,6 +42,7 @@ class CreateProductsTable extends Migration
 			$table->string('highlights_portion', 255);
 			
 			$table->boolean('visibility')->default(1);
+		    $table->tinyInteger('offer',1)->default(0);
 			$table->text('serving_size');
 			$table->text('complement');
 			

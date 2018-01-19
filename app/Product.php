@@ -37,6 +37,7 @@ class Product extends Model
 		'type_id',
 		'highlights_portion',
 		'visibility',
+        'offer',
 		'slug',
 		'last_name_slug',
 		'serving_size',
