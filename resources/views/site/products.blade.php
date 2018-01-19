@@ -235,14 +235,13 @@
 			var itens = [];
 			var n = 0;
 			var none = 0;
+			var checkboxes = $('#search-col :checkbox');
 
 			$('#search-col :checkbox').on('click', function (event) {
 
 				event.stopPropagation();
 
 				$(this).parent().toggleClass('item-normal item-marcado');
-
-				let checkboxes = $('#search-col :checkbox');
 
 				checkboxes.each(function (index, element) {
 
@@ -270,18 +269,63 @@
 
 					let _lines = parseInt(element.dataset.line);
 					let _types = parseInt(element.dataset.type);
-					let _categories = parseInt(element.dataset.category);
+					let _categories = JSON.parse('[' + element.dataset.category + ']');
 					let _goals = parseInt(element.dataset.goal);
 					let _flavors = parseInt(element.dataset.flavor);
 
 					itens.forEach(function (e) {
 
-						if (eval(e + '.includes(_' + e + ')')) {
-							n++;
+						let typeOfVar = eval('typeof _' + e);
+
+						switch (typeOfVar) {
+
+							case 'number':
+								if (eval(e + '.includes(_' + e + ')')) {
+									n++;
+								}
+								break;
+
+							case 'object':
+
+								console.log('--- OBJETO ---');
+
+
+
+								let array1 = eval('_' + e);
+								let array2 = eval(e);
+
+								array2.forEach(function (value, index) {
+
+									if (array1.includes(value)) {
+										n++;
+										console.log(index + ' =>' + value);
+									}
+								});
+
+								//
+								console.log(e);
+								console.log(array1);
+								console.log(array2);
+
+								// console.log(elemento);
+								// elemento.forEach(function (e2) {
+								// 	console.log(e2);
+								// if (eval(e2 + '.includes(_' + e2 + ')')) {
+								// 	n++;
+								// }
+								// });
+								break;
+
 						}
+						// console.log(categories);
+						// console.log(_categories);
+						// console.log(categories.includes(_categories));
+						// console.log(n);
 					});
 
-					if (itens.length == n) {
+					// console.log(n);
+
+					if (n >= itens.length) {
 						element.style.display = 'block';
 					} else {
 						element.style.display = 'none';
@@ -313,6 +357,17 @@
 				}
 
 			});
+
+			// checkboxes.each(function (index, element) {
+			//
+			// 	let id = element.dataset.id;
+			// 	let item = element.dataset.item;
+			//
+			// 	if (item == 'categories' && id == 2) {
+			// 		element.click();
+			// 	}
+			// });
+
 		});
 
 	</script>
