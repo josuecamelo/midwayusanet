@@ -12,7 +12,7 @@
 </div>
 <div class="col-md-2">
 	<div class="form-group">
-		<label for="logo">Logo *</label>
+		<label for="logo">Logo</label>
 		<input type="file" name="logo" id="logo" class="form-control upload-img" data-responsive="true" data-url="@if(isset($goal->logo)){{ asset('uploads/goals') . '/' . $goal->id . '/' . $goal->logo }}@endif">
 	</div>
 </div>

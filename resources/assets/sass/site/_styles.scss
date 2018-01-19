@@ -19,6 +19,12 @@ h1, h2, h3, h4, h5, h6 {
 	font-style: italic !important;
 }
 
+h1 {
+	//background: #f9fafc;
+	font-size: 26px;
+	padding: 0;
+}
+
 main {
 	padding-bottom: 40px;
 }
@@ -65,7 +71,7 @@ main h2, footer h2 {
 }
 
 #logo h1 {
-	margin: -2px 0 0 10px;
+	margin: 0;
 	padding: 3px;
 }
 

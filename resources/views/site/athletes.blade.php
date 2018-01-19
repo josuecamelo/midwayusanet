@@ -9,10 +9,10 @@
 
 		#atletas {
 			margin-top: 80px;
-			background: url({{ asset('img/bg3.jpg') }}) center;
+			/*background: url({{ asset('img/bg3.jpg') }}) center;*/
 		}
 
-		.my-slick-slider {
+		/*.my-slick-slider {
 			text-align: center;
 			width: 70%;
 			margin: auto;
@@ -95,7 +95,7 @@
 
 		.slider-for img {
 			max-height: 480px !important;
-		}
+		}*/
 
 		@media (min-width: 1200px) {
 			#atletas h1 {
@@ -103,8 +103,8 @@
 				padding: 50px 0 40px 0;
 				text-align: center;
 				color: #6d7d32;
-				background: url({{ asset('img/banner-inscrever.jpg') }}) center;
-				text-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+				/*background: url({{ asset('img/banner-inscrever.jpg') }}) center;*/
+				/*text-shadow: 0 0 20px rgba(0, 0, 0, 0.7);*/
 			}
 		}
 
@@ -114,45 +114,53 @@
 				padding: 50px 0 40px 0;
 				text-align: center;
 				color: #6d7d32;
-				background: url({{ asset('img/banner-inscrever.jpg') }}) center;
-				text-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+				/*background: url({{ asset('img/banner-inscrever.jpg') }}) center;*/
+				/*text-shadow: 0 0 20px rgba(0, 0, 0, 0.7);*/
 			}
 		}
 
+		.min {
+			background: #f9f9f9;
+			/*border: 1px solid #f1f1f1;*/
+			text-align: center !important;
+			/*padding-bottom: 20px;*/
+			/*box-shadow: 0 0 5px rgba(0,0,0,0.1);*/
+			/*border-radius: 5px;*/
+		}
+
+		.img-min {
+			border-bottom: 3px solid #a71a20;
+			margin: auto !important;
+		}
 	</style>
 @endsection
 
 @section('main')
 
 	<section id="atletas">
-		<h1>Nossos atletas</h1>
+		<h1>Team Midway</h1>
 
-		<div class="my-slick-slider">
-			<div class="slider-nav">
-				@foreach($athletes as $athlete)
-					<div>
-						<figure><img src="{{ asset('uploads/athletes') . '/' . $athlete->id . '/' . $athlete->thumbnail }}" alt="{{ $athlete->name . ' ' . $athlete->last_name }}"></figure>
+		@foreach($athletesGroups as $g)
+			<div class="row">
+				@foreach($g as $athlete)
+					<div class="col-md-3">
+						<div class="min">
+							<a href="{{ route('team-midway.detail', ['slug'=> $athlete->slug]) }}" class="">
+								<img height="330" class="img-responsive img-min" src="{{ asset('uploads/athletes') . '/' . $athlete->id . '/' . $athlete->thumbnail }}" alt="{{ $athlete->name . ' ' . $athlete->last_name }}">
+								<h2>{{ $athlete->name . ' ' . $athlete->last_name }}</h2>
+							</a>
+						</div>
 					</div>
 				@endforeach
 			</div>
-			<div class="slider-for">
-				@foreach($athletes as $athlete)
-					<div>
-						<a href="{{ route('atleta', ['slug'=> $athlete->slug]) }}">
-							<img src="{{ asset('uploads/athletes') . '/' . $athlete->id . '/' . $athlete->photo }}" alt="{{ $athlete->name . ' ' . $athlete->last_name }}">
-							<h2>{{ $athlete->name . ' ' . $athlete->last_name }}</h2>
-						</a>
-					</div>
-				@endforeach
-			</div>
-		</div>
+		@endforeach
 	</section>
 @endsection
 
 @section('js')
 	<script type="text/javascript" src="{{ asset('slick/slick.min.js') }}"></script>
 	<script type="text/javascript">
-		$(document).ready(function () {
+		/*$(document).ready(function () {
 			$('.slider-for').slick({
 				slidesToShow: 1,
 				slidesToScroll: 1,
@@ -178,6 +186,6 @@
 					}
 				}]
 			});
-		});
+		});*/
 	</script>
 @endsection

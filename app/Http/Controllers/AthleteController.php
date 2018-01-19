@@ -19,8 +19,14 @@ class AthleteController extends Controller
 	
 	public function index()
 	{
-		$athletes = $this->athleteModel->orderBy('name', 'ASC')->paginate(15);
-		return view('site.athletes', compact('athletes'));
+		$athletes = $this
+            ->athleteModel
+            ->orderBy('name', 'ASC')
+            ->get();//paginate(15);
+
+        $athletesGroups = $this->showItemsByRow($athletes, 4);
+
+		return view('site.athletes', compact('athletesGroups'));
 	}
 	
 	public function athlete($slug)

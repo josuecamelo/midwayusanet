@@ -7,11 +7,11 @@
 
 		#atleta {
 			margin-top: 80px;
-			background: url({{ asset('img/bg-atleta.jpg') }}) center center fixed;
+			/*background: url({{ asset('img/bg-atleta.jpg') }}) center center fixed;*/
 		}
 
 		p {
-			text-shadow: 0 2px 12px #000;
+			/*text-shadow: 0 2px 12px #000;*/
 		}
 
 		#main p {
@@ -52,7 +52,7 @@
 
 		#bio {
 			padding: 72px;
-			background: rgba(30, 44, 18, 0.6);
+			/*background: rgba(30, 44, 18, 0.6);*/
 			text-align: center;
 		}
 
@@ -62,7 +62,7 @@
 		}
 
 		#fotos {
-			background: rgba(0, 0, 0, 0.65);
+			/*background: rgba(0, 0, 0, 0.65);*/
 			padding: 40px;
 			text-align: center;
 		}
@@ -78,7 +78,7 @@
 
 		#videos {
 			padding: 72px;
-			background: rgba(30, 44, 18, 0.6);
+			/*background: rgba(30, 44, 18, 0.6);*/
 			text-align: center;
 		}
 
@@ -89,7 +89,7 @@
 		}
 
 		#produtos {
-			background: rgba(0, 0, 0, 0.65);
+			/*background: rgba(0, 0, 0, 0.65);*/
 			padding: 50px;
 		}
 
@@ -182,7 +182,7 @@
 			}
 
 			#main {
-				background: rgba(0, 0, 0, 0.65);
+				/*background: rgba(0, 0, 0, 0.65);*/
 				padding: 40px;
 			}
 
@@ -215,7 +215,7 @@
 			}
 
 			#main {
-				background: rgba(0, 0, 0, 0.65);
+				/*background: rgba(0, 0, 0, 0.65);*/
 				padding: 20px;
 			}
 

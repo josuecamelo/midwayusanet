@@ -23,7 +23,7 @@ class CreateProductsTable extends Migration
 			$table->text('description');
 			$table->text('benefits')->nullable();
 			$table->string('link_purchase', 255)->nullable();
-			$table->string('shopify', 255)->nullable();
+			$table->text('shopify', 255)->nullable();
 			$table->text('excerpt')->nullable();
 			$table->string('video', 255)->nullable();
 			//$table->string('related-flavors');
@@ -42,6 +42,7 @@ class CreateProductsTable extends Migration
 			$table->string('highlights_portion', 255);
 			
 			$table->boolean('visibility')->default(1);
+		    $table->tinyInteger('offer',1)->default(0);
 			$table->text('serving_size');
 			$table->text('complement');
 			

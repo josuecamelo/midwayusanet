@@ -16,12 +16,16 @@ Auth::routes();
 Route::get('/', 'IndexController@index')->name('index');
 Route::get('/home', 'IndexController@home')->name('home');
 
+Route::get('/products/', ['as' => 'products.list', 'uses' => 'ProductController@index']);
+Route::get('/products/offers', ['as' => 'products.offers', 'uses' => 'ProductController@index']);
 Route::get('/produtos', 'ProductController@index')->name('produtos');
 Route::get('/produtos/{slug}/{sabor?}', ['as' => 'produto_exibicao', 'uses' => 'ProductController@product']);
 Route::get('/products/{type}/{category}', ['as' => 'produto_categoria', 'uses' => 'ProductController@obterPorTipoCategoria']);
 
-Route::get('/atletas', 'AthleteController@index')->name('atletas');
-Route::get('/atletas/{slug}', 'AthleteController@athlete')->name('atleta');
+Route::group(['prefix' => 'team-midway', 'as' => 'team-midway.'], function () use ($router) {
+    $router->get('/', ['as' => 'list', 'uses' => 'AthleteController@index']);
+    $router->get('{slug}', ['as' => 'detail', 'uses' => 'AthleteController@athlete']);
+});
 
 Route::get('/objetivos', 'GoalController@index')->name('objetivos');
 Route::get('/objetivos/{goal}', ['as' => 'objetivo_exibicao', 'uses' => 'GoalController@goal']);

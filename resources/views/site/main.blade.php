@@ -234,10 +234,10 @@
 					<nav>
 						<ul>
 							<li><a href="#">Quality</a></li>
-							<li><a href="#">Team Midway</a></li>
+							<li><a href="{{ route('team-midway.list')  }}">Team Midway</a></li>
 							<li><a href="#">Blog</a></li>
 							<li><a href="#">About Us</a></li>
-							<li><a href="#">Sales & Promotions</a></li>
+							<li><a href="{{ route('products.offers')  }}">Sales & Promotions</a></li>
 							<li><a href="#">Store Locator</a></li>
 							<li><a href="#">Contact Us</a></li>
 							<li><a href="#">Videos</a></li>
