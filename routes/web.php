@@ -57,6 +57,12 @@ Route::get('/testes/{cep}', 'TesteController@index');
 
 //final rotas de testes
 
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/laravel-filemanager', '\Unisharp\Laravelfilemanager\controllers\LfmController@show');
+    Route::post('/laravel-filemanager/upload', '\Unisharp\Laravelfilemanager\controllers\UploadController@upload');
+    // list all lfm routes here...
+});
+
 
 Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'adminCheck']], function () use ($router)
 {
