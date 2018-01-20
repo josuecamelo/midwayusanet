@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\BlogPost;
 use App\Product;
 use App\Training;
 use App\Goal;
@@ -38,7 +39,11 @@ class IndexController extends Controller
 		
 		$militaryTrailProducts = $this->productModel->where('line_id', 1)->orderBy('name')->get();
 		$glamourNutritionProducts = $this->productModel->where('line_id', 2)->orderBy('name')->get();
+		$posts = BlogPost::last();
+		$destak = $posts->take(1)->first();
+		$posts = $posts->slice(1,4);
 		
-		return view('site.index', compact('militaryTrailProducts', 'glamourNutritionProducts'));
+		return view('site.index', compact('militaryTrailProducts', 'glamourNutritionProducts',
+            'destak','posts'));
 	}
 }

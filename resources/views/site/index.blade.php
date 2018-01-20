@@ -578,39 +578,25 @@
 		<div class="row">
 			<div class="col-md-6">
 				<div>
-					<a href="#">
-						<img src="http://s3.amazonaws.com/bpi-cdn/v2/wp-content/uploads/2017/12/15182030/VICTORIA-HOLIDAY_THUMBNAIL.jpg" alt="">
+					<a href="{{route('posts.see',$destak->slug)}}">
+						<img src="{{$destak->show_image}}" alt="">
 					</a>
-					<span>December 17, 2017</span>
-					<h3>Tis the Season to Fall Off Track: How to Tackle the Holidays</h3>
+					<span>{{dataMes($destak->date)}}</span>
+					<h3>{{$destak->title}}</h3>
 					<a href="#">Read More<i class="fas fa-angle-right"></i></a>
 				</div>
 			</div>
 			<div class="col-md-6">
-				<div>
-					<a href="#">
-						<img src="http://s3.amazonaws.com/bpi-cdn/v2/wp-content/uploads/2017/12/15170546/YOUR-HOLIDAY-WISH-LIST_THUMBNAIL.jpg" alt="">
-					</a>
-					<span>December 16, 2017</span>
-					<h3>Holiday Gift Guide for Him &amp; Her</h3>
-					<a href="#">Read More<i class="fas fa-angle-right"></i></a>
-				</div>
-				<div>
-					<a href="#">
-						<img src="http://s3.amazonaws.com/bpi-cdn/v2/wp-content/uploads/2017/12/13144604/WHAT-IS-ESSENTIAL-9_THUMBNAIL.jpg" alt="">
-					</a>
-					<span>December 15, 2017</span>
-					<h3>What is Essential 9™?</h3>
-					<a href="#">Read More<i class="fas fa-angle-right"></i></a>
-				</div>
-				<div>
-					<a href="#">
-						<img src="http://s3.amazonaws.com/bpi-cdn/v2/wp-content/uploads/2017/12/12153631/BAND-EXERCISES-YOU-CAN-DO-AT-HOME_THUMBNAIL.jpg" alt="">
-					</a>
-					<span>December 14, 2017</span>
-					<h3>5 Resistance Band Exercises You Can Do at Home</h3>
-					<a href="#">Read More<i class="fas fa-angle-right"></i></a>
-				</div>
+				@foreach($posts as $post)
+					<div>
+						<a href="{{route('posts.see',$post->slug)}}">
+							<img src="{{$post->show_image}}" alt="">
+						</a>
+						<span>{{dataMes($post->date)}}</span>
+						<h3>{{$post->title}}</h3>
+						<a href="#">Read More<i class="fas fa-angle-right"></i></a>
+					</div>
+				@endforeach
 			</div>
 		</div>
 	</section>

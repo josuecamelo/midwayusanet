@@ -114,6 +114,8 @@ uploadImgGallery = function () {
 	});
 };
 
+/**************************************** Show Image uploading: ****************************************/
+
 readURL = function(input) {
     if (input.files && input.files[0]) {
         var reader = new FileReader();
@@ -123,3 +125,11 @@ readURL = function(input) {
         reader.readAsDataURL(input.files[0]);
     }
 };
+
+/**************************************** DataPick: ****************************************/
+
+$.fn.datepicker.defaults.format = "dd-mm-yyyy";
+$.fn.datepicker.defaults.todayHighlight = true;
+$.fn.datepicker.defaults.autoclose = true;
+$('.datapick').mask("99-99-9999");
+$('body .datapick').datepicker();

@@ -202,6 +202,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'adminCheck']], func
         $router->get('/news', ['as' => 'news', 'uses' => 'BlogPostAdminController@index']);
         $router->get('/science', ['as' => 'science', 'uses' => 'BlogPostAdminController@index']);
         $router->get('{t}/create', ['as' => 'create', 'uses' => 'BlogPostAdminController@create']);
+        $router->get('{id}', ['as' => 'see', 'uses' => 'BlogPostAdminController@see']);
         $router->get('{post}/destroy', ['as' => 'destroy', 'uses' => 'BlogPostAdminController@destroy']);
     });
 

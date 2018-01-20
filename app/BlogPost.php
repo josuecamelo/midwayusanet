@@ -12,6 +12,7 @@ class BlogPost extends Model
 	protected $fillable = [
 		'title',
 		'slug',
+        'date',
 		'blog_category_id',
 		'description',
 		'tags',
@@ -35,11 +36,27 @@ class BlogPost extends Model
 		$this->attributes['title'] = $value;
 		$this->attributes['slug'] = strtolower(str_slug($value));
 	}
+    public function setDateAttribute($value)
+    {
+        $this->attributes['date'] = date('Y-m-d',strtotime($value));
+    }
+
+    public function getDateAttribute($v)
+    {
+        return date('d-m-Y',strtotime($v));
+    }
 	
 	public function user()
 	{
 		return $this->belongsTo(User::class);
 	}
+
+	public static function last()
+    {
+        return BlogPost::whereHas('category', function ($q){
+            $q->where('type',1);
+        })->orderBy('date','desc')->orderBy('id','desc')->take(4)->get();
+    }
 	
 	public static function boot()
 	{

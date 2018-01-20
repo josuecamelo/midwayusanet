@@ -2,10 +2,16 @@
 	<div class="row">
 		<div class="col-md-9">
 			<div class="row">
-				<div class="col-md-12">
+				<div class="col-md-10">
 					<div class="form-group">
 						<label for="title">Title *</label>
 						{!! Form::text('title', null, ['id'=>'title', 'class'=>'form-control', 'autofocus', 'required']) !!}
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div class="form-group">
+						<label for="title">Date *</label>
+						{!! Form::text('date', isset($post->date)?null:date('d-m-Y'), ['class'=>'form-control datapick', 'autofocus', 'required']) !!}
 					</div>
 				</div>
 			</div>

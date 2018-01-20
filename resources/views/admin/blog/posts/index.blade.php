@@ -12,6 +12,7 @@
 			<tr>
 				<th width="10">#</th>
 				<th>Title</th>
+				<th>Date</th>
 				<th>Category</th>
 				<th>User</th>
 				<th>Edit</th>
@@ -23,6 +24,7 @@
 				<tr>
 					<td>{{$post->id}}</td>
 					<td>{{ $post->title  }}</td>
+					<td>{{ $post->date  }}</td>
 					<td>{{ $post->category->name  }}</td>
 					<td>{{ $post->user->name  }}</td>
 					<td><a href="{{ route('posts.edit', ['id'=> $post->id]) }}" class="btn btn-xs btn-success"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a></td>

@@ -8,6 +8,7 @@ require('./ui-load');
 require('./ui-nav');
 require('./ui-toggle');
 require('../jquery.maskedinput.min');
+require('./bootstrap-datepicker.min');
 require('./js');
 
 // window.Vue = require('vue');

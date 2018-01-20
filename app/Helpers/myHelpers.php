@@ -50,3 +50,10 @@ if (!function_exists('menu_footer_helper')) {
         return $criarMenu->getMenu($type_id);
     }
 }
+
+if (!function_exists('dataMes')) {
+    function dataMes($v)
+    {
+        return date('F d, Y',strtotime($v));
+    }
+}

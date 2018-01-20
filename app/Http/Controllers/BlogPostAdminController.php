@@ -109,6 +109,11 @@ class BlogPostAdminController extends Controller
 			return redirect()->route('posts.index');
 		}
 	}
+
+	public function see($slug)
+    {
+        dd($slug);
+    }
 	
 	protected function doUpload($file, $nome, $path)
 	{
