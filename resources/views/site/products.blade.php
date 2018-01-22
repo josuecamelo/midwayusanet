@@ -77,21 +77,13 @@
 @section('main')
 	<div class="container">
 
-		<h1>All Products</h1>
+		<h1>Products</h1>
 
 		<div class="row">
 			<div class="col-md-3" id="search-col">
 
 				{{-- Search: --}}
-				<div class="input-group">
-					<input type="text" id="search-product" class="form-control" placeholder="Search for...">
-					<span class="input-group-btn">
-                        <button class="btn btn-default" type="button">
-	                        <i class="fas fa-search"></i>
-                        </button>
-                    </span>
-				</div>
-
+				<input type="text" id="search-product" class="form-control" placeholder="Search for...">
 				<br>
 
 				{{-- Lines: --}}
@@ -132,25 +124,6 @@
 					</div>
 				</div>
 
-				{{-- Categories: --}}
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						<h3 class="panel-title">Categories</h3>
-					</div>
-					<div class="panel-body">
-						<ul>
-							@foreach($categories as $category)
-								<li>
-									<label class="item-normal">
-										<input type="checkbox" data-item="categories" data-id="{{ $category->id }}">
-										{{ $category->name }}
-									</label>
-								</li>
-							@endforeach
-						</ul>
-					</div>
-				</div>
-
 				{{-- Goals: --}}
 				<div class="panel panel-default">
 					<div class="panel-heading">
@@ -163,6 +136,25 @@
 									<label class="item-normal">
 										<input type="checkbox" data-item="goals" data-id="{{ $goal->id }}">
 										{{ $goal->name }}
+									</label>
+								</li>
+							@endforeach
+						</ul>
+					</div>
+				</div>
+
+				{{-- Categories: --}}
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">Categories</h3>
+					</div>
+					<div class="panel-body">
+						<ul>
+							@foreach($categories as $category)
+								<li>
+									<label class="item-normal">
+										<input type="checkbox" data-item="categories" data-id="{{ $category->id }}">
+										{{ $category->name }}
 									</label>
 								</li>
 							@endforeach
@@ -336,6 +328,12 @@
 			});
 
 			$('#search-product').keyup(function () {
+
+				checkboxes.each(function (index, element) {
+					element.checked = false;
+					element.parentNode.classList.remove('item-marcado');
+					element.parentNode.classList.add('item-normal');
+				});
 
 				var mySearch = $(this).val();
 
