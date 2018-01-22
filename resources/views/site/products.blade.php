@@ -383,12 +383,13 @@
 
 				let id = element.dataset.id;
 				let item = element.dataset.item;
+				let title = this.parentNode.innerText;
 
 				if (item == '{{ $item }}' && id == '{{ $id }}') {
 					element.click();
 				}
 
-				$('#sub-title').text(' | {{ $name }}');
+				$('#sub-title').text(title);
 			});
 			@endif
 
