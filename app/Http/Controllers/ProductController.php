@@ -33,8 +33,13 @@ class ProductController extends Controller
 		$this->productCategoryModel = $productCategory;
 	}
 	
-	function index(Request $request)
-	{
+	function index(Request $request,
+                   $line_ids = null,
+                   $types_ids = null,
+                   $goals_ids = null,
+                   $categories_ids = null,
+                   $flavors_ids = null
+    ){
 //	    if($request->getRequestUri() != '/products/offers'){
 //            $products = $this->productModel
 //                ->orderBy('name')
@@ -59,6 +64,8 @@ class ProductController extends Controller
 		$name = 'Acessórios';
 		$item = 'types';
 		$id = 3;
+
+		dd("lines: $line_ids     types: $types_ids goals: $goals_ids categories: $categories_ids flavors: $flavors_ids");
 		
 		return view('site.products', compact('products', 'lines', 'types', 'categories', 'goals', 'flavors', 'name', 'item', 'id'));
 	}
