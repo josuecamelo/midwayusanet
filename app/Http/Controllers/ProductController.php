@@ -35,24 +35,32 @@ class ProductController extends Controller
 	
 	function index(Request $request)
 	{
-	    if($request->getRequestUri() != '/products/offers'){
-            $products = $this->productModel
-                ->orderBy('name')
-                ->get();
-        }else{
-            $products = $this->productModel
-                ->where('offer', 1)
-                ->orderBy('name')
-                ->get();
-        }
-
+//	    if($request->getRequestUri() != '/products/offers'){
+//            $products = $this->productModel
+//                ->orderBy('name')
+//                ->get();
+//        }else{
+//            $products = $this->productModel
+//                ->where('offer', 1)
+//                ->orderBy('name')
+//                ->get();
+//        }
+		
+		$products = $this->productModel
+			->orderBy('name')
+			->get();
+		
 		$lines = $this->lineModel->orderby('name')->get();
 		$types = $this->typeModel->orderby('name')->get();
 		$categories = $this->categoryModel->orderby('name')->get();
 		$goals = $this->goalModel->orderby('name')->get();
 		$flavors = $this->flavorModel->orderby('name')->get();
 		
-		return view('site.products', compact('products', 'lines', 'types', 'categories', 'goals', 'flavors'));
+		$name = 'Acessórios';
+		$item = 'types';
+		$id = 3;
+		
+		return view('site.products', compact('products', 'lines', 'types', 'categories', 'goals', 'flavors', 'name', 'item', 'id'));
 	}
 	
 	public function product($slug, $flavor = '')

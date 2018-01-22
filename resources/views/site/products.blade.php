@@ -17,13 +17,13 @@
 			list-style: none;
 		}
 
-		.panel-body ul li label {
+		#search-col label {
 			display: block;
 			font-weight: normal;
 			margin: 0;
 		}
 
-		.panel-body ul li label:hover {
+		#search-col label:hover {
 			background: #f1f1f1;
 			cursor: pointer;
 		}
@@ -78,6 +78,7 @@
 	<div class="container">
 
 		<h1>Products</h1>
+		<h2></h2>
 
 		<div class="row">
 			<div class="col-md-3" id="search-col">
@@ -85,6 +86,12 @@
 				{{-- Search: --}}
 				<input type="text" id="search-product" class="form-control" placeholder="Search for...">
 				<br>
+
+				<p>
+					<label>
+						<input type="checkbox" data-item="offers" data-id="1"> Sales & Promotions
+					</label>
+				</p>
 
 				{{-- Lines: --}}
 				<div class="panel panel-default">
@@ -191,6 +198,7 @@
 							data-category="{{ $product->categories()->select('category_id')->get()->implode('category_id', ',') }}"
 							data-goal="{{ $product->goals()->select('goal_id')->get()->implode('goal_id', ',') }}"
 							data-flavor="{{ $product->flavor_id }}"
+							data-offer="{{ $product->offer }}"
 						>
 							<article>
 								<div class="panel panel-default">
@@ -227,11 +235,15 @@
 			var goals = [];
 			var flavors = [];
 			var itens = [];
+			var titles = '';
+			var offers = [];
 			var n = 0;
 			var none = 0;
 			var checkboxes = $('#search-col :checkbox');
 
 			$('#search-col :checkbox').on('click', function (event) {
+
+				console.clear();
 
 				event.stopPropagation();
 
@@ -243,9 +255,11 @@
 
 						let id = element.dataset.id;
 						let item = element.dataset.item;
+						let title = this.parentNode.innerText;
 
 						eval(item + '.push(' + id + ')');
 
+						titles += title.trim() + ' • ';
 						itens.push(item);
 					}
 				});
@@ -255,7 +269,10 @@
 				categories = Array.from(new Set(categories));
 				goals = Array.from(new Set(goals));
 				flavors = Array.from(new Set(flavors));
+				offers = Array.from(new Set(offers));
 				itens = Array.from(new Set(itens));
+
+				$('h2').text(titles.slice(0, -3));
 
 				let products = $('#products-grid li');
 
@@ -266,6 +283,7 @@
 					let _categories = JSON.parse('[' + element.dataset.category + ']');
 					let _goals = parseInt(element.dataset.goal);
 					let _flavors = parseInt(element.dataset.flavor);
+					let _offers = parseInt(element.dataset.offer);
 
 					itens.forEach(function (e) {
 
@@ -298,7 +316,6 @@
 						element.style.display = 'block';
 					} else {
 						element.style.display = 'none';
-
 					}
 					n = 0;
 				});
@@ -309,6 +326,7 @@
 				goals = [];
 				flavors = [];
 				itens = [];
+				titles = [];
 				none = 0;
 
 				$('html, body').animate({scrollTop: 0}, 500);
@@ -357,17 +375,20 @@
 				}
 			});
 
-			// checkboxes.each(function (index, element) {
-			//
-			// 	let id = element.dataset.id;
-			// 	let item = element.dataset.item;
-			//
-			// 	if (item == 'categories' && id == 2) {
-			// 		element.click();
-			// 	}
-			// });
+			@if(isset($item))
+			checkboxes.each(function (index, element) {
+
+				let id = element.dataset.id;
+				let item = element.dataset.item;
+
+				if (item == '{{ $item }}' && id == '{{ $id }}') {
+					element.click();
+				}
+
+				$('h2').text('{{ $name }}');
+			});
+			@endif
 
 		});
-
 	</script>
 @endsection
