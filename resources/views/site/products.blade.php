@@ -84,9 +84,11 @@
 
 				{{-- Search: --}}
 				<div class="input-group">
-					<input type="text" class="form-control" placeholder="Search for...">
+					<input type="text" id="search-product" class="form-control" placeholder="Search for...">
 					<span class="input-group-btn">
-                        <button class="btn btn-default" type="button"><i class="fas fa-search"></i></button>
+                        <button class="btn btn-default" type="button">
+	                        <i class="fas fa-search"></i>
+                        </button>
                     </span>
 				</div>
 
@@ -287,10 +289,6 @@
 
 							case 'object':
 
-								console.log('--- OBJETO ---');
-
-
-
 								let array1 = eval('_' + e);
 								let array2 = eval(e);
 
@@ -298,32 +296,11 @@
 
 									if (array1.includes(value)) {
 										n++;
-										console.log(index + ' =>' + value);
 									}
 								});
-
-								//
-								console.log(e);
-								console.log(array1);
-								console.log(array2);
-
-								// console.log(elemento);
-								// elemento.forEach(function (e2) {
-								// 	console.log(e2);
-								// if (eval(e2 + '.includes(_' + e2 + ')')) {
-								// 	n++;
-								// }
-								// });
 								break;
-
 						}
-						// console.log(categories);
-						// console.log(_categories);
-						// console.log(categories.includes(_categories));
-						// console.log(n);
 					});
-
-					// console.log(n);
 
 					if (n >= itens.length) {
 						element.style.display = 'block';
@@ -356,6 +333,30 @@
 					$('#products-grid .alert').hide();
 				}
 
+			});
+
+			$('#search-product').keyup(function () {
+
+				var mySearch = $(this).val();
+
+				if (mySearch) {
+
+					$('#products-grid li').each(function () {
+
+						let myText = $(this).find('h4').text().toLowerCase();
+						let mySearchText = myText.search(mySearch);
+
+						if (mySearchText >= 0) {
+							$(this).show();
+						} else {
+							$(this).hide();
+						}
+					});
+				} else {
+					$('#products-grid li').each(function () {
+						$(this).show();
+					});
+				}
 			});
 
 			// checkboxes.each(function (index, element) {
