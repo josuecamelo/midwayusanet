@@ -3,6 +3,12 @@
 @section('css')
 	<style>
 
+		h1 span {
+			font-size: 20px;
+			font-weight: normal;
+			letter-spacing: 1px;
+		}
+
 		#search-col {
 			font-size: 14px;
 		}
@@ -77,8 +83,7 @@
 @section('main')
 	<div class="container">
 
-		<h1>Products</h1>
-		<h2></h2>
+		<h1>Products <span id="sub-title"></span></h1>
 
 		<div class="row">
 			<div class="col-md-3" id="search-col">
@@ -235,7 +240,7 @@
 			var goals = [];
 			var flavors = [];
 			var itens = [];
-			var titles = '';
+			var titles = ' | ';
 			var offers = [];
 			var n = 0;
 			var none = 0;
@@ -270,7 +275,7 @@
 				offers = Array.from(new Set(offers));
 				itens = Array.from(new Set(itens));
 
-				$('h2').text(titles.slice(0, -3));
+				$('#sub-title').text(titles.slice(0, -3));
 
 				let products = $('#products-grid li');
 
@@ -324,7 +329,7 @@
 				goals = [];
 				flavors = [];
 				itens = [];
-				titles = [];
+				titles = ' | ';
 				none = 0;
 
 				$('html, body').animate({scrollTop: 0}, 500);
@@ -383,7 +388,7 @@
 					element.click();
 				}
 
-				$('h2').text('{{ $name }}');
+				$('#sub-title').text(' | {{ $name }}');
 			});
 			@endif
 
