@@ -243,8 +243,6 @@
 
 			$('#search-col :checkbox').on('click', function (event) {
 
-				console.clear();
-
 				event.stopPropagation();
 
 				$(this).parent().toggleClass('item-normal item-marcado');
