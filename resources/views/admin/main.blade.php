@@ -37,7 +37,7 @@
 							<li><a href="{{ route('posts.science') }}"><i class="fa fa-flask" aria-hidden="true"></i>Science Blog</a></li>
 						@endcan
 						@can('posts.create')
-							<li><a href="{{ route('posts.create', 0) }}"><i class="fa fa-file-o" aria-hidden="true"></i>New Science Post</a></li>
+							<li><a href="{{ route('posts.create', 2) }}"><i class="fa fa-file-o" aria-hidden="true"></i>New Science Post</a></li>
 						@endcan
 						<li class="divider"></li>
 						@can('categories.index')

@@ -80,8 +80,8 @@ return [
     // If true, the uploading file's size will be verified for over than max_image_size/max_file_size.
     'should_validate_size' => false,
 
-    'max_image_size' => 50000,
-    'max_file_size' => 50000,
+    'max_image_size' => 500000,
+    'max_file_size' => 500000,
 
     // If true, the uploading file's mime type will be valid in valid_image_mimetypes/valid_file_mimetypes.
     'should_validate_mime' => false,
@@ -89,7 +89,6 @@ return [
     // available since v1.3.0
     'valid_image_mimetypes' => [
         'image/jpeg',
-        'image/jpg',
         'image/pjpeg',
         'image/png',
         'image/gif',
@@ -181,7 +180,7 @@ return [
     | directives are not supported.
     */
     'php_ini_overrides' => [
-        'memory_limit'        => '256M',
+        'memory_limit'        => '512M',
     ],
 
 ];
