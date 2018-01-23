@@ -125,7 +125,7 @@ main h2, footer h2 {
 	z-index: 1;
 }
 
-#nav-main > ul > li:hover a::before {
+#nav-main > ul > li:hover > a::before {
 	display: block;
 	content: '';
 	height: 61px;
@@ -151,7 +151,7 @@ main h2, footer h2 {
 	background: #fff;
 	top: 61px;
 	left: 0;
-	margin-left: -207px;
+	margin-left: -185px;
 	width: 100vw;
 	padding-top: 1rem;
 	z-index: 9999;
@@ -277,7 +277,7 @@ main h2, footer h2 {
 	list-style: none;
 	display: flex;
 	justify-content: space-evenly;
-	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 	padding: 1rem 0;
 }
 

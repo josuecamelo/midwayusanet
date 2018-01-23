@@ -3,6 +3,12 @@
 @section('css')
 	<style>
 
+		h1 span {
+			font-size: 20px;
+			font-weight: normal;
+			letter-spacing: 1px;
+		}
+
 		#search-col {
 			font-size: 14px;
 		}
@@ -17,13 +23,13 @@
 			list-style: none;
 		}
 
-		.panel-body ul li label {
+		#search-col label {
 			display: block;
 			font-weight: normal;
 			margin: 0;
 		}
 
-		.panel-body ul li label:hover {
+		#search-col label:hover {
 			background: #f1f1f1;
 			cursor: pointer;
 		}
@@ -77,20 +83,20 @@
 @section('main')
 	<div class="container">
 
-		<h1>All Products</h1>
+		<h1>Products <span id="sub-title"></span></h1>
 
 		<div class="row">
 			<div class="col-md-3" id="search-col">
 
 				{{-- Search: --}}
-				<div class="input-group">
-					<input type="text" class="form-control" placeholder="Search for...">
-					<span class="input-group-btn">
-                        <button class="btn btn-default" type="button"><i class="fas fa-search"></i></button>
-                    </span>
-				</div>
-
+				<input type="text" id="search-product" class="form-control" placeholder="Search for...">
 				<br>
+
+				<p>
+					<label>
+						<input type="checkbox" data-item="offers" data-id="1"> Sales & Promotions
+					</label>
+				</p>
 
 				{{-- Lines: --}}
 				<div class="panel panel-default">
@@ -130,25 +136,6 @@
 					</div>
 				</div>
 
-				{{-- Categories: --}}
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						<h3 class="panel-title">Categories</h3>
-					</div>
-					<div class="panel-body">
-						<ul>
-							@foreach($categories as $category)
-								<li>
-									<label class="item-normal">
-										<input type="checkbox" data-item="categories" data-id="{{ $category->id }}">
-										{{ $category->name }}
-									</label>
-								</li>
-							@endforeach
-						</ul>
-					</div>
-				</div>
-
 				{{-- Goals: --}}
 				<div class="panel panel-default">
 					<div class="panel-heading">
@@ -161,6 +148,25 @@
 									<label class="item-normal">
 										<input type="checkbox" data-item="goals" data-id="{{ $goal->id }}">
 										{{ $goal->name }}
+									</label>
+								</li>
+							@endforeach
+						</ul>
+					</div>
+				</div>
+
+				{{-- Categories: --}}
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">Categories</h3>
+					</div>
+					<div class="panel-body">
+						<ul>
+							@foreach($categories as $category)
+								<li>
+									<label class="item-normal">
+										<input type="checkbox" data-item="categories" data-id="{{ $category->id }}">
+										{{ $category->name }}
 									</label>
 								</li>
 							@endforeach
@@ -197,6 +203,7 @@
 							data-category="{{ $product->categories()->select('category_id')->get()->implode('category_id', ',') }}"
 							data-goal="{{ $product->goals()->select('goal_id')->get()->implode('goal_id', ',') }}"
 							data-flavor="{{ $product->flavor_id }}"
+							data-offer="{{ $product->offer }}"
 						>
 							<article>
 								<div class="panel panel-default">
@@ -233,6 +240,8 @@
 			var goals = [];
 			var flavors = [];
 			var itens = [];
+			var titles = ' | ';
+			var offers = [];
 			var n = 0;
 			var none = 0;
 			var checkboxes = $('#search-col :checkbox');
@@ -249,9 +258,11 @@
 
 						let id = element.dataset.id;
 						let item = element.dataset.item;
+						let title = this.parentNode.innerText;
 
 						eval(item + '.push(' + id + ')');
 
+						titles += title.trim() + ' • ';
 						itens.push(item);
 					}
 				});
@@ -261,7 +272,10 @@
 				categories = Array.from(new Set(categories));
 				goals = Array.from(new Set(goals));
 				flavors = Array.from(new Set(flavors));
+				offers = Array.from(new Set(offers));
 				itens = Array.from(new Set(itens));
+
+				$('#sub-title').text(titles.slice(0, -3));
 
 				let products = $('#products-grid li');
 
@@ -272,6 +286,7 @@
 					let _categories = JSON.parse('[' + element.dataset.category + ']');
 					let _goals = parseInt(element.dataset.goal);
 					let _flavors = parseInt(element.dataset.flavor);
+					let _offers = parseInt(element.dataset.offer);
 
 					itens.forEach(function (e) {
 
@@ -287,10 +302,6 @@
 
 							case 'object':
 
-								console.log('--- OBJETO ---');
-
-
-
 								let array1 = eval('_' + e);
 								let array2 = eval(e);
 
@@ -298,38 +309,16 @@
 
 									if (array1.includes(value)) {
 										n++;
-										console.log(index + ' =>' + value);
 									}
 								});
-
-								//
-								console.log(e);
-								console.log(array1);
-								console.log(array2);
-
-								// console.log(elemento);
-								// elemento.forEach(function (e2) {
-								// 	console.log(e2);
-								// if (eval(e2 + '.includes(_' + e2 + ')')) {
-								// 	n++;
-								// }
-								// });
 								break;
-
 						}
-						// console.log(categories);
-						// console.log(_categories);
-						// console.log(categories.includes(_categories));
-						// console.log(n);
 					});
-
-					// console.log(n);
 
 					if (n >= itens.length) {
 						element.style.display = 'block';
 					} else {
 						element.style.display = 'none';
-
 					}
 					n = 0;
 				});
@@ -340,6 +329,7 @@
 				goals = [];
 				flavors = [];
 				itens = [];
+				titles = ' | ';
 				none = 0;
 
 				$('html, body').animate({scrollTop: 0}, 500);
@@ -358,17 +348,51 @@
 
 			});
 
-			// checkboxes.each(function (index, element) {
-			//
-			// 	let id = element.dataset.id;
-			// 	let item = element.dataset.item;
-			//
-			// 	if (item == 'categories' && id == 2) {
-			// 		element.click();
-			// 	}
-			// });
+			$('#search-product').keyup(function () {
+
+				checkboxes.each(function (index, element) {
+					element.checked = false;
+					element.parentNode.classList.remove('item-marcado');
+					element.parentNode.classList.add('item-normal');
+				});
+
+				var mySearch = $(this).val();
+
+				if (mySearch) {
+
+					$('#products-grid li').each(function () {
+
+						let myText = $(this).find('h4').text().toLowerCase();
+						let mySearchText = myText.search(mySearch);
+
+						if (mySearchText >= 0) {
+							$(this).show();
+						} else {
+							$(this).hide();
+						}
+					});
+				} else {
+					$('#products-grid li').each(function () {
+						$(this).show();
+					});
+				}
+			});
+
+			@if(isset($item))
+			checkboxes.each(function (index, element) {
+
+				let id = element.dataset.id;
+				let item = element.dataset.item;
+				let title = this.parentNode.innerText;
+
+				if (item == '{{ $item }}' && id == '{{ $id }}') {
+					element.click();
+				}
+
+				$('#sub-title').text(title);
+			});
+			@endif
 
 		});
-
 	</script>
 @endsection
