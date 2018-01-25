@@ -65,7 +65,7 @@ class ProductController extends Controller
 		$item = 'types';
 		$id = 3;
 
-		dd("lines: $line_ids     types: $types_ids goals: $goals_ids categories: $categories_ids flavors: $flavors_ids");
+//		dd("lines: $line_ids     types: $types_ids goals: $goals_ids categories: $categories_ids flavors: $flavors_ids");
 		
 		return view('site.products', compact('products', 'lines', 'types', 'categories', 'goals', 'flavors', 'name', 'item', 'id'));
 	}

@@ -111,6 +111,21 @@
 						@endcan
 					</ul>
 				</li>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+						<i class="fa fa-flag" aria-hidden="true"></i>
+						Icons
+						<span class="caret"></span>
+					</a>
+					<ul class="dropdown-menu">
+						@can('icons.listar')
+							<li><a href="{{ route('icons.listar') }}"><i class="fa fa-flag" aria-hidden="true"></i>All Icons</a></li>
+						@endcan
+						@can('icons.criar')
+							<li><a href="{{ route('icons.criar') }}"><i class="fa fa-flag-o" aria-hidden="true"></i>New Icon</a></li>
+						@endcan
+					</ul>
+				</li>
 				{{--<li class="dropdown">--}}
 				{{--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cogs" aria-hidden="true"></i>Treinos <span class="caret"></span></a>--}}
 				{{--<ul class="dropdown-menu">--}}

@@ -220,6 +220,17 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'adminCheck']], func
 		$router->get('{id}/edit', ['as' => 'editar', 'uses' => 'MenuAdminController@edit']);*/
 		$router->post('{id}/update', ['as' => 'atualizar', 'uses' => 'MenuAdminController@update']);
 	});
+	
+	$router->group(['prefix' => 'icons', 'as' => 'icons.'], function () use ($router)
+	{
+		$router->get('/', ['as' => 'listar', 'uses' => 'IconAdminController@index']);
+		$router->post('store', ['as' => 'gravar', 'uses' => 'IconAdminController@store']);
+		$router->get('create', ['as' => 'criar', 'uses' => 'IconAdminController@create']);
+		$router->get('{id}/destroy', ['as' => 'remover', 'uses' => 'IconAdminController@destroy']);
+		$router->get('{id}/edit', ['as' => 'editar', 'uses' => 'IconAdminController@edit']);
+		$router->post('{id}/update', ['as' => 'atualizar', 'uses' => 'IconAdminController@update']);
+	});
+	
 });
 
 Route::group(['prefix' => 'atualizar-rotas'], function () use ($router)
