@@ -109,3 +109,17 @@ footer {
 .table > tbody > tr > td {
 	vertical-align: middle;
 }
+
+
+/* SVG */
+
+.svg {
+	transition: all 0.3s ease;
+	width: 40px;
+	height: 40px;
+	fill: #333;
+}
+
+tr:hover .svg {
+	transform: scale(3);
+}

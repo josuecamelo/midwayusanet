@@ -1,19 +1,5 @@
 @extends('admin.main')
 
-@section('css')
-	<style>
-		img {
-			transition: all 0.3s ease;
-			width: 40px;
-			height: 40px;
-		}
-
-		tr:hover img {
-			transform: scale(3);
-		}
-	</style>
-@endsection
-
 @section('main')
 
 	@include('admin.icons._nav')
@@ -34,7 +20,7 @@
 					<td>{{ $icon->name }}</td>
 					<td>
 						<figure>
-							<img src="{{ asset('uploads/icons') . '/' . $icon->url }}" alt="">
+							<img src="{{ asset('uploads/icons') . '/' . $icon->url }}" class="svg" alt="">
 						</figure>
 					</td>
 					<td><a href="{{ route('icons.editar', ['id'=> $icon->id]) }}" class="btn btn-xs btn-success"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a></td>
