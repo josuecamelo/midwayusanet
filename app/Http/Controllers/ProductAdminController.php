@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Flavor;
 use App\Goal;
+use App\Icon;
 use App\Line;
 use App\Product;
 use App\ProductPortion;
@@ -26,10 +27,17 @@ class ProductAdminController extends Controller
 	private $categoryModel;
 	private $goalModel;
 	private $productPortionModel;
+	private $iconModel;
 	
-	public function __construct(Product $productModel, Type $typeModel,
-	                            Flavor $flavorModel, ProductTopic $productTopicModel,
-	                            Line $lineModel, Category $categoryModel, Goal $goalModel, ProductPortion $productPortionModel)
+	public function __construct(Product $productModel,
+	                            Type $typeModel,
+	                            Flavor $flavorModel,
+	                            ProductTopic $productTopicModel,
+	                            Line $lineModel,
+	                            Category $categoryModel,
+	                            Goal $goalModel,
+	                            Icon $iconModel,
+	                            ProductPortion $productPortionModel)
 	{
 		$this->productModel = $productModel;
 		$this->typeModel = $typeModel;
@@ -39,6 +47,7 @@ class ProductAdminController extends Controller
 		$this->categoryModel = $categoryModel;
 		$this->goalModel = $goalModel;
 		$this->productPortionModel = $productPortionModel;
+		$this->iconModel = $iconModel;
 	}
 	
 	public function index()
@@ -61,6 +70,7 @@ class ProductAdminController extends Controller
 		$categories = $this->categoryModel->get();
 		$goals = $this->goalModel->get();
 		$flavorsList = $this->flavorModel->listarTodos(false);
+		$icons = $this->iconModel->orderBy('name');
 		
 		return view('admin.products.create', compact(
 			'products',

@@ -19,7 +19,7 @@ class IconAdminController extends Controller
 	
 	function index()
 	{
-		$icons = $this->iconModel->orderBy('name', 'ASC')->get();
+		$icons = $this->iconModel->listarTodos();
 		
 		return view('admin.icons.index', compact(
 			'icons'

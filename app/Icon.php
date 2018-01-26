@@ -11,8 +11,10 @@ class Icon extends Model
 	
 	protected $dates = ['deleted_at'];
 	
-	protected $fillable = [
-		'name',
-		'url'
-	];
+	protected $fillable = ['name', 'url'];
+	
+	public function listarTodos()
+	{
+		return $this->orderBy('name', 'ASC')->get();
+	}
 }
