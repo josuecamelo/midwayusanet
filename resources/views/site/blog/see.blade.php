@@ -8,10 +8,19 @@
             border: 1px solid #eee;
             padding: 2px;
         }
+        figure {
+            position: relative;
+            text-align: center;
+            font-weight: 700;
+            color: #999;
+            background-color: #fff;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
         .caption {
             position: absolute;
-            bottom: 5px;
-            left: 15px;
+            bottom: 0;
+            left: 0;
             padding: 5px;
             font-size: 14px;
             line-height: 150%;
