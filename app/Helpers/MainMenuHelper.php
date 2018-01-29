@@ -55,7 +55,13 @@ class MainMenuHelper
             }
         }else{
             $product = $menu->featuredProduct()->first();
-            return $product;
+            return '
+                <a href="">
+                    <img height="150" src="'. asset('uploads/products') . '/' . $product->id . '/' . $product->id.'_sm.'.$product->image_ext. '">
+                    <p>'.$product->complete_name.'</p>
+                    <p class="value">$ <span>109</span><sup>.99</sup></p>
+                </a>            
+            ';
         }
 
         $lista.='';
