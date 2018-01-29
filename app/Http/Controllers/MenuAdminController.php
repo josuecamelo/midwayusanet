@@ -29,7 +29,7 @@ class MenuAdminController extends Controller
 	    if($menu_id != null){
             $menu = $this->menuModel->find($menu_id);
 
-            $relatedCategories =$menu->relatedCategories()->orderBy('item_order', 'asc')->get();
+            $relatedCategories = $menu->relatedCategories()->orderBy('item_order', 'asc')->get();
 
             foreach ($relatedCategories as $key => $relatedCategory)
             {
@@ -48,16 +48,21 @@ class MenuAdminController extends Controller
 
             //categorias e produtos selecionados
             if(!empty($relatedProductsList)){
-                $products[] = $this->productModel->listar($relatedProductsList);
+                $products[] = $menu->relatedProducts()
+                    ->orderBy('item_order', 'asc')
+                    ->pluck('name', 'product_id');
             }else{
                 $products[] = [];
             }
 
             if(!empty($relatedCategoriesList)){
-                $categories[] = $this->categoryModel->listar($relatedCategoriesList);
+                $categories[] = $menu->relatedCategories()
+                    ->orderBy('item_order', 'asc')
+                    ->pluck('name', 'category_id');
             }else{
                 $categories[] = [];
             }
+
 
             //listagem do produto destaque
             $products[] = $this->productModel->listarTodos([$menu->featured_product_id]);

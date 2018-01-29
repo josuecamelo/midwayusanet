@@ -74,7 +74,7 @@ class Product extends Model
 		return $this
             ->select(
                 'products.id',
-                DB::raw("concat(products.name, ' ', products.last_name, ' ' , products.presentation, ' ', IFNULL(flavors.name, '')) as name2")
+                DB::raw("concat(products.name, ' ', IFNULL(products.last_name,''), ' ' , products.presentation, ' ', IFNULL(flavors.name, '')) as name2")
             )
             ->leftJoin('flavors', 'flavors.id', '=', 'products.flavor_id')
             //->join('flavors', 'flavors.id', '=', 'products.flavor_id')
@@ -182,7 +182,7 @@ class Product extends Model
              return $this
                  ->select(
                      'products.id',
-                     DB::raw("concat(products.name, ' ', products.last_name, ' ' , products.presentation, ' ', IFNULL(flavors.name, '')) as name2")
+                     DB::raw("concat(products.name, ' ', IFNULL(products.last_name,''), ' ' , products.presentation, ' ', IFNULL(flavors.name, '')) as name2")
                  )
                  ->leftJoin('flavors', 'flavors.id', '=', 'products.flavor_id')
                  ->orderBy('name2', 'ASC')
@@ -191,7 +191,7 @@ class Product extends Model
                return $this
                         ->select(
                             'products.id',
-                    DB::raw("concat(products.name, ' ', products.last_name, ' ' , products.presentation, ' ', IFNULL(flavors.name, '')) as name2")
+                    DB::raw("concat(products.name, ' ', IFNULL(products.last_name,''), ' ' , products.presentation, ' ', IFNULL(flavors.name, '')) as name2")
                    )
                  ->leftJoin('flavors', 'flavors.id', '=', 'products.flavor_id')
                     ->whereIn('products.id', $ids)
