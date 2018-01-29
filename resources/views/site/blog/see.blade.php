@@ -53,7 +53,7 @@
         $(document).ready(function(){
             $('.blogContainer img').each(function(){
                 var alt =   $(this).attr('alt');
-                console.log(alt);
+                $(this).wrap('<figure></figure>');
                 var wrap = $('<figcaption class="caption">');
                 wrap.append(alt);
                 $(this).parent().append(wrap);
