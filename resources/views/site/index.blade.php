@@ -590,7 +590,7 @@
 				@foreach($posts as $post)
 					<div>
 						<a href="{{route('blog.see',$post->slug)}}">
-							<img src="{{$post->show_image}}" alt="{{$p->title}}">
+							<img src="{{$post->show_image}}" alt="{{$post->title}}">
 						</a>
 						<span>{{dataMes($post->date)}}</span>
 						<h3>{{$post->title}}</h3>
