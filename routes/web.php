@@ -44,6 +44,11 @@ $router->group(['prefix' => 'lojas', 'as' => 'lojas.'], function () use ($router
 	$router->get('/pesquisa/json', ['as' => 'pesquisaJson', 'uses' => 'StoreController@pesquisaJson']);
 });
 
+$router->group(['prefix' => 'blog', 'as' => 'blog.'], function () use ($router)
+{
+    $router->get('{slug}', ['as' => 'see', 'uses' => 'BlogPostAdminController@see']);
+});
+
 Route::get('/contato', 'ContactController@index')->name('contato');
 
 Route::get('/inscreverse', 'SubscribeController@index')->name('inscreverse');
@@ -202,7 +207,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'adminCheck']], func
         $router->get('/news', ['as' => 'news', 'uses' => 'BlogPostAdminController@index']);
         $router->get('/science', ['as' => 'science', 'uses' => 'BlogPostAdminController@index']);
         $router->get('{t}/create', ['as' => 'create', 'uses' => 'BlogPostAdminController@create']);
-        $router->get('{id}', ['as' => 'see', 'uses' => 'BlogPostAdminController@see']);
         $router->get('{post}/destroy', ['as' => 'destroy', 'uses' => 'BlogPostAdminController@destroy']);
     });
 

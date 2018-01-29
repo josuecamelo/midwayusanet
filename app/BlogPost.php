@@ -28,7 +28,7 @@ class BlogPost extends Model
 	
 	public function getShowImageAttribute()
 	{
-		return 'uploads/blog/destaque/' . $this->image;
+		return '/uploads/blog/destaque/' . $this->image;
 	}
 	
 	public function setTitleAttribute($value)
@@ -51,12 +51,15 @@ class BlogPost extends Model
 		return $this->belongsTo(User::class);
 	}
 
-	public static function last()
+	public static function last($qtd,$type,$id)
     {
-        return BlogPost::whereHas('category', function ($q){
-            $q->where('type',1);
-        })->orderBy('date','desc')->orderBy('id','desc')->take(4)->get();
+        return BlogPost::whereHas('category', function ($q) use($type){
+            $q->where('type',$type);
+        })->when($id, function ($q) use ($id){
+            $q->where('id','!=',$id);
+        })->orderBy('date','desc')->orderBy('id','desc')->take($qtd)->get();
     }
+
 	
 	public static function boot()
 	{

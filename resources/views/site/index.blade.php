@@ -578,7 +578,7 @@
 		<div class="row">
 			<div class="col-md-6">
 				<div>
-					<a href="{{route('posts.see',$destak->slug)}}">
+					<a href="{{route('blog.see',$destak->slug)}}">
 						<img src="{{$destak->show_image}}" alt="">
 					</a>
 					<span>{{dataMes($destak->date)}}</span>
@@ -589,7 +589,7 @@
 			<div class="col-md-6">
 				@foreach($posts as $post)
 					<div>
-						<a href="{{route('posts.see',$post->slug)}}">
+						<a href="{{route('blog.see',$post->slug)}}">
 							<img src="{{$post->show_image}}" alt="">
 						</a>
 						<span>{{dataMes($post->date)}}</span>

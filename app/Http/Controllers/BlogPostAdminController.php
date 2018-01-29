@@ -110,11 +110,6 @@ class BlogPostAdminController extends Controller
 		}
 	}
 
-	public function see($slug)
-    {
-        dd($slug);
-    }
-	
 	protected function doUpload($file, $nome, $path)
 	{
 		if (!File::exists($path)):
@@ -129,4 +124,14 @@ class BlogPostAdminController extends Controller
 		}
 		return isset($nomeFinal) ? $nomeFinal : null;
 	}
+
+   // Funções do site rotas publicas
+
+    public function see($slug)
+    {
+        $post = $this->model->whereSlug($slug)->first();
+        $posts = BlogPost::last(6,$post->category->type,$post->id);
+
+        return view('site.blog.see',compact('post','posts'));
+    }
 }

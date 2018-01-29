@@ -39,7 +39,7 @@ class IndexController extends Controller
 		
 		$militaryTrailProducts = $this->productModel->where('line_id', 1)->orderBy('name')->get();
 		$glamourNutritionProducts = $this->productModel->where('line_id', 2)->orderBy('name')->get();
-		$posts = BlogPost::last();
+		$posts = BlogPost::last(4,1,null);
 		$destak = $posts->take(1)->first();
 		$posts = $posts->slice(1,4);
 		
