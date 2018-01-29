@@ -65,6 +65,7 @@ class Product extends Model
 	}
 
 	public function setImageAttribute($value){
+	    $this->attributes['image'] = $value;
         $this->attributes['image_ext'] = UploadImagem::getFileExtension($value);
     }
 	

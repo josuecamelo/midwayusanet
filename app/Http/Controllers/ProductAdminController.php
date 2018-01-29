@@ -93,6 +93,7 @@ class ProductAdminController extends Controller
 		$inputs['type_id'] = $inputs['type_id'][0];
 		
 		//$inputs['highlights_portion'] = implode($inputs['portions'], ";");
+
 		if (isset($inputs['image']))
 		{
 			$imagem = $inputs['image'];
@@ -206,12 +207,16 @@ class ProductAdminController extends Controller
 		
 		$product = $this->productModel
 			->find($id);
-		
+
+
 		if (isset($inputs['image']))
 		{
 			$inputs['image'] = UploadImagem::singleUpload($inputs['image'], $product->id, public_path("uploads/products/$product->id"), $redimensionar = true);
+            //$imageName = UploadImagem::singleUpload($inputs['image'], $product->id, public_path("uploads/products/$product->id"), $redimensionar = true);
+            //$product->updateImageName($product, $imageName);
 		}
 		
+
 		//$inputs['highlights_portion'] = implode($inputs['portions'], ";");
 		
 		$this->gravaRelacionamentos($inputs, $product);
