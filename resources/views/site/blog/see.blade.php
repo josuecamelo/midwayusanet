@@ -1,4 +1,11 @@
 @extends('site.main')
+@section('css')
+    <style>
+        img{
+            max-width: 100%;
+        }
+    </style>
+@endsection
 @section('main')
     <div class="container">
         <h1>{{$post->title}}</h1>
