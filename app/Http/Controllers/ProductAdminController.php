@@ -155,7 +155,7 @@ class ProductAdminController extends Controller
 		$lines = $this->lineModel->get();
 		$categories = $this->categoryModel->get();
 		$goals = $this->goalModel->get();
-		
+
 		foreach ($related_products as $key => $related_product)
 		{
 			$relatedProductsList[] = $related_product->product_id;
