@@ -265,7 +265,7 @@
 
 		@media (min-width: 1200px) {
 			#produto {
-				padding-top: 80px;
+				/*padding-top: 80px;*/
 			}
 
 			#produto h1 {
@@ -345,7 +345,7 @@
 
 		@media (max-width: 1200px) {
 			#produto {
-				padding-top: 30px;
+				/*padding-top: 30px;*/
 			}
 
 			#produto h1 {
