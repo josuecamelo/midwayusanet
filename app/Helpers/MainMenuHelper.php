@@ -40,9 +40,7 @@ class MainMenuHelper
                 foreach($categories as $category){
                     $lista.="<li><a href=''>$category->name</a></li>";
                 }
-            }/*else{
-                $lista.="<li><a href='#'>-</a></li>";
-            }*/
+            }
         }elseif($tipo == 2){
             $products = $menu
                 ->relatedProducts()
@@ -54,9 +52,7 @@ class MainMenuHelper
                 foreach ($products as $product) {
                     $lista .= "<li><a href=''>$product->name</a></li>";
                 }
-            }/*else{
-                $lista.="<li><a href='#'>-</a></li>";
-            }*/
+            }
         }
 
         $lista.='';
