@@ -5,17 +5,6 @@
 	<link rel="stylesheet" type="text/css" href="{{ asset('slick/slick-theme.css') }}"/>
 	<style>
 
-		#produto
-		{
-			margin-top: 80px;
-			background: url({{ asset('img/bg-product-view.jpg') }}) fixed;
-		}
-
-		p
-		{
-			text-shadow: 0 2px 12px #000;
-		}
-
 		#main p
 		{
 			font-size: 20px;
@@ -24,7 +13,6 @@
 
 		#produto h3
 		{
-			text-shadow: 0 2px 10px #000;
 			text-align: center;
 			font-size: 20px;
 			margin-bottom: 40px;
@@ -35,32 +23,24 @@
 		{
 			display: block;
 			font-size: 60px;
-			text-shadow: 0 5px 15px rgba(0, 0, 0, .5);
 			margin: -10px 0 5px 0;
 		}
 
 		.nutriente
 		{
 			text-transform: uppercase;
-			text-shadow: 0 2px 10px #000;
 		}
 
 		#tabela-nutricional
 		{
 			display: block;
-			color: #fff;
-			text-shadow: 0 2px 10px #000;
+			color: red;
 			text-transform: uppercase;
 			font-weight: 600;
 			letter-spacing: 7px;
 			position: relative;
 			text-align: center;
 			margin: 50px 0;
-		}
-
-		#tabela-nutricional:hover
-		{
-			color: #BA9E17;
 		}
 
 		#tabela-nutricional::after
@@ -70,8 +50,8 @@
 
 		#informacao-nutricional .header
 		{
-			border-top: 5px solid rgba(255, 255, 255, 0.8);
-			border-bottom: 5px solid rgba(255, 255, 255, 0.8);
+			border-top: 5px solid #000;
+			border-bottom: 5px solid #000;
 			text-align: center;
 		}
 
@@ -89,31 +69,31 @@
 		#informacao-nutricional table
 		{
 			width: 100%;
-			border-bottom: 2px solid rgba(255, 255, 255, 0.7) !important;
+			border-bottom: 2px solid #000 !important;
 			margin-bottom: 0;
 		}
 
 		.table > thead > tr > th, .table > thead > tr > td, .table > tbody > tr > th, .table > tbody > tr > td, .table > tfoot > tr > th, .table > tfoot > tr > td
 		{
 			padding: 2px;
-			border-top: 1px solid rgba(255, 255, 255, 0.2);
+			border-top: 1px solid #000;
 		}
 
 		.table-striped > tbody > tr:nth-of-type(odd)
 		{
-			background-color: rgba(255, 255, 255, 0.1);
+			background-color: rgba(255, 255, 255, 0.2);
 		}
 
 		#informacao-nutricional p:nth-child(1)
 		{
 			padding: 5px 0;
-			border-bottom: 1px solid rgba(255, 255, 255, 0.3) !important;
+			border-bottom: 1px solid #000 !important;
 			margin: 0;
 		}
 
 		#informacao-nutricional .footer
 		{
-			border-bottom: 5px solid rgba(255, 255, 255, 0.8);
+			border-bottom: 5px solid #000;
 		}
 
 		.icon-wrapper
@@ -153,15 +133,15 @@
 
 		#sabores
 		{
-			background: url({{ asset('img/bg2.jpg') }}) fixed;
+			background: #f1f1f1;
 			text-align: center;
-			padding: 100px 0;
-			margin-top: 100px;
+			padding: 40px 0;
+			/*margin-top: 100px;*/
 		}
 
 		#sabores h2
 		{
-			color: #d0bc86;
+			color: #000;
 			font-size: 30px;
 			margin-bottom: 30px;
 		}
@@ -185,8 +165,8 @@
 		#outros-produtos
 		{
 			text-align: center;
-			background: url({{ asset('img/bg-concreto.jpg') }}) fixed;
-			padding: 100px 0;
+			background: #f9f9f9;
+			padding: 40px 0;
 		}
 
 		#outros-produtos h2
@@ -195,8 +175,8 @@
 			letter-spacing: 4px;
 			padding: 0 70px;
 			margin: 0 auto 60px;
-			border-right: 10px solid #ba9e17;
-			border-left: 10px solid #ba9e17;
+			border-right: 10px solid red;
+			border-left: 10px solid red;
 		}
 
 		#outros-produtos .item
@@ -260,7 +240,7 @@
 		.slick-prev:before,
 		.slick-next:before
 		{
-			color: #6d7d32;
+			color: #000;
 			font-size: 25px;
 		}
 
@@ -296,9 +276,22 @@
 			color: #fff;
 		}
 
-		#topicos-produto, .row-sabores
+		#topicos-produto
 		{
-			display: flex;
+			margin-left: 30px;
+			text-transform: uppercase;
+			font-size: 18px;
+			font-weight: bold;
+			color: #555;
+			border-top: 1px solid #ccc;
+			border-bottom: 1px solid #ccc;
+			padding: 20px 40px;
+			letter-spacing: 1px;
+		}
+
+		#shopify {
+			background: #fff;
+			padding: 30px;
 		}
 
 		@media (min-width: 1200px)
@@ -312,7 +305,6 @@
 			{
 				margin-top: 80px;
 				font-weight: 900;
-				text-shadow: 0 2px 20px rgba(0, 0, 0, .5);
 				line-height: 95%;
 				letter-spacing: 7px;
 				font-size: 6rem;
@@ -325,7 +317,7 @@
 				letter-spacing: 20px;
 				line-height: 200%;
 				display: block;
-				text-shadow: 0 2px 10px rgba(0, 0, 0, .7);
+				color: red;
 			}
 
 			.item-qtd-porcao
@@ -343,17 +335,17 @@
 				position: absolute;
 				top: 50%;
 				height: 1px;
-				background-color: #fff;
+				background-color: #ccc;
 				width: 35%;
 			}
 
 			#informacao-nutricional
 			{
 				font-size: 12px;
-				background: rgba(22, 29, 16, 0.8);
+				background: rgba(255,255,255, 0.8);
 				padding: 15px;
 				border-radius: 4px;
-				box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+				box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
 				position: relative;
 				z-index: 999999;
 				display: none;
@@ -365,8 +357,8 @@
 
 			#informacao-nutricional button
 			{
-				background: #47521c;
-				color: #ba9e17;
+				background: red;
+				color: #fff;
 				border: none;
 				border-radius: 100%;
 				padding: 0 6px;
@@ -531,94 +523,96 @@
 								<span id="cor" style="background-color: {{ $product->flavor->color }}">{{ $product->flavor->name }}</span>
 							@endif
 						</p>
+						{{-- Tópicos --}}
+
+						@if($topics)
+							<ul id="topicos-produto">
+								@foreach($topics as $topic)
+									<li>{{ $topic->description }}</li>
+								@endforeach
+							</ul>
+						@endif
+
 						<div>
 							<p>{{ $product->description }}</p>
-							<p><a href="{{ $product->link_purchase }}" target="_blank" class="bt2"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Comprar</a></p>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<div class="container">
+
+		<div id="shopify">
+			{!! $product->shopify !!}
+		</div>
+
+
+		{{-- Tabela nutricional --}}
+
+		@if($product->nutrients)
+			<a href="#informacao-nutricional" id="tabela-nutricional">Supplement Facts</a>
+			<div id="informacao-nutricional">
+				<button><i class="fa fa-times" aria-hidden="true"></i></button>
+				<div class="header">
+					<h2>Supplement Facts</h2>
+					<p>{{ $product->serving_size }}</p>
+				</div>
+				<table class="table table-striped">
+					<thead>
+					<tr>
+						<th>Amount per serving</th>
+						<th></th>
+						<th>%DV (*)</th>
+					</tr>
+					</thead>
+					<tbody>
+					<?php
+					$nutrients = array_map('trim', explode(PHP_EOL, $product->nutrients));
+					$nutrient_qty = array_map('trim', explode(PHP_EOL, $product->nutrient_qty));
+					$nutrient_vd = array_map('trim', explode(PHP_EOL, $product->nutrient_vd));
+					?>
+					@foreach($nutrients as $key => $nutrient)
+						<tr>
+							<td>{{ $nutrient }}</td>
+							<td>{{ $nutrient_qty[$key] }}</td>
+							<td>{{ $nutrient_vd[$key] }}</td>
+						</tr>
+					@endforeach
+					</tbody>
+				</table>
+				{{--<div class="footer">--}}
+				{{--<p>"Não contém quantidades significativas de gorduras trans."</p>--}}
+				{{--<p>*% Valores diários com base em uma dieta de 2000 kcal ou 8400 kJ. Seus valores diários podem ser maiores ou menores dependendo de suas necessidades energéticas.@if(in_array('**', $nutrient_vd)) ** VD não estabelecido.@endif</p>--}}
+				{{--</div>--}}
+			</div>
+		@endif
+
+		{{--<div class="container">--}}
+
+
 
 			{{-- Highlights Portion --}}
 
-			<div id="highlights_portion">
-				@if(isset($product->portions))
-					<h3>Cada <span data-toggle="tooltip" data-placement="top" title="{{ $product->serving_size }}">porção</span> fornece:</h3>
-					<div class="row-col">
-						@foreach($product->portions as $v)
-							<div class="col">
-								<div class="item-qtd-porcao">
-									<span class="valor">{{ $v->value }}</span>
-									<span class="nutriente">{{ $v->nutrient }}</span>
-								</div>
-							</div>
-						@endforeach
-					</div>
-				@endif
-			</div>
+			{{--<div id="highlights_portion">--}}
+				{{--@if(isset($product->portions))--}}
+					{{--<h3>Cada <span data-toggle="tooltip" data-placement="top" title="{{ $product->serving_size }}">porção</span> fornece:</h3>--}}
+					{{--<div class="row-col">--}}
+						{{--@foreach($product->portions as $v)--}}
+							{{--<div class="col">--}}
+								{{--<div class="item-qtd-porcao">--}}
+									{{--<span class="valor">{{ $v->value }}</span>--}}
+									{{--<span class="nutriente">{{ $v->nutrient }}</span>--}}
+								{{--</div>--}}
+							{{--</div>--}}
+						{{--@endforeach--}}
+					{{--</div>--}}
+				{{--@endif--}}
+			{{--</div>--}}
 
-			{{-- Tabela nutricional --}}
 
-			@if($product->nutrients)
-				<a href="#informacao-nutricional" id="tabela-nutricional">Tabela nutricional</a>
-				<div id="informacao-nutricional">
-					<button><i class="fa fa-times" aria-hidden="true"></i></button>
-					<div class="header">
-						<h2>Informação Nutricional</h2>
-						<p>{{ $product->serving_size }}</p>
-					</div>
-					<table class="table table-striped">
-						<thead>
-						<tr>
-							<th>Quantidade por porção</th>
-							<th></th>
-							<th>%VD (*)</th>
-						</tr>
-						</thead>
-						<tbody>
-						<?php
-						$nutrients = array_map('trim', explode(PHP_EOL, $product->nutrients));
-						$nutrient_qty = array_map('trim', explode(PHP_EOL, $product->nutrient_qty));
-						$nutrient_vd = array_map('trim', explode(PHP_EOL, $product->nutrient_vd));
-						?>
-						@foreach($nutrients as $key => $nutrient)
-							<tr>
-								<td>{{ $nutrient }}</td>
-								<td>{{ $nutrient_qty[$key] }}</td>
-								<td>{{ $nutrient_vd[$key] }}</td>
-							</tr>
-						@endforeach
-						</tbody>
-					</table>
-					<div class="footer">
-						<p>"Não contém quantidades significativas de gorduras trans."</p>
-						<p>*% Valores diários com base em uma dieta de 2000 kcal ou 8400 kJ. Seus valores diários podem ser maiores ou menores dependendo de suas necessidades energéticas.@if(in_array('**', $nutrient_vd)) ** VD não estabelecido.@endif</p>
-					</div>
-				</div>
-			@endif
 
-			{{-- Tópicos --}}
 
-			@if($topics)
-				<div id="topicos-produto">
-					@foreach($topics as $topic)
-						<div class="col">
-							<div class="icon-wrapper">
-								<img src="{{ url('uploads/products') . '/' . $product->id . '/topics/' . $topic->image }}" alt="">
-							</div>
-							<div class="desc">
-								{{ $topic->topic_description }}
-								<div>{{ $topic->description }}</div>
-							</div>
-						</div>
-					@endforeach
-				</div>
-			@endif
-
-		</div>
+		{{--</div>--}}
 
 		{{-- Sabores relacionados --}}
 
