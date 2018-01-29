@@ -74,6 +74,7 @@ class MenuAdminController extends Controller
 
     public function update(Request $request, $id)
     {
+        $items = [];
         $inputs = $request->all();
         $menu = $this->menuModel
             ->find($id);
@@ -86,16 +87,24 @@ class MenuAdminController extends Controller
         //dd($inputs);
 
         //Adicionando Produtos Relacionados
-        if (!empty($inputs['menu_products']))
-            $menu->relatedProducts()->sync($inputs['menu_products']);
-        else
+        if (!empty($inputs['menu_products'])){
+            foreach($inputs['menu_products'] as $key => $product_id){
+                $items[$product_id] = ['item_order' => $key];
+            }
+            $menu->relatedProducts()->sync($items);
+        }else{
             $menu->relatedProducts()->sync([]);
+        }
 
         //Adicionando Categorias relacionadas
-        if (!empty($inputs['menu_categories']))
-            $menu->relatedCategories()->sync($inputs['menu_categories']);
-        else
+        if (!empty($inputs['menu_categories'])){
+            foreach($inputs['menu_categories'] as $key => $cat_id){
+                $items[$cat_id] = ['item_order' => $key];
+            }
+            $menu->relatedCategories()->sync($items);
+        }else{
             $menu->relatedCategories()->sync([]);
+        }
 
         //atualizando
         $menu->update($inputs);
