@@ -16,6 +16,7 @@
             background-color: #fff;
             overflow: hidden;
             margin-bottom: 20px;
+            background: none !important;
         }
         .caption {
             position: absolute;
@@ -31,6 +32,12 @@
             -webkit-transition: all .3s ease-out;
             transition: all .3s ease-out;
         }
+        .tagTag{
+            background: #222;
+            color: #fff;
+            border-radius: 5px;
+            padding: 5px;
+        }
     </style>
 @endsection
 @section('main')
@@ -43,6 +50,14 @@
         <div class="row">
             <div class="col-md-8 blogContainer">
                 {!! $post->content !!}
+                <p></p>
+                <hr>
+                <p></p>
+                <div class="blogTags">
+                    @foreach($post->tags as $t)
+                    <a href="{{route('blog.index',['tag'=>$t->slug])}}" class="tagTag">{{$t->name}}</a>
+                    @endforeach
+                </div>
             </div>
             <div class="col-md-4">
                 @foreach($posts as $p)
@@ -62,10 +77,12 @@
         $(document).ready(function(){
             $('.blogContainer img').each(function(){
                 var alt =   $(this).attr('alt');
-                $(this).wrap('<figure></figure>');
-                var wrap = $('<figcaption class="caption">');
-                wrap.append(alt);
-                $(this).parent().append(wrap);
+                if(alt.length > 0){
+                    $(this).wrap('<figure></figure>');
+                    var wrap = $('<figcaption class="caption">');
+                    wrap.append(alt);
+                    $(this).parent().append(wrap);
+                }
             });
         });
     </script>
