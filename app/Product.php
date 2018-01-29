@@ -145,7 +145,7 @@ class Product extends Model
 	}
 
 	public function flavor(){
-	    return $this->belongsTo(Flavor::class);
+	    return $this->belongsTo(Flavor::class, 'flavor_id','id');
     }
 
     public function scopeOfProduct($query, $slug, $lSlug)
@@ -198,5 +198,13 @@ class Product extends Model
                     //->orderBy('name2', 'ASC')
                     ->pluck('name2', 'products.id')->all();
          }
+    }
+
+    public function getCompleteNameAttribute(){
+        if(isset($this->flavor_id)){
+            return $this->name . ' ' .$this->last_name . ' '. $this->presentation. ' '. $this->flavor()->first()->name;
+        }else{
+            return $this->name . ' ' .$this->last_name . ' '. $this->presentation;
+        }
     }
 }
