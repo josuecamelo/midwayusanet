@@ -4,6 +4,6 @@
 
 	<img src="{{ asset('img/about.jpg') }}" alt="" class="img-responsive animated fadeInDown">
 
-	<h1>About Us</h1>
+	<h1>Who We Are</h1>
 
 @endsection
