@@ -82,7 +82,7 @@
 								</button>
 								<div class="panel panel-default">
 									<div class="panel-heading">Selected Categories</div>
-									{!! Form::select('menu_categories', $categories[1], (!isset($relatedCategoriesList) ? null : $relatedCategoriesList),['class'=>'select-to', 'multiple', 'size'=>5]) !!}
+									{!! Form::select('menu_categories[]', $categories[1], (!isset($relatedCategoriesList) ? null : $relatedCategoriesList),['class'=>'select-to', 'multiple', 'size'=>5]) !!}
 								</div>
 								<div class="text-center">
 									<div class="btn-group">
@@ -121,7 +121,7 @@
 								</button>
 								<div class="panel panel-default">
 									<div class="panel-heading">Selected Products</div>
-									{!! Form::select('menu_products', $products[1], (!isset($relatedProductsList) ? null : $relatedProductsList),['class'=>'select-to', 'multiple', 'size'=> 5]) !!}
+									{!! Form::select('menu_products[]', $products[1], (!isset($relatedProductsList) ? null : $relatedProductsList),['class'=>'select-to', 'multiple', 'size'=> 5]) !!}
 								</div>
 								<div class="text-center">
 									<div class="btn-group">
