@@ -29,14 +29,14 @@ class MenuAdminController extends Controller
 	    if($menu_id != null){
             $menu = $this->menuModel->find($menu_id);
 
-            $relatedCategories =$menu->relatedCategories()->orderBy('id', 'asc')->get();
+            $relatedCategories =$menu->relatedCategories()->orderBy('item_order', 'asc')->get();
 
             foreach ($relatedCategories as $key => $relatedCategory)
             {
                 $relatedCategoriesList[] = $relatedCategory->id;
             }
 
-            $relatedProducts = $menu->relatedProducts()->orderBy('id', 'asc')->get();
+            $relatedProducts = $menu->relatedProducts()->orderBy('item_order', 'asc')->get();
             foreach ($relatedProducts as $key => $relatedProduct)
             {
                 $relatedProductsList[] = $relatedProduct->id;
