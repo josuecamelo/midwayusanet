@@ -54,9 +54,11 @@
                 <hr>
                 <p></p>
                 <div class="blogTags">
-                    @foreach($post->tags as $t)
-                    <a href="{{route('blog.index',['tag'=>$t->slug])}}" class="tagTag">{{$t->name}}</a>
-                    @endforeach
+                    @if(count($post->tags) > 0)
+                        @foreach($post->tags as $t)
+                            <a href="{{route('blog.index',['tag'=>$t->slug])}}" class="tagTag">{{$t->name}}</a>
+                        @endforeach
+                    @endif
                 </div>
             </div>
             <div class="col-md-4">
