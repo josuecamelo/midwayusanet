@@ -13,6 +13,7 @@
 	<meta name="googlebot" content="noindex">
 </head>
 <body>
+<div class="overlay"></div>
 <header id="header" class="animated fadeInDown">
 	<div class="container-fluid">
 		<div id="logo">

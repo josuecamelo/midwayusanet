@@ -524,7 +524,7 @@
 			<div>
 				<div class="slick-track" role="listbox">
 					@foreach($militaryTrailProducts as $mtProduct)
-						<a href="#">
+						<a href="{{ $mtProduct->url_visualizacao  }}">
 							<div class="product">
 								<img src="{{ asset('uploads/products') . '/' . $mtProduct->id . '/' . $mtProduct->image }}">
 								<h4>{{ $mtProduct->name . ' ' . $mtProduct->last_name }}</h4>
@@ -541,7 +541,7 @@
 			<div>
 				<div class="slick-track" role="listbox">
 					@foreach($glamourNutritionProducts as $gnProduct)
-						<a href="#">
+						<a href="{{ $gnProduct->url_visualizacao  }}">
 							<div class="product">
 								<img src="{{ asset('uploads/products') . '/' . $gnProduct->id . '/' . $gnProduct->image }}">
 								<h4>{{ $gnProduct->name . ' ' . $gnProduct->last_name }}</h4>
