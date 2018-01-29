@@ -5,6 +5,22 @@
             max-width: 100%;
             height: auto;
             display: block;
+            border: 1px solid #eee;
+            padding: 2px;
+        }
+        .caption {
+            position: absolute;
+            bottom: 5px;
+            left: 15px;
+            padding: 5px;
+            font-size: 14px;
+            line-height: 150%;
+            font-weight: 700;
+            color: #fff;
+            z-index: 100;
+            background-color: rgba(0,0,0,.8);
+            -webkit-transition: all .3s ease-out;
+            transition: all .3s ease-out;
         }
     </style>
 @endsection
@@ -16,7 +32,7 @@
             {{dataMes($post->date)}}
         </div>
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-8 blogContainer">
                 {!! $post->content !!}
             </div>
             <div class="col-md-4">
@@ -31,4 +47,17 @@
             </div>
         </div>
     </div>
+@endsection
+@section('js')
+    <script>
+        $(document).ready(function(){
+            $('.blogContainer img').each(function(){
+                var alt =   $(this).attr('alt');
+                console.log(alt);
+                var wrap = $('<figcaption class="caption">');
+                wrap.append(alt);
+                $(this).parent().append(wrap);
+            });
+        });
+    </script>
 @endsection
