@@ -53,6 +53,10 @@ class MainMenuHelper
                     $lista .= "<li><a href=''>$product->name</a></li>";
                 }
             }
+        }else{
+            //$product = $menu->featuredProduct()->first();
+            //dd($product);
+            //return $product;
         }
 
         $lista.='';

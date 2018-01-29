@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\DB;
 
 class Menu extends Model
 {
@@ -61,4 +62,16 @@ class Menu extends Model
     {
         return $this->belongsToMany(Product::class, 'menu_products', 'menu_id');
     }
+
+    //public function featuredProductMod2(){
+        //return $this->belongsTo(Product::class);
+            /*->select(
+                'products.*',
+                DB::raw("concat(products.name, ' ', IFNULL(products.last_name,''), ' ' , products.presentation, ' ', IFNULL(flavors.name, '')) as name2")
+            )
+            ->leftJoin('flavors', 'flavors.id', '=', 'products.flavor_id');*/
+
+
+       // return $this->belongsTo(Product::class);
+    //}
 }

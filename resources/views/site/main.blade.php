@@ -197,6 +197,7 @@
 							</ul>
 						</li>
 						<li>
+							{!! main_menu_helper(3,3) !!}
 							<h2>Featured Stack</h2>
 							<div id="featured-stack">
 								<a href="/">
