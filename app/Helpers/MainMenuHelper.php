@@ -36,9 +36,13 @@ class MainMenuHelper
                 ->take(5)
                 ->get();
 
-            foreach($categories as $category){
-                $lista.="<li><a href=''>$category->name</a></li>";
-            }
+            if($categories->count() > 0){
+                foreach($categories as $category){
+                    $lista.="<li><a href=''>$category->name</a></li>";
+                }
+            }/*else{
+                $lista.="<li><a href='#'>-</a></li>";
+            }*/
         }elseif($tipo == 2){
             $products = $menu
                 ->relatedProducts()
@@ -46,9 +50,13 @@ class MainMenuHelper
                 ->take(5)
                 ->get();
 
-            foreach($products as $product){
-                $lista.="<li><a href=''>$product->name</a></li>";
-            }
+            if($products->count() > 0) {
+                foreach ($products as $product) {
+                    $lista .= "<li><a href=''>$product->name</a></li>";
+                }
+            }/*else{
+                $lista.="<li><a href='#'>-</a></li>";
+            }*/
         }
 
         $lista.='';
