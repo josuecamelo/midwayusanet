@@ -54,9 +54,8 @@ class MainMenuHelper
                 }
             }
         }else{
-            //$product = $menu->featuredProduct()->first();
-            //dd($product);
-            //return $product;
+            $product = $menu->featuredProduct()->first();
+            return $product;
         }
 
         $lista.='';
