@@ -55,7 +55,13 @@ class MainMenuHelper
             }
         }else{
             $product = $menu->featuredProduct()->first();
-            return $product;
+            return '
+                <a href="">
+                    <img src="https://via.placeholder.com/150x150">
+                    <p>'.$product->complete_name.'</p>
+                    <p class="value">$ <span>109</span><sup>.99</sup></p>
+                </a>            
+            ';
         }
 
         $lista.='';

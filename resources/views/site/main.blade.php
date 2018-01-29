@@ -79,11 +79,12 @@
 						<li>
 							<h2>BEAUTY STACK BUNDLE</h2>
 							<div id="featured-stack">
-								<a href="/">
-									<img src="{{ asset('img/Beauty_Stack20_720x.png') }}">
+								<!--a href="/">
+									<img src="{ { asset('img/Beauty_Stack20_720x.png') }}">
 									<p>Glamour Collagen</p>
 									<p class="value">$ <span>51</span><sup>.99</sup></p>
-								</a>
+								</a-->
+								{!!  main_menu_helper(1,3) !!}
 							</div>
 						</li>
 						<li class="ads">
@@ -146,11 +147,12 @@
 						<li>
 							<h2>FAT BURNER BUNDLE</h2>
 							<div id="featured-stack">
-								<a href="/">
-									<img src="{{ asset('img/Fat_Burner_Bundle_1080x.png') }}">
+								<!--a href="/">
+									<img src="{ { asset('img/Fat_Burner_Bundle_1080x.png') }}">
 									<p>Thermogenic Blast + L-Carnitine Strike</p>
 									<p class="value">$ <span>69</span><sup>.99</sup></p>
-								</a>
+								</a-->
+								{!!  main_menu_helper(2,3) !!}
 							</div>
 						</li>
 						<li class="ads">
@@ -197,14 +199,15 @@
 							</ul>
 						</li>
 						<li>
-							{!! main_menu_helper(3,3) !!}
+							{{--{!! main_menu_helper(3,3) !!}--}}
 							<h2>Featured Stack</h2>
 							<div id="featured-stack">
-								<a href="/">
+								<!--a href="/">
 									<img src="https://via.placeholder.com/150x150">
 									<p>Product Name</p>
 									<p class="value">$ <span>109</span><sup>.99</sup></p>
-								</a>
+								</a-->
+								{!!  main_menu_helper(3,3) !!}
 							</div>
 						</li>
 						<li class="ads">
