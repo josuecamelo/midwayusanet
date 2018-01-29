@@ -238,11 +238,11 @@
 						@foreach($lines as $l => $line)
 							<div class="radio">
 								<label class="i-checks">
-									{{--@if(isset($product) && $product->line_id == $line->id)--}}
+									@if(isset($product) && $product->line_id == $line->id)
 									<input type="radio" name="line_id[]" checked value="{{ $line->id }}">
-									{{--@else--}}
-									{{--<input type="radio" name="line_id[]" value="{{ $line->id }}">--}}
-									{{--@endif--}}
+									@else
+									<input type="radio" name="line_id[]" value="{{ $line->id }}">
+									@endif
 									<i></i>
 									{{ $line->name }}
 								</label>

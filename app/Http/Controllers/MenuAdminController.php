@@ -29,14 +29,15 @@ class MenuAdminController extends Controller
 	    if($menu_id != null){
             $menu = $this->menuModel->find($menu_id);
 
-            $relatedCategories =$menu->relatedCategories()->get();
+            $relatedCategories = $menu->relatedCategories()->orderBy('item_order', 'asc')->get();
 
             foreach ($relatedCategories as $key => $relatedCategory)
             {
                 $relatedCategoriesList[] = $relatedCategory->id;
             }
 
-            $relatedProducts = $menu->relatedProducts()->get();
+            $relatedProducts = $menu->relatedProducts()->orderBy('item_order', 'asc')->get();
+
             foreach ($relatedProducts as $key => $relatedProduct)
             {
                 $relatedProductsList[] = $relatedProduct->id;
@@ -47,16 +48,21 @@ class MenuAdminController extends Controller
 
             //categorias e produtos selecionados
             if(!empty($relatedProductsList)){
-                $products[] = $this->productModel->listar($relatedProductsList);
+                $products[] = $menu->relatedProducts()
+                    ->orderBy('item_order', 'asc')
+                    ->pluck('name', 'product_id');
             }else{
                 $products[] = [];
             }
 
             if(!empty($relatedCategoriesList)){
-                $categories[] = $this->categoryModel->listar($relatedCategoriesList);
+                $categories[] = $menu->relatedCategories()
+                    ->orderBy('item_order', 'asc')
+                    ->pluck('name', 'category_id');
             }else{
                 $categories[] = [];
             }
+
 
             //listagem do produto destaque
             $products[] = $this->productModel->listarTodos([$menu->featured_product_id]);
@@ -74,6 +80,7 @@ class MenuAdminController extends Controller
 
     public function update(Request $request, $id)
     {
+        $items = [];
         $inputs = $request->all();
         $menu = $this->menuModel
             ->find($id);
@@ -86,16 +93,24 @@ class MenuAdminController extends Controller
         //dd($inputs);
 
         //Adicionando Produtos Relacionados
-        if (!empty($inputs['menu_products']))
-            $menu->relatedProducts()->sync($inputs['menu_products']);
-        else
+        if (!empty($inputs['menu_products'])){
+            foreach($inputs['menu_products'] as $key => $product_id){
+                $items[$product_id] = ['item_order' => $key];
+            }
+            $menu->relatedProducts()->sync($items);
+        }else{
             $menu->relatedProducts()->sync([]);
+        }
 
         //Adicionando Categorias relacionadas
-        if (!empty($inputs['menu_categories']))
-            $menu->relatedCategories()->sync($inputs['menu_categories']);
-        else
+        if (!empty($inputs['menu_categories'])){
+            foreach($inputs['menu_categories'] as $key => $cat_id){
+                $items[$cat_id] = ['item_order' => $key];
+            }
+            $menu->relatedCategories()->sync($items);
+        }else{
             $menu->relatedCategories()->sync([]);
+        }
 
         //atualizando
         $menu->update($inputs);

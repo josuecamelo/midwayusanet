@@ -57,3 +57,12 @@ if (!function_exists('dataMes')) {
         return date('F d, Y',strtotime($v));
     }
 }
+
+
+if (!function_exists('main_menu_helper')) {
+    function main_menu_helper($menu_id, $item)
+    {
+        $criarMenu = app(\App\Helpers\MainMenuHelper::class);
+        return $criarMenu->getMenu($menu_id, $item);
+    }
+}

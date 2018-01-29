@@ -87,7 +87,7 @@ class Category extends Model
                     'categories.name'
                 )
                 ->whereIn('id', $ids)
-                ->orderBy('name', 'ASC')
+                //->orderBy('name', 'ASC')
                 ->pluck('name', 'id')->all();
         }
     }

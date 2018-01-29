@@ -528,3 +528,17 @@ footer ul li a:hover .arrow-link {
 	margin: 5px 0 10px 0 !important;
 	display: block;
 }
+
+.overlay {
+	position: fixed;
+	display: none;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(100, 100, 100, 0.5);
+	z-index: 99999;
+	cursor: pointer;
+}

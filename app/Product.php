@@ -65,6 +65,7 @@ class Product extends Model
 	}
 
 	public function setImageAttribute($value){
+	    $this->attributes['image'] = $value;
         $this->attributes['image_ext'] = UploadImagem::getFileExtension($value);
     }
 	
@@ -73,7 +74,7 @@ class Product extends Model
 		return $this
             ->select(
                 'products.id',
-                DB::raw("concat(products.name, ' ', products.last_name, ' ' , products.presentation, ' ', IFNULL(flavors.name, '')) as name2")
+                DB::raw("concat(products.name, ' ', IFNULL(products.last_name,''), ' ' , products.presentation, ' ', IFNULL(flavors.name, '')) as name2")
             )
             ->leftJoin('flavors', 'flavors.id', '=', 'products.flavor_id')
             //->join('flavors', 'flavors.id', '=', 'products.flavor_id')
@@ -173,5 +174,29 @@ class Product extends Model
             ->where('categories.slug', $category_slug)
             ->orderBy('products.name', 'asc')
             ->get();
+    }
+
+    public function listar($ids = [], $orderBy = [])
+     {
+         if(empty($ids)) {
+             return $this
+                 ->select(
+                     'products.id',
+                     DB::raw("concat(products.name, ' ', IFNULL(products.last_name,''), ' ' , products.presentation, ' ', IFNULL(flavors.name, '')) as name2")
+                 )
+                 ->leftJoin('flavors', 'flavors.id', '=', 'products.flavor_id')
+                 ->orderBy('name2', 'ASC')
+                 ->pluck('name2', 'products.id')->all();
+         }else{
+               return $this
+                        ->select(
+                            'products.id',
+                    DB::raw("concat(products.name, ' ', IFNULL(products.last_name,''), ' ' , products.presentation, ' ', IFNULL(flavors.name, '')) as name2")
+                   )
+                 ->leftJoin('flavors', 'flavors.id', '=', 'products.flavor_id')
+                    ->whereIn('products.id', $ids)
+                    //->orderBy('name2', 'ASC')
+                    ->pluck('name2', 'products.id')->all();
+         }
     }
 }
