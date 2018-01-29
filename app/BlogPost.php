@@ -15,7 +15,6 @@ class BlogPost extends Model
         'date',
 		'blog_category_id',
 		'description',
-		'tags',
 		'image',
 		'content',
 		'user_id'
@@ -25,6 +24,11 @@ class BlogPost extends Model
 	{
 		return $this->belongsTo(BlogCategory::class, 'blog_category_id');
 	}
+
+	public function tags()
+    {
+        return $this->belongsToMany(Tag::class,'post_tag','blog_post_id','tag_id');
+    }
 	
 	public function getShowImageAttribute()
 	{

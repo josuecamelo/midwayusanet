@@ -47,6 +47,12 @@ $router->group(['prefix' => 'lojas', 'as' => 'lojas.'], function () use ($router
 $router->group(['prefix' => 'blog', 'as' => 'blog.'], function () use ($router)
 {
     $router->get('{slug}', ['as' => 'see', 'uses' => 'BlogPostAdminController@see']);
+    $router->get('/', ['as' => 'index', 'uses' => 'BlogPostAdminController@siteIndex']);
+});
+
+$router->group(['prefix' => 'science-and-knowledge', 'as' => 'science.'], function () use ($router)
+{
+    $router->get('/', ['as' => 'index', 'uses' => 'BlogPostAdminController@siteIndex']);
 });
 
 Route::get('/contato', 'ContactController@index')->name('contato');

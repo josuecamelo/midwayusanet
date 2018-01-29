@@ -43,8 +43,19 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="form-group">
-						<label for="tags">Tags *</label>
-						{!! Form::text('tags', null, ['id'=>'tags', 'class'=>'form-control', 'required']) !!}
+						<label for="tag_id">Tags </label>
+						{!! Form::text('tag_id', null, ['id'=>'tags', 'class'=>'form-control']) !!}
+						<a href="javascript:;" class="btn btn-primary btn-xs addTag">Adicionar</a>
+						<ul class="tagchecklist">
+							@if(isset($post))
+								@foreach($post->tags as $tag)
+									<li>
+										<a href="javascript:;" class="delTag">{{$tag->name}}</a>
+										<input type="hidden" name="tag_id[]" value="{{$tag->slug}}">
+									</li>
+								@endforeach
+							@endif
+						</ul>
 					</div>
 				</div>
 			</div>

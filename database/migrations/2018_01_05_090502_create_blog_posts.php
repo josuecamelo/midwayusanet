@@ -20,7 +20,6 @@ class CreateBlogPosts extends Migration
 //            $table->integer('blog_category_id');
 //            $table->string('description', 255)->nullable();
 //            $table->date('date');
-//            $table->string('tags', 255)->nullable();
 //            $table->string('image',255)->nullable();
 //            $table->text('content');
 //            $table->integer('user_id');

@@ -1,6 +1,18 @@
 <script src="{{ asset('js/tinymce/js/tinymce/tinymce.min.js') }}"></script>
 <script>
 
+    $('.addTag').on('click', function () {
+        var v = $('#tags').val();
+        $('.tagchecklist').append('<li><a href="javascript:;" class="delTag">'+v+'</a>' +
+            '<input type="hidden" name="tag_id[]" value="'+v+'"></li>');
+        $('#tags').val('');
+        $('#tags').focus();
+    });
+
+    $('body').on('click','.delTag', function () {
+        $(this).parent().remove();
+    });
+
 	$(function(){
 		uploadImg();
 	});

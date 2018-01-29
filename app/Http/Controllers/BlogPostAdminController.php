@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\BlogCategory;
 use App\BlogPost;
+use App\Tag;
 use Laracasts\Flash\Flash;
 use Route;
 use Illuminate\Support\Facades\File;
@@ -45,7 +46,22 @@ class BlogPostAdminController extends Controller
 	
 	public function store()
 	{
-		$save = $this->model->create(request()->all());
+        $tg = new Tag();
+	    $inputs = request()->all();
+		$save = $this->model->create($inputs);
+
+        if(isset($inputs['tag_id'])){
+            foreach($inputs['tag_id'] as $t){
+                $tem = $tg->whereSlug(str_slug($t))->first();
+                if($tem){
+                    $ids['tag_id'][] = $tem->id;
+                } else{
+                    $tag = $tg->create(['name'=>$t,'slug'=>str_slug($t)]);
+                    $ids['tag_id'][] = $tag->id;
+                }
+            }
+            $save->tags()->sync($ids['tag_id']);
+        }
 		
 		if (request()->file() && $save)
 		{
@@ -78,7 +94,22 @@ class BlogPostAdminController extends Controller
 	
 	public function update(BlogPost $post)
 	{
-		$save = $post->update(request()->all());
+	    $tg = new Tag();
+	    $inputs = request()->all();
+		$save = $post->update($inputs);
+
+        if(isset($inputs['tag_id'])){
+            foreach($inputs['tag_id'] as $t){
+                $tem = $tg->whereSlug(str_slug($t))->first();
+                if($tem){
+                    $ids['tag_id'][] = $tem->id;
+                } else{
+                    $tag = $tg->create(['name'=>$t,'slug'=>str_slug($t)]);
+                    $ids['tag_id'][] = $tag->id;
+                }
+            }
+            $post->tags()->sync($ids['tag_id']);
+        }
 		
 		if (request()->file() && $save)
 		{
@@ -87,12 +118,9 @@ class BlogPostAdminController extends Controller
 			$post->update($d);
 		}
 		
-		if ($save)
-		{
+		if ($save){
 			Flash::success('Item successfully changed.');
-		}
-		else
-		{
+		}else{
 			Flash::error('This item could not be changed. Try again.');
 		}
 		
@@ -133,5 +161,28 @@ class BlogPostAdminController extends Controller
         $posts = BlogPost::last(6,$post->category->type,$post->id);
 
         return view('site.blog.see',compact('post','posts'));
+    }
+
+    public function siteIndex()
+    {
+        $t = (Route::is('science.index'))?2:1;
+        $tagId = (request()->tag)?request()->tag:null;
+        if($tagId){
+            $tag = Tag::whereSlug($tagId)->first();
+            if($tag){
+                $title = 'Searching: '.$tag->name;
+                $posts = BlogPost::whereHas('tags', function ($q) use ($tag){
+                    $q->where('slug',$tag->slug);
+                })->get();
+            } else {
+                $title = 'Tag not found';
+                $posts = BlogPost::whereId(0)->get();
+            }
+        } else{
+            $title = ($t == 1)? 'Blog':'Science';
+            $posts = BlogPost::last(100,$t,null);
+        }
+
+        return view('site.blog.index',compact('post','posts','title'));
     }
 }
