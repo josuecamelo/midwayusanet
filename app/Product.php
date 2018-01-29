@@ -176,7 +176,7 @@ class Product extends Model
             ->get();
     }
 
-    public function listar($ids = [])
+    public function listar($ids = [], $orderBy = [])
      {
          if(empty($ids)) {
              return $this
@@ -195,7 +195,7 @@ class Product extends Model
                    )
                  ->leftJoin('flavors', 'flavors.id', '=', 'products.flavor_id')
                     ->whereIn('products.id', $ids)
-                    ->orderBy('name2', 'ASC')
+                    //->orderBy('name2', 'ASC')
                     ->pluck('name2', 'products.id')->all();
          }
     }

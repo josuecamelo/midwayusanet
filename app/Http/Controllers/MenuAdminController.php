@@ -37,6 +37,7 @@ class MenuAdminController extends Controller
             }
 
             $relatedProducts = $menu->relatedProducts()->orderBy('item_order', 'asc')->get();
+
             foreach ($relatedProducts as $key => $relatedProduct)
             {
                 $relatedProductsList[] = $relatedProduct->id;
