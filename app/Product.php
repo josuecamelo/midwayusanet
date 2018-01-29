@@ -175,4 +175,28 @@ class Product extends Model
             ->orderBy('products.name', 'asc')
             ->get();
     }
+
+    public function listar($ids = [])
+     {
+         if(empty($ids)) {
+             return $this
+                 ->select(
+                     'products.id',
+                     DB::raw("concat(products.name, ' ', products.last_name, ' ' , products.presentation, ' ', IFNULL(flavors.name, '')) as name2")
+                 )
+                 ->leftJoin('flavors', 'flavors.id', '=', 'products.flavor_id')
+                 ->orderBy('name2', 'ASC')
+                 ->pluck('name2', 'products.id')->all();
+         }else{
+               return $this
+                        ->select(
+                            'products.id',
+                    DB::raw("concat(products.name, ' ', products.last_name, ' ' , products.presentation, ' ', IFNULL(flavors.name, '')) as name2")
+                   )
+                 ->leftJoin('flavors', 'flavors.id', '=', 'products.flavor_id')
+                    ->whereIn('products.id', $ids)
+                    ->orderBy('name2', 'ASC')
+                    ->pluck('name2', 'products.id')->all();
+         }
+    }
 }
