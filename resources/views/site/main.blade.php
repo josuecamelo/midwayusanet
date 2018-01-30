@@ -253,21 +253,22 @@
 									<li>
 										<h2>POPULAR CATEGORIES</h2>
 										<ul>
-											<li>
-												<a href="/">PRE-WORKOUT</a>
-											</li>
-											<li>
-												<a href="/">PROTEIN</a>
-											</li>
-											<li>
-												<a href="/">AMINO</a>
-											</li>
-											<li>
-												<a href="/">CREATINE</a>
-											</li>
-											<li>
-												<a href="/">TEST BOOSTER</a>
-											</li>
+											{{--<li>--}}
+												{{--<a href="/">PRE-WORKOUT</a>--}}
+											{{--</li>--}}
+											{{--<li>--}}
+												{{--<a href="/">PROTEIN</a>--}}
+											{{--</li>--}}
+											{{--<li>--}}
+												{{--<a href="/">AMINO</a>--}}
+											{{--</li>--}}
+											{{--<li>--}}
+												{{--<a href="/">CREATINE</a>--}}
+											{{--</li>--}}
+											{{--<li>--}}
+												{{--<a href="/">TEST BOOSTER</a>--}}
+											{{--</li>--}}
+											{!! main_menu_helper(1,1) !!}
 											<li>
 												<a href="/">VIEW ALL PRODUCTS</a>
 											</li>
@@ -276,21 +277,22 @@
 									<li>
 										<h2>POPULAR PRODUCTS</h2>
 										<ul>
-											<li>
-												<a href="/">PRE-WORKOUT</a>
-											</li>
-											<li>
-												<a href="/">PROTEIN</a>
-											</li>
-											<li>
-												<a href="/">AMINO</a>
-											</li>
-											<li>
-												<a href="/">CREATINE</a>
-											</li>
-											<li>
-												<a href="/">TEST BOOSTER</a>
-											</li>
+											{{--<li>--}}
+												{{--<a href="/">PRE-WORKOUT</a>--}}
+											{{--</li>--}}
+											{{--<li>--}}
+												{{--<a href="/">PROTEIN</a>--}}
+											{{--</li>--}}
+											{{--<li>--}}
+												{{--<a href="/">AMINO</a>--}}
+											{{--</li>--}}
+											{{--<li>--}}
+												{{--<a href="/">CREATINE</a>--}}
+											{{--</li>--}}
+											{{--<li>--}}
+												{{--<a href="/">TEST BOOSTER</a>--}}
+											{{--</li>--}}
+											{!! main_menu_helper(1,2) !!}
 											<li>
 												<a href="/">VIEW ALL PRODUCTS</a>
 											</li>
@@ -304,21 +306,22 @@
 									<li>
 										<h2>POPULAR CATEGORIES</h2>
 										<ul>
-											<li>
-												<a href="/">PRE-WORKOUT</a>
-											</li>
-											<li>
-												<a href="/">PROTEIN</a>
-											</li>
-											<li>
-												<a href="/">AMINO</a>
-											</li>
-											<li>
-												<a href="/">CREATINE</a>
-											</li>
-											<li>
-												<a href="/">TEST BOOSTER</a>
-											</li>
+											{{--<li>--}}
+												{{--<a href="/">PRE-WORKOUT</a>--}}
+											{{--</li>--}}
+											{{--<li>--}}
+												{{--<a href="/">PROTEIN</a>--}}
+											{{--</li>--}}
+											{{--<li>--}}
+												{{--<a href="/">AMINO</a>--}}
+											{{--</li>--}}
+											{{--<li>--}}
+												{{--<a href="/">CREATINE</a>--}}
+											{{--</li>--}}
+											{{--<li>--}}
+												{{--<a href="/">TEST BOOSTER</a>--}}
+											{{--</li>--}}
+											{!! main_menu_helper(2,1) !!}
 											<li>
 												<a href="/">VIEW ALL PRODUCTS</a>
 											</li>
@@ -327,21 +330,22 @@
 									<li>
 										<h2>POPULAR PRODUCTS</h2>
 										<ul>
-											<li>
-												<a href="/">PRE-WORKOUT</a>
-											</li>
-											<li>
-												<a href="/">PROTEIN</a>
-											</li>
-											<li>
-												<a href="/">AMINO</a>
-											</li>
-											<li>
-												<a href="/">CREATINE</a>
-											</li>
-											<li>
-												<a href="/">TEST BOOSTER</a>
-											</li>
+											{{--<li>--}}
+												{{--<a href="/">PRE-WORKOUT</a>--}}
+											{{--</li>--}}
+											{{--<li>--}}
+												{{--<a href="/">PROTEIN</a>--}}
+											{{--</li>--}}
+											{{--<li>--}}
+												{{--<a href="/">AMINO</a>--}}
+											{{--</li>--}}
+											{{--<li>--}}
+												{{--<a href="/">CREATINE</a>--}}
+											{{--</li>--}}
+											{{--<li>--}}
+												{{--<a href="/">TEST BOOSTER</a>--}}
+											{{--</li>--}}
+											{!! main_menu_helper(2,2) !!}
 											<li>
 												<a href="/">VIEW ALL PRODUCTS</a>
 											</li>
@@ -355,21 +359,22 @@
 									<li>
 										<h2>POPULAR CATEGORIES</h2>
 										<ul>
-											<li>
-												<a href="/">PRE-WORKOUT</a>
-											</li>
-											<li>
-												<a href="/">PROTEIN</a>
-											</li>
-											<li>
-												<a href="/">AMINO</a>
-											</li>
-											<li>
-												<a href="/">CREATINE</a>
-											</li>
-											<li>
-												<a href="/">TEST BOOSTER</a>
-											</li>
+											{{--<li>--}}
+												{{--<a href="/">PRE-WORKOUT</a>--}}
+											{{--</li>--}}
+											{{--<li>--}}
+												{{--<a href="/">PROTEIN</a>--}}
+											{{--</li>--}}
+											{{--<li>--}}
+												{{--<a href="/">AMINO</a>--}}
+											{{--</li>--}}
+											{{--<li>--}}
+												{{--<a href="/">CREATINE</a>--}}
+											{{--</li>--}}
+											{{--<li>--}}
+												{{--<a href="/">TEST BOOSTER</a>--}}
+											{{--</li>--}}
+											{!! main_menu_helper(3,1) !!}
 											<li>
 												<a href="/">VIEW ALL PRODUCTS</a>
 											</li>
@@ -378,21 +383,22 @@
 									<li>
 										<h2>POPULAR PRODUCTS</h2>
 										<ul>
-											<li>
-												<a href="/">PRE-WORKOUT</a>
-											</li>
-											<li>
-												<a href="/">PROTEIN</a>
-											</li>
-											<li>
-												<a href="/">AMINO</a>
-											</li>
-											<li>
-												<a href="/">CREATINE</a>
-											</li>
-											<li>
-												<a href="/">TEST BOOSTER</a>
-											</li>
+											{{--<li>--}}
+												{{--<a href="/">PRE-WORKOUT</a>--}}
+											{{--</li>--}}
+											{{--<li>--}}
+												{{--<a href="/">PROTEIN</a>--}}
+											{{--</li>--}}
+											{{--<li>--}}
+												{{--<a href="/">AMINO</a>--}}
+											{{--</li>--}}
+											{{--<li>--}}
+												{{--<a href="/">CREATINE</a>--}}
+											{{--</li>--}}
+											{{--<li>--}}
+												{{--<a href="/">TEST BOOSTER</a>--}}
+											{{--</li>--}}
+											{!! main_menu_helper(3,2) !!}
 											<li>
 												<a href="/">VIEW ALL PRODUCTS</a>
 											</li>
