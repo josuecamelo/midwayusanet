@@ -427,19 +427,19 @@
 			<div class="item active">
 				<picture>
 					<source media="(min-width: 480px)" srcset="{{ asset('img/home/banners/ArnoldBanner.jpg') }}">
-					<img src="{{ asset('img/home/banners/ArnoldBanner-mobile.jpg') }}" alt="Criamos sites responsivos" class="img-responsive">
+					<img src="{{ asset('img/home/banners/ArnoldBanner-mobile.jpg') }}" class="img-responsive">
 				</picture>
 			</div>
 			<div class="item">
 				<picture>
 					<source media="(min-width: 480px)" srcset="{{ asset('img/home/banners/AthleteBanner.jpg') }}">
-					<img src="{{ asset('img/home/banners/AthleteBanner-mobile.jpg') }}" alt="Criamos sites responsivos" class="img-responsive">
+					<img src="{{ asset('img/home/banners/AthleteBanner-mobile.jpg') }}" class="img-responsive">
 				</picture>
 			</div>
 			<div class="item">
 				<picture>
 					<source media="(min-width: 480px)" srcset="{{ asset('img/home/banners/ProductBanner.jpg') }}">
-					<img src="{{ asset('img/home/banners/ProductBanner-mobile.jpg') }}" alt="Criamos sites responsivos" class="img-responsive">
+					<img src="{{ asset('img/home/banners/ProductBanner-mobile.jpg') }}" class="img-responsive">
 				</picture>
 			</div>
 		</div>

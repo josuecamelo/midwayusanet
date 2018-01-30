@@ -11,7 +11,7 @@
 			padding: 40px 0;
 			margin: 30px 0;
 			background: #fff;
-			box-shadow: 0 0 15px rgba(150,150,150,0.1);
+			box-shadow: 0 0 15px rgba(150, 150, 150, 0.1);
 		}
 
 		.text {
@@ -20,12 +20,19 @@
 			text-align: justify;
 		}
 
+		@media (max-width: 600px) {
+			.text {
+				columns: auto;
+			}
+		}
+
 		.img-res {
 			max-width: 100%;
 		}
 
 		h2 {
 			margin: 30px 0 20px !important;
+			text-align: center;
 		}
 
 		#lines {
@@ -36,16 +43,23 @@
 
 @section('main')
 
-	<img src="{{ asset('img/about.jpg') }}" alt="" class="img-responsive animated fadeInDown">
+	<picture>
+		<source media="(min-width: 480px)" srcset="{{ asset('img/about.jpg') }}">
+		<img src="{{ asset('img/about-mobile.jpg') }}" class="img-responsive animated fadeInDown">
+	</picture>
 
 	<div class="container">
 		<h1>Who We Are</h1>
 		<p class="text">This is our mission, to supplement your journey into building your best version of yourself! With this concept in mind, Midway Labs USA was founded in 1991 by visionary entrepreneur Wilton Colle, bringing the science and technology of the dietary supplement industry to millions of consumers. With extensive international presence and over 25 years in the market, Midway Labs USA is today one of the largest supplement brands in the world. All products are proudly manufactured in the United States of America in GMP and FDA registered facilities, supervised by a team of renowned professional scientists, doctors and nutritionists.</p>
 		<p><img src="{{ asset('img/about-usa.jpg') }}" alt="" class="img-res"></p>
 		<p class="text">Currently, Midway Labs USA which is on the board of directors of the American Chamber of Washington DC. We are also a proud supporter and sponsor of several events, sports and athletes, such as the world famous soccer player Kaká, The UFC Champions Nogueira Brothers, the IFBB pro Felipe Franco, The first ever Women’s Physique Karina Nascimento, Latin America MovieStars Giovanna Ewbank & Bruno Gagliasso as well as being the Diamond Sponsor at the Arnold Classic USA and Brazil, Title Sponsor at all 4 Europa Games, Official Sponsor of IFBB (International Federation of Bodybuilding), Official Sponsor of the Boston City Soccer Club, StockCar Racing, Athina Onassis Longiness and several other athletes, teams and events worldwide.</p>
+		<p><img src="{{ asset('img/about-usa-2.jpg') }}" alt="" class="img-res"></p>
 	</div>
 
-	<img src="{{ asset('img/bella.jpg') }}" alt="" class="img-res">
+	<picture>
+		<source media="(min-width: 480px)" srcset="{{ asset('img/bella.jpg') }}">
+		<img src="{{ asset('img/bella-mobile.jpg') }}" class="img-res">
+	</picture>
 
 	<div id="packshot">
 		<p class="container">With over 500 SKUS, selling inside the main big box retailers, advertising in the main magazines and nationwide TV commercials in South America, Midway Labs USA is ever expanding globally with innovative and unique product lines such as Glamour Nutrition (Nutri-Cosmetics) and Military Trail (Premium Supplements).</p>
@@ -67,18 +81,29 @@
 			</div>
 		</div>
 		<div class="row">
-			HIGH QUALITY CONTROL & RESEARCH
-
-			All of Midway Labs USA products are manufactured in GMP (Good Manufacturing Practices) and FDA registered facilities. Under rigorous quality control and supervised by a dynamic and experienced team of scientists, formulators and product managers. As a result our products are recognized as one of the top dietary supplement brands worldwide.
-			OUR SCIENTIFIC COUNCIL
-
-			Dr. Gerseli Angeli
-
-			Dr. Turíbio Leite de Barros
-
-			Dr. Dirceu Raposo
-
-			Karen Lima
+			<div class="col-md-12">
+				<h2>HIGH QUALITY CONTROL & RESEARCH</h2>
+				<p>All of Midway Labs USA products are manufactured in GMP (Good Manufacturing Practices) and FDA registered facilities. Under rigorous quality control and supervised by a dynamic and experienced team of scientists, formulators and product managers. As a result our products are recognized as one of the top dietary supplement brands worldwide.</p>
+			</div>
+		</div>
+		<p class="text-center"><b>OUR SCIENTIFIC COUNCIL</b></p>
+		<div class="row text-center">
+			<div class="col-md-3">
+				<img src="{{ asset('img/gerseli.png') }}" alt="" class="img-rounded">
+				<p>Dr. Gerseli Angeli</p>
+			</div>
+			<div class="col-md-3">
+				<img src="{{ asset('img/turibio.png') }}" alt="" class="img-rounded">
+				<p>Dr. Turíbio Leite de Barros</p>
+			</div>
+			<div class="col-md-3">
+				<img src="{{ asset('img/dirceu.png') }}" alt="" class="img-rounded">
+				<p>Dr. Dirceu Raposo</p>
+			</div>
+			<div class="col-md-3">
+				<img src="{{ asset('img/karen.png') }}" alt="" class="img-rounded">
+				<p>Karen Lima</p>
+			</div>
 		</div>
 
 	</div>
