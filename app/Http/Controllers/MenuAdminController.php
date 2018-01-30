@@ -103,6 +103,7 @@ class MenuAdminController extends Controller
         }
 
         //Adicionando Categorias relacionadas
+        $items = [];
         if (!empty($inputs['menu_categories'])){
             foreach($inputs['menu_categories'] as $key => $cat_id){
                 $items[$cat_id] = ['item_order' => $key];
