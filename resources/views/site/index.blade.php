@@ -460,7 +460,9 @@
 					SHOP MILITARY TRAIL
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21.12 23.42">
 						<defs>
-							<style>.cls-1{fill:red;}</style>
+							<style>.cls-1 {
+									fill: red;
+								}</style>
 						</defs>
 						<polygon class="cls-1" points="9.19 0 9.19 5.4 15.61 11.71 9.19 18.01 9.19 23.42 21.12 11.71 9.19 0"/>
 						<polygon class="cls-1" points="0 22.24 10.73 11.71 0 1.18 0 22.24"/>
@@ -475,7 +477,9 @@
 					SHOP GLAMOUR NUTRITION
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21.12 23.42">
 						<defs>
-							<style>.cls-1{fill:red;}</style>
+							<style>.cls-1 {
+									fill: red;
+								}</style>
 						</defs>
 						<polygon class="cls-1" points="9.19 0 9.19 5.4 15.61 11.71 9.19 18.01 9.19 23.42 21.12 11.71 9.19 0"/>
 						<polygon class="cls-1" points="0 22.24 10.73 11.71 0 1.18 0 22.24"/>
@@ -490,7 +494,9 @@
 					DELICIOUS LEMON FLAVOR
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21.12 23.42">
 						<defs>
-							<style>.cls-1{fill:red;}</style>
+							<style>.cls-1 {
+									fill: red;
+								}</style>
 						</defs>
 						<polygon class="cls-1" points="9.19 0 9.19 5.4 15.61 11.71 9.19 18.01 9.19 23.42 21.12 11.71 9.19 0"/>
 						<polygon class="cls-1" points="0 22.24 10.73 11.71 0 1.18 0 22.24"/>
@@ -505,7 +511,9 @@
 					GIVING BACK
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21.12 23.42">
 						<defs>
-							<style>.cls-1{fill:red;}</style>
+							<style>.cls-1 {
+									fill: red;
+								}</style>
 						</defs>
 						<polygon class="cls-1" points="9.19 0 9.19 5.4 15.61 11.71 9.19 18.01 9.19 23.42 21.12 11.71 9.19 0"/>
 						<polygon class="cls-1" points="0 22.24 10.73 11.71 0 1.18 0 22.24"/>
@@ -607,26 +615,13 @@
 	<section id="videos-row">
 		<h2>NEWEST VIDEOS</h2>
 		<div class="row">
-			<div class="col-md-3">
-				<div class="overlay-video"></div>
-				<iframe width="100%" height="248" src="https://www.youtube.com/embed/M6GFK6RkFvQ" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
-				<h3>Glamour Collagen</h3>
-			</div>
-			<div class="col-md-3">
-				<div class="overlay-video"></div>
-				<iframe width="100%" height="248" src="https://www.youtube.com/embed/mhO0e3lJAgI" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
-				<h3>Glamour Protein Shake</h3>
-			</div>
-			<div class="col-md-3">
-				<div class="overlay-video"></div>
-				<iframe width="100%" height="248" src="https://www.youtube.com/embed/kI_NR0uCklM" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
-				<h3>Creatine Military Trail Supplement</h3>
-			</div>
-			<div class="col-md-3">
-				<div class="overlay-video"></div>
-				<iframe width="100%" height="248" src="https://www.youtube.com/embed/_5lP9g8X-ZA" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
-				<h3>Felipe Franco Visits Midway Labs USA</h3>
-			</div>
+			@foreach($videos as $video)
+				<div class="col-md-3">
+					<div class="overlay-video"></div>
+					<iframe width="100%" height="248" src="{{ $video->video }}" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+					<h3>{{ $video->title }}</h3>
+				</div>
+			@endforeach
 		</div>
 	</section>
 

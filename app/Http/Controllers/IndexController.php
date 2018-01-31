@@ -4,19 +4,17 @@ namespace App\Http\Controllers;
 
 use App\BlogPost;
 use App\Product;
-use App\Training;
-use App\Goal;
-use App\Type;
+use App\Video;
 
 class IndexController extends Controller
 {
-	private $trainingModel;
-	private $goalModel;
-	private $typeModel;
+	private $productModel;
+	private $videoModel;
 	
-	public function __construct(Product $product)
+	public function __construct(Product $product, Video $video)
 	{
 		$this->productModel = $product;
+		$this->videoModel = $video;
 	}
 	
 //	public function index()
@@ -35,15 +33,15 @@ class IndexController extends Controller
 	
 	public function home()
 	{
-		// All Products:
-		
 		$militaryTrailProducts = $this->productModel->where('line_id', 1)->orderBy('name')->get();
 		$glamourNutritionProducts = $this->productModel->where('line_id', 2)->orderBy('name')->get();
+		
 		$posts = BlogPost::last(4,1,null);
 		$destak = $posts->take(1)->first();
 		$posts = $posts->slice(1,4);
 		
-		return view('site.index', compact('militaryTrailProducts', 'glamourNutritionProducts',
-            'destak','posts'));
+		$videos = $this->videoModel->orderBy('created_at', 'DESC')->get();
+		
+		return view('site.index', compact('militaryTrailProducts','glamourNutritionProducts', 'destak','posts', 'videos'));
 	}
 }

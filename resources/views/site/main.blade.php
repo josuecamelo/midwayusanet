@@ -31,21 +31,6 @@
 						<li>
 							<h2>Popular Categories</h2>
 							<ul>
-								{{--<li>--}}
-									{{--<a href="/">Protein</a>--}}
-								{{--</li>--}}
-								{{--<li>--}}
-									{{--<a href="/">Collagen</a>--}}
-								{{--</li>--}}
-								{{--<li>--}}
-									{{--<a href="/">Sleep Support</a>--}}
-								{{--</li>--}}
-								{{--<li>--}}
-									{{--<a href="/">Anti Age</a>--}}
-								{{--</li>--}}
-								{{--<li>--}}
-									{{--<a href="/">Hair Skin And Nails</a>--}}
-								{{--</li>--}}
 								{!! main_menu_helper(1,1) !!}
 								<li>
 									<a href="/">View All Products</a>
@@ -55,21 +40,6 @@
 						<li>
 							<h2>Popular Products</h2>
 							<ul>
-								{{--<li>--}}
-									{{--<a href="/">Glamour Protein</a>--}}
-								{{--</li>--}}
-								{{--<li>--}}
-									{{--<a href="/">Glamour Collagen</a>--}}
-								{{--</li>--}}
-								{{--<li>--}}
-									{{--<a href="/">Beauty Sleep</a>--}}
-								{{--</li>--}}
-								{{--<li>--}}
-									{{--<a href="/">Glamour Anti Age</a>--}}
-								{{--</li>--}}
-								{{--<li>--}}
-									{{--<a href="/">Hair Skin And Nails</a>--}}
-								{{--</li>--}}
 								{!! main_menu_helper(1,2) !!}
 								<li>
 									<a href="/">View All Products</a>
@@ -77,13 +47,8 @@
 							</ul>
 						</li>
 						<li>
-							<h2>BEAUTY STACK BUNDLE</h2>
+							<h2>Featured Stack</h2>
 							<div id="featured-stack">
-								<!--a href="/">
-									<img src="{ { asset('img/Beauty_Stack20_720x.png') }}">
-									<p>Glamour Collagen</p>
-									<p class="value">$ <span>51</span><sup>.99</sup></p>
-								</a-->
 								{!!  main_menu_helper(1,3) !!}
 							</div>
 						</li>
@@ -99,21 +64,6 @@
 						<li>
 							<h2>POPULAR CATEGORIES</h2>
 							<ul>
-								{{--<li>--}}
-									{{--<a href="/">PRE-WORKOUT</a>--}}
-								{{--</li>--}}
-								{{--<li>--}}
-									{{--<a href="/">PROTEIN</a>--}}
-								{{--</li>--}}
-								{{--<li>--}}
-									{{--<a href="/">AMINO</a>--}}
-								{{--</li>--}}
-								{{--<li>--}}
-									{{--<a href="/">CREATINE</a>--}}
-								{{--</li>--}}
-								{{--<li>--}}
-									{{--<a href="/">TEST BOOSTER</a>--}}
-								{{--</li>--}}
 								{!! main_menu_helper(2,1) !!}
 								<li>
 									<a href="/">VIEW ALL PRODUCTS</a>
@@ -123,21 +73,6 @@
 						<li>
 							<h2>POPULAR PRODUCTS</h2>
 							<ul>
-								{{--<li>--}}
-									{{--<a href="/">ATP ENHANCER</a>--}}
-								{{--</li>--}}
-								{{--<li>--}}
-									{{--<a href="/">MILITARY WHEY</a>--}}
-								{{--</li>--}}
-								{{--<li>--}}
-									{{--<a href="/">AMINO TANK</a>--}}
-								{{--</li>--}}
-								{{--<li>--}}
-									{{--<a href="/">CREATINE</a>--}}
-								{{--</li>--}}
-								{{--<li>--}}
-									{{--<a href="/">ERE FORCE</a>--}}
-								{{--</li>--}}
 								{!! main_menu_helper(2,2) !!}
 								<li>
 									<a href="/">VIEW ALL PRODUCTS</a>
@@ -145,13 +80,8 @@
 							</ul>
 						</li>
 						<li>
-							<h2>FAT BURNER BUNDLE</h2>
+							<h2>Featured Stack</h2>
 							<div id="featured-stack">
-								<!--a href="/">
-									<img src="{ { asset('img/Fat_Burner_Bundle_1080x.png') }}">
-									<p>Thermogenic Blast + L-Carnitine Strike</p>
-									<p class="value">$ <span>69</span><sup>.99</sup></p>
-								</a-->
 								{!!  main_menu_helper(2,3) !!}
 							</div>
 						</li>
@@ -167,7 +97,6 @@
 						<li>
 							<h2>POPULAR CATEGORIES</h2>
 							<ul>
-								{{--{!! menu_helper() !!}--}}
 								{!! main_menu_helper(3,1) !!}
 								<li>
 									<a href="/">VIEW ALL PRODUCTS</a>
@@ -177,21 +106,6 @@
 						<li>
 							<h2>POPULAR PRODUCTS</h2>
 							<ul>
-								{{--<li>--}}
-									{{--<a href="/">PRE-WORKOUT</a>--}}
-								{{--</li>--}}
-								{{--<li>--}}
-									{{--<a href="/">PROTEIN</a>--}}
-								{{--</li>--}}
-								{{--<li>--}}
-									{{--<a href="/">AMINO</a>--}}
-								{{--</li>--}}
-								{{--<li>--}}
-									{{--<a href="/">CREATINE</a>--}}
-								{{--</li>--}}
-								{{--<li>--}}
-									{{--<a href="/">TEST BOOSTER</a>--}}
-								{{--</li>--}}
 								{!! main_menu_helper(3,2) !!}
 								<li>
 									<a href="/">VIEW ALL PRODUCTS</a>
@@ -199,14 +113,8 @@
 							</ul>
 						</li>
 						<li>
-							{{--{!! main_menu_helper(3,3) !!}--}}
 							<h2>Featured Stack</h2>
 							<div id="featured-stack">
-								<!--a href="/">
-									<img src="https://via.placeholder.com/150x150">
-									<p>Product Name</p>
-									<p class="value">$ <span>109</span><sup>.99</sup></p>
-								</a-->
 								{!!  main_menu_helper(3,3) !!}
 							</div>
 						</li>
@@ -253,21 +161,6 @@
 									<li>
 										<h2>POPULAR CATEGORIES</h2>
 										<ul>
-											{{--<li>--}}
-												{{--<a href="/">PRE-WORKOUT</a>--}}
-											{{--</li>--}}
-											{{--<li>--}}
-												{{--<a href="/">PROTEIN</a>--}}
-											{{--</li>--}}
-											{{--<li>--}}
-												{{--<a href="/">AMINO</a>--}}
-											{{--</li>--}}
-											{{--<li>--}}
-												{{--<a href="/">CREATINE</a>--}}
-											{{--</li>--}}
-											{{--<li>--}}
-												{{--<a href="/">TEST BOOSTER</a>--}}
-											{{--</li>--}}
 											{!! main_menu_helper(1,1) !!}
 											<li>
 												<a href="/">VIEW ALL PRODUCTS</a>
@@ -277,21 +170,6 @@
 									<li>
 										<h2>POPULAR PRODUCTS</h2>
 										<ul>
-											{{--<li>--}}
-												{{--<a href="/">PRE-WORKOUT</a>--}}
-											{{--</li>--}}
-											{{--<li>--}}
-												{{--<a href="/">PROTEIN</a>--}}
-											{{--</li>--}}
-											{{--<li>--}}
-												{{--<a href="/">AMINO</a>--}}
-											{{--</li>--}}
-											{{--<li>--}}
-												{{--<a href="/">CREATINE</a>--}}
-											{{--</li>--}}
-											{{--<li>--}}
-												{{--<a href="/">TEST BOOSTER</a>--}}
-											{{--</li>--}}
 											{!! main_menu_helper(1,2) !!}
 											<li>
 												<a href="/">VIEW ALL PRODUCTS</a>
@@ -306,21 +184,6 @@
 									<li>
 										<h2>POPULAR CATEGORIES</h2>
 										<ul>
-											{{--<li>--}}
-												{{--<a href="/">PRE-WORKOUT</a>--}}
-											{{--</li>--}}
-											{{--<li>--}}
-												{{--<a href="/">PROTEIN</a>--}}
-											{{--</li>--}}
-											{{--<li>--}}
-												{{--<a href="/">AMINO</a>--}}
-											{{--</li>--}}
-											{{--<li>--}}
-												{{--<a href="/">CREATINE</a>--}}
-											{{--</li>--}}
-											{{--<li>--}}
-												{{--<a href="/">TEST BOOSTER</a>--}}
-											{{--</li>--}}
 											{!! main_menu_helper(2,1) !!}
 											<li>
 												<a href="/">VIEW ALL PRODUCTS</a>
@@ -330,21 +193,6 @@
 									<li>
 										<h2>POPULAR PRODUCTS</h2>
 										<ul>
-											{{--<li>--}}
-												{{--<a href="/">PRE-WORKOUT</a>--}}
-											{{--</li>--}}
-											{{--<li>--}}
-												{{--<a href="/">PROTEIN</a>--}}
-											{{--</li>--}}
-											{{--<li>--}}
-												{{--<a href="/">AMINO</a>--}}
-											{{--</li>--}}
-											{{--<li>--}}
-												{{--<a href="/">CREATINE</a>--}}
-											{{--</li>--}}
-											{{--<li>--}}
-												{{--<a href="/">TEST BOOSTER</a>--}}
-											{{--</li>--}}
 											{!! main_menu_helper(2,2) !!}
 											<li>
 												<a href="/">VIEW ALL PRODUCTS</a>
@@ -359,21 +207,6 @@
 									<li>
 										<h2>POPULAR CATEGORIES</h2>
 										<ul>
-											{{--<li>--}}
-												{{--<a href="/">PRE-WORKOUT</a>--}}
-											{{--</li>--}}
-											{{--<li>--}}
-												{{--<a href="/">PROTEIN</a>--}}
-											{{--</li>--}}
-											{{--<li>--}}
-												{{--<a href="/">AMINO</a>--}}
-											{{--</li>--}}
-											{{--<li>--}}
-												{{--<a href="/">CREATINE</a>--}}
-											{{--</li>--}}
-											{{--<li>--}}
-												{{--<a href="/">TEST BOOSTER</a>--}}
-											{{--</li>--}}
 											{!! main_menu_helper(3,1) !!}
 											<li>
 												<a href="/">VIEW ALL PRODUCTS</a>
@@ -383,21 +216,6 @@
 									<li>
 										<h2>POPULAR PRODUCTS</h2>
 										<ul>
-											{{--<li>--}}
-												{{--<a href="/">PRE-WORKOUT</a>--}}
-											{{--</li>--}}
-											{{--<li>--}}
-												{{--<a href="/">PROTEIN</a>--}}
-											{{--</li>--}}
-											{{--<li>--}}
-												{{--<a href="/">AMINO</a>--}}
-											{{--</li>--}}
-											{{--<li>--}}
-												{{--<a href="/">CREATINE</a>--}}
-											{{--</li>--}}
-											{{--<li>--}}
-												{{--<a href="/">TEST BOOSTER</a>--}}
-											{{--</li>--}}
 											{!! main_menu_helper(3,2) !!}
 											<li>
 												<a href="/">VIEW ALL PRODUCTS</a>
@@ -443,21 +261,7 @@
 				<div class="col-md-6">
 					<h3>POPULAR CATEGORIES</h3>
 					<ul>
-						<li>
-							<a href="/">PROTEIN<i class="fas fa-angle-right arrow-link"></i></a>
-						</li>
-						<li>
-							<a href="/">COLLAGEN<i class="fas fa-angle-right arrow-link"></i></a>
-						</li>
-						<li>
-							<a href="/">TESTO BOOSTER<i class="fas fa-angle-right arrow-link"></i></a>
-						</li>
-						<li>
-							<a href="/">PRE WORKOUT<i class="fas fa-angle-right arrow-link"></i></a>
-						</li>
-						<li>
-							<a href="/">CREATINE<i class="fas fa-angle-right arrow-link"></i></a>
-						</li>
+						{!! main_menu_helper(3,1) !!}
 						<li>
 							<a href="/">VIEW ALL CATEGORIES<i class="fas fa-angle-right arrow-link"></i></a>
 						</li>
@@ -466,20 +270,9 @@
 				<div class="col-md-6">
 					<h3>POPULAR PRODUCTS</h3>
 					<ul>
+						{!! main_menu_helper(3,2) !!}
 						<li>
-							<a href="/">ERE FORCE<i class="fas fa-angle-right arrow-link"></i></a>
-						</li>
-						<li>
-							<a href="/">L CARNITINE STRIKE<i class="fas fa-angle-right arrow-link"></i></a>
-						</li>
-						<li>
-							<a href="/">ANABOLIC ARSENAL<i class="fas fa-angle-right arrow-link"></i></a>
-						</li>
-						<li>
-							<a href="/">GLAMOUR PROTEIN<i class="fas fa-angle-right arrow-link"></i></a>
-						</li>
-						<li>
-							<a href="/">GLAMOUR COLLAGEN<i class="fas fa-angle-right arrow-link"></i></a>
+							<a href="/">VIEW ALL PRODUCTS <i class="fas fa-angle-right arrow-link"></i></a>
 						</li>
 					</ul>
 				</div>
