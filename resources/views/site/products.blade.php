@@ -208,7 +208,7 @@
 							<article>
 								<div class="panel panel-default">
 									<div class="panel-header">
-										<a href="#">
+										<a href="{{ $product->url_visualizacao  }}">
 											<img src="{{ asset('uploads/products') . '/' . $product->id . '/' . $product->image }}" alt="">
 										</a>
 									</div>
