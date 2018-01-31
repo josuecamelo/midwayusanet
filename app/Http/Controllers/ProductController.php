@@ -91,7 +91,7 @@ class ProductController extends Controller
 				//->orWhere('', '=', ');
 			})
 			->first();
-		
+
 		$topics = $product->productTopics()->get();
 		
 		$flavors = $product::ofProduct($product->slug, $product->last_name_slug);

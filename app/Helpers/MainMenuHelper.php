@@ -50,7 +50,7 @@ class MainMenuHelper
 
             if($products->count() > 0) {
                 foreach ($products as $product) {
-                    $lista .= "<li><a href=''>$product->complete_name</a></li>";
+                    $lista .= "<li><a href='". $product->url_visualizacao ."'>$product->complete_name</a></li>";
                 }
             }
         }else{

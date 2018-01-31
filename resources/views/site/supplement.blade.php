@@ -519,8 +519,8 @@
 					@foreach($nutrients as $key => $nutrient)
 						<tr>
 							<td>{{ $nutrient }}</td>
-							<td>{{ $nutrient_qty[$key] }}</td>
-							<td>{{ $nutrient_vd[$key] }}</td>
+							<td>{{ isset($nutrient_qty[$key]) ? $nutrient_qty[$key] : null }}</td>
+							<td>{{ isset($nutrient_vd[$key]) ? $nutrient_vd[$key] : null }}</td>
 						</tr>
 					@endforeach
 					</tbody>
