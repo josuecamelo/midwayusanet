@@ -38,7 +38,7 @@ class MainMenuHelper
 
             if($categories->count() > 0){
                 foreach($categories as $category){
-                    $lista.="<li><a href=''>$category->name</a></li>";
+                    $lista.="<li><a href='".route('produto_categoria', ['type' => $category->type->slug, 'category' => $category->slug])."'>$category->name</a></li>";
                 }
             }
         }elseif($tipo == 2){
