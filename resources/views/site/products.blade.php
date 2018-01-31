@@ -251,6 +251,8 @@
 
 			$('#search-col :checkbox').on('click', function (event) {
 
+				// window.history.pushState("object or string", "Title", "/new-url");
+
 				event.stopPropagation();
 
 				$(this).parent().toggleClass('item-normal item-marcado');

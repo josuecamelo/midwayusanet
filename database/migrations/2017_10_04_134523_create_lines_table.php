@@ -17,6 +17,7 @@ class CreateLinesTable extends Migration
 		{
 			$table->increments('id');
 			$table->string('name', 255);
+			$table->string('slug', 255);
 			$table->text('description');
 			$table->string('logo', 255)->nullable();
 			$table->string('banner', 255)->nullable();
