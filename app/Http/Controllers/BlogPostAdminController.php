@@ -158,6 +158,9 @@ class BlogPostAdminController extends Controller
     public function see($slug)
     {
         $post = $this->model->whereSlug($slug)->first();
+        if(!$post){
+            return abort(404);
+        }
         $posts = BlogPost::last(6,$post->category->type,$post->id);
 
         return view('site.blog.see',compact('post','posts'));
