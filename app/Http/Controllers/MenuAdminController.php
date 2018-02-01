@@ -6,6 +6,7 @@ use App\Category;
 use App\Menu;
 use App\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Laracasts\Flash\Flash;
 
 class MenuAdminController extends Controller
@@ -49,8 +50,13 @@ class MenuAdminController extends Controller
             //categorias e produtos selecionados
             if(!empty($relatedProductsList)){
                 $products[] = $menu->relatedProducts()
+                    ->select(
+                        'products.id',
+                        DB::raw("concat(products.name, ' ', IFNULL(products.last_name,''), ' ' , products.presentation, ' ', IFNULL(flavors.name, '')) as name2")
+                    )
+                    ->leftJoin('flavors', 'flavors.id', '=', 'products.flavor_id')
                     ->orderBy('item_order', 'asc')
-                    ->pluck('name', 'product_id');
+                    ->pluck('name2', 'products.id');
             }else{
                 $products[] = [];
             }
@@ -103,6 +109,7 @@ class MenuAdminController extends Controller
         }
 
         //Adicionando Categorias relacionadas
+        $items = [];
         if (!empty($inputs['menu_categories'])){
             foreach($inputs['menu_categories'] as $key => $cat_id){
                 $items[$cat_id] = ['item_order' => $key];

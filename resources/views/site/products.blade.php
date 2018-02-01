@@ -53,6 +53,7 @@
 
 		#products-grid .panel {
 			text-align: center;
+			height: 336px;
 			margin: 10px;
 			transition: all 0.2s ease;
 			box-shadow: 0 0 1px #ccc;
@@ -81,7 +82,7 @@
 @endsection
 
 @section('main')
-	<div class="container">
+	<div class="container-fluid">
 
 		<h1>Products <span id="sub-title"></span></h1>
 
@@ -208,15 +209,17 @@
 							<article>
 								<div class="panel panel-default">
 									<div class="panel-header">
-										<a href="#">
+										<a href="{{ $product->url_visualizacao  }}">
 											<img src="{{ asset('uploads/products') . '/' . $product->id . '/' . $product->image }}" alt="">
 										</a>
 									</div>
 									<div class="panel-body">
-										<h4>{{ $product->name . ' ' . $product->last_name }}</h4>
-										@if(!empty($product->flavor))
-											<span class="cor" style="color: {{ $product->flavor->color }}">{{ $product->flavor->name }}</span>
-										@endif
+										<h4>
+											{{ $product->name . ' ' . $product->last_name }}
+											@if(!empty($product->flavor))
+												<span class="cor" style="color: {{ $product->flavor->color }}">{{ $product->flavor->name }}</span>
+											@endif
+										</h4>
 										<div>{!! $product->shopify !!}</div>
 									</div>
 								</div>
@@ -247,6 +250,8 @@
 			var checkboxes = $('#search-col :checkbox');
 
 			$('#search-col :checkbox').on('click', function (event) {
+
+				// window.history.pushState("object or string", "Title", "/new-url");
 
 				event.stopPropagation();
 

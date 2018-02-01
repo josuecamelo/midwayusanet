@@ -18,6 +18,7 @@ class Line extends Model
 
     protected $fillable = [
         'name',
+	    'slug',
         'description',
         'logo',
         'banner'

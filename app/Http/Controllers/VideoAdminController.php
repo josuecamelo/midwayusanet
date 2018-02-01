@@ -52,9 +52,9 @@ class VideoAdminController extends Controller
 		$inputs = $request->all();
 		$inputs['visibility'] = (!isset($inputs['visibility']) ? 0 : 1);
 		$inputs['video'] = Utils::gerarUrlVideo($inputs['video']);
-		
+
 		$video = $this->videoModel->create($inputs);
-		
+
 		if ($video->id != null)
 		{
 			Flash::success('Item adicionado com sucesso.');

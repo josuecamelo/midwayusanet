@@ -20,7 +20,13 @@
 				@foreach($videos as $video)
 					<tr>
 						<td>{{ $video->title }}</td>
-						<td>{{ $video->category->name }}</td>
+						<td>
+							@if($video->category_id)
+								{{ $video->category->name }}
+							@else
+								-
+							@endif
+						</td>
 						<td>
 							<button class="btn btn-xs btn-info bt-visualizar" data-video="{{ $video->video }}" data-toggle="modal" data-target="#modal-video"><i class="fa fa-eye" aria-hidden="true"></i> View</button>
 						</td>

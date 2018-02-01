@@ -61,9 +61,9 @@ class ProductController extends Controller
 		$goals = $this->goalModel->orderby('name')->get();
 		$flavors = $this->flavorModel->orderby('name')->get();
 		
-		$name = 'Acessórios';
-		$item = 'types';
-		$id = 3;
+//		$name = 'Acessórios';
+//		$item = 'types';
+//		$id = 3;
 
 //		dd("lines: $line_ids     types: $types_ids goals: $goals_ids categories: $categories_ids flavors: $flavors_ids");
 		
@@ -91,7 +91,7 @@ class ProductController extends Controller
 				//->orWhere('', '=', ');
 			})
 			->first();
-		
+
 		$topics = $product->productTopics()->get();
 		
 		$flavors = $product::ofProduct($product->slug, $product->last_name_slug);
