@@ -201,8 +201,8 @@
 						<li
 							data-line="{{ $product->line->slug }}"
 							data-type="{{ $product->type->slug }}"
-							data-category="{{ $product->categories()->select('category_id')->get()->implode('category_id', ',') }}"
-							data-goal="{{ $product->goals()->select('goal_id')->get()->implode('goal_id', ',') }}"
+							data-category="{{ $product->productCategories()->select('slug')->get()->implode('slug', ',') }}"
+							data-goal="{{ $product->productGoals()->select('slug')->get()->implode('slug', ',') }}"
 							data-flavor="@if($product->flavor_id){{ $product->flavor->slug }}@endif"
 							data-offer="{{ ($product->offer) ? 'offer' : 'all' }}"
 						>
