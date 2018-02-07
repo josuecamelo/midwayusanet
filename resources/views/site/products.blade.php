@@ -95,7 +95,7 @@
 
 				<p>
 					<label>
-						<input type="checkbox" data-item="offers" data-id="1"> Sales & Promotions
+						<input type="checkbox" data-item="offers" data-slug="offers"> Sales & Promotions
 					</label>
 				</p>
 
@@ -204,7 +204,7 @@
 							data-category="{{ $product->productCategories()->select('slug')->get()->implode('slug', ',') }}"
 							data-goal="{{ $product->productGoals()->select('slug')->get()->implode('slug', ',') }}"
 							data-flavor="@if($product->flavor_id){{ $product->flavor->slug }}@endif"
-							data-offer="{{ ($product->offer) ? 'offer' : 'all' }}"
+							data-offer="{{ ($product->offer) ? 'offers' : 'all' }}"
 						>
 							<article>
 								<div class="panel panel-default">
@@ -237,6 +237,8 @@
 
 		$(function () {
 
+			/* Ao clicar em algum item */
+
 			var lines = [];
 			var types = [];
 			var categories = [];
@@ -249,10 +251,7 @@
 			var none = 0;
 			var checkboxes = $('#search-col :checkbox');
 
-
 			$('#search-col :checkbox').on('click', function (event) {
-
-				// window.history.pushState("object or string", "Title", "/new-url");
 
 				event.stopPropagation();
 
@@ -262,23 +261,23 @@
 
 					if (element.checked == true) {
 
-						let id = element.dataset.id;
+						let slug = element.dataset.slug;
 						let item = element.dataset.item;
 						let title = this.parentNode.innerText;
 
-						eval(item + '.push(' + id + ')');
+						eval(item + '.push("' + slug + '")');
 
 						titles += title.trim() + ' • ';
 						itens.push(item);
 					}
 				});
 
+				offers = Array.from(new Set(offers));
 				lines = Array.from(new Set(lines));
 				types = Array.from(new Set(types));
 				categories = Array.from(new Set(categories));
 				goals = Array.from(new Set(goals));
 				flavors = Array.from(new Set(flavors));
-				offers = Array.from(new Set(offers));
 				itens = Array.from(new Set(itens));
 
 				$('#sub-title').text(titles.slice(0, -3));
@@ -287,37 +286,17 @@
 
 				products.each(function (index, element) {
 
-					let _lines = parseInt(element.dataset.line);
-					let _types = parseInt(element.dataset.type);
-					let _categories = JSON.parse('[' + element.dataset.category + ']');
-					let _goals = parseInt(element.dataset.goal);
-					let _flavors = parseInt(element.dataset.flavor);
-					let _offers = parseInt(element.dataset.offer);
+					let _offers = element.dataset.offer;
+					let _lines = element.dataset.line;
+					let _types = element.dataset.type;
+					let _categories = element.dataset.category;
+					let _goals = element.dataset.goal;
+					let _flavors = element.dataset.flavor;
 
 					itens.forEach(function (e) {
 
-						let typeOfVar = eval('typeof _' + e);
-
-						switch (typeOfVar) {
-
-							case 'number':
-								if (eval(e + '.includes(_' + e + ')')) {
-									n++;
-								}
-								break;
-
-							case 'object':
-
-								let array1 = eval('_' + e);
-								let array2 = eval(e);
-
-								array2.forEach(function (value, index) {
-
-									if (array1.includes(value)) {
-										n++;
-									}
-								});
-								break;
+						if (eval(e + '.includes(_' + e + ')')) {
+							n++;
 						}
 					});
 
@@ -394,35 +373,35 @@
 
 			function check(item, element) {
 
-				let checkboxes = document.querySelector('input[data-item="' + item + '"]');
+				let checkboxes = document.querySelectorAll('input[data-item="' + item + '"]');
 
 				checkboxes.forEach(function (e) {
 
 					if (e.dataset.slug == element) {
 						e.click();
-						subTitle.push(e.parentNode.innerText);
 					}
 				});
-
-				document.querySelector('#sub-title').textContent(subTitle.join(' | '));
 			}
 
 			parts.forEach(function (element, index) {
 
 				switch (index) {
 					case 0:
-						check('lines', element);
+						check('offers', element);
 						break;
 					case 1:
-						check('types', element);
+						check('lines', element);
 						break;
 					case 2:
-						check('goals', element);
+						check('types', element);
 						break;
 					case 3:
-						check('categories', element);
+						check('goals', element);
 						break;
 					case 4:
+						check('categories', element);
+						break;
+					case 5:
 						check('flavors', element);
 						break;
 				}
