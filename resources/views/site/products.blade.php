@@ -109,7 +109,7 @@
 							@foreach($lines as $line)
 								<li>
 									<label class="item-normal">
-										<input type="checkbox" data-item="lines" data-id="{{ $line->id }}">
+										<input type="checkbox" data-item="lines" data-slug="{{ $line->slug }}">
 										{{ $line->name }}
 									</label>
 								</li>
@@ -128,7 +128,7 @@
 							@foreach($types as $type)
 								<li>
 									<label class="item-normal">
-										<input type="checkbox" data-item="types" data-id="{{ $type->id }}">
+										<input type="checkbox" data-item="types" data-slug="{{ $type->slug }}">
 										{{ $type->name }}
 									</label>
 								</li>
@@ -147,7 +147,7 @@
 							@foreach($goals as $goal)
 								<li>
 									<label class="item-normal">
-										<input type="checkbox" data-item="goals" data-id="{{ $goal->id }}">
+										<input type="checkbox" data-item="goals" data-slug="{{ $goal->slug }}">
 										{{ $goal->name }}
 									</label>
 								</li>
@@ -166,7 +166,7 @@
 							@foreach($categories as $category)
 								<li>
 									<label class="item-normal">
-										<input type="checkbox" data-item="categories" data-id="{{ $category->id }}">
+										<input type="checkbox" data-item="categories" data-slug="{{ $category->slug }}">
 										{{ $category->name }}
 									</label>
 								</li>
@@ -185,7 +185,7 @@
 							@foreach($flavors as $flavor)
 								<li>
 									<label class="item-normal">
-										<input type="checkbox" data-item="flavors" data-id="{{ $flavor->id }}">
+										<input type="checkbox" data-item="flavors" data-slug="{{ $flavor->slug }}">
 										{{ $flavor->name }}
 									</label>
 								</li>
@@ -199,12 +199,12 @@
 				<ul>
 					@foreach($products as $product)
 						<li
-							data-line="{{ $product->line_id }}"
-							data-type="{{ $product->type_id }}"
+							data-line="{{ $product->line->slug }}"
+							data-type="{{ $product->type->slug }}"
 							data-category="{{ $product->categories()->select('category_id')->get()->implode('category_id', ',') }}"
 							data-goal="{{ $product->goals()->select('goal_id')->get()->implode('goal_id', ',') }}"
-							data-flavor="{{ $product->flavor_id }}"
-							data-offer="{{ $product->offer }}"
+							data-flavor="@if($product->flavor_id){{ $product->flavor->slug }}@endif"
+							data-offer="{{ ($product->offer) ? 'offer' : 'all' }}"
 						>
 							<article>
 								<div class="panel panel-default">
@@ -248,6 +248,7 @@
 			var n = 0;
 			var none = 0;
 			var checkboxes = $('#search-col :checkbox');
+
 
 			$('#search-col :checkbox').on('click', function (event) {
 
@@ -383,20 +384,49 @@
 				}
 			});
 
-			@if(isset($item))
-			checkboxes.each(function (index, element) {
 
-				let id = element.dataset.id;
-				let item = element.dataset.item;
-				let title = this.parentNode.innerText;
+			/* Marcar itens ao carregar a página: */
 
-				if (item == '{{ $item }}' && id == '{{ $id }}') {
-					element.click();
+			var subTitle = [];
+			var pathname = window.location.pathname;
+			var parts = pathname.split('/');
+			parts.splice(0, 2);
+
+			function check(item, element) {
+
+				let checkboxes = document.querySelector('input[data-item="' + item + '"]');
+
+				checkboxes.forEach(function (e) {
+
+					if (e.dataset.slug == element) {
+						e.click();
+						subTitle.push(e.parentNode.innerText);
+					}
+				});
+
+				document.querySelector('#sub-title').textContent(subTitle.join(' | '));
+			}
+
+			parts.forEach(function (element, index) {
+
+				switch (index) {
+					case 0:
+						check('lines', element);
+						break;
+					case 1:
+						check('types', element);
+						break;
+					case 2:
+						check('goals', element);
+						break;
+					case 3:
+						check('categories', element);
+						break;
+					case 4:
+						check('flavors', element);
+						break;
 				}
-
-				$('#sub-title').text(title);
 			});
-			@endif
 
 		});
 	</script>

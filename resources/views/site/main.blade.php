@@ -33,7 +33,7 @@
 							<ul>
 								{!! main_menu_helper(1,1) !!}
 								<li>
-									<a href="/">View All Products</a>
+									<a href="{{ route('products.list') }}">View All Products</a>
 								</li>
 							</ul>
 						</li>
@@ -42,7 +42,7 @@
 							<ul>
 								{!! main_menu_helper(1,2) !!}
 								<li>
-									<a href="/">View All Products</a>
+									<a href="{{ route('products.list') }}">View All Products</a>
 								</li>
 							</ul>
 						</li>
@@ -66,7 +66,7 @@
 							<ul>
 								{!! main_menu_helper(2,1) !!}
 								<li>
-									<a href="/">VIEW ALL PRODUCTS</a>
+									<a href="{{ route('products.list') }}">VIEW ALL PRODUCTS</a>
 								</li>
 							</ul>
 						</li>
@@ -75,7 +75,7 @@
 							<ul>
 								{!! main_menu_helper(2,2) !!}
 								<li>
-									<a href="/">VIEW ALL PRODUCTS</a>
+									<a href="{{ route('products.list') }}">VIEW ALL PRODUCTS</a>
 								</li>
 							</ul>
 						</li>
@@ -99,7 +99,7 @@
 							<ul>
 								{!! main_menu_helper(3,1) !!}
 								<li>
-									<a href="/">VIEW ALL PRODUCTS</a>
+									<a href="{{ route('products.list') }}">VIEW ALL PRODUCTS</a>
 								</li>
 							</ul>
 						</li>
@@ -108,7 +108,7 @@
 							<ul>
 								{!! main_menu_helper(3,2) !!}
 								<li>
-									<a href="/">VIEW ALL PRODUCTS</a>
+									<a href="{{ route('products.list') }}">VIEW ALL PRODUCTS</a>
 								</li>
 							</ul>
 						</li>
@@ -163,7 +163,7 @@
 										<ul>
 											{!! main_menu_helper(1,1) !!}
 											<li>
-												<a href="/">VIEW ALL PRODUCTS</a>
+												<a href="{{ route('products.list') }}">VIEW ALL PRODUCTS</a>
 											</li>
 										</ul>
 									</li>
@@ -172,7 +172,7 @@
 										<ul>
 											{!! main_menu_helper(1,2) !!}
 											<li>
-												<a href="/">VIEW ALL PRODUCTS</a>
+												<a href="{{ route('products.list') }}">VIEW ALL PRODUCTS</a>
 											</li>
 										</ul>
 									</li>
@@ -186,7 +186,7 @@
 										<ul>
 											{!! main_menu_helper(2,1) !!}
 											<li>
-												<a href="/">VIEW ALL PRODUCTS</a>
+												<a href="{{ route('products.list') }}">VIEW ALL PRODUCTS</a>
 											</li>
 										</ul>
 									</li>
@@ -195,7 +195,7 @@
 										<ul>
 											{!! main_menu_helper(2,2) !!}
 											<li>
-												<a href="/">VIEW ALL PRODUCTS</a>
+												<a href="{{ route('products.list') }}">VIEW ALL PRODUCTS</a>
 											</li>
 										</ul>
 									</li>
@@ -209,7 +209,7 @@
 										<ul>
 											{!! main_menu_helper(3,1) !!}
 											<li>
-												<a href="/">VIEW ALL PRODUCTS</a>
+												<a href="{{ route('products.list') }}">VIEW ALL PRODUCTS</a>
 											</li>
 										</ul>
 									</li>
@@ -218,15 +218,13 @@
 										<ul>
 											{!! main_menu_helper(3,2) !!}
 											<li>
-												<a href="/">VIEW ALL PRODUCTS</a>
+												<a href="{{ route('products.list') }}">VIEW ALL PRODUCTS</a>
 											</li>
 										</ul>
 									</li>
 								</ul>
 							</li>
-							<li>
-								<a href="/">Science</a>
-							</li>
+							<li><a href="/">Science</a></li>
 							<li><a href="#">Quality</a></li>
 							<li><a href="#">Team Midway</a></li>
 							<li><a href="#">Blog</a></li>
