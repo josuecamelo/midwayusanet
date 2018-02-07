@@ -41,7 +41,14 @@ class MainMenuHelper
 			{
 				foreach ($categories as $category)
 				{
-					$lista .= "<li><a href='" . route('produto_categoria', ['type' => $category->type->slug, 'category' => $category->slug]) . "'>$category->name</a></li>";
+					$lista .= "<li><a href='" . route('products.list', [
+							'offers' => 'all',
+							'line' => 'line',
+							'type' => $category->type->slug,
+							'goal' => 'goal',
+							'category' => $category->slug,
+							'flavor' => 'flavor'
+						]) . "'>$category->name</a></li>";
 				}
 			}
 		}

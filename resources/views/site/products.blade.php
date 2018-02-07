@@ -285,7 +285,6 @@
 				let products = $('#products-grid li');
 
 				products.each(function (index, element) {
-
 					let _offers = element.dataset.offer;
 					let _lines = element.dataset.line;
 					let _types = element.dataset.type;
@@ -294,7 +293,6 @@
 					let _flavors = element.dataset.flavor;
 
 					itens.forEach(function (e) {
-
 						if (eval(e + '.includes(_' + e + ')')) {
 							n++;
 						}
@@ -366,7 +364,6 @@
 
 			/* Marcar itens ao carregar a página: */
 
-			var subTitle = [];
 			var pathname = window.location.pathname;
 			var parts = pathname.split('/');
 			parts.splice(0, 2);
@@ -374,7 +371,6 @@
 			function check(item, element) {
 
 				let checkboxes = document.querySelectorAll('input[data-item="' + item + '"]');
-
 				checkboxes.forEach(function (e) {
 
 					if (e.dataset.slug == element) {
