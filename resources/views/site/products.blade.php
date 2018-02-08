@@ -145,12 +145,14 @@
 					<div class="panel-body">
 						<ul>
 							@foreach($goals as $goal)
-								<li>
-									<label class="item-normal">
-										<input type="checkbox" data-item="goals" data-slug="{{ $goal->slug }}">
-										{{ $goal->name }}
-									</label>
-								</li>
+								@if($goal->products()->count() > 0)
+									<li>
+										<label class="item-normal">
+											<input type="checkbox" data-item="goals" data-slug="{{ $goal->slug }}">
+											{{ $goal->name }}
+										</label>
+									</li>
+								@endif
 							@endforeach
 						</ul>
 					</div>
