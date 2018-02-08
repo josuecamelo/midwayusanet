@@ -186,7 +186,7 @@
 								<li>
 									<label class="item-normal">
 										<input type="checkbox" data-item="flavors" data-slug="{{ $flavor->slug }}">
-										{{ $flavor->name }} - {{ $flavor->products()->count() }}
+										{{ $flavor->name }}
 									</label>
 								</li>
 							@endforeach
