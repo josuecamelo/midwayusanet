@@ -64,9 +64,6 @@ class ProductController extends Controller
             ->orderby('name')
             ->get();
 
-		$cat = $this->categoryModel->find(6);
-		dd($cat->products()->count());
-
 		return view('site.products', compact('products', 'lines', 'types', 'categories', 'goals', 'flavors', 'name', 'item', 'id'));
 	}
 	
