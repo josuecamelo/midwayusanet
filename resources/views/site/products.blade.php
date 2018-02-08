@@ -90,7 +90,7 @@
 			<div class="col-md-3" id="search-col">
 
 				{{-- Search: --}}
-				<input type="text" id="search-product" class="form-control" placeholder="Search for...">
+				<input type="text" id="search-product" class="form-control" placeholder="Search for..." autofocus>
 				<br>
 
 				<p>
