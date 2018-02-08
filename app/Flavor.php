@@ -47,4 +47,8 @@ class Flavor extends Model
 	public function products(){
 	    return $this->belongsTo(Product::class);
     }
+
+    public function relatedProducts(){
+	    return $this->hasMany(Product::class);
+    }
 }

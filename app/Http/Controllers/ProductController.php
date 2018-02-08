@@ -64,8 +64,6 @@ class ProductController extends Controller
             ->orderby('name')
             ->get();
 
-		dd($flavors[0]->products()->get());
-
 		return view('site.products', compact('products', 'lines', 'types', 'categories', 'goals', 'flavors', 'name', 'item', 'id'));
 	}
 	
