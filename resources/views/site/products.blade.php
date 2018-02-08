@@ -166,14 +166,14 @@
 					<div class="panel-body">
 						<ul>
 							@foreach($categories as $category)
-								@if($category->products()->count() > 0)
+								{{--@if($category->products()->count() > 0)--}}
 									<li>
 										<label class="item-normal">
 											<input type="checkbox" data-item="categories" data-slug="{{ $category->slug }}">
-											{{ $category->name }}
+											{{ $category->name }} ({{  $category->products()->count() }} item(s))
 										</label>
 									</li>
-								@endif
+								{{--@endif--}}
 							@endforeach
 						</ul>
 					</div>
