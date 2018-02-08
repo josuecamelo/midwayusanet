@@ -41,7 +41,7 @@ class Category extends Model
 	
 	public function products()
 	{
-	    return $this->belongsToMany(Product::class)->withPivot('ProductCategory');
+	    return $this->belongsToMany(Product::class)->withPivot('productCategories');
 		//return $this->belongsToMany(Product::class, 'product_category', 'category_id', 'id');//pela categoria encontra-se o produto
 	}
 
