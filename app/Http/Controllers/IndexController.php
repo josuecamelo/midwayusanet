@@ -33,8 +33,8 @@ class IndexController extends Controller
 	
 	public function home()
 	{
-		$militaryTrailProducts = $this->productModel->where('line_id', 1)->orderBy('name')->get();
-		$glamourNutritionProducts = $this->productModel->where('line_id', 2)->orderBy('name')->get();
+		$militaryTrailProducts = $this->productModel->where('line_id', 1)->where('visibility', 1)->orderBy('name')->get();
+		$glamourNutritionProducts = $this->productModel->where('line_id', 2)->where('visibility', 1)->orderBy('name')->get();
 		
 		$posts = BlogPost::last(4,1,null);
 		$destak = $posts->take(1)->first();
