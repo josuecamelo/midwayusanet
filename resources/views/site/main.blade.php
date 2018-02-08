@@ -125,7 +125,7 @@
 					</ul>
 				</li>
 				<li>
-					<a href="#">Science</a>
+					<a href="{{ route('science.index') }}">Science</a>
 				</li>
 			</ul>
 		</nav>

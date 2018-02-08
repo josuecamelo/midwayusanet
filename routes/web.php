@@ -51,7 +51,7 @@ $router->group(['prefix' => 'blog', 'as' => 'blog.'], function () use ($router)
     $router->get('/', ['as' => 'index', 'uses' => 'BlogPostAdminController@siteIndex']);
 });
 
-$router->group(['prefix' => 'science-and-knowledge', 'as' => 'science.'], function () use ($router)
+$router->group(['prefix' => 'science', 'as' => 'science.'], function () use ($router)
 {
     $router->get('/', ['as' => 'index', 'uses' => 'BlogPostAdminController@siteIndex']);
 });
