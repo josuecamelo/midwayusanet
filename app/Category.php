@@ -48,7 +48,7 @@ class Category extends Model
     public function productsOfCategory()
     {
         //return $this->belongsToMany(Product::class)->withPivot('productCategories');
-        return $this->hasMany(Product::class, 'product_category', 'category_id', 'id');//pela categoria encontra-se o produto
+        return $this->hasMany(Product::class, 'category_id', 'id');//pela categoria encontra-se o produto
     }
 
 	public function productsOfMenu($category_id){
