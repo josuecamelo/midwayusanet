@@ -183,14 +183,12 @@
 					<div class="panel-body">
 						<ul>
 							@foreach($flavors as $flavor)
-								@if($flavor->products()->count() > 0))
 								<li>
 									<label class="item-normal">
 										<input type="checkbox" data-item="flavors" data-slug="{{ $flavor->slug }}">
-										{{ $flavor->name }}
+										{{ $flavor->name }} - {{ $flavor->products()->count() }}
 									</label>
 								</li>
-								@endif
 							@endforeach
 						</ul>
 					</div>
