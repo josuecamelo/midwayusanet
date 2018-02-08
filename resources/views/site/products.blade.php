@@ -271,13 +271,17 @@
 						let item = element.dataset.item;
 						let title = this.parentNode.innerText;
 
+						// Adiciona os itens individuais marcados:
 						eval(item + '.push("' + slug + '")');
 
 						titles += title.trim() + ' • ';
+
+						// Tipos de itens marcados: lines, types, goals, etc.
 						itens.push(item);
 					}
 				});
 
+				// Itens individuais marcados:
 				offers = Array.from(new Set(offers));
 				lines = Array.from(new Set(lines));
 				types = Array.from(new Set(types));
@@ -288,9 +292,12 @@
 
 				$('#sub-title').text(titles.slice(0, -3));
 
+				// products: Todos os produtos do lado direito
 				let products = $('#products-grid li');
 
 				products.each(function (index, element) {
+
+					// Características de cada produto do lado direito:
 					let _offers = element.dataset.offer;
 					let _lines = element.dataset.line;
 					let _types = element.dataset.type;
@@ -298,8 +305,11 @@
 					let _goals = element.dataset.goal;
 					let _flavors = element.dataset.flavor;
 
+					// Percorre os itens marcados:
 					itens.forEach(function (e) {
-						if (eval(e + '.includes(_' + e + ')')) {
+
+						// Se nas características de cada produto possui algum dos itens individuais marcados:
+						if (eval('_' + e + '.includes(' + e + ')')) {
 							n++;
 						}
 					});
