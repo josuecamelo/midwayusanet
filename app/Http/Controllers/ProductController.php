@@ -65,7 +65,7 @@ class ProductController extends Controller
             ->get();
 
 		$cat = $this->categoryModel->find(6);
-		dd($cat);
+		dd($cat->products()->get());
 
 		return view('site.products', compact('products', 'lines', 'types', 'categories', 'goals', 'flavors', 'name', 'item', 'id'));
 	}
