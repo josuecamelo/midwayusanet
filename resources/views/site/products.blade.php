@@ -170,7 +170,7 @@
 									<li>
 										<label class="item-normal">
 											<input type="checkbox" data-item="categories" data-slug="{{ $category->slug }}">
-											{{ $category->name }} ({{  $category->productsOfCategory()->count() }} item(s))
+											{{ $category->name }} ({{  $category->products()->count() }} item(s))
 										</label>
 									</li>
 								{{--@endif--}}

@@ -45,12 +45,6 @@ class Category extends Model
 		return $this->belongsToMany(Product::class, 'product_category', 'category_id', 'id');//pela categoria encontra-se o produto
 	}
 
-    public function productsOfCategory()
-    {
-        //return $this->belongsToMany(Product::class)->withPivot('productCategories');
-        return $this->hasMany(Product::class, 'category_id', 'id');//pela categoria encontra-se o produto
-    }
-
 	public function productsOfMenu($category_id){
 	    $sql = "select distinct
                 p.name, p.last_name, p.slug, p.last_name_slug, 
