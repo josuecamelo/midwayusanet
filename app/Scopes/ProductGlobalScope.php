@@ -15,7 +15,7 @@ trait ProductGlobalScope
     protected static function boot(){
         parent::boot();
 
-        dd(Auth::check());
+        dd(Auth::check() . ' '. Auth::guest());
 
         if( ( Auth::check() && Auth::user()->is_admin == 0 )){
             static::addGlobalScope(new ProductScope());
