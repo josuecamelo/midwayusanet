@@ -28,7 +28,11 @@ class ProductScope implements Scope
     public function apply(Builder $builder, Model $model)
     {
         $user = Auth::user();
-        dd($user);
-        return $builder->where('visibility', 1);
+
+        if(Auth::guest()){
+            return $builder->where('visibility', 1);
+        }
+
+        return $builder;
     }
 }
