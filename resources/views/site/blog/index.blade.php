@@ -11,8 +11,17 @@
 			padding: 2px;
 		}
 
+		.data {
+			color: #777;
+		}
+
 		.h3 {
 			font-size: 20px;
+			margin: 10px 0;
+		}
+
+		.linha {
+			padding-bottom: 40px;
 		}
 	</style>
 @endsection
@@ -20,13 +29,13 @@
 	<div class="container">
 		<h1>{{$title}}</h1>
 		@foreach($posts->chunk(3) as $post)
-			<div class="row">
+			<div class="row linha">
 				@foreach($post as $p)
 					<div class="col-md-4">
 						<a href="{{route('blog.see',$p->slug)}}">
 							<img src="{{$p->show_image}}" alt="{{$p->title}}" class="img-featured">
 						</a>
-						<span>{{dataMes($p->date)}}</span>
+						<span class="data">{{dataMes($p->date)}}</span>
 						<h3 class="h3">{{$p->title}}</h3>
 						<a href="#">Read More<i class="fas fa-angle-right"></i></a>
 					</div>
