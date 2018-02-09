@@ -148,7 +148,7 @@
 
 		#outros-produtos {
 			text-align: center;
-			background: #f9f9f9;
+			background: #eaeaea;
 			padding: 40px 0;
 		}
 
@@ -198,9 +198,12 @@
 			cursor: pointer;
 		}
 
-		/*.slider-nav img:hover, .slick-current img {*/
+		/*.slick-current img {*/
 			/*transform: scale(2);*/
 		/*}*/
+		.slider-nav img:hover {
+			transform: scale(1.5);
+		}
 
 		.slider-nav figcaption {
 			font-weight: bold;
@@ -443,7 +446,7 @@
 		}
 
 		#outros-produtos a {
-			color: #fff !important;
+			color: #333 !important;
 			outline: none;
 		}
 
