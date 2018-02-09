@@ -617,17 +617,14 @@
 			$('.slider-nav').slick({
 				slidesToShow: 5,
 				slidesToScroll: 5,
-				focusOnSelect: true,
+				autoplaySpeed: 5000,
 				autoplay: true,
-				autoplaySpeed: 5000
-				// centerMode: true,
-				// responsive: [
-				// 	{
-				// 		breakpoint: 600,
-				// 		settings: {
-				// 			slidesToShow: 1,
-				// 		}
-				// 	}]
+				responsive: [{
+					breakpoint: 900,
+					settings: {
+						slidesToShow: 1,
+					}
+				}]
 			});
 
 			if (window.innerWidth > 600) {
