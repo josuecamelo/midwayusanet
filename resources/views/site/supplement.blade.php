@@ -198,9 +198,9 @@
 			cursor: pointer;
 		}
 
-		.slider-nav img:hover, .slick-current img {
-			transform: scale(2);
-		}
+		/*.slider-nav img:hover, .slick-current img {*/
+			/*transform: scale(2);*/
+		/*}*/
 
 		.slider-nav figcaption {
 			font-weight: bold;
@@ -234,9 +234,9 @@
 			margin: 0 30px;
 		}
 
-		.opaco {
-			opacity: 0.5;
-		}
+		/*.opaco {*/
+			/*opacity: 0.5;*/
+		/*}*/
 
 		#sabores a {
 			color: #333;
