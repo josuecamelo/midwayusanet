@@ -208,7 +208,7 @@
 		/*transform: scale(2);*/
 		/*}*/
 		.slider-nav img:hover {
-			transform: scale(1.5);
+			transform: scale(1.3);
 		}
 
 		.slider-nav figcaption {
