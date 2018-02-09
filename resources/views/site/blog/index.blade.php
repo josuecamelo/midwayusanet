@@ -1,7 +1,7 @@
 @extends('site.main')
 @section('css')
     <style>
-        img{
+        .img-featured{
             max-width: 100%;
             max-height: 220px;
             height: auto;
@@ -20,7 +20,7 @@
                 @foreach($post as $p)
                     <div class="col-md-4">
                         <a href="{{route('blog.see',$p->slug)}}">
-                            <img src="{{$p->show_image}}" alt="{{$p->title}}">
+                            <img src="{{$p->show_image}}" alt="{{$p->title}}" class="img-featured">
                         </a>
                         <span>{{dataMes($p->date)}}</span>
                         <h3>{{$p->title}}</h3>
