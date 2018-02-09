@@ -536,9 +536,9 @@
 							<div class="product">
 								<img src="{{ asset('uploads/products') . '/' . $mtProduct->id . '/' . $mtProduct->image }}">
 								<h4>{{ $mtProduct->name . ' ' . $mtProduct->last_name }}</h4>
-								@if(!empty($mtProduct->flavor))
-									<span class="cor" style="color: {{ $mtProduct->flavor->color }}">{{ $mtProduct->flavor->name }}</span>
-								@endif
+								{{--@if(!empty($mtProduct->flavor))--}}
+									{{--<span class="cor" style="color: {{ $mtProduct->flavor->color }}">{{ $mtProduct->flavor->name }}</span>--}}
+								{{--@endif--}}
 								<div>{!! $mtProduct->shopify !!}</div>
 							</div>
 						</a>
@@ -553,9 +553,9 @@
 							<div class="product">
 								<img src="{{ asset('uploads/products') . '/' . $gnProduct->id . '/' . $gnProduct->image }}">
 								<h4>{{ $gnProduct->name . ' ' . $gnProduct->last_name }}</h4>
-								@if(!empty($gnProduct->flavor))
-									<span class="cor" style="color: {{ $gnProduct->flavor->color }}">{{ $gnProduct->flavor->name }}</span>
-								@endif
+								{{--@if(!empty($gnProduct->flavor))--}}
+									{{--<span class="cor" style="color: {{ $gnProduct->flavor->color }}">{{ $gnProduct->flavor->name }}</span>--}}
+								{{--@endif--}}
 								<div>{!! $gnProduct->shopify !!}</div>
 							</div>
 						</a>
