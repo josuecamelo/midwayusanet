@@ -156,7 +156,7 @@
 			display: table;
 			letter-spacing: 4px;
 			padding: 0 70px;
-			margin: 0 auto 60px;
+			margin: 0 auto;
 			border-right: 10px solid red;
 			border-left: 10px solid red;
 		}
@@ -233,7 +233,7 @@
 		}
 
 		.slick-list {
-			padding: 70px !important;
+			padding: 30px 70px !important;
 			margin: 0 30px;
 		}
 
@@ -448,6 +448,7 @@
 		#outros-produtos a {
 			color: #333 !important;
 			outline: none;
+			text-decoration: none;
 		}
 
 	</style>
