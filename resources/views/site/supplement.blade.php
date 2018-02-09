@@ -618,19 +618,19 @@
 
 			/* Slider */
 
-			$('.slider-nav').slick({
-				slidesToShow: 5,
-				slidesToScroll: 5,
-				autoplaySpeed: 5000,
-				centerMode: true,
-				autoplay: true,
-				responsive: [{
-					breakpoint: 900,
-					settings: {
-						slidesToShow: 1,
-					}
-				}]
-			});
+			// $('.slider-nav').slick({
+			// 	slidesToShow: 5,
+			// 	slidesToScroll: 5,
+			// 	autoplaySpeed: 5000,
+			// 	centerMode: true,
+			// 	autoplay: true,
+			// 	responsive: [{
+			// 		breakpoint: 900,
+			// 		settings: {
+			// 			slidesToShow: 1,
+			// 		}
+			// 	}]
+			// });
 
 			// if (window.innerWidth > 600) {
 			// 	$('.slick-active:first').css('opacity', '0.5');
