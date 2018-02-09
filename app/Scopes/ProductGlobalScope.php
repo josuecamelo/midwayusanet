@@ -8,7 +8,6 @@
 
 namespace App\Scopes;
 
-
 use Illuminate\Support\Facades\Auth;
 
 trait ProductGlobalScope
@@ -16,11 +15,10 @@ trait ProductGlobalScope
     protected static function boot(){
         parent::boot();
 
-        $guest = Auth::guest();
-        if($guest){
+        if(Auth::guest()){
             static::addGlobalScope(new ProductScope());
-        }elseif(!$guest && Auth::user()->is_admin == 0){
-            static::addGlobalScope(new ProductScope());
+        }elseif(Auth::check()){
+            //static::addGlobalScope(new ProductScope());
         }
     }
 }
