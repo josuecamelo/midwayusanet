@@ -31,6 +31,8 @@ class ProductScope implements Scope
 
         if(Auth::guest()){
             return $builder->where('visibility', 1);
+        }elseif( isset($user) && $user->is_client == 1 ){
+            return $builder->where('visibility', 1);
         }
 
         return $builder;
