@@ -187,8 +187,14 @@
 			outline: none;
 		}
 
+		.slider-nav {
+			display: flex;
+			justify-content: center;
+		}
+
 		.slider-nav div {
 			text-align: center;
+			margin: 30px;
 		}
 
 		.slider-nav img {
@@ -199,7 +205,7 @@
 		}
 
 		/*.slick-current img {*/
-			/*transform: scale(2);*/
+		/*transform: scale(2);*/
 		/*}*/
 		.slider-nav img:hover {
 			transform: scale(1.5);
@@ -238,7 +244,7 @@
 		}
 
 		/*.opaco {*/
-			/*opacity: 0.5;*/
+		/*opacity: 0.5;*/
 		/*}*/
 
 		#sabores a {
@@ -587,19 +593,17 @@
 		@if($product->productRelateds)
 			<div id="outros-produtos">
 				<h2>Produtos relacionados</h2>
-				<div class="my-slick-slider">
-					<div class="slider-nav">
-						@foreach($product->productRelateds as $produto)
-							<div>
-								<a href="{{ $produto->url_visualizacao }}">
-									<figure>
-										<img src="{{ asset("uploads/products/$produto->id/$produto->image") }}" alt="">
-										<figcaption>{{ $produto->name . ' ' . $produto->last_name . ' ' . $produto->presentation }} @if($produto->flavor){{ $produto->flavor->name }}@endif</figcaption>
-									</figure>
-								</a>
-							</div>
-						@endforeach
-					</div>
+				<div class="slider-nav">
+					@foreach($product->productRelateds as $produto)
+						<div>
+							<a href="{{ $produto->url_visualizacao }}">
+								<figure>
+									<img src="{{ asset("uploads/products/$produto->id/$produto->image") }}" alt="">
+									<figcaption>{{ $produto->name . ' ' . $produto->last_name . ' ' . $produto->presentation }} @if($produto->flavor){{ $produto->flavor->name }}@endif</figcaption>
+								</figure>
+							</a>
+						</div>
+					@endforeach
 				</div>
 			</div>
 		@endif
