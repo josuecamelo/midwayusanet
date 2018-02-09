@@ -618,6 +618,7 @@
 				slidesToShow: 5,
 				slidesToScroll: 5,
 				autoplaySpeed: 5000,
+				centerMode: true,
 				autoplay: true,
 				responsive: [{
 					breakpoint: 900,
@@ -627,26 +628,26 @@
 				}]
 			});
 
-			if (window.innerWidth > 600) {
-				$('.slick-active:first').css('opacity', '0.5');
-				$('.slick-active:last').css('opacity', '0.5');
-			} else {
-				$('.slick-slide').not('.slick-current').css('opacity', 0.5);
-			}
-
-			$('.slider-nav').on('beforeChange', function () {
-
-				$('.slick-slide').each(function () {
-					$(this).css('opacity', '1');
-				});
-
-				if (window.innerWidth > 600) {
-					$('.slick-active:first').next().css('opacity', '0.5');
-					$('.slick-active:last').next().css('opacity', '0.5');
-				} else {
-					$('.slick-slide').not('.slick-current').next().css('opacity', 0.5);
-				}
-			});
+			// if (window.innerWidth > 600) {
+			// 	$('.slick-active:first').css('opacity', '0.5');
+			// 	$('.slick-active:last').css('opacity', '0.5');
+			// } else {
+			// 	$('.slick-slide').not('.slick-current').css('opacity', 0.5);
+			// }
+			//
+			// $('.slider-nav').on('beforeChange', function () {
+			//
+			// 	$('.slick-slide').each(function () {
+			// 		$(this).css('opacity', '1');
+			// 	});
+			//
+			// 	if (window.innerWidth > 600) {
+			// 		$('.slick-active:first').next().css('opacity', '0.5');
+			// 		$('.slick-active:last').next().css('opacity', '0.5');
+			// 	} else {
+			// 		$('.slick-slide').not('.slick-current').next().css('opacity', 0.5);
+			// 	}
+			// });
 
 
 			/* Show Hide Tabela Nutricional: */
