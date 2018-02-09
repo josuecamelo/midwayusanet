@@ -460,12 +460,12 @@
 					<div class="col-md-5 animated fadeInLeft">
 						<img src="{{ asset('uploads/products') . '/' . $product->id . '/' . $product->image }}" alt="" class="img-responsive">
 					</div>
-					<div class="col-md-7">
+					<div class="col-md-7 animated fadeInRight">
 						<h1>{{ $product->name }}<span>{{ $product->last_name }}</span></h1>
 						<p>
 							<span id="apresentacao">{{ $product->presentation }}</span>
 							@if(!empty($product->flavor))
-								<span id="cor" style="background-color: {{ $product->flavor->color }}">{{ $product->flavor->name }}</span>
+								<span id="cor" style="background-color: {{ $product->flavor->color }}">{{ $product->flavor->name }} Flavor</span>
 							@endif
 						</p>
 						{{-- Tópicos --}}
