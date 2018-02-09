@@ -48,7 +48,7 @@
                 close_previous : "no"
             });
         },
-	    height : "650"
+	    height : "620"
     };
 
     tinymce.init(editor_config);
