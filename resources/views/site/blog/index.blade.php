@@ -21,7 +21,7 @@
 		}
 
 		.linha {
-			padding-bottom: 40px;
+			padding-bottom: 30px;
 		}
 	</style>
 @endsection
@@ -36,8 +36,10 @@
 							<img src="{{$p->show_image}}" alt="{{$p->title}}" class="img-featured">
 						</a>
 						<span class="data">{{dataMes($p->date)}}</span>
+						<a href="{{route('blog.see',$p->slug)}}">
 						<h3 class="h3">{{$p->title}}</h3>
-						<a href="#">Read More<i class="fas fa-angle-right"></i></a>
+						Read More<i class="fas fa-angle-right"></i>
+						</a>
 					</div>
 				@endforeach
 			</div>
