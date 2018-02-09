@@ -2,8 +2,11 @@
 
 namespace App;
 
+use App\Scopes\ProductGlobalScope;
+use App\Scopes\ProductScope;
 use App\Utils\UploadImagem;
 use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\DB;
@@ -11,7 +14,7 @@ use Illuminate\Support\Str;
 
 class Product extends Model
 {
-	use SoftDeletes;
+	use SoftDeletes, ProductGlobalScope;
 	
 	/**
 	 * The attributes that should be mutated to dates.
@@ -46,7 +49,13 @@ class Product extends Model
 		'nutrient_qty',
 		'nutrient_vd',
 	];
-	
+
+
+	/*protected static function boot(){
+	    parent::boot();
+	    static::addGlobalScope(new ProductScope());
+    }*/
+
 	public function updateImageName($product, $imageName)
 	{
 		$product->image = $imageName;

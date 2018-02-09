@@ -56,6 +56,7 @@ class MainMenuHelper
 		{
 			$products = $menu
 				->relatedProducts()
+                ->where('visibility', 1)
 				->orderBy('item_order', 'asc')
 				->take(5)
 				->get();
@@ -64,19 +65,25 @@ class MainMenuHelper
 			{
 				foreach ($products as $product)
 				{
-					$lista .= "<li><a href='" . $product->url_visualizacao . "'>$product->complete_name</a></li>";
+                    $lista .= "<li><a href='" . $product->url_visualizacao . "'>$product->complete_name</a></li>";
 				}
 			}
 		}
 		else
 		{
 			$product = $menu->featuredProduct()->first();
-			return '
-                <a href="">
-                    <img height="150" src="' . asset('uploads/products') . '/' . $product->id . '/' . $product->id . '_sm.' . $product->image_ext . '">
-                    <p>' . $product->complete_name . '</p>
-                </a>
-            ';
+			if(isset($product->id)){
+                $itemMenu = '
+                    <a href="">
+                        <img height="150" src="' . asset('uploads/products') . '/' . $product->id . '/' . $product->id . '_sm.' . $product->image_ext . '">
+                        <p>' . $product->complete_name . '</p>
+                    </a>
+                ';
+            }else{
+			    $itemMenu = '';
+            }
+
+            return $itemMenu;
 		}
 		
 		$lista .= '';
