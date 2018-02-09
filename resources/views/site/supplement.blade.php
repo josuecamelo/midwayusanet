@@ -239,7 +239,7 @@
 		}
 
 		#sabores a {
-			color: #fff;
+			color: #333;
 		}
 
 		#topicos-produto {
