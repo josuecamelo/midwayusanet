@@ -17,10 +17,9 @@ trait ProductGlobalScope
         parent::boot();
 
         $guest = Auth::guest();
-
         if($guest){
             static::addGlobalScope(new ProductScope());
-        }elseif(!$guest && Auth::user()->is_admin != 1){
+        }elseif(!$guest && Auth::user()->is_admin == 0){
             static::addGlobalScope(new ProductScope());
         }
     }
