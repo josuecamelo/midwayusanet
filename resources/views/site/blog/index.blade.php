@@ -23,6 +23,14 @@
 		.linha {
 			padding-bottom: 30px;
 		}
+
+		a {
+
+		}
+
+		a h3 {
+			color: #333;
+		}
 	</style>
 @endsection
 @section('main')
@@ -38,7 +46,7 @@
 						<span class="data">{{dataMes($p->date)}}</span>
 						<a href="{{route('blog.see',$p->slug)}}">
 						<h3 class="h3">{{$p->title}}</h3>
-						Read More<i class="fas fa-angle-right"></i>
+						Read More <i class="fas fa-angle-right"></i>
 						</a>
 					</div>
 				@endforeach
