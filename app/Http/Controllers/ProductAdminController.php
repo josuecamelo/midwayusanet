@@ -52,19 +52,13 @@ class ProductAdminController extends Controller
 	
 	public function index()
 	{
-		/*$products = $this->productModel
+		$products = $this->productModel
 			->orderBy('name', 'ASC')
 			->paginate(15);
 		
 		return view('admin.products.index', compact(
 			'products'
-		));*/
-
-		$products = $this->productModel->get();
-		foreach($products as $product){
-		    $product->name = $product->name;
-		    $product->save();
-        }
+		));
 	}
 	
 	public function create()
