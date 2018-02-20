@@ -471,7 +471,7 @@
 						<img src="{{ asset('uploads/products') . '/' . $product->id . '/' . $product->image }}" alt="" class="img-responsive">
 					</div>
 					<div class="col-md-7 animated fadeInRight">
-						<h1>{{ $product->name }}<span>{{ $product->last_name }}</span></h1>
+						<h1>{{ $product->name }}</h1>
 						<p>
 							<span id="apresentacao">{{ $product->presentation }}</span>
 							@if(!empty($product->flavor))
@@ -599,7 +599,7 @@
 							<a href="{{ $produto->url_visualizacao }}">
 								<figure>
 									<img src="{{ asset("uploads/products/$produto->id/$produto->image") }}" alt="">
-									<figcaption>{{ $produto->name . ' ' . $produto->last_name . ' ' . $produto->presentation }} @if($produto->flavor){{ $produto->flavor->name }}@endif</figcaption>
+									<figcaption>{{ $produto->name . ' ' . $produto->presentation }} @if($produto->flavor){{ $produto->flavor->name }}@endif</figcaption>
 								</figure>
 							</a>
 						</div>
