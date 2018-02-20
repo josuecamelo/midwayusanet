@@ -31,7 +31,7 @@
 			<tbody>
 			@foreach($products as $product)
 				<tr>
-					<td>{{ $product->name . ' ' . $product->last_name . ' ' . $product->presentation }} @if(!empty($product->flavor)) <span class="color" style="background-color: {{ $product->flavor->color }}">{{ $product->flavor->name }}</span>@endif</td>
+					<td>{{ $product->name . ' ' . $product->presentation }} @if(!empty($product->flavor)) <span class="color" style="background-color: {{ $product->flavor->color }}">{{ $product->flavor->name }}</span>@endif</td>
 					{{--<td>Goal</td>--}}
 					{{--<td>Line</td>--}}
 					<td>{{ $product->update_date  }}</td>
