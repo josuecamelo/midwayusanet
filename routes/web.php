@@ -11,6 +11,13 @@
 |
 */
 
+/* Ajustes de rotas (SEO) */
+
+Route::redirect('/products/anti-age', '/product/anti&age', 301);
+Route::redirect('/products/beauty-sleep', '/product/beauty&sleep', 301);
+
+/**/
+
 Auth::routes();
 
 Route::get('/', 'IndexController@index')->name('index');
@@ -19,9 +26,9 @@ Route::get('/about', 'AboutController@index')->name('about');
 
 Route::get('/products/{offers?}/{line?}/{type?}/{goal?}/{category?}/{flavor?}', ['as' => 'products.list', 'uses' => 'ProductController@index']);
 Route::get('/products/offers', ['as' => 'products.offers', 'uses' => 'ProductController@index']);
-Route::get('/produtos', 'ProductController@index')->name('produtos');
-Route::get('/produtos/{slug}/{sabor?}', ['as' => 'produto_exibicao', 'uses' => 'ProductController@product']);
-Route::get('/products/{type}/{category}', ['as' => 'produto_categoria', 'uses' => 'ProductController@obterPorTipoCategoria']);
+//Route::get('/produtos', 'ProductController@index')->name('produtos');
+Route::get('/product/{slug}/{sabor?}', ['as' => 'produto_exibicao', 'uses' => 'ProductController@product']);
+//Route::get('/products/{type}/{category}', ['as' => 'produto_categoria', 'uses' => 'ProductController@obterPorTipoCategoria']);
 
 Route::group(['prefix' => 'team-midway', 'as' => 'team-midway.'], function () use ($router) {
     $router->get('/', ['as' => 'list', 'uses' => 'AthleteController@index']);

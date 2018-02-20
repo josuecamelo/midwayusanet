@@ -33,7 +33,7 @@
 							<ul>
 								{!! main_menu_helper(1,1) !!}
 								<li>
-									<a href="{{ route('products.list') }}">View All Products</a>
+									<a href="{{ route('products.list', ['offers' => 'all', 'line' => 'glamour-nutrition']) }}">View All Products</a>
 								</li>
 							</ul>
 						</li>
@@ -42,7 +42,7 @@
 							<ul>
 								{!! main_menu_helper(1,2) !!}
 								<li>
-									<a href="{{ route('products.list') }}">View All Products</a>
+									<a href="{{ route('products.list', ['offers' => 'all', 'line' => 'glamour-nutrition']) }}">View All Products</a>
 								</li>
 							</ul>
 						</li>
@@ -53,7 +53,8 @@
 							</div>
 						</li>
 						<li class="ads">
-							<div><a href="{{ route('custom-plan') }}" title=""><img src="{{ asset('img/build.jpg') }}"></a></div>
+							<div><a href="{{ route('custom-plan') }}" title=""><img src="{{ asset('img/build.jpg') }}"></a>
+							</div>
 							<div><a href="/" title=""><img src="{{ asset('img/quality.jpg') }}"></a></div>
 						</li>
 					</ul>
@@ -66,7 +67,7 @@
 							<ul>
 								{!! main_menu_helper(2,1) !!}
 								<li>
-									<a href="{{ route('products.list') }}">VIEW ALL PRODUCTS</a>
+									<a href="{{ route('products.list', ['offers' => 'all', 'line' => 'military-trail']) }}">View All Products</a>
 								</li>
 							</ul>
 						</li>
@@ -75,7 +76,7 @@
 							<ul>
 								{!! main_menu_helper(2,2) !!}
 								<li>
-									<a href="{{ route('products.list') }}">VIEW ALL PRODUCTS</a>
+									<a href="{{ route('products.list', ['offers' => 'all', 'line' => 'military-trail']) }}">View All Products</a>
 								</li>
 							</ul>
 						</li>
@@ -86,7 +87,8 @@
 							</div>
 						</li>
 						<li class="ads">
-							<div><a href="{{ route('custom-plan') }}" title=""><img src="{{ asset('img/build.jpg') }}"></a></div>
+							<div><a href="{{ route('custom-plan') }}" title=""><img src="{{ asset('img/build.jpg') }}"></a>
+							</div>
 							<div><a href="/" title=""><img src="{{ asset('img/quality.jpg') }}"></a></div>
 						</li>
 					</ul>
@@ -119,7 +121,8 @@
 							</div>
 						</li>
 						<li class="ads">
-							<div><a href="{{ route('custom-plan') }}" title=""><img src="{{ asset('img/build.jpg') }}"></a></div>
+							<div><a href="{{ route('custom-plan') }}" title=""><img src="{{ asset('img/build.jpg') }}"></a>
+							</div>
 							<div><a href="/" title=""><img src="{{ asset('img/quality.jpg') }}"></a></div>
 						</li>
 					</ul>
@@ -237,7 +240,8 @@
 					</nav>
 				</li>
 				<li>
-					<a href="https://br.midwaylabsusa.com/"><img src="{{ asset('img/br.svg') }}" alt="Midway Brasil"></a>
+					<a href="https://br.midwaylabsusa.com/"><img src="{{ asset('img/br.svg') }}"
+							alt="Midway Brasil"></a>
 				</li>
 				<li id="search">
 					<i class="fas fa-search"></i><input type="search" class="form-control" placeholder="Search...">
@@ -308,10 +312,14 @@
 				</div>
 				<div class="col-md-6">
 					<ul>
-						<li><a href="https://www.instagram.com/midwaylabsusa/" target="_blank"><i class="fab fa-instagram"></i></a></li>
-						<li><a href="https://www.facebook.com/MidwayLabsUSA/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-						<li><a href="https://twitter.com/midwaylabsusa/" target="_blank"><i class="fab fa-twitter"></i></a></li>
-						<li><a href="https://www.youtube.com/user/MidwayLabsUSA" target="_blank"><i class="fab fa-youtube"></i></a></li>
+						<li><a href="https://www.instagram.com/midwaylabsusa/" target="_blank"><i
+									class="fab fa-instagram"></i></a></li>
+						<li><a href="https://www.facebook.com/MidwayLabsUSA/" target="_blank"><i
+									class="fab fa-facebook-f"></i></a></li>
+						<li><a href="https://twitter.com/midwaylabsusa/" target="_blank"><i class="fab fa-twitter"></i></a>
+						</li>
+						<li><a href="https://www.youtube.com/user/MidwayLabsUSA" target="_blank"><i
+									class="fab fa-youtube"></i></a></li>
 					</ul>
 				</div>
 			</div>
@@ -333,7 +341,9 @@
 	<div id="deep-footer">
 		<div class="row">
 			<div class="col-md-12">
-				<small>* These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure or prevent any disease.</small>
+				<small>* These statements have not been evaluated by the Food and Drug Administration. This product is
+					not intended to diagnose, treat, cure or prevent any disease.
+				</small>
 			</div>
 		</div>
 	</div>

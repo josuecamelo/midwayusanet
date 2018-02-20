@@ -118,7 +118,7 @@
 				{{ csrf_field() }}
 				<input type="hidden" name="gender" id="my_gender">
 				<input type="hidden" name="goal" id="my_goal">
-				<input type="text" name="name" class="form-control" placeholder="Full Name">
+				<input type="text" name="name" id="name" class="form-control" placeholder="Full Name">
 				<input type="email" name="email" class="form-control" placeholder="Email">
 				<button class="btn btn-primary">Send me my free plan</button>
 			</form>
@@ -165,6 +165,7 @@
 				$('#img').attr('src', img);
 				$('#my_gender').val(gender);
 				$('#my_goal').val(goal);
+				$('#name').focus();
 			});
 
 			$('#goals-female img').click(function () {
@@ -179,6 +180,7 @@
 				$('#img').attr('src', img);
 				$('#my_gender').val(gender);
 				$('#my_goal').val(goal);
+                $('#name').focus();
 			});
 
 			// Back:
