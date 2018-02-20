@@ -1,18 +1,18 @@
 <div class="row">
 	<div class="col-md-9">
 		<div class="row">
-			<div class="col-md-4">
+			<div class="col-md-8">
 				<div class="form-group">
 					<label for="name">Name *</label>
 					{!! Form::text('name', null, ['class'=>'form-control', 'autofocus', 'required']) !!}
 				</div>
 			</div>
-			<div class="col-md-4">
-				<div class="form-group">
-					<label for="last_name">Last Name</label>
-					{!! Form::text('last_name', null, ['class'=>'form-control', 'id'=>'last_name']) !!}
-				</div>
-			</div>
+			{{--<div class="col-md-4">--}}
+				{{--<div class="form-group">--}}
+					{{--<label for="last_name">Last Name</label>--}}
+					{{--{!! Form::text('last_name', null, ['class'=>'form-control', 'id'=>'last_name']) !!}--}}
+				{{--</div>--}}
+			{{--</div>--}}
 			<div class="col-md-4">
 				<div class="form-group">
 					<label for="presentation">Presentation</label>

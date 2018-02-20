@@ -53,8 +53,7 @@
 							</div>
 						</li>
 						<li class="ads">
-							<div><a href="{{ route('custom-plan') }}" title=""><img src="{{ asset('img/build.jpg') }}"></a>
-							</div>
+							<div><a href="{{ route('custom-plan') }}" title=""><img src="{{ asset('img/build.jpg') }}"></a></div>
 							<div><a href="/" title=""><img src="{{ asset('img/quality.jpg') }}"></a></div>
 						</li>
 					</ul>
@@ -87,8 +86,7 @@
 							</div>
 						</li>
 						<li class="ads">
-							<div><a href="{{ route('custom-plan') }}" title=""><img src="{{ asset('img/build.jpg') }}"></a>
-							</div>
+							<div><a href="{{ route('custom-plan') }}" title=""><img src="{{ asset('img/build.jpg') }}"></a></div>
 							<div><a href="/" title=""><img src="{{ asset('img/quality.jpg') }}"></a></div>
 						</li>
 					</ul>
