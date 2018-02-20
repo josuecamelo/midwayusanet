@@ -232,11 +232,11 @@ class Product extends Model
 	{
 		if (isset($this->flavor_id))
 		{
-			return $this->name . ' ' . $this->last_name . ' ' . $this->presentation . ' ' . $this->flavor()->first()->name;
+			return $this->name . ' ' . $this->presentation . ' ' . $this->flavor()->first()->name;
 		}
 		else
 		{
-			return $this->name . ' ' . $this->last_name . ' ' . $this->presentation;
+			return $this->name . ' ' . $this->presentation;
 		}
 	}
 }
