@@ -65,7 +65,7 @@ class MainMenuHelper
 			{
 				foreach ($products as $product)
 				{
-                    $lista .= "<li><a href='" . $product->url_visualizacao . "'>$product->complete_name</a></li>";
+                    $lista .= "<li><a href='" . $product->url_visualizacao . "'>$product->name</a></li>";
 				}
 			}
 		}
