@@ -182,7 +182,7 @@ class Product extends Model
 	
 	public function getUrlVisualizacaoAttribute()
 	{
-		$slug = $this->last_name_slug ? $this->slug . '&' . $this->last_name_slug : $this->slug;
+		$slug = $this->slug;//$this->last_name_slug ? $this->slug . '&' . $this->last_name_slug : $this->slug;
 		$product_flavor = isset($this->flavor->id) ? $this->flavor->slug : null;
 		
 		$url = route('produto_exibicao', [$slug, $product_flavor]);
