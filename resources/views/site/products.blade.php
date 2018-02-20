@@ -221,7 +221,7 @@
 									</div>
 									<div class="panel-body">
 										<h4>
-											{{ $product->name . ' ' . $product->last_name }}
+											{{ $product->name }}
 											@if(!empty($product->flavor))
 												<span class="cor" style="color: {{ $product->flavor->color }}">{{ $product->flavor->name }}</span>
 											@endif
