@@ -535,7 +535,7 @@
 						<a href="{{ $mtProduct->url_visualizacao  }}">
 							<div class="product">
 								<img src="{{ asset('uploads/products') . '/' . $mtProduct->id . '/' . $mtProduct->image }}">
-								<h4>{{ $mtProduct->name . ' ' . $mtProduct->last_name }}</h4>
+								<h4>{{ $mtProduct->name }}</h4>
 								{{--@if(!empty($mtProduct->flavor))--}}
 									{{--<span class="cor" style="color: {{ $mtProduct->flavor->color }}">{{ $mtProduct->flavor->name }}</span>--}}
 								{{--@endif--}}
