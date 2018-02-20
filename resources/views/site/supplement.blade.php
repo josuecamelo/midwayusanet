@@ -569,7 +569,8 @@
 					<div class="row-sabores">
 						@foreach($flavors as $flavor)
 							<?php
-							$slug = $flavor->last_name_slug ? $flavor->slug . '&' . $flavor->last_name_slug : $flavor->slug;
+//							$slug = $flavor->last_name_slug ? $flavor->slug . '&' . $flavor->last_name_slug : $flavor->slug;
+							$slug = $flavor->slug;
 							$product_flavor = isset($flavor->flavor->id) ? $flavor->flavor->slug : null;
 							$url = route('produto_exibicao', [$slug, $product_flavor])
 							?>

@@ -552,7 +552,7 @@
 						<a href="{{ $gnProduct->url_visualizacao  }}">
 							<div class="product">
 								<img src="{{ asset('uploads/products') . '/' . $gnProduct->id . '/' . $gnProduct->image }}">
-								<h4>{{ $gnProduct->name . ' ' . $gnProduct->last_name }}</h4>
+								<h4>{{ $gnProduct->name }}</h4>
 								{{--@if(!empty($gnProduct->flavor))--}}
 									{{--<span class="cor" style="color: {{ $gnProduct->flavor->color }}">{{ $gnProduct->flavor->name }}</span>--}}
 								{{--@endif--}}
