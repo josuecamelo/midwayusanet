@@ -12170,14 +12170,12 @@ footer h2 {
 }
 
 #logo h1 {
-  margin: 0;
-  padding: 3px;
+  margin: 3px 0;
 }
 
 @media (max-width: 380px) {
   #logo h1 {
     margin: -2px 0 0 0;
-    padding: 3px;
   }
 }
 
@@ -12188,7 +12186,6 @@ footer h2 {
   position: relative;
   bottom: 0;
   height: 100%;
-  margin-left: 10px;
   float: left;
 }
 
@@ -12202,6 +12199,7 @@ footer h2 {
   position: relative;
   height: 100%;
   cursor: pointer;
+  padding: 0 0 0 60px;
 }
 
 #nav-main > ul > li {
@@ -12261,9 +12259,9 @@ footer h2 {
   background: #fff;
   top: 61px;
   left: 0;
-  margin-left: -186px;
+  margin-left: -185px;
   width: 100vw;
-  padding-top: 1rem;
+  padding: 1rem 0 0 0 !important;
   z-index: 9999;
 }
 
