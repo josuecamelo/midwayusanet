@@ -24,6 +24,8 @@ Route::get('/', 'IndexController@index')->name('index');
 Route::get('/home', 'IndexController@home')->name('home');
 Route::get('/about', 'AboutController@index')->name('about');
 
+Route::get('/quality', 'QualityController@index')->name('quality');
+
 Route::get('/products/{offers?}/{line?}/{type?}/{goal?}/{category?}/{flavor?}', ['as' => 'products.list', 'uses' => 'ProductController@index']);
 Route::get('/products/offers', ['as' => 'products.offers', 'uses' => 'ProductController@index']);
 //Route::get('/produtos', 'ProductController@index')->name('produtos');

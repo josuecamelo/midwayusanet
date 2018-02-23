@@ -26,7 +26,7 @@
 		<nav id="nav-main" role="navigation">
 			<ul>
 				<li>
-					<a href="#">Women's Products</a>
+					<a>Women's Products</a>
 					<ul>
 						<li>
 							<h2>Popular Categories</h2>
@@ -54,12 +54,12 @@
 						</li>
 						<li class="ads">
 							<div><a href="{{ route('custom-plan') }}" title=""><img src="{{ asset('img/build.jpg') }}"></a></div>
-							<div><a href="/" title=""><img src="{{ asset('img/quality.jpg') }}"></a></div>
+							<div><a href="{{ route('quality') }}" title=""><img src="{{ asset('img/quality.jpg') }}"></a></div>
 						</li>
 					</ul>
 				</li>
 				<li>
-					<a href="#">Men's Products</a>
+					<a>Men's Products</a>
 					<ul>
 						<li>
 							<h2>POPULAR CATEGORIES</h2>
@@ -92,7 +92,7 @@
 					</ul>
 				</li>
 				<li>
-					<a href="#">Shop All Products</a>
+					<a>Shop All Products</a>
 					<ul>
 						<li>
 							<h2>POPULAR CATEGORIES</h2>

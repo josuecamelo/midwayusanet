@@ -12201,6 +12201,7 @@ footer h2 {
   margin: 0;
   position: relative;
   height: 100%;
+  cursor: pointer;
 }
 
 #nav-main > ul > li {
@@ -12260,7 +12261,7 @@ footer h2 {
   background: #fff;
   top: 61px;
   left: 0;
-  margin-left: -185px;
+  margin-left: -186px;
   width: 100vw;
   padding-top: 1rem;
   z-index: 9999;
