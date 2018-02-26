@@ -90,7 +90,7 @@
 							</li>
 							<li class="ads">
 								<div><a href="{{ route('custom-plan') }}" title=""><img src="{{ asset('img/build.jpg') }}"></a></div>
-								<div><a href="/" title=""><img src="{{ asset('img/quality.jpg') }}"></a></div>
+								<div><a href="{{ route('quality') }}" title=""><img src="{{ asset('img/quality.jpg') }}"></a></div>
 							</li>
 						</ul>
 					</div>
@@ -126,7 +126,7 @@
 							<li class="ads">
 								<div><a href="{{ route('custom-plan') }}" title=""><img src="{{ asset('img/build.jpg') }}"></a>
 								</div>
-								<div><a href="/" title=""><img src="{{ asset('img/quality.jpg') }}"></a></div>
+								<div><a href="{{ route('quality') }}" title=""><img src="{{ asset('img/quality.jpg') }}"></a></div>
 							</li>
 						</ul>
 					</div>
@@ -145,7 +145,7 @@
 					</a>
 					<nav>
 						<ul>
-							<li><a href="#">Quality</a></li>
+							<li><a href="{{ route('quality') }}">Quality</a></li>
 							<li><a href="{{ route('team-midway.list')  }}">Team Midway</a></li>
 							<li><a href="#">Blog</a></li>
 							<li><a href="{{ route('about') }}">About Us</a></li>
@@ -232,7 +232,7 @@
 								</ul>
 							</li>
 							<li><a href="/">Science</a></li>
-							<li><a href="#">Quality</a></li>
+							<li><a href="{{ route('quality') }}">Quality</a></li>
 							<li><a href="#">Team Midway</a></li>
 							<li><a href="#">Blog</a></li>
 							<li><a href="{{ route('about') }}">About Us</a></li>
