@@ -8,6 +8,7 @@
 	<title>Midway Labs USA | Premium Supplements</title>
 	<link rel="stylesheet" href="https://use.typekit.net/nhi6prz.css">
 	<link href="{{ asset('css/site.css'). '?v='.time() }}" rel="stylesheet">
+	<link rel="icon" href="{{ asset('img/favicon.png') }}">
 	@yield('css')
 	<meta name="robots" content="noindex">
 	<meta name="googlebot" content="noindex">
