@@ -8,7 +8,7 @@
 			width: auto;
 			display: block;
 			border: 1px solid #eee;
-			padding: 2px;
+			padding: 5px;
 		}
 
 		.data {
