@@ -2,13 +2,14 @@
 @section('css')
 	<style>
 		.img-featured {
-			max-width: 100%;
-			max-height: 220px;
-			height: auto;
-			width: auto;
+			width: 100%;
 			display: block;
 			border: 1px solid #eee;
 			padding: 5px;
+		}
+
+		.blogContainer .img-featured {
+			margin-bottom: 20px;
 		}
 
 		.blogContainer {
@@ -84,6 +85,7 @@
 		</div>
 		<div class="row">
 			<div class="col-md-8 blogContainer">
+				<img src="{{ asset($post->show_image) }}" alt="" class="img-featured">
 				{!! $post->content !!}
 				<p></p>
 				<hr>
