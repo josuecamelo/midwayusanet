@@ -62,38 +62,38 @@
 				</li>
 				<li>
 					<a>Men's Products</a>
-					{{--<div>--}}
-						{{--<ul>--}}
-							{{--<li>--}}
-								{{--<h2>POPULAR CATEGORIES</h2>--}}
-								{{--<ul>--}}
-									{{--{!! main_menu_helper(2,1) !!}--}}
-									{{--<li>--}}
-										{{--<a href="{{ route('products.list', ['offers' => 'all', 'line' => 'military-trail']) }}">View All Products</a>--}}
-									{{--</li>--}}
-								{{--</ul>--}}
-							{{--</li>--}}
-							{{--<li>--}}
-								{{--<h2>POPULAR PRODUCTS</h2>--}}
-								{{--<ul>--}}
-									{{--{!! main_menu_helper(2,2) !!}--}}
-									{{--<li>--}}
-										{{--<a href="{{ route('products.list', ['offers' => 'all', 'line' => 'military-trail']) }}">View All Products</a>--}}
-									{{--</li>--}}
-								{{--</ul>--}}
-							{{--</li>--}}
-							{{--<li>--}}
-								{{--<h2>Featured Stack</h2>--}}
-								{{--<div id="featured-stack">--}}
-									{{--{!!  main_menu_helper(2,3) !!}--}}
-								{{--</div>--}}
-							{{--</li>--}}
-							{{--<li class="ads">--}}
-								{{--<div><a href="{{ route('custom-plan') }}" title=""><img src="{{ asset('img/build.jpg') }}"></a></div>--}}
-								{{--<div><a href="/" title=""><img src="{{ asset('img/quality.jpg') }}"></a></div>--}}
-							{{--</li>--}}
-						{{--</ul>--}}
-					{{--</div>--}}
+					<div>
+						<ul>
+							<li>
+								<h2>POPULAR CATEGORIES</h2>
+								<ul>
+									{!! main_menu_helper(2,1) !!}
+									<li>
+										<a href="{{ route('products.list', ['offers' => 'all', 'line' => 'military-trail']) }}">View All Products</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<h2>POPULAR PRODUCTS</h2>
+								<ul>
+									{!! main_menu_helper(2,2) !!}
+									<li>
+										<a href="{{ route('products.list', ['offers' => 'all', 'line' => 'military-trail']) }}">View All Products</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<h2>Featured Stack</h2>
+								<div id="featured-stack">
+									{!!  main_menu_helper(2,3) !!}
+								</div>
+							</li>
+							<li class="ads">
+								<div><a href="{{ route('custom-plan') }}" title=""><img src="{{ asset('img/build.jpg') }}"></a></div>
+								<div><a href="/" title=""><img src="{{ asset('img/quality.jpg') }}"></a></div>
+							</li>
+						</ul>
+					</div>
 				</li>
 				<li>
 					<a>Shop All Products</a>

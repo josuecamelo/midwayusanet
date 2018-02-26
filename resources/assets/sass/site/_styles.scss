@@ -151,11 +151,11 @@ main h2, footer h2 {
 	@include transition;
 	display: block;
 	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-	background: #fff;
+	background: rgba(255,255,255,0.95);
 	top: 61px;
 	left: 0;
-	margin-left: -185px;
-	width: 100vw;
+	//margin-left: -185px;
+	width: 80vw;
 	z-index: 9999;
 }
 #nav-main > ul > li > div > ul {
@@ -195,10 +195,13 @@ main h2, footer h2 {
 	display: block;
 }
 
-//#nav-main > ul > li > div > ul > li {
-//	padding-left: 40px;
-//	width: 100%;
-//}
+#nav-main > ul > li > div > ul > li {
+	padding-left: 40px;
+	width: 100%;
+}
+#nav-main > ul > li > div > ul > li:last-child {
+	padding-right: 15px;
+}
 
 #nav-main > ul > li > div > ul > li > ul {
 	margin: 0;
