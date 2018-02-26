@@ -47,6 +47,14 @@
 			transition: all .3s ease-out;
 		}
 
+		.img-left {
+			margin: 15px 15px 15px 0;
+		}
+
+		.img-right {
+			margin: 15px 0 15px 15px;
+		}
+
 		.tagTag {
 			background: #222;
 			color: #fff;
@@ -111,6 +119,14 @@
 					var wrap = $('<figcaption class="caption">');
 					wrap.append(alt);
 					$(this).parent().append(wrap);
+				}
+			});
+
+			$('.blogContainer img').each(function () {
+				if ($(this).css('float') == 'left') {
+					$(this).addClass('img-left');
+				} else if ($(this).css('float') == 'right') {
+					$(this).addClass('img-right');
 				}
 			});
 		});
