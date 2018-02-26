@@ -24,9 +24,11 @@ p {
 }
 
 h1 {
-	//background: #f9fafc;
-	font-size: 26px;
-	padding: 0;
+	background: #fff;
+	font-size: 40px;
+	padding: 30px;
+	text-align: center;
+	margin-bottom: 30px;
 }
 
 main {
@@ -75,7 +77,11 @@ main h2, footer h2 {
 }
 
 #logo h1 {
-	margin: 3px 0;
+	background: none;
+	font-size: inherit;
+	padding: inherit;
+	text-align: center;
+	margin: 3px 0 !important;
 }
 
 @media(max-width: 380px) {
