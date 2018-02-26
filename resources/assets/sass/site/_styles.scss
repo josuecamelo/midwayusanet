@@ -151,13 +151,16 @@ main h2, footer h2 {
 	@include transition;
 	display: block;
 	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-	background: rgba(255,255,255,0.95);
+	background: rgba(255, 255, 255, 0.95);
 	top: 61px;
 	left: 0;
 	//margin-left: -185px;
 	width: 80vw;
 	z-index: 9999;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
 }
+
 #nav-main > ul > li > div > ul {
 	box-sizing: border-box;
 	display: flex;
@@ -199,8 +202,9 @@ main h2, footer h2 {
 	padding-left: 40px;
 	width: 100%;
 }
+
 #nav-main > ul > li > div > ul > li:last-child {
-	padding-right: 15px;
+	padding-right: 12px;
 }
 
 #nav-main > ul > li > div > ul > li > ul {

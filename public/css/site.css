@@ -12258,6 +12258,8 @@ footer h2 {
   left: 0;
   width: 80vw;
   z-index: 9999;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
 #nav-main > ul > li > div > ul {
@@ -12308,7 +12310,7 @@ footer h2 {
 }
 
 #nav-main > ul > li > div > ul > li:last-child {
-  padding-right: 15px;
+  padding-right: 12px;
 }
 
 #nav-main > ul > li > div > ul > li > ul {
