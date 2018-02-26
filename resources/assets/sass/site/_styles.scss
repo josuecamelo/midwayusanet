@@ -144,6 +144,7 @@ main h2, footer h2 {
 }
 
 #nav-main > ul > li > div {
+	box-sizing: border-box;
 	position: absolute;
 	opacity: 0;
 	visibility: hidden;
@@ -158,6 +159,7 @@ main h2, footer h2 {
 	z-index: 9999;
 }
 #nav-main > ul > li > div > ul {
+	box-sizing: border-box;
 	display: flex;
 	justify-content: space-evenly;
 	padding: 1rem 0 0 0 !important;
