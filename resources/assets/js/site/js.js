@@ -1,5 +1,11 @@
 $(function () {
 
+	$('#nav-main ul li a').on('mouseover', function () {
+		console.log('hover');
+
+		$('#womens-products').show();
+	});
+
 	$('#search svg').on('click', function (event) {
 		console.log('clicou svg');
 		$(this).siblings('.form-control').focus();

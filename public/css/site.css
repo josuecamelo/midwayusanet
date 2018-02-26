@@ -12242,18 +12242,13 @@ footer h2 {
   z-index: -1;
 }
 
-#nav-main > ul > li > ul {
+#nav-main > ul > li > div {
   position: absolute;
   opacity: 0;
   visibility: hidden;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  display: block;
   -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
           box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   background: #fff;
@@ -12261,11 +12256,20 @@ footer h2 {
   left: 0;
   margin-left: -185px;
   width: 100vw;
-  padding: 1rem 0 0 0 !important;
   z-index: 9999;
 }
 
-#nav-main > ul > li:hover > ul {
+#nav-main > ul > li > div > ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  padding: 1rem 0 0 0 !important;
+}
+
+#nav-main > ul > li:hover > div {
   visibility: visible;
   opacity: 1;
 }
@@ -12278,11 +12282,11 @@ footer h2 {
   margin-top: 12px;
 }
 
-#nav-main > ul > li > ul {
+#nav-main > ul > li > div > ul {
   padding: 0;
 }
 
-#nav-main > ul > li > ul > li > h2 {
+#nav-main > ul > li > div > ul > li > h2 {
   color: #989898;
   font-weight: 900;
   font-style: italic;
@@ -12295,16 +12299,17 @@ footer h2 {
   display: block;
 }
 
-#nav-main > ul > li > ul > li {
+#nav-main > ul > li > div > ul > li {
   padding-left: 40px;
+  width: 100%;
 }
 
-#nav-main > ul > li > ul > li > ul {
+#nav-main > ul > li > div > ul > li > ul {
   margin: 0;
   padding: 0;
 }
 
-#nav-main > ul > li > ul > li > ul > li > a {
+#nav-main > ul > li > div > ul > li > ul > li > a {
   color: #555;
   font-weight: 900;
   font-style: italic;
@@ -12312,7 +12317,7 @@ footer h2 {
   text-decoration: none;
 }
 
-#nav-main > ul > li > ul > li > ul > li > a:hover {
+#nav-main > ul > li > div > ul > li > ul > li > a:hover {
   color: #777;
 }
 

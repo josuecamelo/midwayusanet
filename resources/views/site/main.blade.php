@@ -27,103 +27,109 @@
 			<ul>
 				<li>
 					<a>Women's Products</a>
-					<ul>
-						<li>
-							<h2>Popular Categories</h2>
-							<ul>
-								{!! main_menu_helper(1,1) !!}
-								<li>
-									<a href="{{ route('products.list', ['offers' => 'all', 'line' => 'glamour-nutrition']) }}">View All Products</a>
-								</li>
-							</ul>
-						</li>
-						<li>
-							<h2>Popular Products</h2>
-							<ul>
-								{!! main_menu_helper(1,2) !!}
-								<li>
-									<a href="{{ route('products.list', ['offers' => 'all', 'line' => 'glamour-nutrition']) }}">View All Products</a>
-								</li>
-							</ul>
-						</li>
-						<li>
-							<h2>Featured Stack</h2>
-							<div id="featured-stack">
-								{!!  main_menu_helper(1,3) !!}
-							</div>
-						</li>
-						<li class="ads">
-							<div><a href="{{ route('custom-plan') }}" title=""><img src="{{ asset('img/build.jpg') }}"></a></div>
-							<div><a href="{{ route('quality') }}" title=""><img src="{{ asset('img/quality.jpg') }}"></a></div>
-						</li>
-					</ul>
+					<div>
+						<ul>
+							<li>
+								<h2>Popular Categories</h2>
+								<ul>
+									{!! main_menu_helper(1,1) !!}
+									<li>
+										<a href="{{ route('products.list', ['offers' => 'all', 'line' => 'glamour-nutrition']) }}">View All Products</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<h2>Popular Products</h2>
+								<ul>
+									{!! main_menu_helper(1,2) !!}
+									<li>
+										<a href="{{ route('products.list', ['offers' => 'all', 'line' => 'glamour-nutrition']) }}">View All Products</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<h2>Featured Stack</h2>
+								<div id="featured-stack">
+									{!!  main_menu_helper(1,3) !!}
+								</div>
+							</li>
+							<li class="ads">
+								<div><a href="{{ route('custom-plan') }}" title=""><img src="{{ asset('img/build.jpg') }}"></a></div>
+								<div><a href="{{ route('quality') }}" title=""><img src="{{ asset('img/quality.jpg') }}"></a></div>
+							</li>
+						</ul>
+					</div>
 				</li>
 				<li>
 					<a>Men's Products</a>
-					<ul>
-						<li>
-							<h2>POPULAR CATEGORIES</h2>
-							<ul>
-								{!! main_menu_helper(2,1) !!}
-								<li>
-									<a href="{{ route('products.list', ['offers' => 'all', 'line' => 'military-trail']) }}">View All Products</a>
-								</li>
-							</ul>
-						</li>
-						<li>
-							<h2>POPULAR PRODUCTS</h2>
-							<ul>
-								{!! main_menu_helper(2,2) !!}
-								<li>
-									<a href="{{ route('products.list', ['offers' => 'all', 'line' => 'military-trail']) }}">View All Products</a>
-								</li>
-							</ul>
-						</li>
-						<li>
-							<h2>Featured Stack</h2>
-							<div id="featured-stack">
-								{!!  main_menu_helper(2,3) !!}
-							</div>
-						</li>
-						<li class="ads">
-							<div><a href="{{ route('custom-plan') }}" title=""><img src="{{ asset('img/build.jpg') }}"></a></div>
-							<div><a href="/" title=""><img src="{{ asset('img/quality.jpg') }}"></a></div>
-						</li>
-					</ul>
+					<div>
+						<ul>
+							<li>
+								<h2>POPULAR CATEGORIES</h2>
+								<ul>
+									{!! main_menu_helper(2,1) !!}
+									<li>
+										<a href="{{ route('products.list', ['offers' => 'all', 'line' => 'military-trail']) }}">View All Products</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<h2>POPULAR PRODUCTS</h2>
+								<ul>
+									{!! main_menu_helper(2,2) !!}
+									<li>
+										<a href="{{ route('products.list', ['offers' => 'all', 'line' => 'military-trail']) }}">View All Products</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<h2>Featured Stack</h2>
+								<div id="featured-stack">
+									{!!  main_menu_helper(2,3) !!}
+								</div>
+							</li>
+							<li class="ads">
+								<div><a href="{{ route('custom-plan') }}" title=""><img src="{{ asset('img/build.jpg') }}"></a></div>
+								<div><a href="/" title=""><img src="{{ asset('img/quality.jpg') }}"></a></div>
+							</li>
+						</ul>
+					</div>
 				</li>
 				<li>
 					<a>Shop All Products</a>
-					<ul>
-						<li>
-							<h2>POPULAR CATEGORIES</h2>
-							<ul>
-								{!! main_menu_helper(3,1) !!}
-								<li>
-									<a href="{{ route('products.list') }}">VIEW ALL PRODUCTS</a>
-								</li>
-							</ul>
-						</li>
-						<li>
-							<h2>POPULAR PRODUCTS</h2>
-							<ul>
-								{!! main_menu_helper(3,2) !!}
-								<li>
-									<a href="{{ route('products.list') }}">VIEW ALL PRODUCTS</a>
-								</li>
-							</ul>
-						</li>
-						<li>
-							<h2>Featured Stack</h2>
-							<div id="featured-stack">
-								{!!  main_menu_helper(3,3) !!}
-							</div>
-						</li>
-						<li class="ads">
-							<div><a href="{{ route('custom-plan') }}" title=""><img src="{{ asset('img/build.jpg') }}"></a>
-							</div>
-							<div><a href="/" title=""><img src="{{ asset('img/quality.jpg') }}"></a></div>
-						</li>
-					</ul>
+					<div>
+						<ul>
+							<li>
+								<h2>POPULAR CATEGORIES</h2>
+								<ul>
+									{!! main_menu_helper(3,1) !!}
+									<li>
+										<a href="{{ route('products.list') }}">VIEW ALL PRODUCTS</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<h2>POPULAR PRODUCTS</h2>
+								<ul>
+									{!! main_menu_helper(3,2) !!}
+									<li>
+										<a href="{{ route('products.list') }}">VIEW ALL PRODUCTS</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<h2>Featured Stack</h2>
+								<div id="featured-stack">
+									{!!  main_menu_helper(3,3) !!}
+								</div>
+							</li>
+							<li class="ads">
+								<div><a href="{{ route('custom-plan') }}" title=""><img src="{{ asset('img/build.jpg') }}"></a>
+								</div>
+								<div><a href="/" title=""><img src="{{ asset('img/quality.jpg') }}"></a></div>
+							</li>
+						</ul>
+					</div>
 				</li>
 				<li>
 					<a href="{{ route('science.index') }}">Science</a>
