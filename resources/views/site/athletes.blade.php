@@ -11,11 +11,11 @@
 		}
 
 		#atletas h2 {
-			margin: 15px 0 10px 0;
+			margin: 15px 0 5px 0;
 		}
 
 		#atletas p {
-			margin: 5px 0;
+			margin: 0;
 		}
 	</style>
 @endsection
