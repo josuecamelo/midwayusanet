@@ -6,7 +6,7 @@
 			color: #000;
 		}
 
-		#atleta .athlete {
+		#atletas .athlete {
 			text-align: center;
 		}
 
@@ -15,7 +15,7 @@
 		}
 
 		#atletas p {
-			margin: 15px 0;
+			margin: 5px 0;
 		}
 	</style>
 @endsection
