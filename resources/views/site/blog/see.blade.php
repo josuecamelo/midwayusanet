@@ -58,6 +58,13 @@
 			font-size: 20px;
 			margin: 5px 0 20px 0;
 		}
+
+		.blogContainer h2 {
+			border-bottom: 1px solid #ddd;
+			margin: 30px 0 15px 0;
+			font-size: 25px;
+			padding: 0 0 5px 0;
+		}
 	</style>
 @endsection
 @section('main')
