@@ -139,7 +139,7 @@
 		<div id="header-links">
 			<ul>
 				<li id="menu">
-					<a href="#">
+					<a>
 						Menu
 						<i class="fas fa-bars"></i>
 					</a>
@@ -157,7 +157,7 @@
 					</nav>
 				</li>
 				<li id="menu-mobile">
-					<a href="#">
+					<a>
 						<i class="fas fa-bars"></i>
 					</a>
 					<nav>

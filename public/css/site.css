@@ -12395,6 +12395,10 @@ footer h2 {
   }
 }
 
+#menu {
+  cursor: pointer;
+}
+
 #menu nav {
   display: none;
   position: absolute;
