@@ -74,6 +74,11 @@
 			font-size: 25px;
 			padding: 0 0 5px 0;
 		}
+
+		img {
+			max-width: 100%;
+			height: auto;
+		}
 	</style>
 @endsection
 @section('main')
