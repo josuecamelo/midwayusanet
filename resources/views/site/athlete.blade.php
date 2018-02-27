@@ -91,12 +91,13 @@
 
 		@media (min-width: 1200px) {
 			#main h1 {
-				margin-top: 80px;
+				margin-top: 30px;
 				font-weight: 900;
 				line-height: 95%;
 				letter-spacing: 7px;
 				font-size: 6rem;
 				color: #000;
+				text-align: left;
 			}
 
 			#main h1 span {
@@ -121,12 +122,13 @@
 
 		@media (max-width: 1200px) {
 			#main h1 {
-				margin-top: 80px;
+				margin-top: 30px;
 				font-weight: 900;
 				line-height: 95%;
 				letter-spacing: 7px;
 				font-size: 4rem;
 				color: #000;
+				text-align: left;
 			}
 
 			#main h1 span {
@@ -162,7 +164,7 @@
 					<div class="col-md-5 animated fadeInLeft text-center">
 						<img src="{{ asset('uploads/athletes') . '/' . $athlete->id . '/' . $athlete->photo }}" alt="">
 					</div>
-					<div class="col-md-7">
+					<div class="col-md-7 animated fadeInRight">
 						<h1>{{ $athlete->name }}<span>{{ $athlete->last_name }}</span></h1>
 						<div>
 							<h2>{{ $athlete->profession }}</h2>
