@@ -230,13 +230,14 @@ class Product extends Model
 	
 	public function getCompleteNameAttribute()
 	{
-		if (isset($this->flavor_id))
-		{
-			return $this->name . ' ' . $this->presentation . ' ' . $this->flavor()->first()->name;
-		}
-		else
-		{
-			return $this->name . ' ' . $this->presentation;
-		}
+		return $this->name;
+//		if (isset($this->flavor_id))
+//		{
+//			return $this->name . ' ' . $this->presentation . ' ' . $this->flavor()->first()->name;
+//		}
+//		else
+//		{
+//			return $this->name . ' ' . $this->presentation;
+//		}
 	}
 }
