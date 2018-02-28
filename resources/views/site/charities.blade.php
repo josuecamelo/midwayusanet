@@ -3,11 +3,19 @@
 @section('css')
 	<style>
 		#charities h1 {
-			background: url({{ asset('img/charities-banner.jpg') }});
+			background: url({{ asset('img/charities-banner.jpg') }}) top right;
 			padding: 150px;
 			color: #FFF;
+			text-shadow: 0 5px 15px rgba(0,0,0,0.7);
 			font-size: 72px;
 			margin-bottom: 40px;
+		}
+
+		@media(max-width: 600px) {
+			#charities h1 {
+				padding: 100px;
+				font-size: 50px;
+			}
 		}
 
 		.bgParallax {
