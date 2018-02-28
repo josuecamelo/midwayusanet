@@ -4,7 +4,7 @@
 
 	<h1>Videos</h1>
 
-	<div class="container">
+	<div class="container-fluid">
 		<div class="row">
 			@foreach($videos as $video)
 				<div class="col-md-3">
