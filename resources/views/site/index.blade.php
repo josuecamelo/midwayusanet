@@ -1,4 +1,3 @@
-
 @extends('site.main')
 
 @section('css')
@@ -456,7 +455,7 @@
 
 	<section id="mini-banners" class="animated fadeInUp">
 		<div>
-			<a href="#">
+			<a href="{{ url('/products/all/military-trail') }}">
 				<h3>
 					SHOP MILITARY TRAIL
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21.12 23.42">
@@ -473,7 +472,7 @@
 			</a>
 		</div>
 		<div>
-			<a href="#">
+			<a href="{{ url('/products/all/glamour-nutrition') }}">
 				<h3>
 					SHOP GLAMOUR NUTRITION
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21.12 23.42">
@@ -490,7 +489,7 @@
 			</a>
 		</div>
 		<div>
-			<a href="#">
+			<a href="{{ url('/product/l-carnitine-strike/lemon') }}">
 				<h3>
 					DELICIOUS LEMON FLAVOR
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21.12 23.42">
@@ -507,7 +506,7 @@
 			</a>
 		</div>
 		<div>
-			<a href="#">
+			<a href="{{ route('charities') }}">
 				<h3>
 					GIVING BACK
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21.12 23.42">
@@ -538,7 +537,7 @@
 								<img src="{{ asset('uploads/products') . '/' . $mtProduct->id . '/' . $mtProduct->image }}">
 								<h4>{{ $mtProduct->name }}</h4>
 								{{--@if(!empty($mtProduct->flavor))--}}
-									{{--<span class="cor" style="color: {{ $mtProduct->flavor->color }}">{{ $mtProduct->flavor->name }}</span>--}}
+								{{--<span class="cor" style="color: {{ $mtProduct->flavor->color }}">{{ $mtProduct->flavor->name }}</span>--}}
 								{{--@endif--}}
 								<div>{!! $mtProduct->shopify !!}</div>
 							</div>
@@ -555,7 +554,7 @@
 								<img src="{{ asset('uploads/products') . '/' . $gnProduct->id . '/' . $gnProduct->image }}">
 								<h4>{{ $gnProduct->name }}</h4>
 								{{--@if(!empty($gnProduct->flavor))--}}
-									{{--<span class="cor" style="color: {{ $gnProduct->flavor->color }}">{{ $gnProduct->flavor->name }}</span>--}}
+								{{--<span class="cor" style="color: {{ $gnProduct->flavor->color }}">{{ $gnProduct->flavor->name }}</span>--}}
 								{{--@endif--}}
 								<div>{!! $gnProduct->shopify !!}</div>
 							</div>
