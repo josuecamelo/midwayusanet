@@ -4,27 +4,6 @@
 	<style>
 		#charities h1 {
 			background: url({{ asset('img/charities-banner.jpg') }}) top right;
-			padding: 150px;
-			color: #FFF;
-			text-shadow: 0 5px 15px rgba(0,0,0,0.7);
-			font-size: 72px;
-			margin-bottom: 40px;
-		}
-
-		@media(max-width: 600px) {
-			#charities h1 {
-				padding: 100px;
-				font-size: 50px;
-			}
-		}
-
-		.bgParallax {
-			margin: 0 auto;
-			width: 100%;
-			min-height: 100%;
-			background-position: 50% 0;
-			background-repeat: repeat;
-			background-attachment: fixed;
 		}
 
 		.img-circular {
@@ -52,7 +31,7 @@
 
 	<article id="charities">
 
-		<h1 class="bgParallax animated fadeInDown" data-speed="5">Giving Back</h1>
+		<h1 class="bgParallax animated fadeInDown" data-speed="5" data-x="100">Giving Back</h1>
 
 		<div class="container animated fadeInUp">
 
@@ -211,21 +190,4 @@
 			</div>
 		</div>
 	</article>
-@endsection
-
-@section('js')
-	<script>
-		$('.bgParallax').each(function () {
-			var $obj = $(this);
-
-			$(window).scroll(function () {
-				var yPos = -($(window).scrollTop() / $obj.data('speed'));
-				console.log(yPos);
-				var bgpos = '100% ' + yPos + 'px';
-
-				$obj.css('background-position', bgpos);
-
-			});
-		});
-	</script>
 @endsection

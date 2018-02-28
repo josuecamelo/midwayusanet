@@ -35218,8 +35218,21 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 $(function () {
 
+	/* Parallax */
+
+	$('.bgParallax').each(function () {
+		var $obj = $(this);
+
+		$(window).scroll(function () {
+			var yPos = -($(window).scrollTop() / $obj.data('speed'));
+			console.log(yPos);
+			var bgpos = $obj.data('x') + '% ' + yPos + 'px';
+
+			$obj.css('background-position', bgpos);
+		});
+	});
+
 	$('#search svg').on('click', function (event) {
-		console.log('clicou svg');
 		$(this).siblings('.form-control').focus();
 	});
 
@@ -35251,7 +35264,7 @@ $(function () {
 
 	var mmOpen = true;
 
-	$('#menu-mobile > a').on('click', function (event) {
+	$('#menu-mobile > #mm').on('click', function (event) {
 		if (mmOpen) {
 			$('#menu-mobile nav').show('slide', { direction: 'left' });
 			$('#menu-mobile > a > svg').removeClass('fa-bars').addClass('fa-times').attr('data-icon', 'times');
@@ -35279,14 +35292,12 @@ $(function () {
 			$(this).find('svg').attr('data-icon', 'plus');
 		}
 
-		event.preventDefault();
-		event.stopPropagation();
+		// event.preventDefault();
+		// event.stopPropagation();
 	});
 
-	$(document).on('click', function () {
-
-		if (!mmOpen) {
-
+	$(document).on('click', function (e) {
+		if (!mmOpen && e.target.classList.value != 'mm-sub') {
 			$('#menu-mobile nav').hide('slide', { direction: 'left' });
 			$('#menu-mobile > a > svg').removeClass('fa-times').addClass('fa-bars').attr('data-icon', 'bars');
 			mmOpen = true;

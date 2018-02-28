@@ -158,13 +158,13 @@
 					</nav>
 				</li>
 				<li id="menu-mobile">
-					<a>
+					<a id="mm" class="mm-sub">
 						<i class="fas fa-bars"></i>
 					</a>
 					<nav>
 						<ul>
 							<li>
-								<a href="#">Women's Products<i class="fas fa-plus"></i></a>
+								<a class="mm-sub">Women's Products<i class="fas fa-plus"></i></a>
 								<ul>
 									<li>
 										<h2>POPULAR CATEGORIES</h2>
@@ -187,7 +187,7 @@
 								</ul>
 							</li>
 							<li>
-								<a href="/">Men's Products<i class="fas fa-plus"></i></a>
+								<a class="mm-sub">Men's Products<i class="fas fa-plus"></i></a>
 								<ul>
 									<li>
 										<h2>POPULAR CATEGORIES</h2>
@@ -210,7 +210,7 @@
 								</ul>
 							</li>
 							<li>
-								<a href="/">Shop All Products<i class="fas fa-plus"></i></a>
+								<a class="mm-sub">Shop All Products<i class="fas fa-plus"></i></a>
 								<ul>
 									<li>
 										<h2>POPULAR CATEGORIES</h2>
@@ -232,7 +232,7 @@
 									</li>
 								</ul>
 							</li>
-							<li><a href="/">Science</a></li>
+							<li><a href="{{ route('science.index') }}">Science</a></li>
 							<li><a href="{{ route('quality') }}">Quality</a></li>
 							<li><a href="{{ route('team-midway.list')  }}">Team Midway</a></li>
 							<li><a href="{{ route('blog.index') }}">Blog</a></li>
