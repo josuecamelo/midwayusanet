@@ -148,11 +148,11 @@
 						<ul>
 							<li><a href="{{ route('quality') }}">Quality</a></li>
 							<li><a href="{{ route('team-midway.list')  }}">Team Midway</a></li>
-							<li><a href="#">Blog</a></li>
+							<li><a href="{{ route('blog.index') }}">Blog</a></li>
 							<li><a href="{{ route('about') }}">About Us</a></li>
 							<li><a href="{{ route('products.offers')  }}">Sales & Promotions</a></li>
-							<li><a href="#">Store Locator</a></li>
-							<li><a href="#">Contact Us</a></li>
+							{{--<li><a href="#">Store Locator</a></li>--}}
+							<li><a href="{{ route('contact') }}">Contact Us</a></li>
 							<li><a href="#">Videos</a></li>
 						</ul>
 					</nav>
@@ -234,12 +234,12 @@
 							</li>
 							<li><a href="/">Science</a></li>
 							<li><a href="{{ route('quality') }}">Quality</a></li>
-							<li><a href="#">Team Midway</a></li>
-							<li><a href="#">Blog</a></li>
+							<li><a href="{{ route('team-midway.list')  }}">Team Midway</a></li>
+							<li><a href="{{ route('blog.index') }}">Blog</a></li>
 							<li><a href="{{ route('about') }}">About Us</a></li>
 							<li><a href="#">Sales & Promotions</a></li>
-							<li><a href="#">Store Locator</a></li>
-							<li><a href="#">Contact Us</a></li>
+							{{--<li><a href="#">Store Locator</a></li>--}}
+							<li><a href="{{ route('contact') }}">Contact Us</a></li>
 							<li><a href="#">Videos</a></li>
 						</ul>
 					</nav>

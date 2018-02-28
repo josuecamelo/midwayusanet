@@ -13,7 +13,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<p>Comming Soon</p>
+				<p class="text-center">Comming Soon</p>
 			</div>
 		</div>
 	</div>

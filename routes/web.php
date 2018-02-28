@@ -20,7 +20,7 @@ Route::redirect('/products/beauty-sleep', '/product/beauty&sleep', 301);
 
 Auth::routes();
 
-Route::get('/', 'IndexController@index')->name('index');
+Route::get('/', 'IndexController@home')->name('index');
 Route::get('/home', 'IndexController@home')->name('home');
 Route::get('/about', 'AboutController@index')->name('about');
 
@@ -65,7 +65,8 @@ $router->group(['prefix' => 'science', 'as' => 'science.'], function () use ($ro
     $router->get('/', ['as' => 'index', 'uses' => 'BlogPostAdminController@siteIndex']);
 });
 
-Route::get('/contato', 'ContactController@index')->name('contato');
+Route::get('/contact', 'ContactController@index')->name('contact');
+Route::get('/contact/send', 'ContactController@send')->name('contact-send');
 
 Route::get('/inscreverse', 'SubscribeController@index')->name('inscreverse');
 Route::post('/inscrever', 'SubscribeController@store')->name('inscrever');
