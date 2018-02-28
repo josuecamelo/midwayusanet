@@ -50,7 +50,7 @@ main h2, footer h2 {
 #header {
 	background: url('/img/bg-header.svg') no-repeat $red-0;
 	background-size: 230px auto;
-	background-position: -5px top;
+	background-position: -25px top;
 	z-index: 9999 !important;
 	position: relative;
 }
@@ -106,7 +106,7 @@ main h2, footer h2 {
 	position: relative;
 	height: 100%;
 	cursor: pointer;
-	padding: 0 0 0 60px;
+	padding: 0 0 0 40px;
 }
 
 #nav-main > ul > li {
@@ -157,8 +157,7 @@ main h2, footer h2 {
 	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 	background: rgba(255, 255, 255, 0.95);
 	top: 61px;
-	left: 0;
-	//margin-left: -185px;
+	left: 12px;
 	width: 80vw;
 	z-index: 9999;
 	border-bottom-right-radius: 5px;
