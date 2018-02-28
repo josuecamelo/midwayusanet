@@ -41,7 +41,7 @@ Route::get('/objetivos', 'GoalController@index')->name('objetivos');
 Route::get('/objetivos/{goal}', ['as' => 'objetivo_exibicao', 'uses' => 'GoalController@goal']);
 
 Route::get('/historia', 'HistoryController@index')->name('historia');
-Route::get('/treinos', 'TrainingController@index')->name('treinos');
+Route::get('/videos', 'VideosController@index')->name('videos');
 
 Route::get('/revenda', 'ResaleController@index')->name('revenda');
 Route::post('/salvar-revenda', 'ResaleController@store')->name('salvar-revenda');

@@ -150,10 +150,10 @@
 							<li><a href="{{ route('team-midway.list')  }}">Team Midway</a></li>
 							<li><a href="{{ route('blog.index') }}">Blog</a></li>
 							<li><a href="{{ route('about') }}">About Us</a></li>
-							<li><a href="{{ route('products.offers')  }}">Sales & Promotions</a></li>
+							<li><a href="{{ route('products.offers') }}">Sales & Promotions</a></li>
 							{{--<li><a href="#">Store Locator</a></li>--}}
 							<li><a href="{{ route('contact') }}">Contact Us</a></li>
-							<li><a href="#">Videos</a></li>
+							<li><a href="{{ route('videos') }}">Videos</a></li>
 						</ul>
 					</nav>
 				</li>
@@ -237,10 +237,10 @@
 							<li><a href="{{ route('team-midway.list')  }}">Team Midway</a></li>
 							<li><a href="{{ route('blog.index') }}">Blog</a></li>
 							<li><a href="{{ route('about') }}">About Us</a></li>
-							<li><a href="#">Sales & Promotions</a></li>
+							<li><a href="{{ route('products.offers') }}">Sales & Promotions</a></li>
 							{{--<li><a href="#">Store Locator</a></li>--}}
 							<li><a href="{{ route('contact') }}">Contact Us</a></li>
-							<li><a href="#">Videos</a></li>
+							<li><a href="{{ route('videos') }}">Videos</a></li>
 						</ul>
 					</nav>
 				</li>
