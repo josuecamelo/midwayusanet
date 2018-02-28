@@ -66,7 +66,7 @@ $router->group(['prefix' => 'science', 'as' => 'science.'], function () use ($ro
 });
 
 Route::get('/contact', 'ContactController@index')->name('contact');
-Route::get('/contact/send', 'ContactController@send')->name('contact-send');
+Route::post('/contact/send', 'ContactController@send')->name('contact-send');
 
 Route::get('/inscreverse', 'SubscribeController@index')->name('inscreverse');
 Route::post('/inscrever', 'SubscribeController@store')->name('inscrever');

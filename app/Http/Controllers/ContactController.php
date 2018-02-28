@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Mail\ContactEmail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use Laracasts\Flash\Flash;
 
 class ContactController extends Controller
 {
@@ -35,22 +37,22 @@ class ContactController extends Controller
 		switch ($department)
 		{
 			case 'Commercial':
-				return 'commercial@midwaylabsusa.com';
+				return 'talita@midwaylabs.com.br';
 				break;
 			case 'Finance':
 				return 'finance@midwaylabsusa.com';
 				break;
 			case 'Marketing':
-				return 'marketing@midwaylabsusa.com';
+				return 'mkt@midwaylabs.com.br';
 				break;
 			case 'Nutricionist':
-				return 'nutricionist@midwaylabsusa.com';
+				return 'laboratorio@midwaylabs.com.br';
 				break;
 			case 'SAC':
-				return 'sac@midwaylabsusa.com';
+				return 'sac@midwaylabs.com.br';
 				break;
 			case 'Others':
-				return 'arte@midwaylabs.com.br';
+				return 'info@midwaylabsusa.com';
 				break;
 		}
 	}
