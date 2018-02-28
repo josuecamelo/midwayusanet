@@ -221,7 +221,7 @@
 			$(window).scroll(function () {
 				var yPos = -($(window).scrollTop() / $obj.data('speed'));
 				console.log(yPos);
-				var bgpos = '50% ' + yPos + 'px';
+				var bgpos = '100% ' + yPos + 'px';
 
 				$obj.css('background-position', bgpos);
 
