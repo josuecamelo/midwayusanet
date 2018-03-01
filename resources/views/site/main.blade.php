@@ -152,8 +152,8 @@
 							<li><a href="{{ route('about') }}">About Us</a></li>
 							<li><a href="{{ route('products.offers') }}">Sales & Promotions</a></li>
 							{{--<li><a href="#">Store Locator</a></li>--}}
-							<li><a href="{{ route('contact') }}">Contact Us</a></li>
 							<li><a href="{{ route('videos') }}">Videos</a></li>
+							<li><a href="{{ route('contact') }}">Contact Us</a></li>
 						</ul>
 					</nav>
 				</li>
@@ -239,8 +239,8 @@
 							<li><a href="{{ route('about') }}">About Us</a></li>
 							<li><a href="{{ route('products.offers') }}">Sales & Promotions</a></li>
 							{{--<li><a href="#">Store Locator</a></li>--}}
-							<li><a href="{{ route('contact') }}">Contact Us</a></li>
 							<li><a href="{{ route('videos') }}">Videos</a></li>
+							<li><a href="{{ route('contact') }}">Contact Us</a></li>
 						</ul>
 					</nav>
 				</li>
@@ -288,14 +288,23 @@
 		<div class="col-md-3">
 			<h2>LET US HELP YOU</h2>
 			<ul>
-				<li><a href="/">Find a Store<i class="fas fa-angle-right arrow-link"></i></a></li>
-				<li><a href="/">Your Account<i class="fas fa-angle-right arrow-link"></i></a></li>
-				<li><a href="/">Your Orders<i class="fas fa-angle-right arrow-link"></i></a></li>
-				<li><a href="/">Shipping Rates &amp; Policies<i class="fas fa-angle-right arrow-link"></i></a></li>
-				<li><a href="/">Returns &amp; Refund<i class="fas fa-angle-right arrow-link"></i></a></li>
-				<li><a href="/">Sales &amp; Promotions<i class="fas fa-angle-right arrow-link"></i></a></li>
-				<li><a href="/">About Us<i class="fas fa-angle-right arrow-link"></i></a></li>
-				<li><a href="/">Contact Us<i class="fas fa-angle-right arrow-link"></i></a></li>
+				<li><a href="{{ route('science.index') }}">Science</a></li>
+				<li><a href="{{ route('quality') }}">Quality</a></li>
+				<li><a href="{{ route('team-midway.list')  }}">Team Midway</a></li>
+				<li><a href="{{ route('blog.index') }}">Blog</a></li>
+				<li><a href="{{ route('about') }}">About Us</a></li>
+				<li><a href="{{ route('products.offers') }}">Sales & Promotions</a></li>
+				{{--<li><a href="#">Store Locator</a></li>--}}
+				<li><a href="{{ route('videos') }}">Videos</a></li>
+				<li><a href="{{ route('contact') }}">Contact Us</a></li>
+				{{--<li><a href="/">Find a Store<i class="fas fa-angle-right arrow-link"></i></a></li>--}}
+				{{--<li><a href="/">Your Account<i class="fas fa-angle-right arrow-link"></i></a></li>--}}
+				{{--<li><a href="/">Your Orders<i class="fas fa-angle-right arrow-link"></i></a></li>--}}
+				{{--<li><a href="/">Shipping Rates &amp; Policies<i class="fas fa-angle-right arrow-link"></i></a></li>--}}
+				{{--<li><a href="/">Returns &amp; Refund<i class="fas fa-angle-right arrow-link"></i></a></li>--}}
+				{{--<li><a href="/">Sales &amp; Promotions<i class="fas fa-angle-right arrow-link"></i></a></li>--}}
+				{{--<li><a href="/">About Us<i class="fas fa-angle-right arrow-link"></i></a></li>--}}
+				{{--<li><a href="/">Contact Us<i class="fas fa-angle-right arrow-link"></i></a></li>--}}
 			</ul>
 		</div>
 		<div class="col-md-3">
