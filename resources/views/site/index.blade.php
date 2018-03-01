@@ -649,13 +649,12 @@
 	<script type="text/javascript">
 		$(document).ready(function () {
 
-			let largura = window.screen.width;
-
-			console.log(largura);
+			let width = window.screen.width;
+			let numberSlides = (width > 900) ? 5 : 1;
 
 			$('.slick-track').slick({
-				slidesToShow: 5,
-				slidesToScroll: 5,
+				slidesToShow: numberSlides,
+				slidesToScroll: numberSlides,
 				autoplaySpeed: 5000,
 				autoplay: true,
 				responsive: [{
