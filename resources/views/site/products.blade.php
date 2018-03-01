@@ -10,6 +10,7 @@
 		}
 
 		#search-col {
+			margin-top: 50px;
 			font-size: 14px;
 		}
 
@@ -43,35 +44,33 @@
 		}
 
 		#products-grid ul {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			margin: 0;
+			padding: 0;
 			list-style: none;
+			text-align: center;
 		}
 
 		#products-grid li {
-			width: 25%;
-			float: left;
-		}
-
-		@media(max-width: 800px){
-			#products-grid li {
-				width: 100%;
-				display: block;
-			}
-		}
-
-		#products-grid .panel {
-			text-align: center;
+			background: #fff;
+			width: 20%;
 			height: 336px;
 			margin: 10px;
 			transition: all 0.2s ease;
 			box-shadow: 0 0 1px #ccc;
 		}
 
-		#products-grid .panel:hover {
-			box-shadow: 0 0 50px #d1d1d1;
+		@media (max-width: 800px) {
+			#products-grid li {
+				width: 100%;
+				display: block;
+			}
 		}
 
-		#products-grid .panel-header {
-			padding-top: 10px;
+		#products-grid li:hover {
+			box-shadow: 0 0 50px #d1d1d1;
 		}
 
 		#products-grid img {
@@ -81,20 +80,16 @@
 		h4 {
 			font-size: 14px;
 		}
-
-		.panel-heading {
-			border: none;
-		}
 	</style>
 @endsection
 
 @section('main')
 	<div class="container-fluid">
 
-		<h1>Products <span id="sub-title"></span></h1>
 
 		<div class="row">
 			<div class="col-md-9" id="products-grid">
+				<h1>Products <span id="sub-title"></span></h1>
 				<div class="alert alert-warning text-center" style="display: none">No items found with these search parameters.</div>
 				<ul>
 					@foreach($products as $product)
@@ -106,24 +101,20 @@
 							data-flavor="@if($product->flavor_id){{ $product->flavor->slug }}@endif"
 							data-offer="{{ ($product->offer) ? 'offers' : 'all' }}"
 						>
-							<article>
-								<div class="panel panel-default">
-									<div class="panel-header">
-										<a href="{{ $product->url_visualizacao  }}">
-											<img src="{{ asset('uploads/products') . '/' . $product->id . '/' . $product->image }}" alt="">
-										</a>
-									</div>
-									<div class="panel-body">
-										<h4>
-											{{ $product->name }}
-											@if(!empty($product->flavor))
-												<span class="cor" style="color: {{ $product->flavor->color }}">{{ $product->flavor->name }}</span>
-											@endif
-										</h4>
-										<div>{!! $product->shopify !!}</div>
-									</div>
-								</div>
-							</article>
+
+
+							<a href="{{ $product->url_visualizacao  }}">
+								<img src="{{ asset('uploads/products') . '/' . $product->id . '/' . $product->image }}" alt="">
+							</a>
+
+							<h4>
+								{{ $product->name }}
+								@if(!empty($product->flavor))
+									<span class="cor" style="color: {{ $product->flavor->color }}">{{ $product->flavor->name }}</span>
+								@endif
+							</h4>
+							<div>{!! $product->shopify !!}</div>
+
 						</li>
 					@endforeach
 				</ul>
