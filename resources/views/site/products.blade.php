@@ -51,6 +51,13 @@
 			float: left;
 		}
 
+		@media(max-width: 800px){
+			#products-grid li {
+				width: 100%;
+				display: block;
+			}
+		}
+
 		#products-grid .panel {
 			text-align: center;
 			height: 336px;
@@ -87,6 +94,40 @@
 		<h1>Products <span id="sub-title"></span></h1>
 
 		<div class="row">
+			<div class="col-md-9" id="products-grid">
+				<div class="alert alert-warning text-center" style="display: none">No items found with these search parameters.</div>
+				<ul>
+					@foreach($products as $product)
+						<li
+							data-line="{{ $product->line->slug }}"
+							data-type="{{ $product->type->slug }}"
+							data-category="{{ $product->productCategories()->select('slug')->get()->implode('slug', ',') }}"
+							data-goal="{{ $product->productGoals()->select('slug')->get()->implode('slug', ',') }}"
+							data-flavor="@if($product->flavor_id){{ $product->flavor->slug }}@endif"
+							data-offer="{{ ($product->offer) ? 'offers' : 'all' }}"
+						>
+							<article>
+								<div class="panel panel-default">
+									<div class="panel-header">
+										<a href="{{ $product->url_visualizacao  }}">
+											<img src="{{ asset('uploads/products') . '/' . $product->id . '/' . $product->image }}" alt="">
+										</a>
+									</div>
+									<div class="panel-body">
+										<h4>
+											{{ $product->name }}
+											@if(!empty($product->flavor))
+												<span class="cor" style="color: {{ $product->flavor->color }}">{{ $product->flavor->name }}</span>
+											@endif
+										</h4>
+										<div>{!! $product->shopify !!}</div>
+									</div>
+								</div>
+							</article>
+						</li>
+					@endforeach
+				</ul>
+			</div>
 			<div class="col-md-3" id="search-col">
 
 				{{-- Search: --}}
@@ -199,40 +240,6 @@
 						</ul>
 					</div>
 				</div>
-			</div>
-			<div class="col-md-9" id="products-grid">
-				<div class="alert alert-warning text-center" style="display: none">No items found with these search parameters.</div>
-				<ul>
-					@foreach($products as $product)
-						<li
-							data-line="{{ $product->line->slug }}"
-							data-type="{{ $product->type->slug }}"
-							data-category="{{ $product->productCategories()->select('slug')->get()->implode('slug', ',') }}"
-							data-goal="{{ $product->productGoals()->select('slug')->get()->implode('slug', ',') }}"
-							data-flavor="@if($product->flavor_id){{ $product->flavor->slug }}@endif"
-							data-offer="{{ ($product->offer) ? 'offers' : 'all' }}"
-						>
-							<article>
-								<div class="panel panel-default">
-									<div class="panel-header">
-										<a href="{{ $product->url_visualizacao  }}">
-											<img src="{{ asset('uploads/products') . '/' . $product->id . '/' . $product->image }}" alt="">
-										</a>
-									</div>
-									<div class="panel-body">
-										<h4>
-											{{ $product->name }}
-											@if(!empty($product->flavor))
-												<span class="cor" style="color: {{ $product->flavor->color }}">{{ $product->flavor->name }}</span>
-											@endif
-										</h4>
-										<div>{!! $product->shopify !!}</div>
-									</div>
-								</div>
-							</article>
-						</li>
-					@endforeach
-				</ul>
 			</div>
 		</div>
 	</div>
