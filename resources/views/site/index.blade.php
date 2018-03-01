@@ -565,10 +565,10 @@
 		</section>
 		<aside id="products-menu">
 			<ul>
-				<li><a href="{{ url('/') }}">Protein<i class="fas fa-angle-right"></i></a></li>
-				<li><a href="{{ url('/') }}">Pre-Workout<i class="fas fa-angle-right"></i></a></li>
-				<li><a href="{{ url('/') }}">Beauty<i class="fas fa-angle-right"></i></a></li>
-				<li><a href="{{ url('/') }}">Stacks<i class="fas fa-angle-right"></i></a></li>
+				<li><a href="{{ url('/products/all/line/supplements/goal/protein/flavor') }}">Protein<i class="fas fa-angle-right"></i></a></li>
+				<li><a href="{{ url('/products/all/line/supplements/goal/pre-workout/flavor') }}">Pre-Workout<i class="fas fa-angle-right"></i></a></li>
+				<li><a href="{{ url('/products/all/line/supplements/goal/beauty/flavor') }}">Beauty<i class="fas fa-angle-right"></i></a></li>
+				<li><a href="{{ url('/products/all/line/supplements/strength-and-recovery/category/flavor') }}">Strength And Recovery<i class="fas fa-angle-right"></i></a></li>
 			</ul>
 			<div>
 				<h1>LET US HELP YOU BUILD YOURSELF</h1>
@@ -648,6 +648,11 @@
 	<script type="text/javascript" src="{{ asset('slick/slick.min.js') }}"></script>
 	<script type="text/javascript">
 		$(document).ready(function () {
+
+			let largura = window.screen.width;
+
+			console.log(largura);
+
 			$('.slick-track').slick({
 				slidesToShow: 5,
 				slidesToScroll: 5,
