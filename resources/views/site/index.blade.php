@@ -569,7 +569,13 @@
 								{{--@if(!empty($gnProduct->flavor))--}}
 								{{--<span class="cor" style="color: {{ $gnProduct->flavor->color }}">{{ $gnProduct->flavor->name }}</span>--}}
 								{{--@endif--}}
-								<div>{!! $gnProduct->shopify !!}</div>
+								<div>
+									@if($gnProduct->out_of_stock)
+										<a href="{{ $gnProduct->link_purchase }}" target="_blank" class="link-purchase">Buy Now</a>
+									@else
+										{!! $gnProduct->shopify !!}
+									@endif
+								</div>
 							</div>
 						</a>
 					@endforeach
