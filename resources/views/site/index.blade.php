@@ -546,7 +546,13 @@
 								{{--@if(!empty($mtProduct->flavor))--}}
 								{{--<span class="cor" style="color: {{ $mtProduct->flavor->color }}">{{ $mtProduct->flavor->name }}</span>--}}
 								{{--@endif--}}
-								<div>{!! $mtProduct->shopify !!}</div>
+								<div>
+									@if($mtProduct->out_of_stock)
+										<a href="{{ $mtProduct->link_purchase }}" target="_blank" class="link-purchase">Buy Now</a>
+									@else
+										{!! $mtProduct->shopify !!}
+									@endif
+								</div>
 							</div>
 						</a>
 					@endforeach

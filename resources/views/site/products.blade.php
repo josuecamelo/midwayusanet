@@ -113,7 +113,14 @@
 									<span class="cor" style="color: {{ $product->flavor->color }}">{{ $product->flavor->name }}</span>
 								@endif
 							</h4>
-							<div>{!! $product->shopify !!}</div>
+
+							<div>
+								@if($product->out_of_stock)
+									<a href="{{ $product->link_purchase }}" target="_blank" class="link-purchase">Buy Now</a>
+								@else
+									{!! $product->shopify !!}
+								@endif
+							</div>
 
 						</li>
 					@endforeach

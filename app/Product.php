@@ -48,6 +48,7 @@ class Product extends Model
 		'nutrients',
 		'nutrient_qty',
 		'nutrient_vd',
+		'out_of_stock'
 	];
 
 

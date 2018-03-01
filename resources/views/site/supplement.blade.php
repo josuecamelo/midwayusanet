@@ -266,6 +266,7 @@
 		#shopify {
 			background: #fff;
 			padding: 30px;
+			text-align: center;
 		}
 
 		#serving-size {
@@ -498,7 +499,13 @@
 
 
 		<div id="shopify">
-			{!! $product->shopify !!}
+			<div>
+				@if($product->out_of_stock)
+					<a href="{{ $product->link_purchase }}" target="_blank" class="link-purchase">Buy Now</a>
+				@else
+					{!! $product->shopify !!}
+				@endif
+			</div>
 		</div>
 
 

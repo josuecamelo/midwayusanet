@@ -201,6 +201,7 @@ class ProductAdminController extends Controller
 	{
 		$inputs = $request->all();
 		$inputs['visibility'] = (!isset($inputs['visibility']) ? 0 : 1);
+		$inputs['out_of_stock'] = (!isset($inputs['out_of_stock']) ? 0 : 1);
 		
 		$inputs['line_id'] = $inputs['line_id'][0];
 		$inputs['type_id'] = $inputs['type_id'][0];
