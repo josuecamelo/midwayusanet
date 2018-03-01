@@ -12493,6 +12493,12 @@ footer h2 {
   color: #fff;
 }
 
+@media (max-width: 700px) {
+  #menu-mobile nav > ul > li > a {
+    font-size: 16px !important;
+  }
+}
+
 #menu-mobile nav a svg {
   float: right;
   margin: 6px 20px;
