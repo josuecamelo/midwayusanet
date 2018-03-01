@@ -560,13 +560,10 @@
 			<div>
 				<div class="slick-track">
 					@foreach($glamourNutritionProducts as $gnProduct)
-						<a href="{{ $gnProduct->url_visualizacao  }}">
-							<div class="product">
+						<div class="product">
+							<a href="{{ $gnProduct->url_visualizacao  }}">
 								<img src="{{ asset('uploads/products') . '/' . $gnProduct->id . '/' . $gnProduct->image }}">
 								<h4>{{ $gnProduct->name }}</h4>
-								{{--@if(!empty($gnProduct->flavor))--}}
-								{{--<span class="cor" style="color: {{ $gnProduct->flavor->color }}">{{ $gnProduct->flavor->name }}</span>--}}
-								{{--@endif--}}
 								<div>
 									@if($gnProduct->out_of_stock)
 										<a href="{{ $gnProduct->link_purchase }}" target="_blank" class="link-purchase">Buy Now</a>
@@ -574,8 +571,8 @@
 										{!! $gnProduct->shopify !!}
 									@endif
 								</div>
-							</div>
-						</a>
+							</a>
+						</div>
 					@endforeach
 				</div>
 			</div>
