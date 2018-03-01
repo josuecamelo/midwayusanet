@@ -248,9 +248,9 @@
 					{{--<a href="https://br.midwaylabsusa.com/"><img src="{{ asset('img/br.svg') }}"--}}
 							{{--alt="Midway Brasil"></a>--}}
 				{{--</li>--}}
-				<li id="search">
-					<i class="fas fa-search"></i><input type="search" class="form-control" placeholder="Search...">
-				</li>
+				{{--<li id="search">--}}
+					{{--<i class="fas fa-search"></i><input type="search" class="form-control" placeholder="Search...">--}}
+				{{--</li>--}}
 			</ul>
 		</div>
 	</div>
