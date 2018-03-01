@@ -372,6 +372,11 @@ main h2, footer h2 {
 	padding: 15px 0 15px 30px;
 	color: #fff;
 }
+@media(max-width: 500px) {
+	#menu-mobile nav > ul > li > a {
+		font-size: 18px;
+	}
+}
 
 #menu-mobile nav a svg {
 	float: right;
