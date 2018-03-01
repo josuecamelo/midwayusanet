@@ -43,6 +43,7 @@ Route::get('/objetivos/{goal}', ['as' => 'objetivo_exibicao', 'uses' => 'GoalCon
 Route::get('/historia', 'HistoryController@index')->name('historia');
 Route::get('/videos', 'VideosController@index')->name('videos');
 Route::get('/charities', 'CharitiesController@index')->name('charities');
+Route::get('/terms-of-use', 'TermsOfUseController@index')->name('terms-of-use');
 
 Route::get('/revenda', 'ResaleController@index')->name('revenda');
 Route::post('/salvar-revenda', 'ResaleController@store')->name('salvar-revenda');
@@ -69,8 +70,8 @@ $router->group(['prefix' => 'science', 'as' => 'science.'], function () use ($ro
 Route::get('/contact', 'ContactController@index')->name('contact');
 Route::post('/contact/send', 'ContactController@send')->name('contact-send');
 
-Route::get('/inscreverse', 'SubscribeController@index')->name('inscreverse');
-Route::post('/inscrever', 'SubscribeController@store')->name('inscrever');
+Route::get('/signup', 'SubscribeController@index')->name('inscreverse');
+Route::post('/subscribe', 'SubscribeController@store')->name('subscribe');
 
 Route::get('/custom-plan', 'CustomPlanController@index')->name('custom-plan');
 Route::post('/custom-plan/send', 'CustomPlanController@send')->name('custom-plan-send');

@@ -309,14 +309,15 @@
 		</div>
 		<div class="col-md-3">
 			<h2>STAY IN TOUCH</h2>
-			<form>
+			<form method="post" action="{{ route('subscribe') }}">
+				{{ csrf_field() }}
 				<div class="form-group">
 					<label for="first-name-contact">First Name</label>
-					<input type="text" class="form-control" id="first-name-contact">
+					<input type="text" class="form-control" name="name" id="first-name-contact">
 				</div>
 				<div class="form-group">
 					<label for="email-contact">Email address</label>
-					<input type="email" class="form-control" id="email-contact">
+					<input type="email" class="form-control" name="email" id="email-contact">
 				</div>
 				<button type="submit" class="btn btn-danger">Subscribe <i class="fas fa-angle-right"></i></button>
 			</form>
@@ -345,19 +346,19 @@
 		</div>
 		<div class="col-md-6">
 			<ul>
-				<li><a href="/">Privacy Policy</a></li>
-				<li><a href="/">Terms of Use</a></li>
-				<li><a href="/">Sitemap</a></li>
-				<li><a href="/">Affiliate</a></li>
+				{{--<li><a href="/">Privacy Policy</a></li>--}}
+				<li><a href="{{ route('terms-of-use') }}">Terms of Use</a></li>
+				{{--<li><a href="/">Sitemap</a></li>--}}
+				{{--<li><a href="/">Affiliate</a></li>--}}
 			</ul>
 		</div>
 	</div>
 	<div id="deep-footer">
 		<div class="row">
 			<div class="col-md-12">
-				<small>* These statements have not been evaluated by the Food and Drug Administration. This product is
-					not intended to diagnose, treat, cure or prevent any disease.
-				</small>
+				<div class="text">
+					* These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure or prevent any disease.
+				</div>
 			</div>
 		</div>
 	</div>

@@ -29,12 +29,12 @@ class SubscribeController extends Controller
 		if ($subscribe->id != null)
 		{
 			$subscribe->save();
-			Flash::success('Obrigado por se inscrever!');
+			Flash::success('Thanks for signing up!');
 		}
 		else
 		{
-			Flash::error('Não foi possível fazer a inscrição. Tente novamente.');
+			Flash::error('Could not sign up. Try again.');
 		}
-		return redirect()->route('inscreverse');
+		return redirect()->route('index');
 	}
 }

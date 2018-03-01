@@ -410,10 +410,17 @@
 			color: red;
 		}
 
+		.alert {
+			margin-top: 30px;
+		}
 	</style>
 @endsection
 
 @section('main')
+
+	<div class="container text-center">
+		@include('flash::message')
+	</div>
 
 	{{-- Carousel: --}}
 
