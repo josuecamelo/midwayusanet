@@ -45,8 +45,8 @@
 						</a>
 						<span class="data">{{dataMes($p->date)}}</span>
 						<a href="{{route('blog.see',$p->slug)}}">
-						<h3 class="h3">{{$p->title}}</h3>
-						Read More <i class="fas fa-angle-right"></i>
+							<h3 class="h3">{{$p->title}}</h3>
+							Read More <i class="fas fa-angle-right"></i>
 						</a>
 					</div>
 				@endforeach

@@ -537,15 +537,12 @@
 		<section id="products">
 			<h2>Military Trail</h2>
 			<div>
-				<div class="slick-track" role="listbox">
+				<div class="slick-track">
 					@foreach($militaryTrailProducts as $mtProduct)
-						<a href="{{ $mtProduct->url_visualizacao  }}">
-							<div class="product">
+						<div class="product">
+							<a href="{{ $mtProduct->url_visualizacao  }}">
 								<img src="{{ asset('uploads/products') . '/' . $mtProduct->id . '/' . $mtProduct->image }}">
 								<h4>{{ $mtProduct->name }}</h4>
-								{{--@if(!empty($mtProduct->flavor))--}}
-								{{--<span class="cor" style="color: {{ $mtProduct->flavor->color }}">{{ $mtProduct->flavor->name }}</span>--}}
-								{{--@endif--}}
 								<div>
 									@if($mtProduct->out_of_stock)
 										<a href="{{ $mtProduct->link_purchase }}" target="_blank" class="link-purchase">Buy Now</a>
@@ -553,14 +550,15 @@
 										{!! $mtProduct->shopify !!}
 									@endif
 								</div>
-							</div>
-						</a>
+							</a>
+						</div>
 					@endforeach
 				</div>
 			</div>
+
 			<h2>Glamour Nutrition</h2>
 			<div>
-				<div class="slick-track" role="listbox">
+				<div class="slick-track">
 					@foreach($glamourNutritionProducts as $gnProduct)
 						<a href="{{ $gnProduct->url_visualizacao  }}">
 							<div class="product">
