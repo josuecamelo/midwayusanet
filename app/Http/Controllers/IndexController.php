@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\BlogPost;
 use App\Product;
 use App\Video;
+use Illuminate\Http\Request;
 
 class IndexController extends Controller
 {
@@ -44,4 +45,8 @@ class IndexController extends Controller
 		
 		return view('site.index', compact('militaryTrailProducts','glamourNutritionProducts', 'destak','posts', 'videos'));
 	}
+
+	public function finder(Request $request){
+	    dd($request->all());
+    }
 }

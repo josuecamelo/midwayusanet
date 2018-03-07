@@ -51,6 +51,8 @@ Route::get('/terms-of-use', 'TermsOfUseController@index')->name('terms-of-use');
 Route::get('/revenda', 'ResaleController@index')->name('revenda');
 Route::post('/salvar-revenda', 'ResaleController@store')->name('salvar-revenda');
 
+Route::any('/finder',['as' => 'site.finder', 'uses' => 'IndexController@finder']);
+
 $router->group(['prefix' => 'lojas', 'as' => 'lojas.'], function () use ($router)
 {
 	$router->get('/', ['as' => 'index', 'uses' => 'StoreController@index']);
