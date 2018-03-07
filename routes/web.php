@@ -25,7 +25,7 @@ Route::redirect('/products/l-carnitine-strike-lemon-flavor', '/product/l-carniti
 Route::redirect('/products/military-shot', '/product/military-shot', 301);
 Route::redirect('/products/ripped-hawk', '/product/ripped-hawk', 301);
 Route::redirect('/products/thermogenic-blast', '/product/thermogenic-blast', 301);
-Route::redirect('/products/whey-protein', '/product/whey-proten/milk-chocolate', 301);
+Route::redirect('/products/whey-protein', '/product/whey-protein/milk-chocolate', 301);
 
 
 /**/
