@@ -26,6 +26,10 @@
 		#finder .read-more {
 			float: right;
 		}
+
+		#finder .row {
+			margin-bottom: 30px;
+		}
 	</style>
 @endsection
 
@@ -45,13 +49,13 @@
 					<a href="{{ route('produto_exibicao', [$r->slug]) }}">
 						<h2>{{ $r->name }} <span>{{ $r->presentation }}</span></h2>
 					</a>
-					<p>{{ str_limit($r->description, 300, '...') }}</p>
-					<div class="read-more">
+					<p>
+						{{ str_limit($r->description, 300, '...') }}
 						<a href="{{ route('produto_exibicao', [$r->slug]) }}">
 							Read More
 							<i class="fas fa-angle-right"></i>
 						</a>
-					</div>
+					</p>
 				</div>
 			</div>
 		@endforeach
