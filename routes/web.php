@@ -17,6 +17,11 @@ Route::redirect('/products/anabolic-arsenal-orange-flavor', '/product/anabolic-a
 Route::redirect('/products/anti-age', '/product/anti-age', 301);
 Route::redirect('/products/atp-enhancer-overload', '/product/atp-enhancer-overload/grape', 301);
 Route::redirect('/products/beauty-sleep', '/product/beauty-sleep', 301);
+Route::redirect('/products/creatine', '/product/creatine', 301);
+Route::redirect('/products/ereforce', '/product/ereforce', 301);
+Route::redirect('/products/glamour-collagen', '/product/glamour-collagen/berry-passion', 301);
+Route::redirect('/products/glamour-protein-chocolate', '/product/glamour-protein/chocolate', 301);
+Route::redirect('/products/hair-skin-and-nails', '/product/hair-skin-and-nails', 301);
 
 
 /**/
