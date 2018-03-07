@@ -13,8 +13,8 @@
 
 /* Ajustes de rotas (SEO) */
 
-Route::redirect('/products/anti-age', '/product/anti&age', 301);
-Route::redirect('/products/beauty-sleep', '/product/beauty&sleep', 301);
+Route::redirect('/products/anabolic-arsenal-orange-flavor', '/product/anabolic-arsenal/orange', 301);
+
 
 /**/
 
