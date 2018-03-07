@@ -23,6 +23,7 @@ Route::redirect('/products/glamour-collagen', '/product/glamour-collagen/berry-p
 Route::redirect('/products/glamour-protein-chocolate', '/product/glamour-protein/chocolate', 301);
 Route::redirect('/products/l-carnitine-strike-lemon-flavor', '/product/l-carnitine-strike/lemon', 301);
 Route::redirect('/products/military-shot', '/product/military-shot', 301);
+Route::redirect('/products/ripped-hawk', '/product/ripped-hawk', 301);
 
 
 /**/
