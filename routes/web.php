@@ -19,6 +19,7 @@ Route::redirect('/products/atp-enhancer-overload', '/product/atp-enhancer-overlo
 Route::redirect('/products/beauty-sleep', '/product/beauty-sleep', 301);
 Route::redirect('/products/creatine', '/product/creatine', 301);
 Route::redirect('/products/ereforce', '/product/ereforce', 301);
+Route::redirect('/products/glamour-collagen', '/product/glamour-collagen/berry-passion', 301);
 
 
 /**/
