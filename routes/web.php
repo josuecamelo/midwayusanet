@@ -20,8 +20,13 @@ Route::redirect('/products/beauty-sleep', '/product/beauty-sleep', 301);
 Route::redirect('/products/creatine', '/product/creatine', 301);
 Route::redirect('/products/ereforce', '/product/ereforce', 301);
 Route::redirect('/products/glamour-collagen', '/product/glamour-collagen/berry-passion', 301);
-Route::redirect('/products/glamour-protein-chocolate', '/product/glamour-protein/chocolate', 301);
 Route::redirect('/products/hair-skin-and-nails', '/product/hair-skin-and-nails', 301);
+Route::redirect('/products/glamour-protein-chocolate', '/product/glamour-protein/chocolate', 301);
+Route::redirect('/products/l-carnitine-strike-lemon-flavor', '/product/l-carnitine-strike/lemon', 301);
+Route::redirect('/products/military-shot', '/product/military-shot', 301);
+Route::redirect('/products/ripped-hawk', '/product/ripped-hawk', 301);
+Route::redirect('/products/thermogenic-blast', '/product/thermogenic-blast', 301);
+Route::redirect('/products/whey-protein', '/product/whey-protein/milk-chocolate', 301);
 
 
 /**/
