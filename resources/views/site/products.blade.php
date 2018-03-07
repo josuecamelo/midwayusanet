@@ -102,7 +102,6 @@
 							data-offer="{{ ($product->offer) ? 'offers' : 'all' }}"
 						>
 
-
 							<a href="{{ $product->url_visualizacao  }}">
 								<img src="{{ asset('uploads/products') . '/' . $product->id . '/' . $product->image }}" alt="">
 							</a>
