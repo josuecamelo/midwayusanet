@@ -51,6 +51,7 @@ class IndexController extends Controller
 	    $p = $request->all();
 
 	    $res = $productModel
+            ->distinct()
             ->select('products.*')
             ->leftJoin('flavors', 'flavors.id', '=', 'products.flavor_id')
             ->leftJoin('product_topics', 'product_topics.product_id', '=', 'products.flavor_id')
