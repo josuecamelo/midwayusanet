@@ -245,12 +245,12 @@
 					</nav>
 				</li>
 				{{--<li>--}}
-					{{--<a href="https://br.midwaylabsusa.com/"><img src="{{ asset('img/br.svg') }}"--}}
-							{{--alt="Midway Brasil"></a>--}}
+				{{--<a href="https://br.midwaylabsusa.com/"><img src="{{ asset('img/br.svg') }}"--}}
+				{{--alt="Midway Brasil"></a>--}}
 				{{--</li>--}}
 				<li id="search">
 					<i class="fas fa-search"></i>
-					{!! Form::open(['route'=> ['site.finder']]) !!}
+					{!! Form::open(['route'=> ['site.finder'], 'method'=>'get']) !!}
 						<input type="search" name="q" class="form-control" placeholder="Search...">
 					{!! Form::close() !!}
 				</li>
