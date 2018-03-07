@@ -27,7 +27,7 @@
 		<nav id="nav-main" role="navigation">
 			<ul>
 				<li>
-					<a>Women's Products</a>
+					<a>Beauty Products</a>
 					<div>
 						<ul>
 							<li>
@@ -62,7 +62,7 @@
 					</div>
 				</li>
 				<li>
-					<a>Men's Products</a>
+					<a>Fitness Products</a>
 					<div>
 						<ul>
 							<li>
@@ -164,7 +164,7 @@
 					<nav>
 						<ul>
 							<li>
-								<a class="mm-sub">Women's Products<i class="fas fa-plus"></i></a>
+								<a class="mm-sub">Beauty Products<i class="fas fa-plus"></i></a>
 								<ul>
 									<li>
 										<h2>POPULAR CATEGORIES</h2>
@@ -187,7 +187,7 @@
 								</ul>
 							</li>
 							<li>
-								<a class="mm-sub">Men's Products<i class="fas fa-plus"></i></a>
+								<a class="mm-sub">Fitness Products<i class="fas fa-plus"></i></a>
 								<ul>
 									<li>
 										<h2>POPULAR CATEGORIES</h2>
