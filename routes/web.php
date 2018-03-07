@@ -24,6 +24,7 @@ Route::redirect('/products/glamour-protein-chocolate', '/product/glamour-protein
 Route::redirect('/products/l-carnitine-strike-lemon-flavor', '/product/l-carnitine-strike/lemon', 301);
 Route::redirect('/products/military-shot', '/product/military-shot', 301);
 Route::redirect('/products/ripped-hawk', '/product/ripped-hawk', 301);
+Route::redirect('/products/thermogenic-blast', '/product/thermogenic-blast', 301);
 
 
 /**/
