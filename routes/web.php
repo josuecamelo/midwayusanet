@@ -20,6 +20,7 @@ Route::redirect('/products/beauty-sleep', '/product/beauty-sleep', 301);
 Route::redirect('/products/creatine', '/product/creatine', 301);
 Route::redirect('/products/ereforce', '/product/ereforce', 301);
 Route::redirect('/products/glamour-collagen', '/product/glamour-collagen/berry-passion', 301);
+Route::redirect('/products/glamour-protein-chocolate', '/product/glamour-protein/chocolate', 301);
 
 
 /**/
