@@ -59,14 +59,34 @@ class IndexController extends Controller
             ->where(function ($query) use ($p) {
                 $part = explode(" ", $p['q']);
                if(count($part) == 1){
-                    $query
+                    /*$query
                         ->orWhere( DB::raw("concat(products.name, ' ', IFNULL(products.last_name,''), ' ' , products.presentation, ' ', IFNULL(flavors.name, ''))"), 'like', '%' . $p['q'] . '%')
-                        ->orWhere( DB::raw("concat(product_topics.topic_description, ' ', product_topics.description)"), 'like', '%' . $p['q'] . '%');
+                        ->orWhere( DB::raw("concat(product_topics.topic_description, ' ', product_topics.description)"), 'like', '%' . $p['q'] . '%');*/
+                   $fields = [
+                       'products.name',
+                       'products.last_name',
+                       'products.presentation',
+                       'products.description',
+                       'flavors.name',
+                       'product_topics.topic_description',
+                       'product_topics.description'
+                   ];
+
+                   $sql ="";
+
+                   foreach($part as $key=> $item){
+                       foreach($fields as $f){
+                           $sql.= DB::raw("lower(trim($f)) LIKE '%" .strtolower(trim($item)). "%' OR ");
+                       }
+                   }
+
+                   $query->whereRaw(DB::raw(substr($sql, 0, -3)));
                }elseif(count($part) > 1){
                    $fields = [
                        'products.name',
                        'products.last_name',
                        'products.presentation',
+                       'products.description',
                        'flavors.name',
                        'product_topics.topic_description',
                        'product_topics.description'
