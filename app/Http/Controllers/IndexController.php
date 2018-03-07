@@ -6,6 +6,7 @@ use App\BlogPost;
 use App\Product;
 use App\Video;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class IndexController extends Controller
 {
@@ -46,7 +47,43 @@ class IndexController extends Controller
 		return view('site.index', compact('militaryTrailProducts','glamourNutritionProducts', 'destak','posts', 'videos'));
 	}
 
-	public function finder(Request $request){
-	    dd($request->all());
+	public function finder(Request $request, Product $productModel){
+	    $p = $request->all();
+
+	    $res = $productModel
+            ->select('products.*')
+            ->leftJoin('flavors', 'flavors.id', '=', 'products.flavor_id')
+            ->leftJoin('product_topics', 'product_topics.product_id', '=', 'products.flavor_id')
+            ->where('products.visibility', 1)
+            ->where(function ($query) use ($p) {
+                $part = explode(" ", $p['q']);
+               if(count($part) == 1){
+                    $query
+                        ->orWhere( DB::raw("concat(products.name, ' ', IFNULL(products.last_name,''), ' ' , products.presentation, ' ', IFNULL(flavors.name, ''))"), 'like', '%' . $p['q'] . '%')
+                        ->orWhere( DB::raw("concat(product_topics.topic_description, ' ', product_topics.description)"), 'like', '%' . $p['q'] . '%');
+               }elseif(count($part) > 1){
+                   $fields = [
+                       'products.name',
+                       'products.last_name',
+                       'products.presentation',
+                       'flavors.name',
+                       'product_topics.topic_description',
+                       'product_topics.description'
+                   ];
+
+                   $sql ="";
+
+                   foreach($part as $key=> $item){
+                       foreach($fields as $f){
+                           $sql.= DB::raw("lower(trim($f)) LIKE '%" .strtolower(trim($item)). "%' OR ");
+                       }
+                   }
+
+                   $query->whereRaw(DB::raw(substr($sql, 0, -3)));
+               }
+            })
+            ->get();
+
+	   dd($res);
     }
 }
