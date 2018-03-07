@@ -17,6 +17,7 @@ Route::redirect('/products/anabolic-arsenal-orange-flavor', '/product/anabolic-a
 Route::redirect('/products/anti-age', '/product/anti-age', 301);
 Route::redirect('/products/atp-enhancer-overload', '/product/atp-enhancer-overload/grape', 301);
 Route::redirect('/products/beauty-sleep', '/product/beauty-sleep', 301);
+Route::redirect('/products/creatine', '/product/creatine', 301);
 
 
 /**/
