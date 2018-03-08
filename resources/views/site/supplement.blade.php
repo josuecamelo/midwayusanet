@@ -572,7 +572,7 @@
 		@if(count($flavors) > 0)
 			<div id="sabores">
 				<div class="container">
-					<h2>Disponível {{ count($flavors) > 1 ? 'nos sabores' : 'no sabor' }}</h2>
+					<h2>Available in flavor{{ count($flavors) > 1 ? 's' : '' }}</h2>
 					<div class="row-sabores">
 						@foreach($flavors as $flavor)
 							<?php
@@ -600,7 +600,7 @@
 
 		@if($product->productRelateds)
 			<div id="outros-produtos">
-				<h2>Produtos relacionados</h2>
+				<h2>Related Products</h2>
 				<div class="slider-nav">
 					@foreach($product->productRelateds as $produto)
 						<div>
