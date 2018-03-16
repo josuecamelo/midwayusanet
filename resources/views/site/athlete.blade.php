@@ -43,6 +43,19 @@
 			text-align: center;
 		}
 
+		#bio .container div {
+			column-count: 2;
+			column-gap: 40px;
+			text-align: justify;
+			padding-bottom: 30px;
+		}
+
+		@media (max-width: 600px) {
+			#bio .container div {
+				columns: auto;
+			}
+		}
+
 		#bio h1 {
 			margin: 0 0 20px;
 			color: #777;
@@ -168,7 +181,7 @@
 						<h1>{{ $athlete->name }}<span>{{ $athlete->last_name }}</span></h1>
 						<div>
 							<h2>{{ $athlete->profession }}</h2>
-							<p>{!! nl2br(e($athlete->about)) !!}</p>
+							<p>{!! nl2br($athlete->about) !!}</p>
 							<div id="redes-sociais">
 								<ul>
 									@if($athlete->facebook)
@@ -193,7 +206,7 @@
 			<div id="bio">
 				<div class="container">
 					<h1>Bio</h1>
-					<p>{!! nl2br($athlete->bio) !!}</p>
+					<div>{!! nl2br($athlete->bio) !!}</div>
 				</div>
 			</div>
 		@endif
