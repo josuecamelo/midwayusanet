@@ -84,7 +84,7 @@
 				<p>Military Trail is the line of products created to honor those who always have to be physically prepared to defend us. While risking their lives daily, members of the military must be constantly ready for any challenge.</p>
 				<p>In honor of the brave men and women who are active duty or veterans of the U.S. Military and law enforcement. 5% of Military Trail’s U.S. gross sales will be donated to charities that support our active service members, veterans, law enforcement and their families.*</p>
 				<p>All Midway Labs USA products are manufactured in GMP (Good Manufacturing Practices) and FDA registered facilities under rigorous quality control and supervised by a dynamic and experienced team of scientists, formulators and product managers. As a result our products are recognized as one of the top dietary supplement brands worldwide.</p>
-				<p><a href="{{ route('team-midway') }}">Team Midway</a></p>
+				<p><a href="{{ route('team-midway.list') }}">Team Midway</a></p>
 			</div>
 		</div>
 		<div class="row">
