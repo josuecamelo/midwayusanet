@@ -168,7 +168,7 @@
 						<h1>{{ $athlete->name }}<span>{{ $athlete->last_name }}</span></h1>
 						<div>
 							<h2>{{ $athlete->profession }}</h2>
-							<p>{!! $athlete->about !!}</p>
+							<p>{{{ $athlete->about }}}</p>
 							<div id="redes-sociais">
 								<ul>
 									@if($athlete->facebook)
