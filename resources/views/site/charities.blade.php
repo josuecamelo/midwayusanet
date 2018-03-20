@@ -44,7 +44,7 @@
 
 			<div class="row">
 				<div class="col-md-3">
-					<a href="https://www.wwfs.org/" target="_blank"><img src="http://midwaylabsusa.com/wp-content/uploads/2017/05/Wound.png" alt="Wounded Warriors Family Support" class="img-circular"></a>
+					<a href="https://www.wwfs.org/" target="_blank"><img src="{{ asset('img/charities/wounded.png') }}" alt="Wounded Warriors Family Support" class="img-circular"></a>
 				</div>
 				<div class="col-md-9">
 					<h3>Wounded Warriors Family Support</h3>
@@ -58,7 +58,7 @@
 
 			<div class="row">
 				<div class="col-md-3">
-					<a href="https://www.asymca.org/" target="_blank"><img src="http://midwaylabsusa.com/wp-content/uploads/2017/05/TheY.png" alt="Armed Services YMCA of the USA (“ASYMCA”)" class="img-circular"></a>
+					<a href="https://www.asymca.org/" target="_blank"><img src="{{ asset('img/charities/armed.png') }}" alt="Armed Services YMCA of the USA (“ASYMCA”)" class="img-circular"></a>
 				</div>
 				<div class="col-md-9">
 					<h3>Armed Services YMCA of the USA (“ASYMCA”)</h3>
@@ -71,7 +71,7 @@
 
 			<div class="row">
 				<div class="col-md-3">
-					<a href="http://www.racingforheroes.org/" target="_blank"><img src="http://midwaylabsusa.com/wp-content/uploads/2017/05/RACER.png" alt="Racing For Heroes, Inc." class="img-circular"></a>
+					<a href="http://www.racingforheroes.org/" target="_blank"><img src="{{ asset('img/charities/racing.png') }}" alt="Racing For Heroes, Inc." class="img-circular"></a>
 				</div>
 				<div class="col-md-9">
 					<h3>Racing For Heroes, Inc.</h3>
@@ -84,7 +84,7 @@
 
 			<div class="row">
 				<div class="col-md-3">
-					<a href="http://www.militaryfamily.org/" target="_blank"><img src="http://midwaylabsusa.com/wp-content/uploads/2017/05/NMFA_Final.png" alt="National Military Family Association" class="img-circular"></a>
+					<a href="http://www.militaryfamily.org/" target="_blank"><img src="{{ asset('img/charities/national.png') }}" alt="National Military Family Association" class="img-circular"></a>
 				</div>
 				<div class="col-md-9">
 					<h3>National Military Family Association</h3>
@@ -97,7 +97,7 @@
 
 			<div class="row">
 				<div class="col-md-3">
-					<a href="http://labsforliberty.org/" target="_blank"><img src="http://midwaylabsusa.com/wp-content/uploads/2017/05/LAB4.png" alt="Labs 4 Liberty" class="img-circular"></a>
+					<a href="http://labsforliberty.org/" target="_blank"><img src="{{ asset('img/charities/labs.png') }}" alt="Labs 4 Liberty" class="img-circular"></a>
 				</div>
 				<div class="col-md-9">
 					<h3>Labs 4 Liberty</h3>
@@ -110,7 +110,7 @@
 
 			<div class="row">
 				<div class="col-md-3">
-					<a href="https://americanheroadventures.org/" target="_blank"><img src="http://midwaylabsusa.com/wp-content/uploads/2017/05/Adventure.png" alt="American Hero Adventures" class="img-circular"></a>
+					<a href="https://americanheroadventures.org/" target="_blank"><img src="{{ asset('img/charities/american.png') }}" alt="American Hero Adventures" class="img-circular"></a>
 				</div>
 				<div class="col-md-9">
 					<h3>American Hero Adventures</h3>
@@ -123,7 +123,7 @@
 
 			<div class="row">
 				<div class="col-md-3">
-					<a href="https://www.22kill.com/" target="_blank"><img src="http://midwaylabsusa.com/wp-content/uploads/2017/05/22K.png" alt="22Kill" class="img-circular"></a>
+					<a href="https://www.22kill.com/" target="_blank"><img src="{{ asset('img/charities/22kill.png') }}" alt="22Kill" class="img-circular"></a>
 				</div>
 				<div class="col-md-9">
 					<h3>22Kill</h3>
@@ -137,7 +137,7 @@
 
 			<div class="row">
 				<div class="col-md-3">
-					<a href="http://honoringamericaswarriors.org/" target="_blank"><img src="http://midwaylabsusa.com/wp-content/uploads/2017/05/HAW.png" alt="Honoring America’s Warriors" class="img-circular"></a>
+					<a href="http://honoringamericaswarriors.org/" target="_blank"><img src="{{ asset('img/charities/honoring.png') }}" alt="Honoring America’s Warriors" class="img-circular"></a>
 				</div>
 				<div class="col-md-9">
 					<h3>Honoring America’s Warriors</h3>
@@ -152,7 +152,7 @@
 
 			<div class="row">
 				<div class="col-md-3">
-					<a href="http://www.vetdogs.org/" target="_blank"><img src="http://midwaylabsusa.com/wp-content/uploads/2017/05/AVD.png" alt="American Veteran Dog" class="img-circular"></a>
+					<a href="http://www.vetdogs.org/" target="_blank"><img src="{{ asset('img/charities/american-veteran-dogs.png') }}" alt="American Veteran Dogs" class="img-circular"></a>
 				</div>
 				<div class="col-md-9">
 					<h3>American Veteran Dog</h3>
@@ -165,7 +165,7 @@
 
 			<div class="row">
 				<div class="col-md-3">
-					<a href="http://www.connectedwarriors.org/" target="_blank"><img src="http://midwaylabsusa.com/wp-content/uploads/2017/05/CW.png" alt="Connected Warriors" class="img-circular"></a>
+					<a href="http://www.connectedwarriors.org/" target="_blank"><img src="{{ asset('img/charities/cw.png') }}" alt="Connected Warriors" class="img-circular"></a>
 				</div>
 				<div class="col-md-9">
 					<h3>Connected Warriors</h3>
@@ -178,7 +178,7 @@
 
 			<div class="row">
 				<div class="col-md-3">
-					<a href="https://www.nationalcops.org/" target="_blank"><img src="http://midwaylabsusa.com/wp-content/uploads/2017/05/CPS.png" alt="C.O.P.S - Concerns of Police Survivors" class="img-circular"></a>
+					<a href="https://www.nationalcops.org/" target="_blank"><img src="{{ asset('img/charities/cps.png') }}" alt="C.O.P.S - Concerns of Police Survivors" class="img-circular"></a>
 				</div>
 				<div class="col-md-9">
 					<h3>C.O.P.S - Concerns of Police Survivors</h3>
