@@ -38,7 +38,7 @@
 			<div class="row">
 				<div class="col-md-12">
 					<p><b>Military Trail</b> is the line of products created to honor those who always have to be physically prepared to defend us. While risking their lives daily they must always be ready for any challenge.</p>
-					<p>In honor of the brave men and women who are active-duty or veterans of the U.S. Military and law enforcement. 5% of u.s. gross sales proceeds for military trail will be donated to charities that support our active service members, veterans, law enforcement and their families.*</p>
+					<p>In honor of the brave men and women who are active-duty or veterans of the U.S. Military and law enforcement. 5% of u.s. gross sales proceeds for Military Trail will be donated to charities that support our active service members, veterans, law enforcement and their families.*</p>
 				</div>
 			</div>
 
