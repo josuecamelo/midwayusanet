@@ -7,6 +7,10 @@
 
 		/* Carousel: */
 
+		#carousel-main img {
+			width: 100%;
+		}
+
 		.carousel-fade .carousel-inner .item {
 			-webkit-transition-property: opacity;
 			transition-property: opacity;
@@ -74,6 +78,7 @@
 			margin: 2px 2px 2px 0;
 			display: block;
 			position: relative;
+			width: 100%;
 		}
 
 		@media (max-width: 900px) {
@@ -110,7 +115,7 @@
 		}
 
 		#mini-banners a img {
-			width: 100%;
+			width: 100% !important;
 			transition: all .2s ease-in-out;
 		}
 
@@ -434,19 +439,19 @@
 			<div class="item active">
 				<picture>
 					<source media="(min-width: 480px)" srcset="{{ asset('img/home/banners/ArnoldBanner.jpg') }}">
-					<img src="{{ asset('img/home/banners/ArnoldBanner-mobile.jpg') }}" class="img-responsive">
+					<img src="{{ asset('img/home/banners/ArnoldBanner-mobile.jpg') }}">
 				</picture>
 			</div>
 			<div class="item">
 				<picture>
 					<source media="(min-width: 480px)" srcset="{{ asset('img/home/banners/AthleteBanner.jpg') }}">
-					<img src="{{ asset('img/home/banners/AthleteBanner-mobile.jpg') }}" class="img-responsive">
+					<img src="{{ asset('img/home/banners/AthleteBanner-mobile.jpg') }}">
 				</picture>
 			</div>
 			<div class="item">
 				<picture>
 					<source media="(min-width: 480px)" srcset="{{ asset('img/home/banners/ProductBanner.jpg') }}">
-					<img src="{{ asset('img/home/banners/ProductBanner-mobile.jpg') }}" class="img-responsive">
+					<img src="{{ asset('img/home/banners/ProductBanner-mobile.jpg') }}">
 				</picture>
 			</div>
 		</div>
