@@ -24,6 +24,11 @@
 		#charities p {
 			text-align: justify;
 		}
+
+		#charities h1 span {
+			display: block;
+			font-size: 30px;
+		}
 	</style>
 @endsection
 
@@ -31,8 +36,11 @@
 
 	<article id="charities">
 
-		<h1 class="bgParallax animated fadeInDown" data-speed="5" data-x="100">Giving Back</h1>
-<!-- Midway: -->
+		<h1 class="bgParallax animated fadeInDown" data-speed="5" data-x="100">
+			Giving Back
+			<span>Home of the free because of the brave</span>
+		</h1>
+
 		<div class="container animated fadeInUp">
 
 			<div class="row">
