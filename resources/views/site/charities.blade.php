@@ -32,7 +32,7 @@
 	<article id="charities">
 
 		<h1 class="bgParallax animated fadeInDown" data-speed="5" data-x="100">Giving Back</h1>
-
+<!-- Midway -->
 		<div class="container animated fadeInUp">
 
 			<div class="row">
