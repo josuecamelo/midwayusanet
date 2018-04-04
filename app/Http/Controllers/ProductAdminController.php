@@ -12,6 +12,7 @@ use App\ProductPortion;
 use App\ProductTopic;
 use App\Type;
 use App\Utils\UploadImagem;
+use App\Utils\Utils;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Redirect;
@@ -87,6 +88,7 @@ class ProductAdminController extends Controller
 	{
 		$upload = false;
 		$inputs = $request->all();
+		$inputs['video'] = Utils::gerarUrlVideo($inputs['video']);
 		$inputs['visibility'] = (!isset($inputs['visibility']) ? 0 : 1);
 		$inputs['out_of_stock'] = (!isset($inputs['out_of_stock']) ? 0 : 1);
 		$inputs['coming_soon'] = (!isset($inputs['coming_soon']) ? 0 : 1);
@@ -202,6 +204,7 @@ class ProductAdminController extends Controller
 	public function update(Request $request, $id)
 	{
 		$inputs = $request->all();
+		$inputs['video'] = Utils::gerarUrlVideo($inputs['video']);
 		$inputs['visibility'] = (!isset($inputs['visibility']) ? 0 : 1);
 		$inputs['out_of_stock'] = (!isset($inputs['out_of_stock']) ? 0 : 1);
 		$inputs['coming_soon'] = (!isset($inputs['coming_soon']) ? 0 : 1);

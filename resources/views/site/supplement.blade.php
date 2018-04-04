@@ -457,7 +457,6 @@
 			outline: none;
 			text-decoration: none;
 		}
-
 	</style>
 @endsection
 
@@ -498,6 +497,8 @@
 		</div>
 
 
+		{{-- Shopify --}}
+
 		<div id="shopify">
 			<div>
 				@if($product->out_of_stock)
@@ -507,6 +508,17 @@
 				@endif
 			</div>
 		</div>
+
+
+		{{-- Vídeos --}}
+
+		@if($product->video)
+			<div id="video">
+				<div class="embed-responsive embed-responsive-16by9">
+				<iframe src="{{ $product->video }}"  class="embed-responsive-item" width="640" height="360" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				</div>
+			</div>
+		@endif
 
 
 		{{-- Tabela nutricional --}}
@@ -576,7 +588,7 @@
 					<div class="row-sabores">
 						@foreach($flavors as $flavor)
 							<?php
-//							$slug = $flavor->last_name_slug ? $flavor->slug . '&' . $flavor->last_name_slug : $flavor->slug;
+							//							$slug = $flavor->last_name_slug ? $flavor->slug . '&' . $flavor->last_name_slug : $flavor->slug;
 							$slug = $flavor->slug;
 							$product_flavor = isset($flavor->flavor->id) ? $flavor->flavor->slug : null;
 							$url = route('produto_exibicao', [$slug, $product_flavor])
