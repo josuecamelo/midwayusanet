@@ -97,40 +97,40 @@
 					</div>
 				</li>
 				<li>
-					<a>Shop All Products</a>
-					<div>
-						<ul>
-							<li>
-								<h2>POPULAR CATEGORIES</h2>
-								<ul>
-									{!! main_menu_helper(3,1) !!}
-									<li>
-										<a href="{{ route('products.list') }}">VIEW ALL PRODUCTS</a>
-									</li>
-								</ul>
-							</li>
-							<li>
-								<h2>POPULAR PRODUCTS</h2>
-								<ul>
-									{!! main_menu_helper(3,2) !!}
-									<li>
-										<a href="{{ route('products.list') }}">VIEW ALL PRODUCTS</a>
-									</li>
-								</ul>
-							</li>
-							<li>
-								<h2>Featured Stack</h2>
-								<div id="featured-stack">
-									{!!  main_menu_helper(3,3) !!}
-								</div>
-							</li>
-							<li class="ads">
-								<div><a href="{{ route('custom-plan') }}" title=""><img src="{{ asset('img/build.jpg') }}"></a>
-								</div>
-								<div><a href="{{ route('quality') }}" title=""><img src="{{ asset('img/quality.jpg') }}"></a></div>
-							</li>
-						</ul>
-					</div>
+					<a href="{{ route('products.list') }}">Shop All Products</a>
+					{{--<div>--}}
+						{{--<ul>--}}
+							{{--<li>--}}
+								{{--<h2>POPULAR CATEGORIES</h2>--}}
+								{{--<ul>--}}
+									{{--{!! main_menu_helper(3,1) !!}--}}
+									{{--<li>--}}
+										{{--<a href="{{ route('products.list') }}">VIEW ALL PRODUCTS</a>--}}
+									{{--</li>--}}
+								{{--</ul>--}}
+							{{--</li>--}}
+							{{--<li>--}}
+								{{--<h2>POPULAR PRODUCTS</h2>--}}
+								{{--<ul>--}}
+									{{--{!! main_menu_helper(3,2) !!}--}}
+									{{--<li>--}}
+										{{--<a href="{{ route('products.list') }}">VIEW ALL PRODUCTS</a>--}}
+									{{--</li>--}}
+								{{--</ul>--}}
+							{{--</li>--}}
+							{{--<li>--}}
+								{{--<h2>Featured Stack</h2>--}}
+								{{--<div id="featured-stack">--}}
+									{{--{!!  main_menu_helper(3,3) !!}--}}
+								{{--</div>--}}
+							{{--</li>--}}
+							{{--<li class="ads">--}}
+								{{--<div><a href="{{ route('custom-plan') }}" title=""><img src="{{ asset('img/build.jpg') }}"></a>--}}
+								{{--</div>--}}
+								{{--<div><a href="{{ route('quality') }}" title=""><img src="{{ asset('img/quality.jpg') }}"></a></div>--}}
+							{{--</li>--}}
+						{{--</ul>--}}
+					{{--</div>--}}
 				</li>
 				<li>
 					<a href="{{ route('science.index') }}">Science</a>
@@ -210,27 +210,27 @@
 								</ul>
 							</li>
 							<li>
-								<a class="mm-sub">Shop All Products<i class="fas fa-plus"></i></a>
-								<ul>
-									<li>
-										<h2>POPULAR CATEGORIES</h2>
-										<ul>
-											{!! main_menu_helper(3,1) !!}
-											<li>
-												<a href="{{ route('products.list') }}">VIEW ALL PRODUCTS</a>
-											</li>
-										</ul>
-									</li>
-									<li>
-										<h2>POPULAR PRODUCTS</h2>
-										<ul>
-											{!! main_menu_helper(3,2) !!}
-											<li>
-												<a href="{{ route('products.list') }}">VIEW ALL PRODUCTS</a>
-											</li>
-										</ul>
-									</li>
-								</ul>
+								<a href="{{ route('products.list') }}">Shop All Products</a>
+								{{--<ul>--}}
+									{{--<li>--}}
+										{{--<h2>POPULAR CATEGORIES</h2>--}}
+										{{--<ul>--}}
+											{{--{!! main_menu_helper(3,1) !!}--}}
+											{{--<li>--}}
+												{{--<a href="{{ route('products.list') }}">VIEW ALL PRODUCTS</a>--}}
+											{{--</li>--}}
+										{{--</ul>--}}
+									{{--</li>--}}
+									{{--<li>--}}
+										{{--<h2>POPULAR PRODUCTS</h2>--}}
+										{{--<ul>--}}
+											{{--{!! main_menu_helper(3,2) !!}--}}
+											{{--<li>--}}
+												{{--<a href="{{ route('products.list') }}">VIEW ALL PRODUCTS</a>--}}
+											{{--</li>--}}
+										{{--</ul>--}}
+									{{--</li>--}}
+								{{--</ul>--}}
 							</li>
 							<li><a href="{{ route('science.index') }}">Science</a></li>
 							<li><a href="{{ route('quality') }}">Quality</a></li>
