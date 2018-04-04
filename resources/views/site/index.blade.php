@@ -549,10 +549,14 @@
 								<img src="{{ asset('uploads/products') . '/' . $mtProduct->id . '/' . $mtProduct->image }}">
 								<h4>{{ $mtProduct->name }}</h4>
 								<div>
-									@if($mtProduct->out_of_stock)
-										<a href="{{ $mtProduct->link_purchase }}" target="_blank" class="link-purchase">Buy Now</a>
+									@if($mtProduct->coming_soon)
+										<span class="coming_soon">Coming Soon</span>
 									@else
-										{!! $mtProduct->shopify !!}
+										@if($mtProduct->out_of_stock)
+											<a href="{{ $mtProduct->link_purchase }}" target="_blank" class="link-purchase">Buy Now</a>
+										@else
+											{!! $mtProduct->shopify !!}
+										@endif
 									@endif
 								</div>
 							</a>
@@ -570,10 +574,14 @@
 								<img src="{{ asset('uploads/products') . '/' . $gnProduct->id . '/' . $gnProduct->image }}">
 								<h4>{{ $gnProduct->name }}</h4>
 								<div>
-									@if($gnProduct->out_of_stock)
-										<a href="{{ $gnProduct->link_purchase }}" target="_blank" class="link-purchase">Buy Now</a>
+									@if($gnProduct->coming_soon)
+										<span class="coming_soon">Coming Soon</span>
 									@else
-										{!! $gnProduct->shopify !!}
+										@if($gnProduct->out_of_stock)
+											<a href="{{ $gnProduct->link_purchase }}" target="_blank" class="link-purchase">Buy Now</a>
+										@else
+											{!! $gnProduct->shopify !!}
+										@endif
 									@endif
 								</div>
 							</a>

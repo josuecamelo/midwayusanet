@@ -618,3 +618,28 @@ footer ul li a:hover .arrow-link {
 	background-color: #c10b0b;
 	text-decoration: none;
 }
+
+a .coming_soon, .coming_soon {
+	color: #fff !important;
+	text-transform: uppercase;
+	margin: 41px 0;
+	font-size: 15px;
+	font-style: normal;
+	font-weight: 400;
+	font-family: system-ui;
+	font-variant-caps: normal;
+	background-color: #777;
+	padding: 12px 40px;
+	letter-spacing: .3px;
+	display: inline-block;
+	border-radius: 3px;
+	cursor: pointer;
+	-webkit-transition: background 200ms ease;
+	transition: background 200ms ease;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	line-height: 1.2;
+	border: 0;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+}

@@ -10,6 +10,18 @@
 
 	{!! Form::model($product,['route'=> ['produtos.atualizar',$product->id], 'files'=>true]) !!}
 
+	<div id="coming-soon">
+		<span>Coming Soon</span>
+		<label class="i-switch m-t-xs m-r">
+			@if(isset($product) && $product->coming_soon == 1)
+				{!! Form::checkbox('coming_soon', null , true) !!}
+			@else
+				{!! Form::checkbox('coming_soon', null , false) !!}
+			@endif
+			<i></i>
+		</label>
+	</div>
+
 	<div id="out-of-stock">
 		<span>Out Of Stock</span>
 		<label class="i-switch m-t-xs m-r">

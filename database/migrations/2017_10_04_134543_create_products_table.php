@@ -41,6 +41,8 @@ class CreateProductsTable extends Migration
 			//$table->integer('supplement-facts');
 			$table->string('highlights_portion', 255);
 			
+			$table->boolean('coming_soon')->default(0);
+			$table->boolean('out_of_stock')->default(0);
 			$table->boolean('visibility')->default(1);
 		    $table->tinyInteger('offer',1)->default(0);
 			$table->text('serving_size');

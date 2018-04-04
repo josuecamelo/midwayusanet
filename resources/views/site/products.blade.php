@@ -114,10 +114,14 @@
 							</h4>
 
 							<div>
-								@if($product->out_of_stock)
-									<a href="{{ $product->link_purchase }}" target="_blank" class="link-purchase">Buy Now</a>
+								@if($product->coming_soon)
+									<span class="coming_soon">Coming Soon</span>
 								@else
-									{!! $product->shopify !!}
+									@if($product->out_of_stock)
+										<a href="{{ $product->link_purchase }}" target="_blank" class="link-purchase">Buy Now</a>
+									@else
+										{!! $product->shopify !!}
+									@endif
 								@endif
 							</div>
 
