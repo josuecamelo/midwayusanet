@@ -121,7 +121,8 @@
 		top: 66px;
 		right: 150px;
 	}
-	#coming-soon{
+
+	#coming-soon {
 		position: absolute;
 		top: 66px;
 		right: 310px;
