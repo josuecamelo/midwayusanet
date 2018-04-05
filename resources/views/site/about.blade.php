@@ -39,14 +39,18 @@
 		#lines {
 			padding-top: 10px !important;
 		}
+
+		picture img {
+			width: 100%;
+		}
 	</style>
 @endsection
 
 @section('main')
 
 	<picture>
-		<source media="(min-width: 480px)" srcset="{{ asset('img/about.jpg') }}">
-		<img src="{{ asset('img/about-mobile.jpg') }}" class="img-responsive animated fadeInDown">
+		<source media="(min-width: 480px)" srcset="{{ asset('img/about-us.jpg') }}">
+		<img src="{{ asset('img/about-us-mobile.jpg') }}" class="animated fadeInDown">
 	</picture>
 
 	<div class="container animated fadeInUp">
