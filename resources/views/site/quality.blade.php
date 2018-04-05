@@ -7,7 +7,12 @@
 		}
 
 		#quality h3 {
-			font-size: 20px;
+			font-size: 22px;
+		}
+
+		#quality h4 {
+			font-size: 18px;
+			text-align: center;
 		}
 
 		#quality p {
