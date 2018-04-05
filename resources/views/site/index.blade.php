@@ -443,10 +443,12 @@
 				</picture>
 			</div>
 			<div class="item">
-				<picture>
-					<source media="(min-width: 480px)" srcset="{{ asset('img/home/banners/AthleteBanner.jpg') }}">
-					<img src="{{ asset('img/home/banners/AthleteBanner-mobile.jpg') }}">
-				</picture>
+				<a href="{{ route('products.list') }}">
+					<picture>
+						<source media="(min-width: 480px)" srcset="{{ asset('img/home/banners/AthleteBanner.jpg') }}">
+						<img src="{{ asset('img/home/banners/AthleteBanner-mobile.jpg') }}">
+					</picture>
+				</a>
 			</div>
 			<div class="item">
 				<picture>
