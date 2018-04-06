@@ -238,7 +238,7 @@
 
 		@if($products)
 			<div id="produtos">
-				<h2>Produtos que o atleta usa</h2>
+				<h2>Products that the athlete uses</h2>
 				<div class="my-slick-slider">
 					<div class="slider-nav">
 						@foreach($products as $product)
