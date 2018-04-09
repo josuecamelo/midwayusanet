@@ -180,7 +180,7 @@
 										<ul>
 											{!! main_menu_helper(1,1) !!}
 											<li>
-												<a href="{{ route('products.list') }}">VIEW ALL PRODUCTS</a>
+												<a href="{{ route('products.list', ['offers' => 'all', 'line' => 'glamour-nutrition']) }}">View All Products</a>
 											</li>
 										</ul>
 									</li>
@@ -189,7 +189,7 @@
 										<ul>
 											{!! main_menu_helper(1,2) !!}
 											<li>
-												<a href="{{ route('products.list') }}">VIEW ALL PRODUCTS</a>
+												<a href="{{ route('products.list', ['offers' => 'all', 'line' => 'glamour-nutrition']) }}">View All Products</a>
 											</li>
 										</ul>
 									</li>
@@ -203,7 +203,7 @@
 										<ul>
 											{!! main_menu_helper(2,1) !!}
 											<li>
-												<a href="{{ route('products.list') }}">VIEW ALL PRODUCTS</a>
+												<a href="{{ route('products.list', ['offers' => 'all', 'line' => 'military-trail']) }}">View All Products</a>
 											</li>
 										</ul>
 									</li>
@@ -212,7 +212,7 @@
 										<ul>
 											{!! main_menu_helper(2,2) !!}
 											<li>
-												<a href="{{ route('products.list') }}">VIEW ALL PRODUCTS</a>
+												<a href="{{ route('products.list', ['offers' => 'all', 'line' => 'military-trail']) }}">View All Products</a>
 											</li>
 										</ul>
 									</li>
