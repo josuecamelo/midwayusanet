@@ -80,6 +80,16 @@
 		h4 {
 			font-size: 14px;
 		}
+
+		.frase {
+			font-size: 20px;
+			text-align: center;
+			text-transform: uppercase;
+			font-style: italic !important;
+			display: none;
+			letter-spacing: 1px;
+			margin-top: -40px;
+		}
 	</style>
 @endsection
 
@@ -90,6 +100,7 @@
 		<div class="row">
 			<div class="col-md-9" id="products-grid">
 				<h1>Products <span id="sub-title"></span></h1>
+				<p class="frase">Home of the free because of the brave</p>
 				<div class="alert alert-warning text-center" style="display: none">No items found with these search parameters.</div>
 				<ul>
 					@foreach($products as $product)
@@ -251,6 +262,17 @@
 
 		$(function () {
 
+			function verificaMilitary() {
+				let url = location.href;
+				if (url.includes('military-trail')) {
+					$('.frase').show();
+				} else {
+					$('.frase').hide();
+				}
+			}
+
+			verificaMilitary();
+
 			/* Ao clicar em algum item */
 
 			var lines = [];
@@ -329,6 +351,12 @@
 					}
 					n = 0;
 				});
+
+				if (lines.includes('military-trail')) {
+					$('.frase').show();
+				} else {
+					$('.frase').hide();
+				}
 
 				lines = [];
 				types = [];
