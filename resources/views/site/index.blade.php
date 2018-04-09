@@ -591,7 +591,9 @@
 					</a>
 					<span>{{dataMes($destak->date)}}</span>
 					<h3>{{$destak->title}}</h3>
-					<a href="#">Read More<i class="fas fa-angle-right"></i></a>
+					<a href="{{route('blog.see',$destak->slug)}}">
+						Read More<i class="fas fa-angle-right"></i>
+					</a>
 				</div>
 			</div>
 			<div class="col-md-6">
@@ -602,7 +604,9 @@
 						</a>
 						<span>{{dataMes($post->date)}}</span>
 						<h3>{{$post->title}}</h3>
-						<a href="#">Read More<i class="fas fa-angle-right"></i></a>
+						<a href="{{route('blog.see',$post->slug)}}">
+							Read More<i class="fas fa-angle-right"></i>
+						</a>
 					</div>
 				@endforeach
 			</div>
@@ -614,15 +618,17 @@
 
 	<section id="videos-row">
 		<h2>NEWEST VIDEOS</h2>
-		<div class="row">
-			@foreach($videos as $video)
-				<div class="col-md-3">
-					<div class="overlay-video"></div>
-					<iframe width="100%" height="248" src="{{ $video->video }}" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
-					<h3>{{ $video->title }}</h3>
-				</div>
-			@endforeach
-		</div>
+		@foreach($videos->chunk(4) as $vd)
+			<div class="row">
+				@foreach($vd as $video)
+					<div class="col-md-3">
+						<div class="overlay-video"></div>
+						<iframe width="100%" height="248" src="{{ $video->video }}" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+						<h3>{{ $video->title }}</h3>
+					</div>
+				@endforeach
+			</div>
+		@endforeach
 	</section>
 
 
@@ -647,35 +653,35 @@
 @section('js')
 	<script type="text/javascript" src="{{ asset('slick/slick.min.js') }}"></script>
 	<script type="text/javascript">
-		$(document).ready(function () {
-			$('.slick-track').slick({
-				slidesToShow: 5,
-				slidesToScroll: 1,
-				autoplaySpeed: 5000,
-				autoplay: true,
-				responsive: [{
-					breakpoint: 900,
-					settings: {
-						slidesToShow: 1,
-					}
-				}]
-			});
+        $(document).ready(function () {
+            $('.slick-track').slick({
+                slidesToShow: 5,
+                slidesToScroll: 1,
+                autoplaySpeed: 5000,
+                autoplay: true,
+                responsive: [{
+                    breakpoint: 900,
+                    settings: {
+                        slidesToShow: 1,
+                    }
+                }]
+            });
 
-			$('.overlay-video').on('click', function (e) {
+            $('.overlay-video').on('click', function (e) {
 
-				$('#modal-video').modal('show');
+                $('#modal-video').modal('show');
 
-				let titulo = $(this).siblings('h3').text();
-				$('#modal-video h4').text(titulo);
+                let titulo = $(this).siblings('h3').text();
+                $('#modal-video h4').text(titulo);
 
-				let src = $(this).siblings('iframe').attr('src') + '?autoplay=1';
-				$('#modal-video iframe').attr('src', src);
-			});
+                let src = $(this).siblings('iframe').attr('src') + '?autoplay=1';
+                $('#modal-video iframe').attr('src', src);
+            });
 
-			$('#modal-video').on('hide.bs.modal', function (e) {
-				$('#modal-video h4').text('');
-				$('#modal-video iframe').attr('src', '');
-			});
-		});
+            $('#modal-video').on('hide.bs.modal', function (e) {
+                $('#modal-video h4').text('');
+                $('#modal-video iframe').attr('src', '');
+            });
+        });
 	</script>
 @endsection
