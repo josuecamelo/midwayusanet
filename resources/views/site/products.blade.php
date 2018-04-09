@@ -10,6 +10,7 @@
 		}
 
 		#search-col {
+			margin-top: 50px;
 			font-size: 14px;
 		}
 
@@ -43,28 +44,33 @@
 		}
 
 		#products-grid ul {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			margin: 0;
+			padding: 0;
 			list-style: none;
+			text-align: center;
 		}
 
 		#products-grid li {
-			width: 25%;
-			float: left;
-		}
-
-		#products-grid .panel {
-			text-align: center;
+			background: #fff;
+			width: 20%;
 			height: 336px;
 			margin: 10px;
 			transition: all 0.2s ease;
 			box-shadow: 0 0 1px #ccc;
 		}
 
-		#products-grid .panel:hover {
-			box-shadow: 0 0 50px #d1d1d1;
+		@media (max-width: 800px) {
+			#products-grid li {
+				width: 100%;
+				display: block;
+			}
 		}
 
-		#products-grid .panel-header {
-			padding-top: 10px;
+		#products-grid li:hover {
+			box-shadow: 0 0 50px #d1d1d1;
 		}
 
 		#products-grid img {
@@ -74,28 +80,64 @@
 		h4 {
 			font-size: 14px;
 		}
-
-		.panel-heading {
-			border: none;
-		}
 	</style>
 @endsection
 
 @section('main')
 	<div class="container-fluid">
 
-		<h1>Products <span id="sub-title"></span></h1>
 
 		<div class="row">
+			<div class="col-md-9" id="products-grid">
+				<h1>Products <span id="sub-title"></span></h1>
+				<div class="alert alert-warning text-center" style="display: none">No items found with these search parameters.</div>
+				<ul>
+					@foreach($products as $product)
+						<li
+							data-line="{{ $product->line->slug }}"
+							data-type="{{ $product->type->slug }}"
+							data-category="{{ $product->productCategories()->select('slug')->get()->implode('slug', ',') }}"
+							data-goal="{{ $product->productGoals()->select('slug')->get()->implode('slug', ',') }}"
+							data-flavor="@if($product->flavor_id){{ $product->flavor->slug }}@endif"
+							data-offer="{{ ($product->offer) ? 'offers' : 'all' }}"
+						>
+
+							<a href="{{ $product->url_visualizacao  }}">
+								<img src="{{ asset('uploads/products') . '/' . $product->id . '/' . $product->image }}" alt="">
+							</a>
+
+							<h4>
+								{{ $product->name }}
+								@if(!empty($product->flavor))
+									<span class="cor" style="color: {{ $product->flavor->color }}">{{ $product->flavor->name }}</span>
+								@endif
+							</h4>
+
+							<div>
+								@if($product->coming_soon)
+									<span class="coming_soon">Coming Soon</span>
+								@else
+									@if($product->out_of_stock)
+										<a href="{{ $product->link_purchase }}" target="_blank" class="link-purchase">Buy Now</a>
+									@else
+										{!! $product->shopify !!}
+									@endif
+								@endif
+							</div>
+
+						</li>
+					@endforeach
+				</ul>
+			</div>
 			<div class="col-md-3" id="search-col">
 
 				{{-- Search: --}}
-				<input type="text" id="search-product" class="form-control" placeholder="Search for...">
+				<input type="text" id="search-product" class="form-control" placeholder="Search for..." autofocus>
 				<br>
 
 				<p>
 					<label>
-						<input type="checkbox" data-item="offers" data-id="1"> Sales & Promotions
+						<input type="checkbox" data-item="offers" data-slug="offers"> Sales & Promotions
 					</label>
 				</p>
 
@@ -109,7 +151,7 @@
 							@foreach($lines as $line)
 								<li>
 									<label class="item-normal">
-										<input type="checkbox" data-item="lines" data-id="{{ $line->id }}">
+										<input type="checkbox" data-item="lines" data-slug="{{ $line->slug }}">
 										{{ $line->name }}
 									</label>
 								</li>
@@ -128,7 +170,7 @@
 							@foreach($types as $type)
 								<li>
 									<label class="item-normal">
-										<input type="checkbox" data-item="types" data-id="{{ $type->id }}">
+										<input type="checkbox" data-item="types" data-slug="{{ $type->slug }}">
 										{{ $type->name }}
 									</label>
 								</li>
@@ -145,12 +187,14 @@
 					<div class="panel-body">
 						<ul>
 							@foreach($goals as $goal)
-								<li>
-									<label class="item-normal">
-										<input type="checkbox" data-item="goals" data-id="{{ $goal->id }}">
-										{{ $goal->name }}
-									</label>
-								</li>
+								@if($goal->products()->count() > 0)
+									<li>
+										<label class="item-normal">
+											<input type="checkbox" data-item="goals" data-slug="{{ $goal->slug }}">
+											{{ $goal->name }}
+										</label>
+									</li>
+								@endif
 							@endforeach
 						</ul>
 					</div>
@@ -164,12 +208,14 @@
 					<div class="panel-body">
 						<ul>
 							@foreach($categories as $category)
-								<li>
-									<label class="item-normal">
-										<input type="checkbox" data-item="categories" data-id="{{ $category->id }}">
-										{{ $category->name }}
-									</label>
-								</li>
+								@if($category->products()->count() > 0)
+									<li>
+										<label class="item-normal">
+											<input type="checkbox" data-item="categories" data-slug="{{ $category->slug }}">
+											{{ $category->name }}
+										</label>
+									</li>
+								@endif
 							@endforeach
 						</ul>
 					</div>
@@ -183,50 +229,18 @@
 					<div class="panel-body">
 						<ul>
 							@foreach($flavors as $flavor)
-								<li>
-									<label class="item-normal">
-										<input type="checkbox" data-item="flavors" data-id="{{ $flavor->id }}">
-										{{ $flavor->name }}
-									</label>
-								</li>
+								@if($flavor->relatedProducts()->count() > 0)
+									<li>
+										<label class="item-normal">
+											<input type="checkbox" data-item="flavors" data-slug="{{ $flavor->slug }}">
+											{{ $flavor->name }}
+										</label>
+									</li>
+								@endif
 							@endforeach
 						</ul>
 					</div>
 				</div>
-			</div>
-			<div class="col-md-9" id="products-grid">
-				<div class="alert alert-warning text-center" style="display: none">No items found with these search parameters.</div>
-				<ul>
-					@foreach($products as $product)
-						<li
-							data-line="{{ $product->line_id }}"
-							data-type="{{ $product->type_id }}"
-							data-category="{{ $product->categories()->select('category_id')->get()->implode('category_id', ',') }}"
-							data-goal="{{ $product->goals()->select('goal_id')->get()->implode('goal_id', ',') }}"
-							data-flavor="{{ $product->flavor_id }}"
-							data-offer="{{ $product->offer }}"
-						>
-							<article>
-								<div class="panel panel-default">
-									<div class="panel-header">
-										<a href="{{ $product->url_visualizacao  }}">
-											<img src="{{ asset('uploads/products') . '/' . $product->id . '/' . $product->image }}" alt="">
-										</a>
-									</div>
-									<div class="panel-body">
-										<h4>
-											{{ $product->name . ' ' . $product->last_name }}
-											@if(!empty($product->flavor))
-												<span class="cor" style="color: {{ $product->flavor->color }}">{{ $product->flavor->name }}</span>
-											@endif
-										</h4>
-										<div>{!! $product->shopify !!}</div>
-									</div>
-								</div>
-							</article>
-						</li>
-					@endforeach
-				</ul>
 			</div>
 		</div>
 	</div>
@@ -236,6 +250,8 @@
 	<script>
 
 		$(function () {
+
+			/* Ao clicar em algum item */
 
 			var lines = [];
 			var types = [];
@@ -251,8 +267,6 @@
 
 			$('#search-col :checkbox').on('click', function (event) {
 
-				// window.history.pushState("object or string", "Title", "/new-url");
-
 				event.stopPropagation();
 
 				$(this).parent().toggleClass('item-normal item-marcado');
@@ -261,62 +275,50 @@
 
 					if (element.checked == true) {
 
-						let id = element.dataset.id;
+						let slug = element.dataset.slug;
 						let item = element.dataset.item;
 						let title = this.parentNode.innerText;
 
-						eval(item + '.push(' + id + ')');
+						// Adiciona os itens individuais marcados:
+						eval(item + '.push("' + slug + '")');
 
 						titles += title.trim() + ' • ';
+
+						// Tipos de itens marcados: lines, types, goals, etc.
 						itens.push(item);
 					}
 				});
 
+				// Itens individuais marcados:
+				offers = Array.from(new Set(offers));
 				lines = Array.from(new Set(lines));
 				types = Array.from(new Set(types));
 				categories = Array.from(new Set(categories));
 				goals = Array.from(new Set(goals));
 				flavors = Array.from(new Set(flavors));
-				offers = Array.from(new Set(offers));
 				itens = Array.from(new Set(itens));
 
 				$('#sub-title').text(titles.slice(0, -3));
 
+				// products: Todos os produtos do lado direito
 				let products = $('#products-grid li');
 
 				products.each(function (index, element) {
 
-					let _lines = parseInt(element.dataset.line);
-					let _types = parseInt(element.dataset.type);
-					let _categories = JSON.parse('[' + element.dataset.category + ']');
-					let _goals = parseInt(element.dataset.goal);
-					let _flavors = parseInt(element.dataset.flavor);
-					let _offers = parseInt(element.dataset.offer);
+					// Características de cada produto do lado direito:
+					let _offers = element.dataset.offer;
+					let _lines = element.dataset.line;
+					let _types = element.dataset.type;
+					let _categories = element.dataset.category;
+					let _goals = element.dataset.goal;
+					let _flavors = element.dataset.flavor;
 
+					// Percorre os itens marcados:
 					itens.forEach(function (e) {
 
-						let typeOfVar = eval('typeof _' + e);
-
-						switch (typeOfVar) {
-
-							case 'number':
-								if (eval(e + '.includes(_' + e + ')')) {
-									n++;
-								}
-								break;
-
-							case 'object':
-
-								let array1 = eval('_' + e);
-								let array2 = eval(e);
-
-								array2.forEach(function (value, index) {
-
-									if (array1.includes(value)) {
-										n++;
-									}
-								});
-								break;
+						// Se nas características de cada produto possui algum dos itens individuais marcados:
+						if (eval('_' + e + '.includes(' + e + ')')) {
+							n++;
 						}
 					});
 
@@ -383,20 +385,47 @@
 				}
 			});
 
-			@if(isset($item))
-			checkboxes.each(function (index, element) {
 
-				let id = element.dataset.id;
-				let item = element.dataset.item;
-				let title = this.parentNode.innerText;
+			/* Marcar itens ao carregar a página: */
 
-				if (item == '{{ $item }}' && id == '{{ $id }}') {
-					element.click();
+			var pathname = window.location.pathname;
+			var parts = pathname.split('/');
+			parts.splice(0, 2);
+
+			function check(item, element) {
+
+				let checkboxes = document.querySelectorAll('input[data-item="' + item + '"]');
+				checkboxes.forEach(function (e) {
+
+					if (e.dataset.slug == element) {
+						e.click();
+					}
+				});
+			}
+
+			parts.forEach(function (element, index) {
+
+				switch (index) {
+					case 0:
+						check('offers', element);
+						break;
+					case 1:
+						check('lines', element);
+						break;
+					case 2:
+						check('types', element);
+						break;
+					case 3:
+						check('goals', element);
+						break;
+					case 4:
+						check('categories', element);
+						break;
+					case 5:
+						check('flavors', element);
+						break;
 				}
-
-				$('#sub-title').text(title);
 			});
-			@endif
 
 		});
 	</script>

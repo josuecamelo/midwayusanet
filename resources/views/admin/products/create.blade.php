@@ -10,6 +10,22 @@
 
 	{!! Form::open(['route'=> ['produtos.gravar'], 'files'=>true]) !!}
 
+	<div id="coming-soon">
+		<span>Coming Soon</span>
+		<label class="i-switch m-t-xs m-r">
+			{!! Form::checkbox('coming_soon', null , false) !!}
+			<i></i>
+		</label>
+	</div>
+
+	<div id="out-of-stock">
+		<span>Out Of Stock</span>
+		<label class="i-switch m-t-xs m-r">
+			{!! Form::checkbox('out_of_stock', null , false) !!}
+			<i></i>
+		</label>
+	</div>
+
 	<div id="visivel">
 		<span>Visibility</span>
 		<label class="i-switch m-t-xs m-r">

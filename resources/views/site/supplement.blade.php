@@ -148,7 +148,7 @@
 
 		#outros-produtos {
 			text-align: center;
-			background: #f9f9f9;
+			background: #eaeaea;
 			padding: 40px 0;
 		}
 
@@ -156,7 +156,7 @@
 			display: table;
 			letter-spacing: 4px;
 			padding: 0 70px;
-			margin: 0 auto 60px;
+			margin: 0 auto;
 			border-right: 10px solid red;
 			border-left: 10px solid red;
 		}
@@ -187,8 +187,14 @@
 			outline: none;
 		}
 
+		.slider-nav {
+			display: flex;
+			justify-content: center;
+		}
+
 		.slider-nav div {
 			text-align: center;
+			margin: 30px;
 		}
 
 		.slider-nav img {
@@ -198,8 +204,11 @@
 			cursor: pointer;
 		}
 
-		.slider-nav img:hover, .slick-current img {
-			transform: scale(2);
+		/*.slick-current img {*/
+		/*transform: scale(2);*/
+		/*}*/
+		.slider-nav img:hover {
+			transform: scale(1.3);
 		}
 
 		.slider-nav figcaption {
@@ -230,16 +239,16 @@
 		}
 
 		.slick-list {
-			padding: 70px !important;
+			padding: 30px 70px !important;
 			margin: 0 30px;
 		}
 
-		.opaco {
-			opacity: 0.5;
-		}
+		/*.opaco {*/
+		/*opacity: 0.5;*/
+		/*}*/
 
 		#sabores a {
-			color: #fff;
+			color: #333;
 		}
 
 		#topicos-produto {
@@ -257,6 +266,7 @@
 		#shopify {
 			background: #fff;
 			padding: 30px;
+			text-align: center;
 		}
 
 		#serving-size {
@@ -443,10 +453,10 @@
 		}
 
 		#outros-produtos a {
-			color: #fff !important;
+			color: #333 !important;
 			outline: none;
+			text-decoration: none;
 		}
-
 	</style>
 @endsection
 
@@ -460,12 +470,12 @@
 					<div class="col-md-5 animated fadeInLeft">
 						<img src="{{ asset('uploads/products') . '/' . $product->id . '/' . $product->image }}" alt="" class="img-responsive">
 					</div>
-					<div class="col-md-7">
-						<h1>{{ $product->name }}<span>{{ $product->last_name }}</span></h1>
+					<div class="col-md-7 animated fadeInRight">
+						<h1>{{ $product->name }}</h1>
 						<p>
 							<span id="apresentacao">{{ $product->presentation }}</span>
 							@if(!empty($product->flavor))
-								<span id="cor" style="background-color: {{ $product->flavor->color }}">{{ $product->flavor->name }}</span>
+								<span id="cor" style="background-color: {{ $product->flavor->color }}">{{ $product->flavor->name }} Flavor</span>
 							@endif
 						</p>
 						{{-- Tópicos --}}
@@ -487,9 +497,28 @@
 		</div>
 
 
+		{{-- Shopify --}}
+
 		<div id="shopify">
-			{!! $product->shopify !!}
+			<div>
+				@if($product->out_of_stock)
+					<a href="{{ $product->link_purchase }}" target="_blank" class="link-purchase">Buy Now</a>
+				@else
+					{!! $product->shopify !!}
+				@endif
+			</div>
 		</div>
+
+
+		{{-- Vídeos --}}
+
+		@if($product->video)
+			<div id="video">
+				<div class="embed-responsive embed-responsive-16by9">
+				<iframe src="{{ $product->video }}"  class="embed-responsive-item" width="640" height="360" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				</div>
+			</div>
+		@endif
 
 
 		{{-- Tabela nutricional --}}
@@ -555,11 +584,12 @@
 		@if(count($flavors) > 0)
 			<div id="sabores">
 				<div class="container">
-					<h2>Disponível {{ count($flavors) > 1 ? 'nos sabores' : 'no sabor' }}</h2>
+					<h2>Available in flavor{{ count($flavors) > 1 ? 's' : '' }}</h2>
 					<div class="row-sabores">
 						@foreach($flavors as $flavor)
 							<?php
-							$slug = $flavor->last_name_slug ? $flavor->slug . '&' . $flavor->last_name_slug : $flavor->slug;
+							//							$slug = $flavor->last_name_slug ? $flavor->slug . '&' . $flavor->last_name_slug : $flavor->slug;
+							$slug = $flavor->slug;
 							$product_flavor = isset($flavor->flavor->id) ? $flavor->flavor->slug : null;
 							$url = route('produto_exibicao', [$slug, $product_flavor])
 							?>
@@ -582,20 +612,18 @@
 
 		@if($product->productRelateds)
 			<div id="outros-produtos">
-				<h2>Produtos relacionados</h2>
-				<div class="my-slick-slider">
-					<div class="slider-nav">
-						@foreach($product->productRelateds as $produto)
-							<div>
-								<a href="{{ $produto->url_visualizacao }}">
-									<figure>
-										<img src="{{ asset("uploads/products/$produto->id/$produto->image") }}" alt="">
-										<figcaption>{{ $produto->name . ' ' . $produto->last_name . ' ' . $produto->presentation }} @if($produto->flavor){{ $produto->flavor->name }}@endif</figcaption>
-									</figure>
-								</a>
-							</div>
-						@endforeach
-					</div>
+				<h2>Related Products</h2>
+				<div class="slider-nav">
+					@foreach($product->productRelateds as $produto)
+						<div>
+							<a href="{{ $produto->url_visualizacao }}">
+								<figure>
+									<img src="{{ asset("uploads/products/$produto->id/$produto->image") }}" alt="">
+									<figcaption>{{ $produto->name . ' ' . $produto->presentation }} @if($produto->flavor){{ $produto->flavor->name }}@endif</figcaption>
+								</figure>
+							</a>
+						</div>
+					@endforeach
 				</div>
 			</div>
 		@endif
@@ -614,42 +642,40 @@
 
 			/* Slider */
 
-			$('.slider-nav').slick({
-				slidesToShow: 5,
-				slidesToScroll: 1,
-				focusOnSelect: true,
-				autoplay: true,
-				autoplaySpeed: 5000,
-				centerMode: true,
-				responsive: [
-					{
-						breakpoint: 600,
-						settings: {
-							slidesToShow: 1,
-						}
-					}]
-			});
+			// $('.slider-nav').slick({
+			// 	slidesToShow: 5,
+			// 	slidesToScroll: 5,
+			// 	autoplaySpeed: 5000,
+			// 	centerMode: true,
+			// 	autoplay: true,
+			// 	responsive: [{
+			// 		breakpoint: 900,
+			// 		settings: {
+			// 			slidesToShow: 1,
+			// 		}
+			// 	}]
+			// });
 
-			if (window.innerWidth > 600) {
-				$('.slick-active:first').css('opacity', '0.5');
-				$('.slick-active:last').css('opacity', '0.5');
-			} else {
-				$('.slick-slide').not('.slick-current').css('opacity', 0.5);
-			}
-
-			$('.slider-nav').on('beforeChange', function () {
-
-				$('.slick-slide').each(function () {
-					$(this).css('opacity', '1');
-				});
-
-				if (window.innerWidth > 600) {
-					$('.slick-active:first').next().css('opacity', '0.5');
-					$('.slick-active:last').next().css('opacity', '0.5');
-				} else {
-					$('.slick-slide').not('.slick-current').next().css('opacity', 0.5);
-				}
-			});
+			// if (window.innerWidth > 600) {
+			// 	$('.slick-active:first').css('opacity', '0.5');
+			// 	$('.slick-active:last').css('opacity', '0.5');
+			// } else {
+			// 	$('.slick-slide').not('.slick-current').css('opacity', 0.5);
+			// }
+			//
+			// $('.slider-nav').on('beforeChange', function () {
+			//
+			// 	$('.slick-slide').each(function () {
+			// 		$(this).css('opacity', '1');
+			// 	});
+			//
+			// 	if (window.innerWidth > 600) {
+			// 		$('.slick-active:first').next().css('opacity', '0.5');
+			// 		$('.slick-active:last').next().css('opacity', '0.5');
+			// 	} else {
+			// 		$('.slick-slide').not('.slick-current').next().css('opacity', 0.5);
+			// 	}
+			// });
 
 
 			/* Show Hide Tabela Nutricional: */

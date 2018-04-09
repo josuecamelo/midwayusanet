@@ -29,7 +29,7 @@ class Menu extends Model
 	}
 
 	public function featuredProduct(){
-	    return $this->belongsTo(Product::class, 'featured_product_id', 'id');
+	    return $this->belongsTo(Product::class, 'featured_product_id', 'id')->where('visibility', 1);
     }
 	
 	public function listar()

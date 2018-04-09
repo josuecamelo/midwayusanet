@@ -59,14 +59,11 @@ class ProductController extends Controller
 		$types = $this->typeModel->orderby('name')->get();
 		$categories = $this->categoryModel->orderby('name')->get();
 		$goals = $this->goalModel->orderby('name')->get();
-		$flavors = $this->flavorModel->orderby('name')->get();
-		
-//		$name = 'Acessórios';
-//		$item = 'types';
-//		$id = 3;
+		$flavors = $this
+            ->flavorModel
+            ->orderby('name')
+            ->get();
 
-//		dd("lines: $line_ids     types: $types_ids goals: $goals_ids categories: $categories_ids flavors: $flavors_ids");
-		
 		return view('site.products', compact('products', 'lines', 'types', 'categories', 'goals', 'flavors', 'name', 'item', 'id'));
 	}
 	

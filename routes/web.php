@@ -11,17 +11,39 @@
 |
 */
 
+/* Ajustes de rotas (SEO) */
+
+Route::redirect('/products/anabolic-arsenal-orange-flavor', '/product/anabolic-arsenal/orange', 301);
+Route::redirect('/products/anti-age', '/product/anti-age', 301);
+Route::redirect('/products/atp-enhancer-overload', '/product/atp-enhancer-overload/grape', 301);
+Route::redirect('/products/beauty-sleep', '/product/beauty-sleep', 301);
+Route::redirect('/products/creatine', '/product/creatine', 301);
+Route::redirect('/products/ereforce', '/product/ereforce', 301);
+Route::redirect('/products/glamour-collagen', '/product/glamour-collagen/berry-passion', 301);
+Route::redirect('/products/hair-skin-and-nails', '/product/hair-skin-and-nails', 301);
+Route::redirect('/products/glamour-protein-chocolate', '/product/glamour-protein/chocolate', 301);
+Route::redirect('/products/l-carnitine-strike-lemon-flavor', '/product/l-carnitine-strike/lemon', 301);
+Route::redirect('/products/military-shot', '/product/military-shot', 301);
+Route::redirect('/products/ripped-hawk', '/product/ripped-hawk', 301);
+Route::redirect('/products/thermogenic-blast', '/product/thermogenic-blast', 301);
+Route::redirect('/products/whey-protein', '/product/whey-protein/milk-chocolate', 301);
+
+
+/**/
+
 Auth::routes();
 
-Route::get('/', 'IndexController@index')->name('index');
+Route::get('/', 'IndexController@home')->name('index');
 Route::get('/home', 'IndexController@home')->name('home');
 Route::get('/about', 'AboutController@index')->name('about');
 
-Route::get('/products/{lines_ids?}/{types_ids?}/{goals_ids?}/{categories_ids?}/{flavors_ids?}', ['as' => 'products.list', 'uses' => 'ProductController@index']);
+Route::get('/quality', 'QualityController@index')->name('quality');
+
+Route::get('/products/{offers?}/{line?}/{type?}/{goal?}/{category?}/{flavor?}', ['as' => 'products.list', 'uses' => 'ProductController@index']);
 Route::get('/products/offers', ['as' => 'products.offers', 'uses' => 'ProductController@index']);
-Route::get('/produtos', 'ProductController@index')->name('produtos');
-Route::get('/produtos/{slug}/{sabor?}', ['as' => 'produto_exibicao', 'uses' => 'ProductController@product']);
-Route::get('/products/{type}/{category}', ['as' => 'produto_categoria', 'uses' => 'ProductController@obterPorTipoCategoria']);
+//Route::get('/produtos', 'ProductController@index')->name('produtos');
+Route::get('/product/{slug}/{sabor?}', ['as' => 'produto_exibicao', 'uses' => 'ProductController@product']);
+//Route::get('/products/{type}/{category}', ['as' => 'produto_categoria', 'uses' => 'ProductController@obterPorTipoCategoria']);
 
 Route::group(['prefix' => 'team-midway', 'as' => 'team-midway.'], function () use ($router) {
     $router->get('/', ['as' => 'list', 'uses' => 'AthleteController@index']);
@@ -32,10 +54,14 @@ Route::get('/objetivos', 'GoalController@index')->name('objetivos');
 Route::get('/objetivos/{goal}', ['as' => 'objetivo_exibicao', 'uses' => 'GoalController@goal']);
 
 Route::get('/historia', 'HistoryController@index')->name('historia');
-Route::get('/treinos', 'TrainingController@index')->name('treinos');
+Route::get('/videos', 'VideosController@index')->name('videos');
+Route::get('/charities', 'CharitiesController@index')->name('charities');
+Route::get('/terms-of-use', 'TermsOfUseController@index')->name('terms-of-use');
 
 Route::get('/revenda', 'ResaleController@index')->name('revenda');
 Route::post('/salvar-revenda', 'ResaleController@store')->name('salvar-revenda');
+
+Route::any('/finder',['as' => 'site.finder', 'uses' => 'IndexController@finder']);
 
 $router->group(['prefix' => 'lojas', 'as' => 'lojas.'], function () use ($router)
 {
@@ -51,15 +77,16 @@ $router->group(['prefix' => 'blog', 'as' => 'blog.'], function () use ($router)
     $router->get('/', ['as' => 'index', 'uses' => 'BlogPostAdminController@siteIndex']);
 });
 
-$router->group(['prefix' => 'science-and-knowledge', 'as' => 'science.'], function () use ($router)
+$router->group(['prefix' => 'science', 'as' => 'science.'], function () use ($router)
 {
     $router->get('/', ['as' => 'index', 'uses' => 'BlogPostAdminController@siteIndex']);
 });
 
-Route::get('/contato', 'ContactController@index')->name('contato');
+Route::get('/contact', 'ContactController@index')->name('contact');
+Route::post('/contact/send', 'ContactController@send')->name('contact-send');
 
-Route::get('/inscreverse', 'SubscribeController@index')->name('inscreverse');
-Route::post('/inscrever', 'SubscribeController@store')->name('inscrever');
+Route::get('/signup', 'SubscribeController@index')->name('inscreverse');
+Route::post('/subscribe', 'SubscribeController@store')->name('subscribe');
 
 Route::get('/custom-plan', 'CustomPlanController@index')->name('custom-plan');
 Route::post('/custom-plan/send', 'CustomPlanController@send')->name('custom-plan-send');

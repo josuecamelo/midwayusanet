@@ -7,6 +7,10 @@
 
 		/* Carousel: */
 
+		#carousel-main img {
+			width: 100%;
+		}
+
 		.carousel-fade .carousel-inner .item {
 			-webkit-transition-property: opacity;
 			transition-property: opacity;
@@ -74,6 +78,7 @@
 			margin: 2px 2px 2px 0;
 			display: block;
 			position: relative;
+			width: 100%;
 		}
 
 		@media (max-width: 900px) {
@@ -110,7 +115,7 @@
 		}
 
 		#mini-banners a img {
-			width: 100%;
+			width: 100% !important;
 			transition: all .2s ease-in-out;
 		}
 
@@ -410,10 +415,17 @@
 			color: red;
 		}
 
+		.alert {
+			margin-top: 30px;
+		}
 	</style>
 @endsection
 
 @section('main')
+
+	<div class="container text-center">
+		@include('flash::message')
+	</div>
 
 	{{-- Carousel: --}}
 
@@ -427,19 +439,21 @@
 			<div class="item active">
 				<picture>
 					<source media="(min-width: 480px)" srcset="{{ asset('img/home/banners/ArnoldBanner.jpg') }}">
-					<img src="{{ asset('img/home/banners/ArnoldBanner-mobile.jpg') }}" class="img-responsive">
+					<img src="{{ asset('img/home/banners/ArnoldBanner-mobile.jpg') }}">
 				</picture>
 			</div>
 			<div class="item">
-				<picture>
-					<source media="(min-width: 480px)" srcset="{{ asset('img/home/banners/AthleteBanner.jpg') }}">
-					<img src="{{ asset('img/home/banners/AthleteBanner-mobile.jpg') }}" class="img-responsive">
-				</picture>
+				<a href="{{ route('products.list') }}">
+					<picture>
+						<source media="(min-width: 480px)" srcset="{{ asset('img/home/banners/AthleteBanner.jpg') }}">
+						<img src="{{ asset('img/home/banners/AthleteBanner-mobile.jpg') }}">
+					</picture>
+				</a>
 			</div>
 			<div class="item">
 				<picture>
 					<source media="(min-width: 480px)" srcset="{{ asset('img/home/banners/ProductBanner.jpg') }}">
-					<img src="{{ asset('img/home/banners/ProductBanner-mobile.jpg') }}" class="img-responsive">
+					<img src="{{ asset('img/home/banners/ProductBanner-mobile.jpg') }}">
 				</picture>
 			</div>
 		</div>
@@ -455,7 +469,7 @@
 
 	<section id="mini-banners" class="animated fadeInUp">
 		<div>
-			<a href="#">
+			<a href="{{ url('/products/all/military-trail') }}">
 				<h3>
 					SHOP MILITARY TRAIL
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21.12 23.42">
@@ -472,7 +486,7 @@
 			</a>
 		</div>
 		<div>
-			<a href="#">
+			<a href="{{ url('/products/all/glamour-nutrition') }}">
 				<h3>
 					SHOP GLAMOUR NUTRITION
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21.12 23.42">
@@ -489,7 +503,7 @@
 			</a>
 		</div>
 		<div>
-			<a href="#">
+			<a href="{{ url('/product/l-carnitine-strike/lemon') }}">
 				<h3>
 					DELICIOUS LEMON FLAVOR
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21.12 23.42">
@@ -506,7 +520,7 @@
 			</a>
 		</div>
 		<div>
-			<a href="#">
+			<a href="{{ route('charities') }}">
 				<h3>
 					GIVING BACK
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21.12 23.42">
@@ -530,45 +544,60 @@
 		<section id="products">
 			<h2>Military Trail</h2>
 			<div>
-				<div class="slick-track" role="listbox">
+				<div class="slick-track">
 					@foreach($militaryTrailProducts as $mtProduct)
-						<a href="{{ $mtProduct->url_visualizacao  }}">
-							<div class="product">
+						<div class="product">
+							<a href="{{ $mtProduct->url_visualizacao  }}">
 								<img src="{{ asset('uploads/products') . '/' . $mtProduct->id . '/' . $mtProduct->image }}">
-								<h4>{{ $mtProduct->name . ' ' . $mtProduct->last_name }}</h4>
-								@if(!empty($mtProduct->flavor))
-									<span class="cor" style="color: {{ $mtProduct->flavor->color }}">{{ $mtProduct->flavor->name }}</span>
-								@endif
-								<div>{!! $mtProduct->shopify !!}</div>
-							</div>
-						</a>
+								<h4>{{ $mtProduct->name }}</h4>
+								<div>
+									@if($mtProduct->coming_soon)
+										<span class="coming_soon">Coming Soon</span>
+									@else
+										@if($mtProduct->out_of_stock)
+											<a href="{{ $mtProduct->link_purchase }}" target="_blank" class="link-purchase">Buy Now</a>
+										@else
+											{!! $mtProduct->shopify !!}
+										@endif
+									@endif
+								</div>
+							</a>
+						</div>
 					@endforeach
 				</div>
 			</div>
+
 			<h2>Glamour Nutrition</h2>
 			<div>
-				<div class="slick-track" role="listbox">
+				<div class="slick-track">
 					@foreach($glamourNutritionProducts as $gnProduct)
-						<a href="{{ $gnProduct->url_visualizacao  }}">
-							<div class="product">
+						<div class="product">
+							<a href="{{ $gnProduct->url_visualizacao  }}">
 								<img src="{{ asset('uploads/products') . '/' . $gnProduct->id . '/' . $gnProduct->image }}">
-								<h4>{{ $gnProduct->name . ' ' . $gnProduct->last_name }}</h4>
-								@if(!empty($gnProduct->flavor))
-									<span class="cor" style="color: {{ $gnProduct->flavor->color }}">{{ $gnProduct->flavor->name }}</span>
-								@endif
-								<div>{!! $gnProduct->shopify !!}</div>
-							</div>
-						</a>
+								<h4>{{ $gnProduct->name }}</h4>
+								<div>
+									@if($gnProduct->coming_soon)
+										<span class="coming_soon">Coming Soon</span>
+									@else
+										@if($gnProduct->out_of_stock)
+											<a href="{{ $gnProduct->link_purchase }}" target="_blank" class="link-purchase">Buy Now</a>
+										@else
+											{!! $gnProduct->shopify !!}
+										@endif
+									@endif
+								</div>
+							</a>
+						</div>
 					@endforeach
 				</div>
 			</div>
 		</section>
 		<aside id="products-menu">
 			<ul>
-				<li><a href="{{ url('/') }}">Protein<i class="fas fa-angle-right"></i></a></li>
-				<li><a href="{{ url('/') }}">Pre-Workout<i class="fas fa-angle-right"></i></a></li>
-				<li><a href="{{ url('/') }}">Beauty<i class="fas fa-angle-right"></i></a></li>
-				<li><a href="{{ url('/') }}">Stacks<i class="fas fa-angle-right"></i></a></li>
+				<li><a href="{{ url('/products/all/line/supplements/goal/protein/flavor') }}">Protein<i class="fas fa-angle-right"></i></a></li>
+				<li><a href="{{ url('/products/all/line/supplements/goal/pre-workout/flavor') }}">Pre-Workout<i class="fas fa-angle-right"></i></a></li>
+				<li><a href="{{ url('/products/all/line/supplements/goal/beauty/flavor') }}">Beauty<i class="fas fa-angle-right"></i></a></li>
+				<li><a href="{{ url('/products/all/line/supplements/strength-and-recovery/category/flavor') }}">Strength And Recovery<i class="fas fa-angle-right"></i></a></li>
 			</ul>
 			<div>
 				<h1>LET US HELP YOU BUILD YOURSELF</h1>
@@ -649,39 +678,42 @@
 	</div>
 
 @endsection
-
 @section('js')
 	<script type="text/javascript" src="{{ asset('slick/slick.min.js') }}"></script>
 	<script type="text/javascript">
-        $(document).ready(function () {
-            $('.slick-track').slick({
-                slidesToShow: 5,
-                slidesToScroll: 1,
-                autoplaySpeed: 5000,
-                autoplay: true,
-                responsive: [{
-                    breakpoint: 900,
-                    settings: {
-                        slidesToShow: 1,
-                    }
-                }]
-            });
+		$(document).ready(function () {
 
-            $('.overlay-video').on('click', function (e) {
+			let width = window.screen.width;
+			let numberSlides = (width > 900) ? 5 : 1;
 
-                $('#modal-video').modal('show');
+			$('.slick-track').slick({
+				slidesToShow: numberSlides,
+				slidesToScroll: numberSlides,
+				autoplaySpeed: 5000,
+				autoplay: true,
+				responsive: [{
+					breakpoint: 900,
+					settings: {
+						slidesToShow: 1,
+					}
+				}]
+			});
 
-                let titulo = $(this).siblings('h3').text();
-                $('#modal-video h4').text(titulo);
+			$('.overlay-video').on('click', function (e) {
 
-                let src = $(this).siblings('iframe').attr('src') + '?autoplay=1';
-                $('#modal-video iframe').attr('src', src);
-            });
+				$('#modal-video').modal('show');
 
-            $('#modal-video').on('hide.bs.modal', function (e) {
-                $('#modal-video h4').text('');
-                $('#modal-video iframe').attr('src', '');
-            });
-        });
+				let titulo = $(this).siblings('h3').text();
+				$('#modal-video h4').text(titulo);
+
+				let src = $(this).siblings('iframe').attr('src') + '?autoplay=1';
+				$('#modal-video iframe').attr('src', src);
+			});
+
+			$('#modal-video').on('hide.bs.modal', function (e) {
+				$('#modal-video h4').text('');
+				$('#modal-video iframe').attr('src', '');
+			});
+		});
 	</script>
 @endsection

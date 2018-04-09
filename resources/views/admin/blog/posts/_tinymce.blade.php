@@ -47,7 +47,8 @@
                 resizable : "yes",
                 close_previous : "no"
             });
-        }
+        },
+	    height : "600"
     };
 
     tinymce.init(editor_config);

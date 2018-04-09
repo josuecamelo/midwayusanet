@@ -2,6 +2,10 @@
 
 namespace App\Providers;
 
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Events\QueryExecuted;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 
@@ -21,6 +25,10 @@ class AppServiceProvider extends ServiceProvider
 			$viewName = $view->getName();
 			view()->share('viewName', $viewName);
 		});
+
+		/*DB::listen(function(QueryExecuted $query){
+            Log::info($query->sql);
+        });*/
 	}
 	
 	/**

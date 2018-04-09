@@ -187,6 +187,6 @@ class BlogPostAdminController extends Controller
             $posts = BlogPost::last(100,$t,null);
         }
 
-        return view('site.blog.index',compact('post','posts','title'));
+        return view('site.blog.index',compact('post','posts','title','t'));
     }
 }
