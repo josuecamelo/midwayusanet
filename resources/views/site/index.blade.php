@@ -620,7 +620,9 @@
 					</a>
 					<span>{{dataMes($destak->date)}}</span>
 					<h3>{{$destak->title}}</h3>
-					<a href="#">Read More<i class="fas fa-angle-right"></i></a>
+					<a href="{{route('blog.see',$destak->slug)}}">
+						Read More<i class="fas fa-angle-right"></i>
+					</a>
 				</div>
 			</div>
 			<div class="col-md-6">
@@ -631,7 +633,9 @@
 						</a>
 						<span>{{dataMes($post->date)}}</span>
 						<h3>{{$post->title}}</h3>
-						<a href="#">Read More<i class="fas fa-angle-right"></i></a>
+						<a href="{{route('blog.see',$post->slug)}}">
+							Read More<i class="fas fa-angle-right"></i>
+						</a>
 					</div>
 				@endforeach
 			</div>
@@ -643,15 +647,17 @@
 
 	<section id="videos-row">
 		<h2>NEWEST VIDEOS</h2>
-		<div class="row">
-			@foreach($videos as $video)
-				<div class="col-md-3">
-					<div class="overlay-video"></div>
-					<iframe width="100%" height="248" src="{{ $video->video }}" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
-					<h3>{{ $video->title }}</h3>
-				</div>
-			@endforeach
-		</div>
+		@foreach($videos->chunk(4) as $vd)
+			<div class="row">
+				@foreach($vd as $video)
+					<div class="col-md-3">
+						<div class="overlay-video"></div>
+						<iframe width="100%" height="248" src="{{ $video->video }}" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+						<h3>{{ $video->title }}</h3>
+					</div>
+				@endforeach
+			</div>
+		@endforeach
 	</section>
 
 
@@ -672,7 +678,6 @@
 	</div>
 
 @endsection
-
 @section('js')
 	<script type="text/javascript" src="{{ asset('slick/slick.min.js') }}"></script>
 	<script type="text/javascript">

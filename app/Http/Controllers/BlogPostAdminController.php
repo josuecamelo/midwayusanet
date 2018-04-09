@@ -96,6 +96,7 @@ class BlogPostAdminController extends Controller
 	{
 	    $tg = new Tag();
 	    $inputs = request()->all();
+        $inputs['visibility'] = (!isset($inputs['visibility']) ? 0 : 1);
 		$save = $post->update($inputs);
 
         if(isset($inputs['tag_id'])){

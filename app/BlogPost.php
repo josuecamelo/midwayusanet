@@ -17,6 +17,7 @@ class BlogPost extends Model
 		'description',
 		'image',
 		'content',
+        'visibility',
 		'user_id'
 	];
 	
@@ -61,7 +62,8 @@ class BlogPost extends Model
             $q->where('type',$type);
         })->when($id, function ($q) use ($id){
             $q->where('id','!=',$id);
-        })->orderBy('date','desc')->orderBy('id','desc')->take($qtd)->get();
+        })->where('visibility',1)
+            ->orderBy('date','desc')->orderBy('id','desc')->take($qtd)->get();
     }
 
 	
