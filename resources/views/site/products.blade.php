@@ -100,7 +100,7 @@
 		<div class="row">
 			<div class="col-md-9" id="products-grid">
 				<h1>Products <span id="sub-title"></span></h1>
-				<p class="frase">Home of the free because of the brave</p>
+				<p class="frase">Home of the free because of the brave™</p>
 				<div class="alert alert-warning text-center" style="display: none">No items found with these search parameters.</div>
 				<ul>
 					@foreach($products as $product)
