@@ -38,7 +38,7 @@
 
 		<h1 class="bgParallax animated fadeInDown" data-speed="5" data-x="100">
 			Giving Back
-			<span>Home of the free because of the brave</span>
+			<span>Home of the free because of the brave™</span>
 		</h1>
 
 		<div class="container animated fadeInUp">
