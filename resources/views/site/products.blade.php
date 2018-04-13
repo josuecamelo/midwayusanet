@@ -90,13 +90,23 @@
 			letter-spacing: 1px;
 			margin-top: -40px;
 		}
+
+		#banner img {
+			width: 100%;
+		}
 	</style>
 @endsection
 
 @section('main')
+
+	<div id="banner">
+		<picture>
+			<source media="(min-width: 480px)" srcset="{{ asset('img/banner-military.jpg') }}">
+			<img src="{{ asset('img/banner-military-mobile.jpg') }}">
+		</picture>
+	</div>
+
 	<div class="container-fluid">
-
-
 		<div class="row">
 			<div class="col-md-9" id="products-grid">
 				<h1>Products <span id="sub-title"></span></h1>
