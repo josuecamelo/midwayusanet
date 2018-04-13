@@ -91,7 +91,7 @@
 			margin-top: -40px;
 		}
 
-		#banner img {
+		#banner-military img {
 			width: 100%;
 		}
 	</style>
@@ -99,7 +99,7 @@
 
 @section('main')
 
-	<div id="banner">
+	<div id="banner-military">
 		<picture>
 			<source media="(min-width: 480px)" srcset="{{ asset('img/banner-military.jpg') }}">
 			<img src="{{ asset('img/banner-military-mobile.jpg') }}">
@@ -276,8 +276,10 @@
 				let url = location.href;
 				if (url.includes('military-trail')) {
 					$('.frase').show();
+					$('#banner-military').show();
 				} else {
 					$('.frase').hide();
+					$('#banner-military').hide();
 				}
 			}
 
@@ -364,8 +366,10 @@
 
 				if (lines.includes('military-trail')) {
 					$('.frase').show();
+					$('#banner-military').show();
 				} else {
 					$('.frase').hide();
+					$('#banner-military').hide();
 				}
 
 				lines = [];
