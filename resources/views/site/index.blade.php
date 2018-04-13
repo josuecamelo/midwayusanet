@@ -434,26 +434,35 @@
 			<li data-target="#carousel-main" data-slide-to="0" class="active"></li>
 			<li data-target="#carousel-main" data-slide-to="1"></li>
 			<li data-target="#carousel-main" data-slide-to="2"></li>
+			<li data-target="#carousel-main" data-slide-to="3"></li>
 		</ol>
 		<div class="carousel-inner" role="listbox">
 			<div class="item active">
-				<picture>
-					<source media="(min-width: 480px)" srcset="{{ asset('img/home/banners/ArnoldBanner.jpg') }}">
-					<img src="{{ asset('img/home/banners/ArnoldBanner-mobile.jpg') }}">
-				</picture>
-			</div>
-			<div class="item">
-				<a href="{{ route('products.list') }}">
+				<a href="{{ route('charities') }}">
 					<picture>
-						<source media="(min-width: 480px)" srcset="{{ asset('img/home/banners/AthleteBanner.jpg') }}">
-						<img src="{{ asset('img/home/banners/AthleteBanner-mobile.jpg') }}">
+						<source media="(min-width: 480px)" srcset="{{ asset('img/home/banners/charities-banner.jpg') }}">
+						<img src="{{ asset('img/home/banners/charities-banner-mobile.jpg') }}">
 					</picture>
 				</a>
 			</div>
 			<div class="item">
 				<picture>
-					<source media="(min-width: 480px)" srcset="{{ asset('img/home/banners/ProductBanner.jpg') }}">
-					<img src="{{ asset('img/home/banners/ProductBanner-mobile.jpg') }}">
+					<source media="(min-width: 480px)" srcset="{{ asset('img/home/banners/arnold-banner.jpg') }}">
+					<img src="{{ asset('img/home/banners/arnold-banner-mobile.jpg') }}">
+				</picture>
+			</div>
+			<div class="item">
+				<a href="{{ route('products.list') }}">
+					<picture>
+						<source media="(min-width: 480px)" srcset="{{ asset('img/home/banners/athlete-banner.jpg') }}">
+						<img src="{{ asset('img/home/banners/athlete-banner-mobile.jpg') }}">
+					</picture>
+				</a>
+			</div>
+			<div class="item">
+				<picture>
+					<source media="(min-width: 480px)" srcset="{{ asset('img/home/banners/product-banner.jpg') }}">
+					<img src="{{ asset('img/home/banners/product-banner-mobile.jpg') }}">
 				</picture>
 			</div>
 		</div>
