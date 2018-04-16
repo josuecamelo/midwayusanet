@@ -464,37 +464,7 @@
 
 	<section id="produto">
 
-		<div id="main">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-5 animated fadeInLeft">
-						<img src="{{ asset('uploads/products') . '/' . $product->id . '/' . $product->image }}" alt="" class="img-responsive">
-					</div>
-					<div class="col-md-7 animated fadeInRight">
-						<h1>{{ $product->name }}</h1>
-						<p>
-							<span id="apresentacao">{{ $product->presentation }}</span>
-							@if(!empty($product->flavor))
-								<span id="cor" style="background-color: {{ $product->flavor->color }}">{{ $product->flavor->name }} Flavor</span>
-							@endif
-						</p>
-						{{-- Tópicos --}}
 
-						@if(isset($topics))
-							<ul id="topicos-produto">
-								@foreach($topics as $topic)
-									<li>{{ $topic->description }}</li>
-								@endforeach
-							</ul>
-						@endif
-
-						<div>
-							<p>{{ $product->description }}</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
 
 
 		{{-- Shopify --}}
@@ -581,6 +551,31 @@
 
 		{{-- Sabores relacionados --}}
 
+		@if(isset($flavors) && $flavors->count() > 0)
+			<div id="sabores">
+				<div class="container">
+					<h2>Available in flavor{{ count($flavors) > 1 ? 's' : '' }}</h2>
+					<div class="row-sabores">
+						@foreach($flavors as $flavor)
+							<?php
+							//							$slug = $flavor->last_name_slug ? $flavor->slug . '&' . $flavor->last_name_slug : $flavor->slug;
+							$slug = $flavor->slug;
+							$product_flavor = isset($flavor->flavor->id) ? $flavor->flavor->slug : null;
+							$url = route('produto_exibicao', [$slug, $product_flavor])
+							?>
+							<div class="col">
+								<a href="{{ $url }}">
+									<span class="sabor" style="background: {{ $flavor->flavor->color }}"></span>
+									{{ $flavor->flavor->name }}
+									<br>
+									<img src="{{ asset("uploads/products/$flavor->id/$flavor->image") }}">
+								</a>
+							</div>
+						@endforeach
+					</div>
+				</div>
+			</div>
+		@endif
 
 
 		{{-- Produtos relacionados --}}
