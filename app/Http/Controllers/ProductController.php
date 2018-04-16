@@ -94,8 +94,6 @@ class ProductController extends Controller
         }
 		
 		$flavors = $product::ofProduct($product->slug, $product->last_name_slug);
-		
-		dd($flavors);
 
 		return view('site.supplement', compact(
 			'product',
