@@ -173,9 +173,9 @@ class Product extends Model
 		return $this->belongsTo(Type::class, 'type_id', 'id');
 	}
 	
-	public function scopeOfProduct($query, $slug, $lSlug)
+	public function ofProduct($slug, $lSlug)
 	{
-		return $query
+		return $this
 			->where('last_name_slug', $lSlug)
 			->where('slug', $slug)
 			->whereRaw("products.flavor_id is not null")
