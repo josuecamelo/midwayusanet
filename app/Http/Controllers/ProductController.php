@@ -89,8 +89,6 @@ class ProductController extends Controller
 			})
 			->first();
 
-		dd($product);
-
 		if( isset($product)) {
 		    $topics = $product->productTopics()->get();
         }
