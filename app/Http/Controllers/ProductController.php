@@ -95,8 +95,6 @@ class ProductController extends Controller
 
 		$flavors = $this->productModel->related($product->slug, $product->last_name_slug);
 
-		dd($flavors);
-
         //dd($this->productModel->ofProduct($product->slug, $product->last_name_slug));
 
 		return view('site.supplement', compact(
