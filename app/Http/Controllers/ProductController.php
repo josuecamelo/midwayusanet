@@ -89,7 +89,9 @@ class ProductController extends Controller
 			})
 			->first();
 
-		if( $product->productTopics()->count() > 0 ){
+		dd($product);
+
+		if( isset($product)) {
 		    $topics = $product->productTopics()->get();
         }
 		
