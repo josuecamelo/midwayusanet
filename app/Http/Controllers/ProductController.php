@@ -95,7 +95,9 @@ class ProductController extends Controller
 
 		//$flavors = $this->productModel->related($product->slug, $product->last_name_slug);
         //dd($this->productModel->ofProduct($product->slug, $product->last_name_slug));
-        $flavors = new collection();
+        $flavors = [
+            new \stdClass()
+        ];
 
 		dd($flavors);
 
