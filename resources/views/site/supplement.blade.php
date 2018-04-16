@@ -464,7 +464,37 @@
 
 	<section id="produto">
 
+		<div id="main">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-5 animated fadeInLeft">
+						<img src="{{ asset('uploads/products') . '/' . $product->id . '/' . $product->image }}" alt="" class="img-responsive">
+					</div>
+					<div class="col-md-7 animated fadeInRight">
+						<h1>{{ $product->name }}</h1>
+						<p>
+							<span id="apresentacao">{{ $product->presentation }}</span>
+							@if(!empty($product->flavor))
+								<span id="cor" style="background-color: {{ $product->flavor->color }}">{{ $product->flavor->name }} Flavor</span>
+							@endif
+						</p>
+						{{-- Tópicos --}}
 
+						@if(isset($topics))
+							<ul id="topicos-produto">
+								@foreach($topics as $topic)
+									<li>{{ $topic->description }}</li>
+								@endforeach
+							</ul>
+						@endif
+
+						<div>
+							<p>{{ $product->description }}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
 
 		{{-- Shopify --}}
