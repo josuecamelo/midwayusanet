@@ -173,12 +173,12 @@ class Product extends Model
 		return $this->belongsTo(Type::class, 'type_id', 'id');
 	}
 	
-	public function ofProduct($slug, $lSlug)
+	public function related($slug, $lSlug)
 	{
 		return $this
 			->where('last_name_slug', $lSlug)
 			->where('slug', $slug)
-			//->whereRaw("products.flavor_id is not null")
+			->whereRaw("products.flavor_id is not null")
             ->get();
 	}
 	
