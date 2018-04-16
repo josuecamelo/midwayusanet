@@ -610,7 +610,7 @@
 
 		{{-- Produtos relacionados --}}
 
-		@if($product->productRelateds)
+		@if($product->productRelateds->count() > 0)
 			<div id="outros-produtos">
 				<h2>Related Products</h2>
 				<div class="slider-nav">
