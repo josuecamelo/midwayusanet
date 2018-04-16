@@ -92,7 +92,9 @@ class ProductController extends Controller
 		if( isset($product)) {
 		    $topics = $product->productTopics()->get();
         }
-		
+
+        dd($product);
+
 		$flavors = $product->ofProduct($product->slug, $product->last_name_slug);
 
 		return view('site.supplement', compact(
