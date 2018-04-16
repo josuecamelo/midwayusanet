@@ -93,7 +93,7 @@ class ProductController extends Controller
 		    $topics = $product->productTopics()->get();
         }
 
-		$flavors = $this->productModel->ofProduct($product->slug, $product->last_name_slug);
+		$flavors = $this->productModel->ofProduct($product->slug, $product->last_name_slug)->get();
 
 		return view('site.supplement', compact(
 			'product',
