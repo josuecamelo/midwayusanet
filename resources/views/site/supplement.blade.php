@@ -480,7 +480,7 @@
 						</p>
 						{{-- Tópicos --}}
 
-						@if($topics)
+						@if(isset($topics))
 							<ul id="topicos-produto">
 								@foreach($topics as $topic)
 									<li>{{ $topic->description }}</li>
