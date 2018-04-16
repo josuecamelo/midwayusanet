@@ -87,7 +87,7 @@ class ProductController extends Controller
 					$query->where('flavors.slug', $flavor);
 				//->orWhere('', '=', ');
 			})
-			->toSql();
+			->first();
 
 		dd($product);
 
