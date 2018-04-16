@@ -581,7 +581,7 @@
 
 		{{-- Sabores relacionados --}}
 
-		@if(count($flavors) > 0)
+		@if(isset($flavors) && $flavors->count() > 0)
 			<div id="sabores">
 				<div class="container">
 					<h2>Available in flavor{{ count($flavors) > 1 ? 's' : '' }}</h2>
