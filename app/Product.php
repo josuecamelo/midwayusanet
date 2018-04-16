@@ -178,6 +178,7 @@ class Product extends Model
 		return $this
 			->where('last_name_slug', $lSlug)
 			->where('slug', $slug)
+            ->where('visibility', 1)
 			->whereRaw("products.flavor_id is not null")
             ->get();
 	}
