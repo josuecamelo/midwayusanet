@@ -36,7 +36,7 @@
 		<nav id="nav-main" role="navigation">
 			<ul>
 				<li>
-					<a>Beauty Products</a>
+					<a>Glamour Nutrition</a>
 					<div>
 						<ul>
 							<li>
@@ -71,7 +71,7 @@
 					</div>
 				</li>
 				<li>
-					<a>Fitness Products</a>
+					<a>Military Trail</a>
 					<div>
 						<ul>
 							<li>
@@ -173,7 +173,7 @@
 					<nav>
 						<ul>
 							<li>
-								<a class="mm-sub">Beauty Products<i class="fas fa-plus"></i></a>
+								<a class="mm-sub">Glamour Nutrition<i class="fas fa-plus"></i></a>
 								<ul>
 									<li>
 										<h2>POPULAR CATEGORIES</h2>
@@ -196,7 +196,7 @@
 								</ul>
 							</li>
 							<li>
-								<a class="mm-sub">Fitness Products<i class="fas fa-plus"></i></a>
+								<a class="mm-sub">Military Trail<i class="fas fa-plus"></i></a>
 								<ul>
 									<li>
 										<h2>POPULAR CATEGORIES</h2>
