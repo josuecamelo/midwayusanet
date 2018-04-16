@@ -89,7 +89,11 @@ class ProductController extends Controller
 			})
 			->first();
 
-		$topics = $product->productTopics()->get();
+		if( $product->productTopics()->count() > 0 ){
+		    $topics = $product->productTopics()->get();
+        }else{
+		    $topics = [];
+        }
 		
 		$flavors = $product::ofProduct($product->slug, $product->last_name_slug);
 		
