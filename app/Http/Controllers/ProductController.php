@@ -99,8 +99,6 @@ class ProductController extends Controller
             new \stdClass()
         ];
 
-		dd($flavors);
-
 		return view('site.supplement', compact(
 			'product',
 			'topics',
