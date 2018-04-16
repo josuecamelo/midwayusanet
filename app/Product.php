@@ -178,7 +178,8 @@ class Product extends Model
 		return $query
 			->where('last_name_slug', $lSlug)
 			->where('slug', $slug)
-			->whereRaw("products.flavor_id is not null");
+			->whereRaw("products.flavor_id is not null")
+            ->get();
 	}
 	
 	
